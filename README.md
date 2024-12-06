@@ -1,4 +1,3 @@
-# Informejtycy
 
 ![Logo banner](./informejtycy-logo-banner.png)
 
