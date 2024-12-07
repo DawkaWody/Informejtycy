@@ -11,212 +11,8 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap"
 		rel="stylesheet">
-	<style>
-		html {
-			scroll-behavior: smooth;
-		}
+	<link rel="stylesheet" href="../style.css">
 
-		body {
-			font-family: Funnel Display;
-			line-height: 1.6;
-			margin: 20px;
-			background-color: #f4f4f9;
-			font-size: 18px;
-		}
-
-		#srodek {
-			display: flex;
-			align-items: flex-start;
-			gap: 35px;
-			margin-top: 50px;
-		}
-
-		#sidebar-left {
-			width: 300px;
-			padding: 20px;
-			padding-bottom: 0;
-			border: 1px solid #ccc;
-			position: sticky;
-			top: 50px;
-			overflow-y: none;
-		}
-
-		#sidebar-left ul {
-			list-style-type: none;
-			padding: 0;
-		}
-
-		#sidebar-left li {
-			margin: 5px 0;
-		}
-
-		#sidebar-left h2 {
-			margin: 0;
-		}
-
-		#sidebar-left a {
-			text-decoration: none;
-			color: #004186;
-			font-weight: bold;
-		}
-
-		#sidebar-left a:hover {
-			text-decoration: underline;
-		}
-
-		#artykul {
-			flex: 1;
-			margin: 0;
-		}
-
-		#artykul h1 {
-			margin: 0;
-		}
-
-		#sidebar-right {
-			width: 300px;
-			padding: 20px;
-			padding-bottom: 0;
-			border: 1px solid #ccc;
-			position: sticky;
-			top: 50px;
-			margin-left: auto;
-			right: 20px;
-		}
-
-
-		#sidebar-right h2 {
-			margin: 0;
-		}
-
-		#sidebar-right ul {
-			list-style-type: none;
-			padding: 0;
-		}
-
-		#sidebar-right li {
-			margin: 5px 0;
-		}
-
-		#sidebar-right a {
-			text-decoration: none;
-			color: #004186;
-			font-weight: bold;
-		}
-
-		#sidebar-right a:hover {
-			text-decoration: underline;
-		}
-
-		h1,
-		h2,
-		h3 {
-			color: #002750;
-		}
-
-		code {
-			background-color: #eaeaea;
-			padding: 4px 7px;
-			font-size: 1em;
-			font-family: Consolas;
-			border-radius: 5px;
-		}
-
-		pre {
-			background-color: #eaeaea;
-			padding: 15px;
-			border-radius: 10px;
-			overflow-x: auto;
-		}
-
-		.odnosnik {
-			margin-top: -20px;
-			padding-top: 20px;
-		}
-
-		header {
-			display: flex;
-			align-items: flex-start;
-			gap: 20px;
-			height: 75px;
-			background-color: #2C3857;
-			box-shadow: 1px 1px 3px 1px rgb(123, 127, 185);
-		}
-
-		#menu {
-			margin-top: 18px;
-			margin-left: 25px;
-		}
-
-		#menu-img {
-			width: 40px;
-		}
-
-		#baner-img {
-			margin-top: 7px;
-			width: 200px;
-		}
-
-		/* Styl dla dyrektyw preprocesora, takich jak #include */
-		.directive {
-			color: #e36209;
-		}
-
-		/* Styl dla nagłówków, takich jak <iostream> */
-		.header {
-			color: #22863a;
-		}
-
-		.type {
-			color: #e36209;
-		}
-
-		/* Styl dla słów kluczowych, takich jak int, return, using, namespace */
-		.keyword {
-			color: #e36209;
-			font-weight: bold;
-		}
-
-		/* Styl dla przestrzeni nazw, takich jak std */
-		.namespace {
-			color: #005cc5;
-		}
-
-		/* Styl dla funkcji, takich jak main */
-		.function {
-			color: #e38c09;
-			font-weight: bold;
-		}
-
-		/* Styl dla liczb, takich jak 0 */
-		.number {
-			color: #6f42c1;
-			font-weight: bold;
-		}
-
-		/* Styl dla komentarzy, takich jak // Twój kod tutaj */
-		.comment {
-			color: #6a737d;
-			font-style: italic;
-		}
-
-		/* Styl dla komend, takich jak g++, ./program */
-		.command {
-			color: #e36209;
-			font-weight: bold;
-		}
-
-		/* Styl dla flag komend, takich jak -o */
-		.flag {
-			color: #0366d6;
-		}
-
-		/* Styl dla nazw plików, takich jak program, nazwa_pliku.cpp */
-		.filename {
-			color: #032f62;
-			font-weight: bold;
-		}
-	</style>
 </head>
 
 <body>
@@ -225,11 +21,12 @@
 		<div id="menu">
 			<img id="menu-img" src="../img/menu.png">
 		</div>
-		<a href="../index.html">
-			<div id="baner">
+		<div id="baner">
+			<a href="../index.html">
 				<img id="baner-img" src="../img/baner-ciemne.png">
-			</div>
-		</a>
+			</a>
+		</div>
+		<img src="../img/image.png" id="theme-toggle">
 	</header>
 
 	<div id="srodek">
@@ -374,11 +171,25 @@
 		</div>
 	</div>
 
-	<footer
-		style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; font-size: 14px;">
+	<footer>
 		Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
-		&copy; 2024 Wszystkie prawa zastrzeżone
+		&copy; 2024 Wszelkie prawa zastrzeżone
 	</footer>
+
+	<script>
+		const themeToggleButton = document.getElementById("theme-toggle");
+
+		themeToggleButton.addEventListener("click", () => {
+
+			if (document.documentElement.getAttribute("data-theme") === "dark") {
+				document.documentElement.setAttribute("data-theme", "light");
+			}
+
+			else {
+				document.documentElement.setAttribute("data-theme", "dark");
+			}
+		});
+	</script>
 
 </body>
 
