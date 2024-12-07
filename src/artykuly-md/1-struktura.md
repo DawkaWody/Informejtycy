@@ -5,15 +5,15 @@ C++ jest językiem programowania, który umożliwia tworzenie wydajnych i złoż
 
 Każdy program w C++ składa się z kilku podstawowych elementów:
 
-### 1. Dyrektywa preprocesora `#include`
-
-Na początku programu zwykle znajduje się dyrektywa preprocesora. Dyrektywy preprocesora to instrukcje dla kompilatora wykonywane przed kompilacją kodu. Najczęściej spotykanym poleceniem jest `#include`, które służy do dołączania bibliotek.
+### 1. Polecenie `#include` na początku programu
+Na początku programu często znajduje się specjalne polecenie zaczynające się od `#include`. Takie polecenia informują komputer, które dodatkowe funkcje i narzędzia będą używane w programie. Najczęściej spotykanym poleceniem tego typu jest:
 
 ```cpp
 #include <iostream>
 ```
 
-`<iostream>` to standardowa biblioteka umożliwiająca korzystanie z wejścia i wyjścia, takich jak `cout` (do wyświetlania tekstu w konsoli) i `cin` (do wczytywania danych). Więcej na ten temat w kolejnym artykule.
+`<iostream>` to biblioteka, która pozwala korzystać z funkcji do wyświetlania tekstu na ekranie (np. za pomocą `cout`) oraz do wczytywania danych od użytkownika (np. przy użyciu `cin`). Więcej na ten temat w kolejnym artykule.
+
 ### 2. Dodanie przestrzeni nazw
 
 Aby uprościć korzystanie z elementów standardowej biblioteki C++, można dodać polecenie:
