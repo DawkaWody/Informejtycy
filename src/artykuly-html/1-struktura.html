@@ -119,13 +119,13 @@
 			padding: 4px 7px;
 			font-size: 1em;
 			font-family: Consolas;
-			border-radius: 3px;
+			border-radius: 5px;
 		}
 
 		pre {
 			background-color: #eaeaea;
-			padding: 10px;
-			border-radius: 5px;
+			padding: 15px;
+			border-radius: 10px;
 			overflow-x: auto;
 		}
 
@@ -236,24 +236,24 @@
 		<div id="sidebar-left">
 			<h2>Lista tematów</h2>
 			<ul>
-				<li><a href="struktura_programu.html">Struktura programu w C++</a></li>
-				<li><a href="input_output_zmienne.html">Input-output, zmienne</a></li>
-				<li><a href="if.html">If</a></li>
-				<li><a href="for_while.html">For, while</a></li>
-				<li><a href="tablice_vector.html">Tablice, vector</a></li>
-				<li><a href="ascii.html">ASCII</a></li>
-				<li><a href="string.html">String</a></li>
-				<li><a href="min_max_swap.html">Min, max, swap i inne</a></li>
-				<li><a href="zlozonosc_czasowa.html">Złożoność czasowa</a></li>
-				<li><a href="wlasne_funkcje.html">Własne funkcje</a></li>
-				<li><a href="pair_struct.html">Pair, struct</a></li>
-				<li><a href="custom_sort.html">Custom sort</a></li>
-				<li><a href="queue_deque.html">Queue, deque</a></li>
-				<li><a href="priority_queue.html">Priority queue</a></li>
-				<li><a href="set_multiset.html">Set, multiset</a></li>
-				<li><a href="unordered_map_map.html">Unordered map, map</a></li>
-				<li><a href="stack.html">Stack</a></li>
-				<li><a href="rekurencja.html">Rekurencja</a></li>
+				<li><a href="struktura_programu.html">1. Struktura programu w C++</a></li>
+				<li><a href="input_output_zmienne.html">2. Input-output, zmienne</a></li>
+				<li><a href="if.html">3. If</a></li>
+				<li><a href="for_while.html">4. For, while</a></li>
+				<li><a href="tablice_vector.html">5. Tablice, vector</a></li>
+				<li><a href="ascii.html">6. ASCII</a></li>
+				<li><a href="string.html">7. String</a></li>
+				<li><a href="min_max_swap.html">8. Min, max, swap i inne</a></li>
+				<li><a href="zlozonosc_czasowa.html">9. Złożoność czasowa</a></li>
+				<li><a href="wlasne_funkcje.html">10. Własne funkcje</a></li>
+				<li><a href="pair_struct.html">11. Pair, struct</a></li>
+				<li><a href="custom_sort.html">12. Custom sort</a></li>
+				<li><a href="queue_deque.html">13. Queue, deque</a></li>
+				<li><a href="priority_queue.html">14. Priority queue</a></li>
+				<li><a href="set_multiset.html">15. Set, multiset</a></li>
+				<li><a href="unordered_map_map.html">16. Unordered map, map</a></li>
+				<li><a href="stack.html">17. Stack</a></li>
+				<li><a href="rekurencja.html">18. Rekurencja</a></li>
 			</ul>
 		</div>
 
@@ -272,12 +272,13 @@
 <span class="type">int</span> <span class="function">main</span>()
 {
     <span class="comment">// Twój kod tutaj</span>
+
     <span class="keyword">return</span> <span class="number">0</span>;
 }</code></pre>
 
 			<p>Każdy program w C++ składa się z kilku podstawowych elementów:</p>
 			<div class="odnosnik" id="polecenie_include"></div>
-			<h3>1. Polecenie <code>#include</code> na początku programu</h3>
+			<h3>Polecenie <code>#include</code> na początku programu</h3>
 			<p>Na początku programu często znajduje się specjalne polecenie zaczynające się od <code>#include</code>.
 				Takie
 				polecenia informują komputer, które dodatkowe funkcje i narzędzia będą używane w programie. Najczęściej
@@ -290,14 +291,14 @@
 				<code>cin</code>).
 			</p>
 			<div class="odnosnik" id="przestrzen_nazw"></div>
-			<h3>2. Dodanie przestrzeni nazw</h3>
+			<h3>Dodanie przestrzeni nazw</h3>
 			<p>Aby uprościć korzystanie z elementów standardowej biblioteki C++, można dodać polecenie:</p>
 			<pre><code><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="namespace">std</span>;</code></pre>
 			<p>Dzięki temu nie trzeba będzie poprzedzać nazw takich jak <code>cout</code> czy <code>cin</code> prefiksem
 				<code>std::</code>.
 			</p>
 			<div class="odnosnik" id="funkcja_main"></div>
-			<h3>3. Funkcja <code>main</code></h3>
+			<h3>Funkcja <code>main</code></h3>
 			<p>Funkcja <code>main</code> jest punktem wejścia każdego programu w C++. To właśnie od niej zaczyna się
 				wykonanie
 				programu.</p>
@@ -306,16 +307,16 @@
 				poprawnie).
 				Nawiasy <code>()</code> mogą zawierać argumenty, ale dla prostych programów są puste.</p>
 			<div class="odnosnik" id="blok_kodu"></div>
-			<h3>4. Blok kodu <code>{}</code></h3>
+			<h3>Blok kodu <code>{}</code></h3>
 			<p>Kod, który ma być wykonany przez funkcję <code>main</code>, znajduje się w nawiasach klamrowych
 				<code>{}</code>. To
 				tzw. ciało funkcji.
 			</p>
 			<pre><code>{
-    <span class="comment">// Twój kod tutaj</span>
+	<span class="comment">// Twój kod tutaj</span>
 }</code></pre>
 			<div class="odnosnik" id="instrukcja_return"></div>
-			<h3>5. Instrukcja <code>return</code></h3>
+			<h3>Instrukcja <code>return</code></h3>
 			<p>Na końcu funkcji <code>main</code> zwykle znajduje się instrukcja <code>return</code>, która zwraca
 				wartość
 				całkowitą. Wartość ta informuje system operacyjny o zakończeniu programu.</p>
@@ -361,14 +362,14 @@
 		<div id="sidebar-right">
 			<h2>Spis treści</h2>
 			<ul>
-				<li><a href="#struktura_programu">Wstęp</a></li>
-				<li><a href="#polecenie_include">Polecenie <code>#include</code></a></li>
-				<li><a href="#przestrzen_nazw">Dodanie przestrzeni nazw</a></li>
-				<li><a href="#funkcja_main">Funkcja <code>main</code></a></li>
-				<li><a href="#blok_kodu">Blok kodu</a></li>
-				<li><a href="#instrukcja_return">Instrukcja <code>return</code></a></li>
-				<li><a href="#uruchomienie_programu">Jak uruchomić program?</a></li>
-				<li><a href="#podsumowanie">Podsumowanie</a></li>
+				<li><a href="#struktura_programu">1. Wstęp</a></li>
+				<li><a href="#polecenie_include">2. Polecenie <code>#include</code></a></li>
+				<li><a href="#przestrzen_nazw">3. Dodanie przestrzeni nazw</a></li>
+				<li><a href="#funkcja_main">4. Funkcja <code>main</code></a></li>
+				<li><a href="#blok_kodu">5. Blok kodu</a></li>
+				<li><a href="#instrukcja_return">6. Instrukcja <code>return</code></a></li>
+				<li><a href="#uruchomienie_programu">7. Jak uruchomić program?</a></li>
+				<li><a href="#podsumowanie">8. Podsumowanie</a></li>
 			</ul>
 		</div>
 	</div>
@@ -378,7 +379,6 @@
 		Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
 		&copy; 2024 Wszystkie prawa zastrzeżone
 	</footer>
-
 
 </body>
 
