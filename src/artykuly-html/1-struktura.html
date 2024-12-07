@@ -156,6 +156,75 @@
 			margin-top: 7px;
 			width: 200px;
 		}
+
+		/* Styl dla dyrektyw preprocesora, takich jak #include */
+		.directive {
+			color: #d73a49;
+			/* Czerwony */
+			font-weight: bold;
+		}
+
+		/* Styl dla nagłówków, takich jak <iostream> */
+		.header {
+			color: #6f42c1;
+			/* Fioletowy */
+			font-style: italic;
+		}
+
+		/* Styl dla słów kluczowych, takich jak int, return, using, namespace */
+		.keyword {
+			color: #005cc5;
+			/* Niebieski */
+			font-weight: bold;
+		}
+
+		/* Styl dla przestrzeni nazw, takich jak std */
+		.namespace {
+			color: #24292e;
+			/* Ciemnoszary */
+			font-style: italic;
+		}
+
+		/* Styl dla funkcji, takich jak main */
+		.function {
+			color: #22863a;
+			/* Zielony */
+			font-weight: bold;
+		}
+
+		/* Styl dla liczb, takich jak 0 */
+		.number {
+			color: #005cc5;
+			/* Niebieski */
+			font-weight: bold;
+		}
+
+		/* Styl dla komentarzy, takich jak // Twój kod tutaj */
+		.comment {
+			color: #6a737d;
+			/* Szary */
+			font-style: italic;
+		}
+
+		/* Styl dla komend, takich jak g++, ./program */
+		.command {
+			color: #e36209;
+			/* Pomarańczowy */
+			font-weight: bold;
+		}
+
+		/* Styl dla flag komend, takich jak -o */
+		.flag {
+			color: #0366d6;
+			/* Jasnoniebieski */
+		}
+
+		/* Styl dla nazw plików, takich jak program, nazwa_pliku.cpp */
+		.filename {
+			color: #032f62;
+			/* Granatowy */
+			font-weight: bold;
+		}
 	</style>
 </head>
 
@@ -206,70 +275,63 @@
 				szablonie. W tym artykule przedstawimy krok po kroku strukturę prostego programu w C++.</p>
 			<div class="odnosnik" id="struktura_programu"></div>
 			<h2>Podstawowa struktura programu</h2>
+			<pre><code><span class="directive">#include</span> <span class="header">&lt;iostream&gt;</span>
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="namespace">std</span>;
 
-			<pre><code>#include &lt;iostream&gt;
-using namespace std;
-
-int main()
+<span class="type">int</span> <span class="function">main</span>()
 {
-	// Twój kod tutaj
-	
-	return 0;
+    <span class="comment">// Twój kod tutaj</span>
+    <span class="keyword">return</span> <span class="number">0</span>;
 }</code></pre>
 
 			<p>Każdy program w C++ składa się z kilku podstawowych elementów:</p>
-
 			<div class="odnosnik" id="polecenie_include"></div>
 			<h3>1. Polecenie <code>#include</code> na początku programu</h3>
 			<p>Na początku programu często znajduje się specjalne polecenie zaczynające się od <code>#include</code>.
 				Takie
 				polecenia informują komputer, które dodatkowe funkcje i narzędzia będą używane w programie. Najczęściej
-				spotykanym poleceniem tego typu jest:</p>
-			<pre><code>#include &lt;iostream&gt;</code></pre>
+				spotykanym
+				poleceniem tego typu jest:</p>
+			<pre><code><span class="directive">#include</span> <span class="header">&lt;iostream&gt;</span></code></pre>
 			<p><code>&lt;iostream&gt;</code> to biblioteka, która pozwala korzystać z funkcji do wyświetlania tekstu na
-				ekranie
-				(np. za pomocą <code>cout</code>) oraz do wczytywania danych od użytkownika (np. przy użyciu
+				ekranie (np.
+				za pomocą <code>cout</code>) oraz do wczytywania danych od użytkownika (np. przy użyciu
 				<code>cin</code>).
 			</p>
-
 			<div class="odnosnik" id="przestrzen_nazw"></div>
 			<h3>2. Dodanie przestrzeni nazw</h3>
 			<p>Aby uprościć korzystanie z elementów standardowej biblioteki C++, można dodać polecenie:</p>
-			<pre><code>using namespace std;</code></pre>
+			<pre><code><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="namespace">std</span>;</code></pre>
 			<p>Dzięki temu nie trzeba będzie poprzedzać nazw takich jak <code>cout</code> czy <code>cin</code> prefiksem
 				<code>std::</code>.
 			</p>
-
 			<div class="odnosnik" id="funkcja_main"></div>
 			<h3>3. Funkcja <code>main</code></h3>
 			<p>Funkcja <code>main</code> jest punktem wejścia każdego programu w C++. To właśnie od niej zaczyna się
 				wykonanie
 				programu.</p>
-			<pre><code>int main()</code></pre>
+			<pre><code><span class="type">int</span> <span class="function">main</span>()</code></pre>
 			<p><code>int</code> oznacza, że funkcja zwraca wartość całkowitą (zwykle 0, jeśli program zakończył się
 				poprawnie).
 				Nawiasy <code>()</code> mogą zawierać argumenty, ale dla prostych programów są puste.</p>
-
 			<div class="odnosnik" id="blok_kodu"></div>
 			<h3>4. Blok kodu <code>{}</code></h3>
 			<p>Kod, który ma być wykonany przez funkcję <code>main</code>, znajduje się w nawiasach klamrowych
-				<code>{}</code>.
-				To tzw. ciało funkcji.
+				<code>{}</code>. To
+				tzw. ciało funkcji.
 			</p>
 			<pre><code>{
-	// Twój kod tutaj
+    <span class="comment">// Twój kod tutaj</span>
 }</code></pre>
-
 			<div class="odnosnik" id="instrukcja_return"></div>
 			<h3>5. Instrukcja <code>return</code></h3>
 			<p>Na końcu funkcji <code>main</code> zwykle znajduje się instrukcja <code>return</code>, która zwraca
 				wartość
 				całkowitą. Wartość ta informuje system operacyjny o zakończeniu programu.</p>
-			<pre><code>return 0;</code></pre>
+			<pre><code><span class="keyword">return</span> <span class="number">0</span>;</code></pre>
 			<p><code>0</code> oznacza, że program zakończył się sukcesem. Jeśli program napotka błąd, można zwrócić inną
 				wartość
 				(np. <code>1</code>).</p>
-
 			<div class="odnosnik" id="uruchomienie_programu"></div>
 			<h2>Jak uruchomić program w C++?</h2>
 			<p>Aby uruchomić program, należy:</p>
@@ -278,31 +340,31 @@ int main()
 					programistycznego
 					(IDE), np. Visual Studio Code, CLion lub Code::Blocks.</li>
 				<li><strong>Skompilować program:</strong> Za pomocą kompilatora, takiego jak GCC czy Clang. W wierszu
-					poleceń
-					można wpisać:
-					<pre><code>g++ -o program nazwa_pliku.cpp</code></pre>
+					poleceń można
+					wpisać:
+					<pre><code><span class="command">g++</span> <span class="flag">-o</span> <span class="filename">program</span> <span class="filename">nazwa_pliku.cpp</span></code></pre>
 					gdzie <code>-o</code> to flaga po której podaje się nazwę pliku wykonywalnego, <code>program</code>
-					to
-					nazwa
+					to nazwa
 					pliku wykonywalnego, a <code>nazwa_pliku.cpp</code> to Twój plik z kodem.
 				</li>
 				<li><strong>Uruchomić program:</strong> wpisując:
-					<pre><code>./program</code></pre>
+					<pre><code><span class="command">./program</span></code></pre>
 					na Linuxie lub:
-					<pre><code>program</code></pre>
+					<pre><code><span class="command">program</span></code></pre>
 					na Windowsie.
 				</li>
 			</ol>
-
 			<div class="odnosnik" id="podsumowanie"></div>
 			<h2>Podsumowanie</h2>
 			<p>Podstawowa struktura programu w C++ jest prosta, ale zrozumienie jej fundamentów jest kluczowe, aby móc
 				pisać
 				bardziej złożone aplikacje. Warto zapamiętać, że każdy program rozpoczyna się od funkcji
-				<code>main</code> i
-				kończy instrukcją <code>return</code>. W kolejnych artykułach omówimy bardziej zaawansowane aspekty
-				programowania w C++, takie jak zmienne, pętle czy funkcje.
+				<code>main</code> i kończy
+				instrukcją <code>return</code>. W kolejnych artykułach omówimy bardziej zaawansowane aspekty
+				programowania w C++,
+				takie jak zmienne, pętle czy funkcje.
 			</p>
+
 		</div>
 
 		<div id="sidebar-right">
