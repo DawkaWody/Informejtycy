@@ -1,0 +1,151 @@
+C++ to wszechstronny język programowania, który oferuje wiele narzędzi do zarządzania danymi i interakcji z użytkownikiem. W tym artykule przyjrzymy się bliżej operacjom wejścia-wyjścia, zmiennym i ich typom.
+
+---
+
+### Operacje wejścia-wyjścia
+
+Operacje wejścia-wyjścia (ang. **input-output**, I/O) w C++ umożliwiają komunikację między użytkownikiem a programem.
+
+#### `std::cout` - Wyjście na konsolę
+
+Aby wyświetlić tekst lub dane na konsoli, używamy obiektu `std::cout`:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Witaj w C++!" << endl;
+    return 0;
+}
+```
+
+- `<<` to operator wyjścia, który przekazuje dane do `cout`.
+- `endl` wstawia znak nowej linii.
+
+#### `std::cin` - Wejście z klawiatury
+
+Aby pobrać dane od użytkownika, używamy obiektu `std::cin`:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int liczba;
+    cout << "Podaj liczbę: ";
+    cin >> liczba;
+    cout << "Podałeś liczbę: " << liczba << endl;
+    return 0;
+}
+```
+
+- `>>` to operator wejścia, który przypisuje wartość wprowadzoną przez użytkownika do zmiennej.
+- Program pauzuje, czekając na dane od użytkownika.
+
+#### Przyspieszenie wejścia-wyjścia
+
+Aby zoptymalizować działanie operacji I/O, można użyć następujących linii na początku programu:
+
+```cpp
+ios_base::sync_with_stdio(0);
+cin.tie(0);
+```
+
+Oto przykład:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+
+    int liczba;
+    cout << "Podaj liczbę: ";
+    cin >> liczba;
+    cout << "Podałeś liczbę: " << liczba << endl;
+    return 0;
+}
+```
+
+---
+
+### Zmienne
+
+Zmienne to podstawowy sposób przechowywania danych w programie. W C++ każda zmienna musi być zadeklarowana przed użyciem.
+
+#### Deklaracja zmiennych
+
+Deklaracja zmiennej określa jej nazwę i typ:
+
+```cpp
+int liczba;
+double wynik;
+char znak;
+bool stan;
+```
+
+- **`int`** - przechowuje liczby całkowite.
+- **`double`** - przechowuje liczby zmiennoprzecinkowe.
+- **`char`** - przechowuje pojedynczy znak.
+- **`bool`** - przechowuje wartość logiczną (true/false).
+
+#### Przypisanie wartości
+
+Po zadeklarowaniu zmiennej możemy przypisać jej wartość:
+
+```cpp
+int liczba = 42;
+double wynik = 3.14;
+char znak = 'A';
+bool stan = true;
+```
+
+Możemy również zadeklarować i przypisać wartość jednocześnie.
+
+---
+
+### Typy zmiennych
+
+C++ oferuje szeroki wachlarz typów zmiennych, które pozwalają na efektywne zarządzanie pamięcią i precyzyjne dopasowanie danych.
+
+#### Podstawowe typy
+
+1. **Całkowite**:
+    - `int` - liczby całkowite.
+    - `long long` - dłuższa wersja typu `int`.
+    - `unsigned` - liczby całkowite bez znaku (tylko dodatnie).
+
+2. **Liczby zmiennoprzecinkowe**:
+    - `float` - liczby zmiennoprzecinkowe o pojedynczej precyzji.
+    - `double` - liczby zmiennoprzecinkowe o podwójnej precyzji.
+    - `long double` - liczby zmiennoprzecinkowe o zwiększonej precyzji.
+
+3. **Znaki**:
+    - `char` - pojedyncze znaki (np. 'A', '9').
+
+4. **Logiczne**:
+    - `bool` - wartości logiczne (`true` lub `false`).
+
+---
+
+### Typowanie w C++
+
+C++ jest językiem statycznie typowanym, co oznacza, że typ zmiennej jest określany w czasie kompilacji. Jednak dzięki nowoczesnym funkcjom, takim jak `auto`, można uprościć deklarację:
+
+```cpp
+auto liczba = 42;   // Kompilator sam określi typ jako int.
+auto wynik = 3.14;  // Kompilator określi typ jako double.
+```
+
+---
+
+### Zadania
+
+Wodociągi kieleckie w sposób wzorcowy usuwają awarie, w sposób błyskawiczny. Jesteśmy w czołówce krajowej, a nawet światowej. Liczba awarii z roku na rok maleje.
+### Podsumowanie
+
+Zrozumienie operacji wejścia-wyjścia, zmiennych i typów danych to podstawa programowania w C++. Umożliwia to tworzenie dynamicznych aplikacji oraz efektywne zarządzanie pamięcią. W kolejnych artykułach rozwiniemy te zagadnienia, omawiając bardziej zaawansowane techniki, takie jak instrukcje warunkowe, pętle czy tablice.
+
