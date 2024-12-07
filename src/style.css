@@ -1,162 +1,166 @@
 /* Zmienne dla trybu jasnego */
 :root {
-  --primary-color: #004186;
-  --secondary-color: #002750;
-  --tertiary-color: #e36209;
-  --highlight-color: #22863a;
-  --keyword-color: #e36209;
-  --namespace-color: #005cc5;
-  --function-color: #e38c09;
-  --number-color: #6f42c1;
-  --comment-color: #6a737d;
-  --command-color: #e36209;
-  --flag-color: #0366d6;
-  --filename-color: #032f62;
-  --background-color: #f4f4f9;
-  --header-background: #2C3857;
-  --footer-border: #ccc;
-  --sidebar-border: #ccc;
-  --sidebar-hover: underline;
+	--primary-color: #004186;
+	--secondary-color: #002750;
+	--tertiary-color: #e36209;
+	--highlight-color: #22863a;
+	--background-color: #f4f4f9;
+	--header-background: #2C3857;
+	--footer-border: #ccc;
+	--sidebar-border: #ccc;
+	--sidebar-hover: underline;
+
+	/* do kodu */
+	--keyword-color: #e36209;
+	--namespace-color: #005cc5;
+	--function-color: #e38c09;
+	--number-color: #6f42c1;
+	--comment-color: #6a737d;
+	--command-color: #e36209;
+	--flag-color: #0366d6;
+	--filename-color: #032f62;
 }
 
 /* Zmienne dla trybu ciemnego */
 [data-theme="dark"] {
-  --primary-color: #82c6ff;
-  --secondary-color: #d1d1d6;
-  --tertiary-color: #ff7a00;
-  --highlight-color: #3bff3b;
-  --keyword-color: #ff7a00;
-  --namespace-color: #8ec7ff;
-  --function-color: #ffac33;
-  --number-color: #b477e2;
-  --comment-color: #b0b0b0;
-  --command-color: #ff7a00;
-  --flag-color: #69a9f7;
-  --filename-color: #3d5e91;
-  --background-color: #121212;
-  --header-background: #1c2638;
-  --footer-border: #444;
-  --sidebar-border: #444;
-  --sidebar-hover: underline;
+	--primary-color: #004186;
+	--secondary-color: #002750;
+	--tertiary-color: #e36209;
+	--highlight-color: #22863a;
+	--background-color: #f4f4f9;
+	--header-background: #2C3857;
+	--footer-border: #ccc;
+	--sidebar-border: #ccc;
+	--sidebar-hover: underline;
+
+	/* do kodu */
+	--keyword-color: #e36209;
+	--namespace-color: #005cc5;
+	--function-color: #e38c09;
+	--number-color: #6f42c1;
+	--comment-color: #6a737d;
+	--command-color: #e36209;
+	--flag-color: #0366d6;
+	--filename-color: #032f62;
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 body {
-  font-family: Funnel Display;
-  line-height: 1.6;
-  margin: 20px;
-  background-color: var(--background-color);
-  font-size: 18px;
+	font-family: Funnel Display;
+	line-height: 1.6;
+	margin: 20px;
+	background-color: var(--background-color);
+	font-size: 18px;
 }
 
 #srodek {
-  display: flex;
-  align-items: flex-start;
-  gap: 35px;
-  margin-top: 50px;
+	display: flex;
+	align-items: flex-start;
+	gap: 35px;
+	margin-top: 50px;
 }
 
 #sidebar-left {
-  width: 300px;
-  padding: 20px;
-  padding-bottom: 0;
-  border: 1px solid var(--sidebar-border);
-  position: sticky;
-  top: 50px;
-  overflow-y: none;
+	width: 300px;
+	padding: 20px;
+	padding-bottom: 0;
+	border: 1px solid var(--sidebar-border);
+	position: sticky;
+	top: 50px;
+	overflow-y: none;
 }
 
 #sidebar-left ul {
-  list-style-type: none;
-  padding: 0;
+	list-style-type: none;
+	padding: 0;
 }
 
 #sidebar-left li {
-  margin: 5px 0;
+	margin: 5px 0;
 }
 
 #sidebar-left h2 {
-  margin: 0;
+	margin: 0;
 }
 
 #sidebar-left a {
-  text-decoration: none;
-  color: var(--primary-color);
-  font-weight: bold;
+	text-decoration: none;
+	color: var(--primary-color);
+	font-weight: bold;
 }
 
 #sidebar-left a:hover {
-  text-decoration: var(--sidebar-hover);
+	text-decoration: var(--sidebar-hover);
 }
 
 #artykul {
-  flex: 1;
-  margin: 0;
+	flex: 1;
+	margin: 0;
 }
 
 #artykul h1 {
-  margin: 0;
+	margin: 0;
 }
 
 #sidebar-right {
-  width: 300px;
-  padding: 20px;
-  padding-bottom: 0;
-  border: 1px solid var(--sidebar-border);
-  position: sticky;
-  top: 50px;
-  margin-left: auto;
-  right: 20px;
+	width: 300px;
+	padding: 20px;
+	padding-bottom: 0;
+	border: 1px solid var(--sidebar-border);
+	position: sticky;
+	top: 50px;
+	margin-left: auto;
+	right: 20px;
 }
 
 #sidebar-right h2 {
-  margin: 0;
+	margin: 0;
 }
 
 #sidebar-right ul {
-  list-style-type: none;
-  padding: 0;
+	list-style-type: none;
+	padding: 0;
 }
 
 #sidebar-right li {
-  margin: 5px 0;
+	margin: 5px 0;
 }
 
 #sidebar-right a {
-  text-decoration: none;
-  color: var(--primary-color);
-  font-weight: bold;
+	text-decoration: none;
+	color: var(--primary-color);
+	font-weight: bold;
 }
 
 #sidebar-right a:hover {
-  text-decoration: var(--sidebar-hover);
+	text-decoration: var(--sidebar-hover);
 }
 
 h1,
 h2,
 h3 {
-  color: var(--secondary-color);
+	color: var(--secondary-color);
 }
 
 code {
-  background-color: #eaeaea;
-  padding: 4px 7px;
-  font-size: 1em;
-  font-family: Consolas;
-  border-radius: 5px;
+	background-color: #eaeaea;
+	padding: 4px 7px;
+	font-size: 1em;
+	font-family: Consolas;
+	border-radius: 5px;
 }
 
 pre {
-  background-color: #eaeaea;
-  padding: 15px;
-  border-radius: 10px;
-  overflow-x: auto;
+	background-color: #eaeaea;
+	padding: 15px;
+	border-radius: 10px;
+	overflow-x: auto;
 }
 
-#theme-toggle{
+#theme-toggle {
 	width: 30px;
 	position: absolute;
 	right: 50px;
@@ -164,97 +168,97 @@ pre {
 }
 
 .odnosnik {
-  margin-top: -20px;
-  padding-top: 20px;
+	margin-top: -20px;
+	padding-top: 20px;
 }
 
 header {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  height: 75px;
-  background-color: var(--header-background);
-  box-shadow: 1px 1px 3px 1px rgb(123, 127, 185);
+	display: flex;
+	align-items: flex-start;
+	gap: 20px;
+	height: 75px;
+	background-color: var(--header-background);
+	box-shadow: 1px 1px 3px 1px rgb(123, 127, 185);
 }
 
 footer {
-  text-align: center;
-  margin-top: 50px;
-  padding-top: 20px;
-  border-top: 1px solid var(--footer-border);
-  font-size: 14px;
+	text-align: center;
+	margin-top: 50px;
+	padding-top: 20px;
+	border-top: 1px solid var(--footer-border);
+	font-size: 14px;
 }
 
 #menu {
-  margin-top: 18px;
-  margin-left: 25px;
+	margin-top: 18px;
+	margin-left: 25px;
 }
 
 #menu-img {
-  width: 40px;
+	width: 40px;
 }
 
 #baner-img {
-  margin-top: 7px;
-  width: 200px;
+	margin-top: 7px;
+	width: 200px;
 }
 
 /* Styl dla dyrektyw preprocesora, takich jak #include */
 .directive {
-  color: var(--tertiary-color);
+	color: var(--tertiary-color);
 }
 
 /* Styl dla nagłówków, takich jak <iostream> */
 .header {
-  color: var(--highlight-color);
+	color: var(--highlight-color);
 }
 
 .type {
-  color: var(--tertiary-color);
+	color: var(--tertiary-color);
 }
 
 /* Styl dla słów kluczowych, takich jak int, return, using, namespace */
 .keyword {
-  color: var(--keyword-color);
-  font-weight: bold;
+	color: var(--keyword-color);
+	font-weight: bold;
 }
 
 /* Styl dla przestrzeni nazw, takich jak std */
 .namespace {
-  color: var(--namespace-color);
+	color: var(--namespace-color);
 }
 
 /* Styl dla funkcji, takich jak main */
 .function {
-  color: var(--function-color);
-  font-weight: bold;
+	color: var(--function-color);
+	font-weight: bold;
 }
 
 /* Styl dla liczb, takich jak 0 */
 .number {
-  color: var(--number-color);
-  font-weight: bold;
+	color: var(--number-color);
+	font-weight: bold;
 }
 
 /* Styl dla komentarzy, takich jak // Twój kod tutaj */
 .comment {
-  color: var(--comment-color);
-  font-style: italic;
+	color: var(--comment-color);
+	font-style: italic;
 }
 
 /* Styl dla komend, takich jak g++, ./program */
 .command {
-  color: var(--command-color);
-  font-weight: bold;
+	color: var(--command-color);
+	font-weight: bold;
 }
 
 /* Styl dla flag komend, takich jak -o */
 .flag {
-  color: var(--flag-color);
+	color: var(--flag-color);
 }
 
 /* Styl dla nazw plików, takich jak program, nazwa_pliku.cpp */
 .filename {
-  color: var(--filename-color);
-  font-weight: bold;
+	color: var(--filename-color);
+	font-weight: bold;
 }
