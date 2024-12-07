@@ -24,13 +24,21 @@
 			font-size: 20px;
 		}
 
+		#srodek {
+			display: flex;
+			align-items: flex-start;
+			gap: 35px;
+			margin-top: 50px;
+		}
+
 		#sidebar-left {
 			width: 300px;
 			padding: 20px;
 			padding-bottom: 0;
 			border: 1px solid #ccc;
-			position: fixed;
-			overflow-y: auto;
+			position: sticky;
+			top: 75px;
+			overflow-y: none;
 		}
 
 		#sidebar-left ul {
@@ -57,9 +65,12 @@
 		}
 
 		#artykul {
-			margin-left: 400px;
-			margin-right: 400px;
-			margin-top: 50px;
+			flex: 1;
+			margin: 0;
+		}
+
+		#artykul h1 {
+			margin: 0;
 		}
 
 		#sidebar-right {
@@ -67,11 +78,12 @@
 			padding: 20px;
 			padding-bottom: 0;
 			border: 1px solid #ccc;
-			position: fixed;
-			right: 20px;
-			overflow-y: auto;
+			position: sticky;
 			top: 50px;
+			margin-left: auto;
+			right: 20px;
 		}
+
 
 		#sidebar-right h2 {
 			margin: 0;
@@ -121,10 +133,44 @@
 			margin-top: -20px;
 			padding-top: 20px;
 		}
+
+		header {
+			display: flex;
+			align-items: flex-start;
+			gap: 20px;
+			height: 75px;
+			background-color: #2C3857;
+			box-shadow: 1px 1px 3px 1px rgb(123, 127, 185);
+		}
+
+		#menu {
+			margin-top: 18px;
+			margin-left: 25px;
+		}
+
+		#menu-img {
+			width: 40px;
+		}
+
+		#baner-img {
+			margin-top: 7px;
+			width: 200px;
+		}
 	</style>
 </head>
 
 <body>
+
+	<header>
+		<div id="menu">
+			<img id="menu-img" src="../img/menu.png">
+		</div>
+		<a href="../index.html">
+			<div id="baner">
+				<img id="baner-img" src="../img/baner-ciemne.png">
+			</div>
+		</a>
+	</header>
 
 	<div id="srodek">
 		<div id="sidebar-left">
