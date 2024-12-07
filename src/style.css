@@ -2,15 +2,17 @@
 :root {
 	--primary-color: #004186;
 	--secondary-color: #002750;
-	--tertiary-color: #e36209;
-	--highlight-color: #22863a;
 	--background-color: #f4f4f9;
 	--header-background: #2C3857;
+	--default: black;
+	--code: #eaeaea;
 	--footer-border: #ccc;
 	--sidebar-border: #ccc;
 	--sidebar-hover: underline;
 
 	/* do kodu */
+	--iostream: #22863a;
+	--directive_i_type: #e36209;
 	--keyword-color: #e36209;
 	--namespace-color: #005cc5;
 	--function-color: #e38c09;
@@ -25,15 +27,17 @@
 [data-theme="dark"] {
 	--primary-color: #004186;
 	--secondary-color: #002750;
-	--tertiary-color: #e36209;
-	--highlight-color: #22863a;
 	--background-color: #f4f4f9;
 	--header-background: #2C3857;
+	--default: black;
+	--code: #eaeaea;
 	--footer-border: #ccc;
 	--sidebar-border: #ccc;
 	--sidebar-hover: underline;
 
 	/* do kodu */
+	--iostream: #22863a;
+	--directive_i_type: #e36209;
 	--keyword-color: #e36209;
 	--namespace-color: #005cc5;
 	--function-color: #e38c09;
@@ -54,6 +58,7 @@ body {
 	margin: 20px;
 	background-color: var(--background-color);
 	font-size: 18px;
+	color: var(--default);
 }
 
 #srodek {
@@ -146,7 +151,7 @@ h3 {
 }
 
 code {
-	background-color: #eaeaea;
+	background-color: var(--code);
 	padding: 4px 7px;
 	font-size: 1em;
 	font-family: Consolas;
@@ -154,7 +159,7 @@ code {
 }
 
 pre {
-	background-color: #eaeaea;
+	background-color: var(--code);
 	padding: 15px;
 	border-radius: 10px;
 	overflow-x: auto;
@@ -205,16 +210,16 @@ footer {
 
 /* Styl dla dyrektyw preprocesora, takich jak #include */
 .directive {
-	color: var(--tertiary-color);
+	color: var(--directive_i_type);
 }
 
 /* Styl dla nagłówków, takich jak <iostream> */
 .header {
-	color: var(--highlight-color);
+	color: var(--iostream);
 }
 
 .type {
-	color: var(--tertiary-color);
+	color: var(--directive_i_type);
 }
 
 /* Styl dla słów kluczowych, takich jak int, return, using, namespace */
