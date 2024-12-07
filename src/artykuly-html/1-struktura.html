@@ -12,6 +12,10 @@
 		href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap"
 		rel="stylesheet">
 	<style>
+		html {
+			scroll-behavior: smooth;
+		}
+
 		body {
 			font-family: Funnel Display;
 			line-height: 1.6;
@@ -20,10 +24,76 @@
 			font-size: 20px;
 		}
 
+		#sidebar-left {
+			width: 300px;
+			padding: 20px;
+			padding-bottom: 0;
+			border: 1px solid #ccc;
+			position: fixed;
+			overflow-y: auto;
+		}
+
+		#sidebar-left ul {
+			list-style-type: none;
+			padding: 0;
+		}
+
+		#sidebar-left li {
+			margin: 5px 0;
+		}
+
+		#sidebar-left h2 {
+			margin: 0;
+		}
+
+		#sidebar-left a {
+			text-decoration: none;
+			color: #004186;
+			font-weight: bold;
+		}
+
+		#sidebar-left a:hover {
+			text-decoration: underline;
+		}
+
 		#artykul {
 			margin-left: 400px;
 			margin-right: 400px;
 			margin-top: 50px;
+		}
+
+		#sidebar-right {
+			width: 300px;
+			padding: 20px;
+			padding-bottom: 0;
+			border: 1px solid #ccc;
+			position: fixed;
+			right: 20px;
+			overflow-y: auto;
+			top: 50px;
+		}
+
+		#sidebar-right h2 {
+			margin: 0;
+		}
+
+		#sidebar-right ul {
+			list-style-type: none;
+			padding: 0;
+		}
+
+		#sidebar-right li {
+			margin: 5px 0;
+		}
+
+		#sidebar-right a {
+			text-decoration: none;
+			color: #004186;
+			font-weight: bold;
+		}
+
+		#sidebar-right a:hover {
+			text-decoration: underline;
 		}
 
 		h1,
@@ -34,7 +104,7 @@
 
 		code {
 			background-color: #eaeaea;
-			padding: 2px 4px;
+			padding: 4px 7px;
 			font-size: 1em;
 			font-family: Consolas;
 			border-radius: 3px;
@@ -46,98 +116,171 @@
 			border-radius: 5px;
 			overflow-x: auto;
 		}
+
+		.odnosnik {
+			margin-top: -20px;
+			padding-top: 20px;
+		}
 	</style>
 </head>
 
 <body>
-	<div id="artykul">
 
-		<h1>Podstawowa struktura programu w C++</h1>
-		<p>C++ jest językiem programowania, który umożliwia tworzenie wydajnych i złożonych aplikacji. Będąc
-			początkującym,
-			warto zrozumieć podstawową strukturę programu w C++, ponieważ wszystkie programy będą bazowały na podobnym
-			szablonie. W tym artykule przedstawimy krok po kroku strukturę prostego programu w C++.</p>
+	<div id="srodek">
+		<div id="sidebar-left">
+			<h2>Lista tematów</h2>
+			<ul>
+				<li><a href="struktura_programu.html">Struktura programu w C++</a></li>
+				<li><a href="input_output_zmienne.html">Input-output, zmienne</a></li>
+				<li><a href="if.html">If</a></li>
+				<li><a href="for_while.html">For, while</a></li>
+				<li><a href="tablice_vector.html">Tablice, vector</a></li>
+				<li><a href="ascii.html">ASCII</a></li>
+				<li><a href="string.html">String</a></li>
+				<li><a href="min_max_swap.html">Min, max, swap i inne</a></li>
+				<li><a href="zlozonosc_czasowa.html">Złożoność czasowa</a></li>
+				<li><a href="wlasne_funkcje.html">Własne funkcje</a></li>
+				<li><a href="pair_struct.html">Pair, struct</a></li>
+				<li><a href="custom_sort.html">Custom sort</a></li>
+				<li><a href="queue_deque.html">Queue, deque</a></li>
+				<li><a href="priority_queue.html">Priority queue</a></li>
+				<li><a href="set_multiset.html">Set, multiset</a></li>
+				<li><a href="unordered_map_map.html">Unordered map, map</a></li>
+				<li><a href="stack.html">Stack</a></li>
+				<li><a href="rekurencja.html">Rekurencja</a></li>
+			</ul>
+		</div>
 
-		<h2>Podstawowa struktura programu</h2>
-		<p>Każdy program w C++ składa się z kilku podstawowych elementów:</p>
+		<div id="artykul">
+			<h1>Podstawowa struktura programu w C++</h1>
+			<p>C++ jest językiem programowania, który umożliwia tworzenie wydajnych i złożonych aplikacji. Będąc
+				początkującym,
+				warto zrozumieć podstawową strukturę programu w C++, ponieważ wszystkie programy będą bazowały na
+				podobnym
+				szablonie. W tym artykule przedstawimy krok po kroku strukturę prostego programu w C++.</p>
+			<div class="odnosnik" id="struktura_programu"></div>
+			<h2>Podstawowa struktura programu</h2>
 
-		<h3>1. Polecenie <code>#include</code> na początku programu</h3>
-		<p>Na początku programu często znajduje się specjalne polecenie zaczynające się od <code>#include</code>. Takie
-			polecenia informują komputer, które dodatkowe funkcje i narzędzia będą używane w programie. Najczęściej
-			spotykanym poleceniem tego typu jest:</p>
-		<pre><code>#include &lt;iostream&gt;</code></pre>
-		<p><code>&lt;iostream&gt;</code> to biblioteka, która pozwala korzystać z funkcji do wyświetlania tekstu na
-			ekranie
-			(np. za pomocą <code>cout</code>) oraz do wczytywania danych od użytkownika (np. przy użyciu
-			<code>cin</code>).
-		</p>
+			<pre><code>#include &lt;iostream&gt;
+using namespace std;
 
-		<h3>2. Dodanie przestrzeni nazw</h3>
-		<p>Aby uprościć korzystanie z elementów standardowej biblioteki C++, można dodać polecenie:</p>
-		<pre><code>using namespace std;</code></pre>
-		<p>Dzięki temu nie trzeba będzie poprzedzać nazw takich jak <code>cout</code> czy <code>cin</code> prefiksem
-			<code>std::</code>.
-		</p>
-
-		<h3>3. Funkcja <code>main</code></h3>
-		<p>Funkcja <code>main</code> jest punktem wejścia każdego programu w C++. To właśnie od niej zaczyna się
-			wykonanie
-			programu.</p>
-		<pre><code>int main()</code></pre>
-		<p><code>int</code> oznacza, że funkcja zwraca wartość całkowitą (zwykle 0, jeśli program zakończył się
-			poprawnie).
-			Nawiasy <code>()</code> mogą zawierać argumenty, ale dla prostych programów są puste.</p>
-
-		<h3>4. Blok kodu <code>{}</code></h3>
-		<p>Kod, który ma być wykonany przez funkcję <code>main</code>, znajduje się w nawiasach klamrowych
-			<code>{}</code>.
-			To tzw. ciało funkcji.
-		</p>
-		<pre><code>{
-    // Twój kod tutaj
+int main()
+{
+	// Twój kod tutaj
+	
+	return 0;
 }</code></pre>
 
-		<h3>5. Instrukcja <code>return</code></h3>
-		<p>Na końcu funkcji <code>main</code> zwykle znajduje się instrukcja <code>return</code>, która zwraca wartość
-			całkowitą. Wartość ta informuje system operacyjny o zakończeniu programu.</p>
-		<pre><code>return 0;</code></pre>
-		<p><code>0</code> oznacza, że program zakończył się sukcesem. Jeśli program napotka błąd, można zwrócić inną
-			wartość
-			(np. <code>1</code>).</p>
+			<p>Każdy program w C++ składa się z kilku podstawowych elementów:</p>
 
-		<h2>Jak uruchomić program w C++?</h2>
-		<p>Aby uruchomić program, należy:</p>
-		<ol>
-			<li><strong>Napisać kod:</strong> Użyj dowolnego edytora tekstu lub zintegrowanego środowiska
-				programistycznego
-				(IDE), np. Visual Studio Code, CLion lub Code::Blocks.</li>
-			<li><strong>Skompilować program:</strong> Za pomocą kompilatora, takiego jak GCC czy Clang. W wierszu
-				poleceń
-				można wpisać:
-				<pre><code>g++ -o program nazwa_pliku.cpp</code></pre>
-				gdzie <code>-o</code> to flaga po której podaje się nazwę pliku wykonywalnego, <code>program</code> to
-				nazwa
-				pliku wykonywalnego, a <code>nazwa_pliku.cpp</code> to Twój plik z kodem.
-			</li>
-			<li><strong>Uruchomić program:</strong> wpisując:
-				<pre><code>./program</code></pre>
-				na Linuxie lub:
-				<pre><code>program</code></pre>
-				na Windowsie.
-			</li>
-		</ol>
+			<div class="odnosnik" id="polecenie_include"></div>
+			<h3>1. Polecenie <code>#include</code> na początku programu</h3>
+			<p>Na początku programu często znajduje się specjalne polecenie zaczynające się od <code>#include</code>.
+				Takie
+				polecenia informują komputer, które dodatkowe funkcje i narzędzia będą używane w programie. Najczęściej
+				spotykanym poleceniem tego typu jest:</p>
+			<pre><code>#include &lt;iostream&gt;</code></pre>
+			<p><code>&lt;iostream&gt;</code> to biblioteka, która pozwala korzystać z funkcji do wyświetlania tekstu na
+				ekranie
+				(np. za pomocą <code>cout</code>) oraz do wczytywania danych od użytkownika (np. przy użyciu
+				<code>cin</code>).
+			</p>
 
-		<h2>Podsumowanie</h2>
-		<p>Podstawowa struktura programu w C++ jest prosta, ale zrozumienie jej fundamentów jest kluczowe, aby móc pisać
-			bardziej złożone aplikacje. Warto zapamiętać, że każdy program rozpoczyna się od funkcji <code>main</code> i
-			kończy instrukcją <code>return</code>. W kolejnych artykułach omówimy bardziej zaawansowane aspekty
-			programowania w C++, takie jak zmienne, pętle czy funkcje.</p>
+			<div class="odnosnik" id="przestrzen_nazw"></div>
+			<h3>2. Dodanie przestrzeni nazw</h3>
+			<p>Aby uprościć korzystanie z elementów standardowej biblioteki C++, można dodać polecenie:</p>
+			<pre><code>using namespace std;</code></pre>
+			<p>Dzięki temu nie trzeba będzie poprzedzać nazw takich jak <code>cout</code> czy <code>cin</code> prefiksem
+				<code>std::</code>.
+			</p>
+
+			<div class="odnosnik" id="funkcja_main"></div>
+			<h3>3. Funkcja <code>main</code></h3>
+			<p>Funkcja <code>main</code> jest punktem wejścia każdego programu w C++. To właśnie od niej zaczyna się
+				wykonanie
+				programu.</p>
+			<pre><code>int main()</code></pre>
+			<p><code>int</code> oznacza, że funkcja zwraca wartość całkowitą (zwykle 0, jeśli program zakończył się
+				poprawnie).
+				Nawiasy <code>()</code> mogą zawierać argumenty, ale dla prostych programów są puste.</p>
+
+			<div class="odnosnik" id="blok_kodu"></div>
+			<h3>4. Blok kodu <code>{}</code></h3>
+			<p>Kod, który ma być wykonany przez funkcję <code>main</code>, znajduje się w nawiasach klamrowych
+				<code>{}</code>.
+				To tzw. ciało funkcji.
+			</p>
+			<pre><code>{
+	// Twój kod tutaj
+}</code></pre>
+
+			<div class="odnosnik" id="instrukcja_return"></div>
+			<h3>5. Instrukcja <code>return</code></h3>
+			<p>Na końcu funkcji <code>main</code> zwykle znajduje się instrukcja <code>return</code>, która zwraca
+				wartość
+				całkowitą. Wartość ta informuje system operacyjny o zakończeniu programu.</p>
+			<pre><code>return 0;</code></pre>
+			<p><code>0</code> oznacza, że program zakończył się sukcesem. Jeśli program napotka błąd, można zwrócić inną
+				wartość
+				(np. <code>1</code>).</p>
+
+			<div class="odnosnik" id="uruchomienie_programu"></div>
+			<h2>Jak uruchomić program w C++?</h2>
+			<p>Aby uruchomić program, należy:</p>
+			<ol>
+				<li><strong>Napisać kod:</strong> Użyj dowolnego edytora tekstu lub zintegrowanego środowiska
+					programistycznego
+					(IDE), np. Visual Studio Code, CLion lub Code::Blocks.</li>
+				<li><strong>Skompilować program:</strong> Za pomocą kompilatora, takiego jak GCC czy Clang. W wierszu
+					poleceń
+					można wpisać:
+					<pre><code>g++ -o program nazwa_pliku.cpp</code></pre>
+					gdzie <code>-o</code> to flaga po której podaje się nazwę pliku wykonywalnego, <code>program</code>
+					to
+					nazwa
+					pliku wykonywalnego, a <code>nazwa_pliku.cpp</code> to Twój plik z kodem.
+				</li>
+				<li><strong>Uruchomić program:</strong> wpisując:
+					<pre><code>./program</code></pre>
+					na Linuxie lub:
+					<pre><code>program</code></pre>
+					na Windowsie.
+				</li>
+			</ol>
+
+			<div class="odnosnik" id="podsumowanie"></div>
+			<h2>Podsumowanie</h2>
+			<p>Podstawowa struktura programu w C++ jest prosta, ale zrozumienie jej fundamentów jest kluczowe, aby móc
+				pisać
+				bardziej złożone aplikacje. Warto zapamiętać, że każdy program rozpoczyna się od funkcji
+				<code>main</code> i
+				kończy instrukcją <code>return</code>. W kolejnych artykułach omówimy bardziej zaawansowane aspekty
+				programowania w C++, takie jak zmienne, pętle czy funkcje.
+			</p>
+		</div>
+
+		<div id="sidebar-right">
+			<h2>Spis treści</h2>
+			<ul>
+				<li><a href="#struktura_programu">Wstęp</a></li>
+				<li><a href="#polecenie_include">Polecenie <code>#include</code></a></li>
+				<li><a href="#przestrzen_nazw">Dodanie przestrzeni nazw</a></li>
+				<li><a href="#funkcja_main">Funkcja <code>main</code></a></li>
+				<li><a href="#blok_kodu">Blok kodu</a></li>
+				<li><a href="#instrukcja_return">Instrukcja <code>return</code></a></li>
+				<li><a href="#uruchomienie_programu">Jak uruchomić program?</a></li>
+				<li><a href="#podsumowanie">Podsumowanie</a></li>
+			</ul>
+		</div>
 	</div>
+
 	<footer
 		style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; font-size: 14px;">
 		Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
 		&copy; 2024 Wszystkie prawa zastrzeżone
 	</footer>
+
+
 </body>
 
 </html>

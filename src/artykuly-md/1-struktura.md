@@ -3,6 +3,18 @@ C++ jest językiem programowania, który umożliwia tworzenie wydajnych i złoż
 
 ## Podstawowa struktura programu
 
+```cpp
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	// Twój kod tutaj
+
+	return 0;
+}
+```
+
 Każdy program w C++ składa się z kilku podstawowych elementów:
 
 ### 1. Polecenie `#include` na początku programu
@@ -38,6 +50,8 @@ Kod, który ma być wykonany przez funkcję `main`, znajduje się w nawiasach kl
 ```cpp
 {
     // Twój kod tutaj
+	
+	return 0;
 }
 ```
 ### 5. Instrukcja `return`
@@ -56,7 +70,8 @@ Aby uruchomić program, należy:
 2. **Skompilować program**: Za pomocą kompilatora, takiego jak GCC czy Clang. W wierszu poleceń można wpisać:
    ```bash
    g++ -o program nazwa_pliku.cpp
-   ```   gdzie `-o` to flaga po której podaje się nazwę pliku wykonywalnego, `program` to nazwa pliku wykonywalnego, a `nazwa_pliku.cpp` to Twój plik z kodem.
+   ```
+   gdzie `-o` to flaga po której podaje się nazwę pliku wykonywalnego, `program` to nazwa pliku wykonywalnego, a `nazwa_pliku.cpp` to Twój plik z kodem.
    
 3. **Uruchomić program**: wpisując:
    ```bash
