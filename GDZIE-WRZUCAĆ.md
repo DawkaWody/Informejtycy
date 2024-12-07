@@ -1,1 +1,1 @@
-Artykuły wrzucajcie do folderu src/artykuly-md z roszerzeniem .md !!!
+Artykuły wrzucajcie do folderu src/artykuly-md z roszerzeniem .md !!! Artukuły polecam pisać w Obsidianie.

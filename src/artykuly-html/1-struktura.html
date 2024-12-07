@@ -1,0 +1,53 @@
+<p>C++ jest językiem programowania, który umożliwia tworzenie wydajnych i złożonych aplikacji. Będąc początkującym, warto zrozumieć podstawową strukturę programu w C++, ponieważ wszystkie programy będą bazowały na podobnym szablonie. W tym artykule przedstawimy krok po kroku strukturę prostego programu w C++.</p>
+<h2 id="podstawowa-struktura-programu">Podstawowa struktura programu</h2>
+<p>Każdy program w C++ składa się z kilku podstawowych elementów:</p>
+<h3 id="1-polecenie-include-na-początku-programu">1. Polecenie <code>#include</code> na początku programu</h3>
+<p>Na początku programu często znajduje się specjalne polecenie zaczynające się od <code>#include</code>. Takie polecenia informują komputer, które dodatkowe funkcje i narzędzia będą używane w programie. Najczęściej spotykanym poleceniem tego typu jest:</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+</code></pre>
+<p><code>&lt;iostream&gt;</code> to biblioteka, która pozwala korzystać z funkcji do wyświetlania tekstu na ekranie (np. za pomocą <code>cout</code>) oraz do wczytywania danych od użytkownika (np. przy użyciu <code>cin</code>). Więcej na ten temat w kolejnym artykule.</p>
+<h3 id="2-dodanie-przestrzeni-nazw">2. Dodanie przestrzeni nazw</h3>
+<p>Aby uprościć korzystanie z elementów standardowej biblioteki C++, można dodać polecenie:</p>
+<pre><code class="language-cpp">using namespace std;
+</code></pre>
+<p>Dzięki temu nie trzeba będzie poprzedzać nazw takich jak <code>cout</code> czy <code>cin</code> prefiksem <code>std::</code>.</p>
+<h3 id="3-funkcja-main">3. Funkcja <code>main</code></h3>
+<p>Funkcja <code>main</code> jest punktem wejścia każdego programu w C++. To właśnie od niej zaczyna się wykonanie programu.</p>
+<pre><code class="language-cpp">int main()
+</code></pre>
+<ul>
+<li><code>int</code> oznacza, że funkcja zwraca wartość całkowitą (zwykle 0, jeśli program zakończył się poprawnie).</li>
+<li>Nawiasy <code>()</code> mogą zawierać argumenty, ale dla prostych programów są puste.</li>
+</ul>
+<h3 id="4-blok-kodu-">4. Blok kodu <code>{}</code></h3>
+<p>Kod, który ma być wykonany przez funkcję <code>main</code>, znajduje się w nawiasach klamrowych <code>{}</code>. To tzw. ciało funkcji.</p>
+<pre><code class="language-cpp">{
+    // Twój kod tutaj
+}
+</code></pre>
+<h3 id="5-instrukcja-return">5. Instrukcja <code>return</code></h3>
+<p>Na końcu funkcji <code>main</code> zwykle znajduje się instrukcja <code>return</code>, która zwraca wartość całkowitą. Wartość ta informuje system operacyjny o zakończeniu programu.</p>
+<pre><code class="language-cpp">    return 0;
+</code></pre>
+<p><code>0</code> oznacza, że program zakończył się sukcesem. Jeśli program napotka błąd, można zwrócić inną wartość (np. <code>1</code>).</p>
+<h2 id="jak-uruchomić-program-w-c">Jak uruchomić program w C++?</h2>
+<p>Aby uruchomić program, należy:</p>
+<ol>
+<li><p><strong>Napisać kod</strong>: Użyj dowolnego edytora tekstu lub zintegrowanego środowiska programistycznego (IDE), np. Visual Studio Code, CLion lub Code::Blocks.</p>
+</li>
+<li><p><strong>Skompilować program</strong>: Za pomocą kompilatora, takiego jak GCC czy Clang. W wierszu poleceń można wpisać:</p>
+<pre><code class="language-bash">g++ -o program nazwa_pliku.cpp
+</code></pre>
+<p>gdzie <code>-o</code> to flaga po której podaje się nazwę pliku wykonywalnego, <code>program</code> to nazwa pliku wykonywalnego, a <code>nazwa_pliku.cpp</code> to Twój plik z kodem.</p>
+</li>
+<li><p><strong>Uruchomić program</strong>: wpisując:</p>
+<pre><code class="language-bash">./program
+</code></pre>
+<p>na Linuxie lub:</p>
+<pre><code class="language-bash">program
+</code></pre>
+<p>na Windowsie.</p>
+</li>
+</ol>
+<h2 id="podsumowanie">Podsumowanie</h2>
+<p>Podstawowa struktura programu w C++ jest prosta, ale zrozumienie jej fundamentów jest kluczowe, aby móc pisać bardziej złożone aplikacje. Warto zapamiętać, że każdy program rozpoczyna się od funkcji <code>main</code> i kończy instrukcją <code>return</code>. W kolejnych artykułach omówimy bardziej zaawansowane aspekty programowania w C++, takie jak zmienne, pętle czy funkcje.</p>

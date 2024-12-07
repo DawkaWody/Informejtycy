@@ -1,0 +1,120 @@
+<p>C++ to wszechstronny język programowania, który oferuje wiele narzędzi do zarządzania danymi i interakcji z użytkownikiem. W tym artykule przyjrzymy się bliżej operacjom wejścia-wyjścia, zmiennym i ich typom.</p>
+<hr>
+<h3 id="operacje-wejścia-wyjścia">Operacje wejścia-wyjścia</h3>
+<p>Operacje wejścia-wyjścia (ang. <strong>input-output</strong>, I/O) w C++ umożliwiają komunikację między użytkownikiem a programem.</p>
+<h4 id="stdcout---wyjście-na-konsolę"><code>std::cout</code> - Wyjście na konsolę</h4>
+<p>Aby wyświetlić tekst lub dane na konsoli, używamy obiektu <code>std::cout</code>:</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; &quot;Witaj w C++!&quot; &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<ul>
+<li><code>&lt;&lt;</code> to operator wyjścia, który przekazuje dane do <code>cout</code>.</li>
+<li><code>endl</code> wstawia znak nowej linii.</li>
+</ul>
+<h4 id="stdcin---wejście-z-klawiatury"><code>std::cin</code> - Wejście z klawiatury</h4>
+<p>Aby pobrać dane od użytkownika, używamy obiektu <code>std::cin</code>:</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int liczba;
+    cout &lt;&lt; &quot;Podaj liczbę: &quot;;
+    cin &gt;&gt; liczba;
+    cout &lt;&lt; &quot;Podałeś liczbę: &quot; &lt;&lt; liczba &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<ul>
+<li><code>&gt;&gt;</code> to operator wejścia, który przypisuje wartość wprowadzoną przez użytkownika do zmiennej.</li>
+<li>Program pauzuje, czekając na dane od użytkownika.</li>
+</ul>
+<h4 id="przyspieszenie-wejścia-wyjścia">Przyspieszenie wejścia-wyjścia</h4>
+<p>Aby zoptymalizować działanie operacji I/O, można użyć następujących linii na początku programu:</p>
+<pre><code class="language-cpp">ios_base::sync_with_stdio(0);
+cin.tie(0);
+</code></pre>
+<p>Oto przykład:</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+
+    int liczba;
+    cout &lt;&lt; &quot;Podaj liczbę: &quot;;
+    cin &gt;&gt; liczba;
+    cout &lt;&lt; &quot;Podałeś liczbę: &quot; &lt;&lt; liczba &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<hr>
+<h3 id="zmienne">Zmienne</h3>
+<p>Zmienne to podstawowy sposób przechowywania danych w programie. W C++ każda zmienna musi być zadeklarowana przed użyciem.</p>
+<h4 id="deklaracja-zmiennych">Deklaracja zmiennych</h4>
+<p>Deklaracja zmiennej określa jej nazwę i typ:</p>
+<pre><code class="language-cpp">int liczba;
+double wynik;
+char znak;
+bool stan;
+</code></pre>
+<ul>
+<li><strong><code>int</code></strong> - przechowuje liczby całkowite.</li>
+<li><strong><code>double</code></strong> - przechowuje liczby zmiennoprzecinkowe.</li>
+<li><strong><code>char</code></strong> - przechowuje pojedynczy znak.</li>
+<li><strong><code>bool</code></strong> - przechowuje wartość logiczną (true/false).</li>
+</ul>
+<h4 id="przypisanie-wartości">Przypisanie wartości</h4>
+<p>Po zadeklarowaniu zmiennej możemy przypisać jej wartość:</p>
+<pre><code class="language-cpp">int liczba = 42;
+double wynik = 3.14;
+char znak = &#39;A&#39;;
+bool stan = true;
+</code></pre>
+<p>Możemy również zadeklarować i przypisać wartość jednocześnie.</p>
+<hr>
+<h3 id="typy-zmiennych">Typy zmiennych</h3>
+<p>C++ oferuje szeroki wachlarz typów zmiennych, które pozwalają na efektywne zarządzanie pamięcią i precyzyjne dopasowanie danych.</p>
+<h4 id="podstawowe-typy">Podstawowe typy</h4>
+<ol>
+<li><p><strong>Całkowite</strong>:</p>
+<ul>
+<li><code>int</code> - liczby całkowite.</li>
+<li><code>long long</code> - dłuższa wersja typu <code>int</code>.</li>
+<li><code>unsigned</code> - liczby całkowite bez znaku (tylko dodatnie).</li>
+</ul>
+</li>
+<li><p><strong>Liczby zmiennoprzecinkowe</strong>:</p>
+<ul>
+<li><code>float</code> - liczby zmiennoprzecinkowe o pojedynczej precyzji.</li>
+<li><code>double</code> - liczby zmiennoprzecinkowe o podwójnej precyzji.</li>
+<li><code>long double</code> - liczby zmiennoprzecinkowe o zwiększonej precyzji.</li>
+</ul>
+</li>
+<li><p><strong>Znaki</strong>:</p>
+<ul>
+<li><code>char</code> - pojedyncze znaki (np. &#39;A&#39;, &#39;9&#39;).</li>
+</ul>
+</li>
+<li><p><strong>Logiczne</strong>:</p>
+<ul>
+<li><code>bool</code> - wartości logiczne (<code>true</code> lub <code>false</code>).</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="typowanie-w-c">Typowanie w C++</h3>
+<p>C++ jest językiem statycznie typowanym, co oznacza, że typ zmiennej jest określany w czasie kompilacji. Jednak dzięki nowoczesnym funkcjom, takim jak <code>auto</code>, można uprościć deklarację:</p>
+<pre><code class="language-cpp">auto liczba = 42;   // Kompilator sam określi typ jako int.
+auto wynik = 3.14;  // Kompilator określi typ jako double.
+</code></pre>
+<hr>
+<h3 id="zadania">Zadania</h3>
+<p>Wodociągi kieleckie w sposób wzorcowy usuwają awarie, w sposób błyskawiczny. Jesteśmy w czołówce krajowej, a nawet światowej. Liczba awarii z roku na rok maleje.</p>
+<h3 id="podsumowanie">Podsumowanie</h3>
+<p>Zrozumienie operacji wejścia-wyjścia, zmiennych i typów danych to podstawa programowania w C++. Umożliwia to tworzenie dynamicznych aplikacji oraz efektywne zarządzanie pamięcią. W kolejnych artykułach rozwiniemy te zagadnienia, omawiając bardziej zaawansowane techniki, takie jak instrukcje warunkowe, pętle czy tablice.</p>
