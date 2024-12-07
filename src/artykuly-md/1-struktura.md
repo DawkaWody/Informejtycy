@@ -11,7 +11,6 @@ Na początku programu często znajduje się specjalne polecenie zaczynające si�
 ```cpp
 #include <iostream>
 ```
-
 `<iostream>` to biblioteka, która pozwala korzystać z funkcji do wyświetlania tekstu na ekranie (np. za pomocą `cout`) oraz do wczytywania danych od użytkownika (np. przy użyciu `cin`). Więcej na ten temat w kolejnym artykule.
 
 ### 2. Dodanie przestrzeni nazw
@@ -21,7 +20,6 @@ Aby uprościć korzystanie z elementów standardowej biblioteki C++, można doda
 ```cpp
 using namespace std;
 ```
-
 Dzięki temu nie trzeba będzie poprzedzać nazw takich jak `cout` czy `cin` prefiksem `std::`.
 ### 3. Funkcja `main`
 
@@ -30,7 +28,6 @@ Funkcja `main` jest punktem wejścia każdego programu w C++. To właśnie od ni
 ```cpp
 int main()
 ```
-
 - `int` oznacza, że funkcja zwraca wartość całkowitą (zwykle 0, jeśli program zakończył się poprawnie).
 - Nawiasy `()` mogą zawierać argumenty, ale dla prostych programów są puste.
 
@@ -43,7 +40,6 @@ Kod, który ma być wykonany przez funkcję `main`, znajduje się w nawiasach kl
     // Twój kod tutaj
 }
 ```
-
 ### 5. Instrukcja `return`
 
 Na końcu funkcji `main` zwykle znajduje się instrukcja `return`, która zwraca wartość całkowitą. Wartość ta informuje system operacyjny o zakończeniu programu.
@@ -51,7 +47,6 @@ Na końcu funkcji `main` zwykle znajduje się instrukcja `return`, która zwraca
 ```cpp
     return 0;
 ```
-
 `0` oznacza, że program zakończył się sukcesem. Jeśli program napotka błąd, można zwrócić inną wartość (np. `1`).
 ## Jak uruchomić program w C++?
 
@@ -61,17 +56,16 @@ Aby uruchomić program, należy:
 2. **Skompilować program**: Za pomocą kompilatora, takiego jak GCC czy Clang. W wierszu poleceń można wpisać:
    ```bash
    g++ -o program nazwa_pliku.cpp
-   ```
-   gdzie `-o` to flaga po której podaje się nazwę pliku wykonywalnego, `program` to nazwa pliku wykonywalnego, a `nazwa_pliku.cpp` to Twój plik z kodem.
+   ```   gdzie `-o` to flaga po której podaje się nazwę pliku wykonywalnego, `program` to nazwa pliku wykonywalnego, a `nazwa_pliku.cpp` to Twój plik z kodem.
    
 3. **Uruchomić program**: wpisując:
    ```bash
    ./program
-   ```
+   ```   
    na Linuxie lub:
    ```bash
    program
-   ```
+   ```   
    na Windowsie.
 ## Podsumowanie
 
