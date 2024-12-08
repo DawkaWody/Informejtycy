@@ -61,14 +61,8 @@ body {
 	line-height: 1.6;
 	margin: 20px;
 	background-color: var(--background-color);
-	font-size: 18px;
+	font-size: 1vw;
 	color: var(--zwykly-tekst);
-}
-
-@media (max-width: 1600px) {
-	body {
-		font-size: 16px;
-	}
 }
 
 #srodek {
@@ -84,13 +78,26 @@ body {
 
 #sidebar-left,
 #sidebar-right {
-	width: 280px;
+	width: 15vw;
 	padding: 20px;
 	padding-bottom: 0;
 	border-radius: 5px;
 	border: 1px solid var(--granica-paneli-bocznych);
 	position: sticky;
 	top: 50px;
+}
+
+@media (max-width: 1000px) {
+
+	#sidebar-left,
+	#sidebar-right {
+		display: none;
+	}
+
+	html,
+	body {
+		font-size: 18px
+	}
 }
 
 #sidebar-left ul,
