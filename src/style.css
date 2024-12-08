@@ -128,9 +128,8 @@ body {
 	text-decoration: var(--linki-paneli-bocznych);
 }
 
-
 #aktualny-temat {
-	color: var(--tlo-gornego-paska) !important;
+	color: var(--naglowki) !important;
 }
 
 #sidebar-left {
