@@ -69,7 +69,7 @@ body {
 	display: flex;
 	align-items: flex-start;
 	gap: 35px;
-	margin-top: 50px;
+	margin-top: 5vh;
 }
 
 .no-select {
@@ -84,7 +84,7 @@ body {
 	border-radius: 5px;
 	border: 1px solid var(--granica-paneli-bocznych);
 	position: sticky;
-	top: 50px;
+	top: 5vh;
 }
 
 @media (max-width: 1000px) {
