@@ -34,7 +34,7 @@
 			<h2>Lista tematów</h2>
 			<ul>
 				<li><a href="1.html">1. Struktura programu w C++</a></li>
-				<li><a id="aktualny-temat"  href="2.html">2. Input-output, zmienne</a></li>
+				<li><a id="aktualny-temat" href="2.html">2. Input-output, zmienne</a></li>
 				<li><a href="3.html">3. If</a></li>
 				<li><a href="4.html">4. For, while</a></li>
 				<li><a href="5.html">5. Tablice, vector</a></li>
@@ -59,6 +59,7 @@
 
 			<h1>Input-output, zmienne</h1>
 
+			<div id="1" class="odnosnik"></div>
 			<p>C++ to wszechstronny język programowania, który oferuje wiele narzędzi do zarządzania danymi i interakcji
 				z
 				użytkownikiem. W tym artykule przyjrzymy się bliżej operacjom wejścia-wyjścia, zmiennym i ich typom.</p>
@@ -67,7 +68,7 @@
 			<p>Operacje wejścia-wyjścia (ang. <strong>input-output</strong>, I/O) w C++ umożliwiają komunikację między
 				użytkownikiem
 				a programem.</p>
-
+			<div id="2" class="odnosnik"></div>
 			<h3><code>std::cout</code> - Wyjście na konsolę</h3>
 			<p>Aby wyświetlić tekst lub dane na konsoli, używamy obiektu <code>std::cout</code>:</p>
 
@@ -80,7 +81,7 @@
 }</code></pre>
 			<p>- <code>&lt;&lt;</code> to operator wyjścia, który przekazuje dane do <code>cout</code>.</p>
 			<p>- <code>endl</code> wstawia znak nowej linii.</p>
-
+			<div id="3" class="odnosnik"></div>
 			<h3><code>std::cin</code> - Wejście z klawiatury</h3>
 			<p>Aby pobrać dane od użytkownika, używamy obiektu <code>std::cin</code>:</p>
 
@@ -97,7 +98,7 @@
 			<p>- <code>&gt;&gt;</code> to operator wejścia, który przypisuje wartość wprowadzoną przez użytkownika do
 				zmiennej.</p>
 			<p>- Program pauzuje, czekając na dane od użytkownika.</p>
-
+			<div id="4" class="odnosnik"></div>
 			<h3>Przyspieszenie wejścia-wyjścia</h3>
 			<p>Aby zoptymalizować działanie operacji I/O, można użyć następujących linii na początku programu:</p>
 
@@ -117,6 +118,7 @@
     <span class="command">cout</span> <span class="operator">&lt;&lt;</span> <span class="string">"Podałeś liczbę: "</span> <span class="command"><<</span> <span class="variable">liczba</span> <span class="command"><<</span> <span class="std">endl</span>;
     <span class="keyword">return</span> <span class="number">0</span>;
 }</code></pre>
+			<div id="5" class="odnosnik"></div>
 
 			<h2>Zmienne</h2>
 			<p>Zmienne to podstawowy sposób przechowywania danych w programie. W C++ każda zmienna musi być
@@ -139,12 +141,13 @@
 			<h3>Przypisanie wartości</h3>
 			<p>Po zadeklarowaniu zmiennej możemy przypisać jej wartość:</p>
 
-<pre><code><span class="type">int</span> <span class="variable">liczba</span> = <span class="number">42</span>;
+			<pre><code><span class="type">int</span> <span class="variable">liczba</span> = <span class="number">42</span>;
 <span class="type">double</span> <span class="variable">wynik</span> = <span class="number">3.14</span>;
 <span class="type">char</span> <span class="variable">znak</span> = <span class="string">'A'</span>;
 <span class="type">bool</span> <span class="variable">stan</span> = <span class="keyword">true</span>;</code></pre>
 
 			<p>Możemy również zadeklarować i przypisać wartość jednocześnie.</p>
+			<div id="6" class="odnosnik"></div>
 
 			<h2>Typy zmiennych</h2>
 			<p>C++ oferuje szeroki wachlarz typów zmiennych, które pozwalają na efektywne zarządzanie pamięcią i
@@ -178,6 +181,7 @@
 					</ul>
 				</li>
 			</ul>
+			<div id="7" class="odnosnik"></div>
 
 			<h2>Typowanie w C++</h2>
 			<p>C++ jest językiem statycznie typowanym, co oznacza, że typ zmiennej jest określany w czasie kompilacji.
@@ -186,11 +190,13 @@
 
 			<pre><code><span class="type">auto</span> <span class="variable">liczba</span> = <span class="number">42</span>;   <span class="comment">// Kompilator sam określi typ jako int.</span>
 <span class="type">auto</span> <span class="variable">wynik</span> = <span class="number">3.14</span>;  <span class="comment">// Kompilator określi typ jako double.</span></code></pre>
+			<div id="8" class="odnosnik"></div>
 
 			<h2>Zadania</h2>
 			<p>Wodociągi kieleckie w sposób wzorcowy usuwają awarie, w sposób błyskawiczny. Jesteśmy w czołówce
 				krajowej, a nawet
 				światowej. Liczba awarii z roku na rok maleje.</p>
+			<div id="9" class="odnosnik"></div>
 
 			<h2>Podsumowanie</h2>
 			<p>Zrozumienie operacji wejścia-wyjścia, zmiennych i typów danych to podstawa programowania w C++. Umożliwia
@@ -205,14 +211,15 @@
 		<div id="sidebar-right">
 			<h2>Spis treści</h2>
 			<ul>
-				<li><a href="#struktura_programu">1. Wstęp</a></li>
-				<li><a href="#polecenie_include">2. Polecenie <code>#include</code></a></li>
-				<li><a href="#przestrzen_nazw">3. Dodanie przestrzeni nazw</a></li>
-				<li><a href="#funkcja_main">4. Funkcja <code>main</code></a></li>
-				<li><a href="#blok_kodu">5. Blok kodu</a></li>
-				<li><a href="#instrukcja_return">6. Instrukcja <code>return</code></a></li>
-				<li><a href="#uruchomienie_programu">7. Jak uruchomić program?</a></li>
-				<li><a href="#podsumowanie">8. Podsumowanie</a></li>
+				<li><a href="#1">1. Wstęp</a></li>
+				<li><a href="#2">2. <code>cout</code></a></li>
+				<li><a href="#3">3. <code>cin</code></a></li>
+				<li><a href="#4">4. Przyspieszenie I/O</a></li>
+				<li><a href="#5">5. Zmienne</a></li>
+				<li><a href="#6">6. Typy zmiennych</a></li>
+				<li><a href="#7">7. Typowanie w C++</a></li>
+				<li><a href="#8">8. Zadania</a></li>
+				<li><a href="#9">9. Podsumowanie</a></li>
 			</ul>
 		</div>
 	</div>
