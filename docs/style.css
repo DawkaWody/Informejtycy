@@ -1,0 +1,277 @@
+/* Zmienne dla trybu jasnego */
+:root {
+	--background-color: #f4f4f9;
+	--zwykly-tekst: black;
+	--naglowki: #002750;
+	--lista-i-spis: #004186;
+	--tlo-kodu: #eaeaea;
+	--granica-paneli-bocznych: #ccc;
+	--granica-stopki: #ccc;
+	--linki-paneli-bocznych: underline;
+	/* tego nie zmieniać */
+	--tlo-gornego-paska: #2C3857;
+	/* tego nie zmieniać */
+
+	/* do kodu */
+	--iostream: #22863a;
+	--include-i-int: #e36209;
+	--using-i-return: #e36209;
+	--std: #005cc5;
+	--main: #e38c09;
+	--numerki: #6f42c1;
+	--komentarze: #6a737d;
+	--komendy-w-terminalu: #e36209;
+	--flagi-w-terminalu: #0366d6;
+	--nazwy-plikow-w-terminalu: #032f62;
+}
+
+/* Zmienne dla trybu ciemnego */
+[data-theme="dark"] {
+	--background-color: #1e1e1e;
+	--zwykly-tekst: white;
+	--naglowki: #cbe4ff;
+	--lista-i-spis: white;
+	--tlo-kodu: #252526;
+	--granica-paneli-bocznych: #3e3e42;
+	--granica-stopki: #3e3e42;
+	--linki-paneli-bocznych: underline;
+	/* tego nie zmieniać */
+	--tlo-gornego-paska: #2C3857;
+	/* tego nie zmieniać */
+
+	/* do kodu */
+	--iostream: #22863a;
+	--include-i-int: #e36209;
+	--using-i-return: #e36209;
+	--std: #005cc5;
+	--main: #e38c09;
+	--numerki: #6f42c1;
+	--komentarze: #6a737d;
+	--komendy-w-terminalu: #e36209;
+	--flagi-w-terminalu: #0366d6;
+	--nazwy-plikow-w-terminalu: #4893e9;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: Funnel Display !important;
+	line-height: 1.6;
+	margin: 20px;
+	background-color: var(--background-color);
+	font-size: 1vw;
+	color: var(--zwykly-tekst);
+}
+
+#srodek {
+	display: flex;
+	align-items: flex-start;
+	gap: 35px;
+	margin-top: 5vh;
+}
+
+.no-select {
+	user-select: none;
+}
+
+#sidebar-left,
+#sidebar-right {
+	width: 15vw;
+	padding: 20px;
+	padding-bottom: 0;
+	border-radius: 5px;
+	border: 1px solid var(--granica-paneli-bocznych);
+	position: sticky;
+	top: 5vh;
+}
+
+@media (max-width: 1000px) {
+
+	#sidebar-left,
+	#sidebar-right {
+		display: none;
+	}
+
+	html,
+	body {
+		font-size: 18px
+	}
+}
+
+#sidebar-left ul,
+#sidebar-right ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+#sidebar-left li,
+#sidebar-right li {
+	margin: 5px 0;
+}
+
+#sidebar-left h2,
+#sidebar-right h2 {
+	margin: 0;
+}
+
+#sidebar-left a,
+#sidebar-right a {
+	text-decoration: none;
+	color: var(--lista-i-spis);
+	font-weight: bold;
+}
+
+#sidebar-left a:hover,
+#sidebar-right a:hover {
+	text-decoration: var(--linki-paneli-bocznych);
+}
+
+#aktualny-temat {
+	color: var(--naglowki) !important;
+}
+
+#sidebar-left {
+	overflow-y: none;
+}
+
+#sidebar-right {
+	margin-left: auto;
+	right: 20px;
+}
+
+#artykul {
+	flex: 1;
+	margin: 0;
+	line-height: 1.6;
+}
+
+#artykul h1 {
+	margin: 0;
+}
+
+h1,
+h2,
+h3 {
+	color: var(--naglowki);
+}
+
+code {
+	background-color: var(--tlo-kodu);
+	padding: 4px 7px;
+	font-size: 1em;
+	font-family: Consolas;
+	border-radius: 5px;
+}
+
+pre {
+	background-color: var(--tlo-kodu);
+	padding: 15px;
+	padding-left: 20px;
+	border-radius: 10px;
+	overflow-x: auto;
+}
+
+#theme-toggle {
+	width: 30px;
+	position: absolute;
+	right: 50px;
+	top: 40px;
+}
+
+.odnosnik {
+	margin-top: -20px;
+	padding-top: 20px;
+}
+
+header {
+	display: flex;
+	align-items: flex-start;
+	gap: 20px;
+	height: 75px;
+	background-color: var(--tlo-gornego-paska);
+	box-shadow: 0px 0px 3px 1px rgb(90, 98, 204);
+}
+
+footer {
+	text-align: center;
+	margin-top: 50px;
+	padding-top: 20px;
+	border-top: 1px solid var(--granica-stopki);
+	font-size: 14px;
+}
+
+#menu {
+	margin-top: 18px;
+	margin-left: 25px;
+}
+
+#menu-img {
+	width: 40px;
+}
+
+#baner-img {
+	margin-top: 7px;
+	width: 200px;
+}
+
+/* Styl dla dyrektyw preprocesora, takich jak #include */
+.directive {
+	color: var(--include-i-int);
+}
+
+/* Styl dla nagłówków, takich jak <iostream> */
+.header {
+	color: var(--iostream);
+}
+
+.type {
+	color: var(--include-i-int);
+}
+
+/* Styl dla słów kluczowych, takich jak int, return, using, std */
+.keyword {
+	color: var(--using-i-return);
+	font-weight: bold;
+}
+
+/* Styl dla przestrzeni nazw, takich jak std */
+.std {
+	color: var(--std);
+}
+
+/* Styl dla funkcji, takich jak main */
+.function {
+	color: var(--main);
+	font-weight: bold;
+}
+
+/* Styl dla liczb, takich jak 0 */
+.number {
+	color: var(--numerki);
+	font-weight: bold;
+}
+
+/* Styl dla komentarzy, takich jak // Twój kod tutaj */
+.comment {
+	color: var(--komentarze);
+	font-style: italic;
+}
+
+/* Styl dla komend, takich jak g++, ./program */
+.command {
+	color: var(--komendy-w-terminalu);
+	font-weight: bold;
+}
+
+/* Styl dla flag komend, takich jak -o */
+.flag {
+	color: var(--flagi-w-terminalu);
+}
+
+/* Styl dla nazw plików, takich jak program, nazwa_pliku.cpp */
+.filename {
+	color: var(--nazwy-plikow-w-terminalu);
+	font-weight: bold;
+}
