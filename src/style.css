@@ -161,7 +161,7 @@ code {
 	background-color: var(--tlo-kodu);
 	padding: 4px 7px;
 	font-size: 1em;
-	font-family: Consolas;
+	font-family: Consolas, monospace;
 	border-radius: 5px;
 }
 
