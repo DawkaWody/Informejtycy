@@ -167,10 +167,11 @@ code {
 
 pre {
 	background-color: var(--tlo-kodu);
-	padding: 15px;
-	padding-left: 20px;
+	padding: 10px;
+	padding-left: 15px;
 	border-radius: 10px;
 	overflow-x: auto;
+	display: flex;
 }
 
 #theme-toggle {
