@@ -1,0 +1,59 @@
+Cel SMART: Stworzymy interaktywną stronę internetową do nauki programowania z poradnikami i zadaniami praktycznymi dla min. 100 użytkowników do 31 marca 2025 roku.
+
+1. Projektowanie i planowanie
+
+1.1. Opracowanie wymagań funkcjonalnych i niefunkcjonalnych strony. - do 21.12.2024
+1.2. Przygotowanie struktury treści (mapa strony). - do 25.12.2024
+1.3. Wybór technologii (języki programowania, frameworki, CMS). - do 31.12.2024
+
+2. Tworzenie szaty graficznej
+
+2.1. Opracowanie wstępnych makiet i prototypów strony. - do 05.01.2025
+2.2. Zaprojektowanie responsywnego interfejsu użytkownika (UI). - do 10.01.2025
+2.3. Wybór kolorystyki, czcionek i stylu graficznego strony. - do 10.01.2025
+
+3. Implementacja strony internetowej
+
+3.1. Utworzenie struktury głównej strony (HTML i CSS). - do 20.01.2025
+3.2. Implementacja mechanizmów nawigacyjnych (menu, breadcrumbs). - do 20.01.2025
+3.3. Dodanie sekcji z poradnikami (wpisy tekstowe, kod). - do 31.01.2025
+3.4. Wdrożenie systemu zarządzania zadaniami. - do 31.01.2025
+
+4. Funkcjonalności programistyczne
+
+4.1. Implementacja systemu użytkowników (logowanie, rejestracja). - do 10.02.2025
+4.2. Tworzenie interaktywnych zadań praktycznych. - do 15.02.2025
+
+5. Baza danych
+
+5.1. Projekt i implementacja bazy danych dla użytkowników i treści. - do 28.02.2025
+5.2. Wdrożenie mechanizmów bezpieczeństwa. - do 28.02.2025
+
+6. Treści merytoryczne
+
+6.1. Przygotowanie zestawu poradników wprowadzających do programowania. - do 28.02.2025
+6.2. Opracowanie zestawu zadań praktycznych. - do 28.02.2025
+
+7. Testowanie i optymalizacja
+
+7.1. Przeprowadzenie testów funkcjonalnych. - do 31.03.2025
+7.2. Testowanie responsywności na różnych urządzeniach. - do 31.03.2025
+7.3. Optymalizacja szybkości ładowania strony. - do 31.03.2025
+
+8. Marketing i promocja
+
+8.1. Utworzenie profili na mediach społecznościowych. - do 31.12.2024
+8.2. Przygotowanie kampanii reklamowej. - do 31.01.2025 - koszt: 0-500 zł
+
+9. Wdrożenie i utrzymanie
+
+9.1. Publikacja strony na wybranym serwerze (hosting). - do 31.03.2025 - koszt: 50-200 zł
+9.2. Konfiguracja Google Analytics. - do 31.03.2025
+9.3. Monitorowanie i regularne aktualizacje treści oraz kodu.
+
+10. Inkluzywność technologiczna w projekcie - partner zadania: Autopay
+
+10.1. Uwzględnienie zasad dostępności przy projektowaniu strony. - do 31.12.2024
+10.2. Wprowadzenie tekstów alternatywnych dla grafik i multimediów. - do 15.01.2025
+10.3. Implementacja opcji dostosowania strony (np. zmiana kontrastu, rozmiaru czcionki). - do 15.02.2025
+10.4. Uzyskanie wsparcia technicznego i merytorycznego od Autopay w trakcie realizacji projektu. - ciągłe
