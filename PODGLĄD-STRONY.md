@@ -9,8 +9,8 @@ cURL na ręczny rebuild strony (może się przydać):
 
 curl --location --request POST 'https://api.github.com/repos/DawkaWody/Informejtycy/pages/builds' \
 --header 'Accept: application/vnd.github+json' \
---header 'Authorization: Bearer <WKLEJ TOKEN Z DC> \
+--header 'Authorization: Bearer TOKEN_Z_DC \
 --header 'X-GitHub-Api-Version: 2022-11-28'
 
 
-ten token działa tylko na to repo 😼
+token działa tylko na to repo 😼
