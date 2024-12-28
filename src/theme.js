@@ -8,11 +8,13 @@ function setTheme(theme) {
 
 // Pobranie motywu z localStorage przy ładowaniu strony
 const savedTheme = localStorage.getItem("theme");
+
 if (savedTheme) {
     setTheme(savedTheme);
 } else {
-    // Jeśli brak zapisu, ustaw domyślny motyw
-    const defaultTheme = "light";
+    // Jeśli brak zapisu, pobierz preferencje przeglądarki
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const defaultTheme = prefersDark ? "dark" : "light";
     setTheme(defaultTheme);
 }
 
