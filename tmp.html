@@ -1,67 +1,11 @@
-<!DOCTYPE html>
-<html lang="pl">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Podstawowa struktura programu w C++</title>
-	<link rel="icon" type="image/x-icon" href="../img/kolko-logo.png">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-		rel="stylesheet">
-	<link rel="stylesheet" href="../style.css">
-
-</head>
-
-<body>
-
-	<header class="no-select">
-		<div id="menu">
-			<img id="menu-img" src="../img/menu.png">
-		</div>
-		<div id="baner">
-			<a href="../menu/glowna.html">
-				<img id="baner-img" src="../img/baner-ciemne.png">
-			</a>
-		</div>
-		<img src="../img/theme.png" id="theme-toggle">
-	</header>
-
-	<div id="srodek">
-		<div id="sidebar-left">
-			<h2>Lista tematów</h2>
-			<ul>
-				<li><a id="aktualny-temat" href="1.html">1. Struktura programu w C++</a></li>
-				<li><a href="2.html">2. Input-output, zmienne</a></li>
-				<li><a href="3.html">3. If</a></li>
-				<li><a href="4.html">4. For, while</a></li>
-				<li><a href="5.html">5. Tablice, vector</a></li>
-				<li><a href="6.html">6. ASCII</a></li>
-				<li><a href="7.html">7. String</a></li>
-				<li><a href="8.html">8. Min, max, swap i inne</a></li>
-				<li><a href="9.html">9. Złożoność czasowa</a></li>
-				<li><a href="10.html">10. Własne funkcje</a></li>
-				<li><a href="11.html">11. Pair, struct</a></li>
-				<li><a href="12.html">12. Custom sort</a></li>
-				<li><a href="13.html">13. Queue, deque</a></li>
-				<li><a href="14.html">14. Priority queue</a></li>
-				<li><a href="15.html">15. Set, multiset</a></li>
-				<li><a href="16.html">16. Unordered map, map</a></li>
-				<li><a href="17.html">17. Stack</a></li>
-				<li><a href="18.html">18. Rekurencja</a></li>
-
-			</ul>
-		</div>
-
-		<div id="artykul"><p>C++ jest językiem programowania, który umożliwia tworzenie wydajnych i złożonych aplikacji. Będąc początkującym, warto zrozumieć podstawową strukturę programu w C++, ponieważ wszystkie programy będą bazowały na podobnym szablonie. W tym artykule przedstawimy krok po kroku strukturę prostego programu w C++.</p>
+<h1>Podstawowa struktura programu w C++</h1>
+<p>C++ jest językiem programowania, który umożliwia tworzenie wydajnych i złożonych aplikacji. Będąc początkującym, warto zrozumieć podstawową strukturę programu w C++, ponieważ wszystkie programy będą bazowały na podobnym szablonie. W tym artykule przedstawimy krok po kroku strukturę prostego programu w C++.</p>
 <div class="odnosnik" id="struktura_programu"></div>
 <h2>Podstawowa struktura programu</h2>
-<pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
-<span class="inne">using</span> <span class="variable">namespace</span> <span class="io">std</span>;
+<pre><code><span class="inne">#include</span> <span class="inne">&lt;iostream&gt;</span>
+<span class="inne">using</span> <span class="inne">namespace</span> <span class="inne">std</span>;
 
-<span class="type">int</span> <span class="variable">main</span>()
+<span class="type">int</span> <span class="inne">main</span>()
 {
     <span class="comment">// Twój kod tutaj</span>
 
@@ -72,17 +16,17 @@
 <div class="odnosnik" id="polecenie_include"></div>
 <h3>Polecenie <code>#include</code> na początku programu</h3>
 <p>Na początku programu często znajduje się specjalne polecenie zaczynające się od <code>#include</code>. Takie polecenia informują komputer, które dodatkowe funkcje i narzędzia będą używane w programie. Najczęściej spotykanym poleceniem tego typu jest:</p>
-<pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span></code></pre>
+<pre><code><span class="inne">#include</span> <span class="inne">&lt;iostream&gt;</span></code></pre>
 <p><code>&lt;iostream&gt;</code> to biblioteka, która pozwala korzystać z funkcji do wyświetlania tekstu na ekranie (np. za pomocą <code>cout</code>) oraz do wczytywania danych od użytkownika (np. przy użyciu <code>cin</code>).</p>
 <div class="odnosnik" id="przestrzen_nazw"></div>
 <h3>Dodanie przestrzeni nazw</h3>
 <p>Aby uprościć korzystanie z elementów standardowej biblioteki C++, można dodać polecenie:</p>
-<pre><code><span class="inne">using</span> <span class="variable">namespace</span> <span class="io">std</span>;</code></pre>
+<pre><code><span class="inne">using</span> <span class="inne">namespace</span> <span class="inne">std</span>;</code></pre>
 <p>Dzięki temu nie trzeba będzie poprzedzać nazw takich jak <code>cout</code> czy <code>cin</code> prefiksem <code>std::</code>.</p>
 <div class="odnosnik" id="funkcja_main"></div>
 <h3>Funkcja <code>main</code></h3>
 <p>Funkcja <code>main</code> jest punktem wejścia każdego programu w C++. To właśnie od niej zaczyna się wykonanie programu.</p>
-<pre><code><span class="type">int</span> <span class="variable">main</span>()</code></pre>
+<pre><code><span class="type">int</span> <span class="inne">main</span>()</code></pre>
 <p><code>int</code> oznacza, że funkcja zwraca wartość całkowitą (zwykle 0, jeśli program zakończył się poprawnie). Nawiasy <code>()</code> mogą zawierać argumenty, ale dla prostych programów są puste.</p>
 <div class="odnosnik" id="blok_kodu"></div>
 <h3>Blok kodu <code>{}</code></h3>
@@ -114,29 +58,3 @@
 <div class="odnosnik" id="podsumowanie"></div>
 <h2>Podsumowanie</h2>
 <p>Podstawowa struktura programu w C++ jest prosta, ale zrozumienie jej fundamentów jest kluczowe, aby móc pisać bardziej złożone aplikacje. Warto zapamiętać, że każdy program rozpoczyna się od funkcji <code>main</code> i kończy instrukcją <code>return</code>. W kolejnych artykułach omówimy bardziej zaawansowane aspekty programowania w C++, takie jak zmienne, pętle czy funkcje.</p>
-</div>
-
-		<div id="sidebar-right">
-			<h2>Spis treści</h2>
-			<ul>
-				<li><a href="#struktura_programu">1. Wstęp</a></li>
-				<li><a href="#polecenie_include">2. Polecenie <code>#include</code></a></li>
-				<li><a href="#przestrzen_nazw">3. Dodanie przestrzeni nazw</a></li>
-				<li><a href="#funkcja_main">4. Funkcja <code>main</code></a></li>
-				<li><a href="#blok_kodu">5. Blok kodu</a></li>
-				<li><a href="#instrukcja_return">6. Instrukcja <code>return</code></a></li>
-				<li><a href="#uruchomienie_programu">7. Jak uruchomić program?</a></li>
-				<li><a href="#podsumowanie">8. Podsumowanie</a></li>
-			</ul>
-		</div>
-	</div>
-
-	<footer>
-		Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
-		&copy; 2024 Wszelkie prawa zastrzeżone
-	</footer>
-    <script src="../theme.js"></script>
-
-</body>
-
-</html>

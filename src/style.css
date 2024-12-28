@@ -13,16 +13,13 @@
 	/* tego nie zmieniać */
 
 	/* do kodu */
-	--iostream: #22863a;
-	--include-i-int: #e36209;
-	--using-i-return: #e36209;
-	--std: #005cc5;
-	--main: #e38c09;
-	--numerki: #6f42c1;
-	--komentarze: #6a737d;
-	--komendy-w-terminalu: #e36209;
-	--flagi-w-terminalu: #0366d6;
-	--nazwy-plikow-w-terminalu: #032f62;
+	--type: #c95400;
+	--variable: #d68017;
+	--string: #9B9B1B;
+	--number: #9b6dc9;
+	--comment: #6a737d;
+	--io: #ad5216;
+	--inne: #085d6e;
 }
 
 /* Zmienne dla trybu ciemnego */
@@ -40,16 +37,13 @@
 	/* tego nie zmieniać */
 
 	/* do kodu */
-	--iostream: #22863a;
-	--include-i-int: #e36209;
-	--using-i-return: #e36209;
-	--std: #005cc5;
-	--main: #e38c09;
-	--numerki: #6f42c1;
-	--komentarze: #6a737d;
-	--komendy-w-terminalu: #e36209;
-	--flagi-w-terminalu: #0366d6;
-	--nazwy-plikow-w-terminalu: #4893e9;
+	--type: #FF8F40;
+	--variable: #F7AD52;
+	--string: #9B9B1B;
+	--number: #D2A6FF;
+	--comment: #6a737d;
+	--io: #ff6a00;
+	--inne: #e1c5fd;
 }
 
 html {
@@ -221,62 +215,35 @@ footer {
 	width: 200px;
 }
 
-/* Styl dla dyrektyw preprocesora, takich jak #include */
-.directive {
-	color: var(--include-i-int);
-}
-
-/* Styl dla nagłówków, takich jak <iostream> */
-.header {
-	color: var(--iostream);
-}
-
 .type {
-	color: var(--include-i-int);
-}
-
-/* Styl dla słów kluczowych, takich jak int, return, using, std */
-.keyword {
-	color: var(--using-i-return);
+	color: var(--type);
 	font-weight: bold;
 }
 
-/* Styl dla przestrzeni nazw, takich jak std */
-.std {
-	color: var(--std);
-}
-
-/* Styl dla funkcji, takich jak main */
-.function {
-	color: var(--main);
+.variable {
+	color: var(--variable);
 	font-weight: bold;
 }
 
-/* Styl dla liczb, takich jak 0 */
+.string {
+	color: var(--string);
+	font-weight: bold;
+}
+
 .number {
-	color: var(--numerki);
+	color: var(--number);
 	font-weight: bold;
 }
 
-/* Styl dla komentarzy, takich jak // Twój kod tutaj */
 .comment {
-	color: var(--komentarze);
+	color: var(--comment);
 	font-style: italic;
 }
 
-/* Styl dla komend, takich jak g++, ./program */
-.command {
-	color: var(--komendy-w-terminalu);
-	font-weight: bold;
+.inne {
+	color: var(--inne);
 }
 
-/* Styl dla flag komend, takich jak -o */
-.flag {
-	color: var(--flagi-w-terminalu);
-}
-
-/* Styl dla nazw plików, takich jak program, nazwa_pliku.cpp */
-.filename {
-	color: var(--nazwy-plikow-w-terminalu);
-	font-weight: bold;
+.io {
+	color: var(--io);
 }

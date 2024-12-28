@@ -55,156 +55,148 @@
 			</ul>
 		</div>
 
-		<div id="artykul">
+		<div id="artykul"><h1>Input-output, zmienne</h1>
 
-			<h1>Input-output, zmienne</h1>
+<div id="1" class="odnosnik"></div>
+<p>C++ to wszechstronny język programowania, który oferuje wiele narzędzi do zarządzania danymi i interakcji z użytkownikiem. W tym artykule przyjrzymy się bliżej operacjom wejścia-wyjścia, zmiennym i ich typom.</p>
 
-			<div id="1" class="odnosnik"></div>
-			<p>C++ to wszechstronny język programowania, który oferuje wiele narzędzi do zarządzania danymi i interakcji
-				z
-				użytkownikiem. W tym artykule przyjrzymy się bliżej operacjom wejścia-wyjścia, zmiennym i ich typom.</p>
+<h2>Operacje wejścia-wyjścia</h2>
+<p>Operacje wejścia-wyjścia (ang. <code>input-output</code>, I/O) w C++ umożliwiają komunikację między użytkownikiem a programem.</p>
 
-			<h2>Operacje wejścia-wyjścia</h2>
-			<p>Operacje wejścia-wyjścia (ang. <strong>input-output</strong>, I/O) w C++ umożliwiają komunikację między
-				użytkownikiem
-				a programem.</p>
-			<div id="2" class="odnosnik"></div>
-			<h3><code>std::cout</code> - Wyjście na konsolę</h3>
-			<p>Aby wyświetlić tekst lub dane na konsoli, używamy obiektu <code>std::cout</code>:</p>
+<div id="2" class="odnosnik"></div>
+<h3><code>std::cout</code> - Wyjście na konsolę</h3>
+<p>Aby wyświetlić tekst lub dane na konsoli, używamy obiektu <code>std::cout</code>:</p>
 
-			<pre><code><span class="directive">#include</span> <span class="header">&lt;iostream&gt;</span>
-<span class="type">using</span> <span class="keyword">namespace</span> <span class="std">std;</span>
+<pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">using</span> <span class="variable">namespace</span> <span class="io">std</span>;
 
-<span class="function">int</span> <span class="main">main</span>() {
-    <span class="command">cout</span> <span class="operator">&lt;&lt;</span> <span class="string">"Witaj w C++!"</span> <span class="command"><<</span> <span class="std">endl</span>;
-    <span class="keyword">return</span> <span class="number">0</span>;
-}</code></pre>
-			<p>- <code>&lt;&lt;</code> to operator wyjścia, który przekazuje dane do <code>cout</code>.</p>
-			<p>- <code>endl</code> wstawia znak nowej linii.</p>
-			<div id="3" class="odnosnik"></div>
-			<h3><code>std::cin</code> - Wejście z klawiatury</h3>
-			<p>Aby pobrać dane od użytkownika, używamy obiektu <code>std::cin</code>:</p>
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="io">cout</span> <span class="inne">&lt;&lt;</span> <span class="string">"Witaj w C++!"</span> <span class="inne">&lt;&lt;</span> <span class="io">endl</span>;
+    <span class="inne">return</span> <span class="number">0</span>;
+}
+</code></pre>
 
-			<pre><code><span class="directive">#include</span> <span class="header">&lt;iostream&gt;</span>
-<span class="type">using</span> <span class="keyword">namespace</span> <span class="std">std;</span>
+<p>- <code>&lt;&lt;</code> to operator wyjścia, który przekazuje dane do <code>cout</code>.</p>
+<p>- <code>endl</code> wstawia znak nowej linii.</p>
 
-<span class="function">int</span> <span class="main">main</span>() {
+<div id="3" class="odnosnik"></div>
+<h3><code>std::cin</code> - Wejście z klawiatury</h3>
+<p>Aby pobrać dane od użytkownika, używamy obiektu <code>std::cin</code>:</p>
+
+<pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">using</span> <span class="variable">namespace</span> <span class="io">std</span>;
+
+<span class="type">int</span> <span class="variable">main</span>() {
     <span class="type">int</span> <span class="variable">liczba</span>;
-    <span class="command">cout</span> <span class="operator">&lt;&lt;</span> <span class="string">"Podaj liczbę: "</span>;
-    <span class="command">cin</span> <span class="operator">&gt;&gt;</span> <span class="variable">liczba</span>;
-    <span class="command">cout</span> <span class="operator">&lt;&lt;</span> <span class="string">"Podałeś liczbę: "</span> <span class="command"><<</span> <span class="variable">liczba</span> <span class="command"><<</span> <span class="std">endl</span>;
-    <span class="keyword">return</span> <span class="number">0</span>;
-}</code></pre>
-			<p>- <code>&gt;&gt;</code> to operator wejścia, który przypisuje wartość wprowadzoną przez użytkownika do
-				zmiennej.</p>
-			<p>- Program pauzuje, czekając na dane od użytkownika.</p>
-			<div id="4" class="odnosnik"></div>
-			<h3>Przyspieszenie wejścia-wyjścia</h3>
-			<p>Aby zoptymalizować działanie operacji I/O, można użyć następujących linii na początku programu:</p>
+    <span class="io">cout</span> <span class="inne">&lt;&lt;</span> <span class="string">"Podaj liczbę: "</span>;
+    <span class="io">cin</span> <span class="inne">&gt;&gt;</span> <span class="variable">liczba</span>;
+    <span class="io">cout</span> <span class="inne">&lt;&lt;</span> <span class="string">"Podałeś liczbę: "</span> <span class="inne">&lt;&lt;</span> <span class="variable">liczba</span> <span class="inne">&lt;&lt;</span> <span class="io">endl</span>;
+    <span class="inne">return</span> <span class="number">0</span>;
+}
+</code></pre>
 
-			<pre><code><span class="command">ios_base::sync_with_stdio</span>(<span class="number">0</span>);
-<span class="command">cin</span>.<span class="command">tie</span>(<span class="number">0</span>);</code></pre>
+<p>- <code>&gt;&gt;</code> to operator wejścia, który przypisuje wartość wprowadzoną przez użytkownika do zmiennej.</p>
+<p>- Program pauzuje, czekając na dane od użytkownika.</p>
 
-			<pre><code><span class="directive">#include</span> <span class="header">&lt;iostream&gt;</span>
-<span class="type">using</span> <span class="keyword">namespace</span> <span class="std">std;</span>
+<div id="4" class="odnosnik"></div>
+<h3>Przyspieszenie wejścia-wyjścia</h3>
+<p>Aby zoptymalizować działanie operacji I/O, można użyć następujących linii na początku programu:</p>
 
-<span class="function">int</span> <span class="main">main</span>() {
-    <span class="command">ios_base::sync_with_stdio</span>(<span class="number">0</span>);
-    <span class="command">cin</span>.<span class="command">tie</span>(<span class="number">0</span>);
+<pre><code><span class="io">ios_base::sync_with_stdio</span>(<span class="number">0</span>);
+<span class="io">cin.tie</span>(<span class="number">0</span>);
+</code></pre>
+
+<pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">using</span> <span class="variable">namespace</span> <span class="io">std</span>;
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="io">ios_base::sync_with_stdio</span>(<span class="number">0</span>);
+    <span class="io">cin.tie</span>(<span class="number">0</span>);
 
     <span class="type">int</span> <span class="variable">liczba</span>;
-    <span class="command">cout</span> <span class="operator">&lt;&lt;</span> <span class="string">"Podaj liczbę: "</span>;
-    <span class="command">cin</span> <span class="operator">&gt;&gt;</span> <span class="variable">liczba</span>;
-    <span class="command">cout</span> <span class="operator">&lt;&lt;</span> <span class="string">"Podałeś liczbę: "</span> <span class="command"><<</span> <span class="variable">liczba</span> <span class="command"><<</span> <span class="std">endl</span>;
-    <span class="keyword">return</span> <span class="number">0</span>;
-}</code></pre>
-			<div id="5" class="odnosnik"></div>
+    <span class="io">cout</span> <span class="inne">&lt;&lt;</span> <span class="string">"Podaj liczbę: "</span>;
+    <span class="io">cin</span> <span class="inne">&gt;&gt;</span> <span class="variable">liczba</span>;
+    <span class="io">cout</span> <span class="inne">&lt;&lt;</span> <span class="string">"Podałeś liczbę: "</span> <span class="inne">&lt;&lt;</span> <span class="variable">liczba</span> <span class="inne">&lt;&lt;</span> <span class="io">endl</span>;
+    <span class="inne">return</span> <span class="number">0</span>;
+}
+</code></pre>
 
-			<h2>Zmienne</h2>
-			<p>Zmienne to podstawowy sposób przechowywania danych w programie. W C++ każda zmienna musi być
-				zadeklarowana przed
-				użyciem.</p>
+<div id="5" class="odnosnik"></div>
+<h2>Zmienne</h2>
+<p>Zmienne to podstawowy sposób przechowywania danych w programie. W C++ każda zmienna musi być zadeklarowana przed użyciem.</p>
 
-			<h3>Deklaracja zmiennych</h3>
-			<p>Deklaracja zmiennej określa jej nazwę i typ:</p>
+<h3>Deklaracja zmiennych</h3>
+<p>Deklaracja zmiennej określa jej nazwę i typ:</p>
 
-			<pre><code><span class="type">int</span> <span class="variable">liczba</span>;
+<pre><code><span class="type">int</span> <span class="variable">liczba</span>;
 <span class="type">double</span> <span class="variable">wynik</span>;
 <span class="type">char</span> <span class="variable">znak</span>;
-<span class="type">bool</span> <span class="variable">stan</span>;</code></pre>
+<span class="type">bool</span> <span class="variable">stan</span>;
+</code></pre>
 
-			<p>- <code>int</code> - przechowuje liczby całkowite.</p>
-			<p>- <code>double</code> - przechowuje liczby zmiennoprzecinkowe.</p>
-			<p>- <code>char</code> - przechowuje pojedynczy znak.</p>
-			<p>- <code>bool</code> - przechowuje wartość logiczną (<code>true</code>/<code>false</code>).</p>
+<p>- <code>int</code> - przechowuje liczby całkowite.</p>
+<p>- <code>double</code> - przechowuje liczby zmiennoprzecinkowe.</p>
+<p>- <code>char</code> - przechowuje pojedynczy znak.</p>
+<p>- <code>bool</code> - przechowuje wartość logiczną (<code>true</code>/<code>false</code>).</p>
 
-			<h3>Przypisanie wartości</h3>
-			<p>Po zadeklarowaniu zmiennej możemy przypisać jej wartość:</p>
+<h3>Przypisanie wartości</h3>
+<p>Po zadeklarowaniu zmiennej możemy przypisać jej wartość:</p>
 
-			<pre><code><span class="type">int</span> <span class="variable">liczba</span> = <span class="number">42</span>;
+<pre><code><span class="type">int</span> <span class="variable">liczba</span> = <span class="number">42</span>;
 <span class="type">double</span> <span class="variable">wynik</span> = <span class="number">3.14</span>;
 <span class="type">char</span> <span class="variable">znak</span> = <span class="string">'A'</span>;
-<span class="type">bool</span> <span class="variable">stan</span> = <span class="keyword">true</span>;</code></pre>
+<span class="type">bool</span> <span class="variable">stan</span> = <span class="inne">true</span>;
+</code></pre>
 
-			<p>Możemy również zadeklarować i przypisać wartość jednocześnie.</p>
-			<div id="6" class="odnosnik"></div>
+<p>Możemy również zadeklarować i przypisać wartość jednocześnie.</p>
 
-			<h2>Typy zmiennych</h2>
-			<p>C++ oferuje szeroki wachlarz typów zmiennych, które pozwalają na efektywne zarządzanie pamięcią i
-				precyzyjne
-				dopasowanie danych.</p>
+<div id="6" class="odnosnik"></div>
+<h2>Typy zmiennych</h2>
+<p>C++ oferuje szeroki wachlarz typów zmiennych, które pozwalają na efektywne zarządzanie pamięcią i precyzyjne dopasowanie danych.</p>
 
-			<h3>Podstawowe typy</h3>
-			<ul>
-				<li><strong>Całkowite</strong>:
-					<ul>
-						<li><code>int</code> - liczby całkowite.</li>
-						<li><code>long long</code> - dłuższa wersja typu <code>int</code>.</li>
-						<li><code>unsigned</code> - liczby całkowite bez znaku (tylko dodatnie).</li>
-					</ul>
-				</li>
-				<li><strong>Liczby zmiennoprzecinkowe</strong>:
-					<ul>
-						<li><code>float</code> - liczby zmiennoprzecinkowe o pojedynczej precyzji.</li>
-						<li><code>double</code> - liczby zmiennoprzecinkowe o podwójnej precyzji.</li>
-						<li><code>long double</code> - liczby zmiennoprzecinkowe o zwiększonej precyzji.</li>
-					</ul>
-				</li>
-				<li><strong>Znaki</strong>:
-					<ul>
-						<li><code>char</code> - pojedyncze znaki (np. 'A', '9').</li>
-					</ul>
-				</li>
-				<li><strong>Logiczne</strong>:
-					<ul>
-						<li><code>bool</code> - wartości logiczne (<code>true</code> lub <code>false</code>).</li>
-					</ul>
-				</li>
-			</ul>
-			<div id="7" class="odnosnik"></div>
+<h3>Podstawowe typy</h3>
+<ul>
+    <li><strong>Całkowite</strong>:
+        <ul>
+            <li><code>int</code> - liczby całkowite.</li>
+            <li><code>long long</code> - dłuższa wersja typu <code>int</code>.</li>
+            <li><code>unsigned</code> - liczby całkowite bez znaku (tylko dodatnie).</li>
+        </ul>
+    </li>
+    <li><strong>Liczby zmiennoprzecinkowe</strong>:
+        <ul>
+            <li><code>float</code> - liczby zmiennoprzecinkowe o pojedynczej precyzji.</li>
+            <li><code>double</code> - liczby zmiennoprzecinkowe o podwójnej precyzji.</li>
+            <li><code>long double</code> - liczby zmiennoprzecinkowe o zwiększonej precyzji.</li>
+        </ul>
+    </li>
+    <li><strong>Znaki</strong>:
+        <ul>
+            <li><code>char</code> - pojedyncze znaki (np. 'A', '9').</li>
+        </ul>
+    </li>
+    <li><strong>Logiczne</strong>:
+        <ul>
+            <li><code>bool</code> - wartości logiczne (<code>true</code> lub <code>false</code>).</li>
+        </ul>
+    </li>
+</ul>
 
-			<h2>Typowanie w C++</h2>
-			<p>C++ jest językiem statycznie typowanym, co oznacza, że typ zmiennej jest określany w czasie kompilacji.
-				Jednak dzięki
-				nowoczesnym funkcjom, takim jak <code>auto</code>, można uprościć deklarację:</p>
+<div id="7" class="odnosnik"></div>
+<h2>Typowanie w C++</h2>
+<p>C++ jest językiem statycznie typowanym, co oznacza, że typ zmiennej jest określany w czasie kompilacji. Jednak dzięki nowoczesnym funkcjom, takim jak <code>auto</code>, można uprościć deklarację:</p>
 
-			<pre><code><span class="type">auto</span> <span class="variable">liczba</span> = <span class="number">42</span>;   <span class="comment">// Kompilator sam określi typ jako int.</span>
-<span class="type">auto</span> <span class="variable">wynik</span> = <span class="number">3.14</span>;  <span class="comment">// Kompilator określi typ jako double.</span></code></pre>
-			<div id="8" class="odnosnik"></div>
+<pre><code><span class="type">auto</span> <span class="variable">liczba</span> = <span class="number">42</span>;   <span class="comment">// Kompilator sam określi typ jako int.</span>
+<span class="type">auto</span> <span class="variable">wynik</span> = <span class="number">3.14</span>;  <span class="comment">// Kompilator określi typ jako double.</span>
+</code></pre>
 
-			<h2>Zadania</h2>
-			
-			<div id="9" class="odnosnik"></div>
+<div id="8" class="odnosnik"></div>
+<h2>Zadania</h2>
 
-			<h2>Podsumowanie</h2>
-			<p>Zrozumienie operacji wejścia-wyjścia, zmiennych i typów danych to podstawa programowania w C++. Umożliwia
-				to
-				tworzenie dynamicznych aplikacji oraz efektywne zarządzanie pamięcią. W kolejnych artykułach rozwiniemy
-				te
-				zagadnienia, omawiając bardziej zaawansowane techniki, takie jak instrukcje warunkowe, pętle czy
-				tablice.</p>
-
-		</div>
+<div id="9" class="odnosnik"></div>
+<h2>Podsumowanie</h2>
+<p>Zrozumienie operacji wejścia-wyjścia, zmiennych i typów danych to podstawa programowania w C++. Umożliwia to tworzenie dynamicznych aplikacji oraz efektywne zarządzanie pamięcią. W kolejnych artykułach rozwiniemy te zagadnienia, omawiając bardziej zaawansowane techniki, takie jak instrukcje warunkowe, pętle czy tablice.</p>
+</div>
 
 		<div id="sidebar-right">
 			<h2>Spis treści</h2>
@@ -227,20 +219,7 @@
 		&copy; 2024 Wszelkie prawa zastrzeżone
 	</footer>
 
-	<script>
-		const themeToggleButton = document.getElementById("theme-toggle");
-
-		themeToggleButton.addEventListener("click", () => {
-
-			if (document.documentElement.getAttribute("data-theme") === "dark") {
-				document.documentElement.setAttribute("data-theme", "light");
-			}
-
-			else {
-				document.documentElement.setAttribute("data-theme", "dark");
-			}
-		});
-	</script>
+    <script src="../theme.js"></script>
 
 </body>
 
