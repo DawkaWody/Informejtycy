@@ -1,5 +1,5 @@
 # ASCII
-##### **ASCII**  to standard kodowania znaków, który przypisuje numery literom, cyfrom i symbolom. Innymi słowy, jest to system zapisu znaków poprzez liczby (7-bitowe - od 0 do 127) wykorzystywany między innymi przez C++. Oznacza to, że każda *litera alfabetu łacińskiego/cyfra/biały znak* (i wiele więcej) posiada swój własny numer w systemie ASCII.
+**ASCII**  to standard kodowania znaków, który przypisuje numery literom, cyfrom i symbolom. Innymi słowy, jest to system zapisu znaków poprzez liczby (7-bitowe - od 0 do 127) wykorzystywany między innymi przez C++. Oznacza to, że każda *litera alfabetu łacińskiego/cyfra/biały znak* (i wiele więcej) posiada swój własny numer w systemie ASCII.
 
 Poniższy fragment kodu wczyta dowolny znak i wypisze jego numer w systemie ASCII.
 ```cpp
@@ -37,10 +37,10 @@ int main()
     return 0;
 }
 ```
-W trzeciej linii kodu program ''domyśla się'', że skoro używamy operatora '+', chodzi nam o wartość liczbową. Dla wejścia *a b* program wypisze *195* (*97+98=195*). Możemy używać też operatorów: '-', '*' , '/', '%';
+W trzeciej linii kodu program "domyśla się", że skoro używamy operatora `+`, chodzi nam o wartość liczbową. Dla wejścia *a b* program wypisze *195* (*97+98=195*). Możemy używać też operatorów: `-`, `*`, `/`, `%`;
 
 ## Konwertowanie cyfr ze zmiennych typu char na zmienne typu int
-Operacje matematyczne na znakach możemy wykorzystać do przekształcania cyfry zapisanej jako znak w cyfrę zapisaną jako liczba. Użyjemy operatora '-' - poniższy program wczytuje cyfrę jako znak i przekształca ją w zmienną typu int:
+Operacje matematyczne na znakach możemy wykorzystać do przekształcania cyfry zapisanej jako znak w cyfrę zapisaną jako liczba. Użyjemy operatora `-` - poniższy program wczytuje cyfrę jako znak i przekształca ją w zmienną typu int:
 ```cpp
 #include <iostream>
 using namespace std;

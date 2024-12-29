@@ -83,4 +83,4 @@ Warto również wspomnieć o trzech podstawowych operatorach logicznych:
     Operator zwraca wartość przeciwną do wartości logicznej operandu.  
     Przykład: `!(a > b)` (prawda, jeśli `a` nie jest większe niż `b`).
 
-
+> Warto dodać, iż operatory logiczne mają swoje słowne odpowiedniki: `&&` - `and`, `||` - `or` i `!` - `not`, toteż powyższe przykłady można zapisać jako `a > 0 and b > 0`, `a > 0 or b > 0` i `not (a > b)`
