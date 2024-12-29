@@ -28,13 +28,6 @@
 	<script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
-    <script type="text/javascript">
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [['$', '$']]
-            }
-        });
-    </script>
 
 </head>
 
@@ -136,12 +129,12 @@
     <span class="io">cout</span> &lt;&lt; <span class="variable">kwadrat</span> + <span class="variable">liczba</span> &lt;&lt; <span class="io">endl</span>;
 }
 </code></pre>
-    <p>Dominująca jest operacja w linii drugiej czyli pętla <code>for</code>. Wykona się dokładnie <span class="variable">n</span> razy, a ile to <span class="variable">n</span> wynosi to już zależy od danych wejściowych. Idealne dla notacji dużego O, ponieważ opisuje ona zależność <strong>od danych wejściowych</strong>. Dlatego złożoność tego programu w notacji dużego O to <strong>$O(n)$</strong> gdzie <span class="variable">n</span> jest wielkością wczytywaną z wejścia.</p>
-    <p>Notacja dużego O nie konwertuje się na sekundy, natomiast wiemy, że jeśli podamy programowi liczbę <span class="number">150</span> to wykona on <span class="number">150</span> operacji. Ale zaraz, zaraz! Przecież w tym przykładzie widzimy, że program w każdej iteracji pętli wykonuje trzy operacje. Policzenie kwadratu, dodanie do niego zmiennej <span class="variable">liczba</span> i wypisanie wyniku na standardowe wyjście. To prawda, jednak w notacji dużego O <strong>ignoruje się stałe</strong>, ponieważ podobnie jak operacje niedominujące, nie mają one realnego wpływu na czas działania programu. Tak naprawdę $O(n)$ oznacza $O(c * n)$, gdzie <span class="variable">c</span> to jakaś stała liczba operacji, która nie ma wpływu na czas działania programu (liczba operacji w jednej iteracji pętli). Notacja dużego O ma być tak prosta, jak to tylko możliwe - zero niepotrzebnych informacji.</p>
+    <p>Dominująca jest operacja w linii drugiej czyli pętla <code>for</code>. Wykona się dokładnie <span class="variable">n</span> razy, a ile to <span class="variable">n</span> wynosi to już zależy od danych wejściowych. Idealne dla notacji dużego O, ponieważ opisuje ona zależność <strong>od danych wejściowych</strong>. Dlatego złożoność tego programu w notacji dużego O to <strong>\(O(n)\)</strong> gdzie <span class="variable">n</span> jest wielkością wczytywaną z wejścia.</p>
+    <p>Notacja dużego O nie konwertuje się na sekundy, natomiast wiemy, że jeśli podamy programowi liczbę <span class="number">150</span> to wykona on <span class="number">150</span> operacji. Ale zaraz, zaraz! Przecież w tym przykładzie widzimy, że program w każdej iteracji pętli wykonuje trzy operacje. Policzenie kwadratu, dodanie do niego zmiennej <span class="variable">liczba</span> i wypisanie wyniku na standardowe wyjście. To prawda, jednak w notacji dużego O <strong>ignoruje się stałe</strong>, ponieważ podobnie jak operacje niedominujące, nie mają one realnego wpływu na czas działania programu. Tak naprawdę \(O(n)\) oznacza \(O(c * n)\) , gdzie <span class="variable">c</span> to jakaś stała liczba operacji, która nie ma wpływu na czas działania programu (liczba operacji w jednej iteracji pętli). Notacja dużego O ma być tak prosta, jak to tylko możliwe - zero niepotrzebnych informacji.</p>
     
 <div id="4" class="odnosnik"></div>	
     <h2>Typowe złożoności programów</h2>
-    <p>Złożoność to inaczej ilość wykonywanych przez program operacji, czyli idealnie to co opisuje notacja dużego O. Poznałeś już jedną złożoność programu - $O(n)$ nazywaną również <em>czasem liniowym</em>. Jakie inne złożoności jeszcze istnieją? Wyobraź sobie, że chcesz podzielić kwadratową kartkę na <span class="number">16</span> równych kwadratowych części. Możesz rysować kwadraty po kolei. To jest czas liniowy. Można to jednak zrobić szybciej. Zauważ, że jeśli będziesz zginał kartkę na pół, to za każdym razem otrzymasz <span class="number">2</span> razy więcej kratek niż poprzednio. Zatem potrzebna ilość złożeń kartki to $\log_2 {16}$ czyli <span class="number">4</span>. Logarytm dwójkowy z $16$ oznacza "do jakiej potęgi podnieść <span class="number">2</span> aby otrzymać <span class="number">16</span>?". Złożoność takiego składania kartki to $O(\log n)$. Przeanalizujmy teraz te najpowszechniejsze złożoności programów, z którymi możesz się spotkać. Złożoności są przedstawione od najszybszej do najwolniejszej</p>
+    <p>Złożoność to inaczej ilość wykonywanych przez program operacji, czyli idealnie to co opisuje notacja dużego O. Poznałeś już jedną złożoność programu - \(O(n)\) nazywaną również <em>czasem liniowym</em>. Jakie inne złożoności jeszcze istnieją? Wyobraź sobie, że chcesz podzielić kwadratową kartkę na <span class="number">16</span> równych kwadratowych części. Możesz rysować kwadraty po kolei. To jest czas liniowy. Można to jednak zrobić szybciej. Zauważ, że jeśli będziesz zginał kartkę na pół, to za każdym razem otrzymasz <span class="number">2</span> razy więcej kratek niż poprzednio. Zatem potrzebna ilość złożeń kartki to \(\log_2 {16}\)  czyli <span class="number">4</span>. Logarytm dwójkowy z \(16\) oznacza "do jakiej potęgi podnieść <span class="number">2</span> aby otrzymać <span class="number">16</span>?". Złożoność takiego składania kartki to \(O(\log n)\). Przeanalizujmy teraz te najpowszechniejsze złożoności programów, z którymi możesz się spotkać. Złożoności są przedstawione od najszybszej do najwolniejszej</p>
     
     <table border="1">
         <tr>
@@ -149,27 +142,27 @@
             <th>Przykład</th>
         </tr>
         <tr>
-            <td>$O(1)$ - złożoność stała</td>
+            <td>\(O(1)\) - złożoność stała</td>
             <td>Operacja niezależna od wejścia np. policzenie czegoś ze wzoru</td>
         </tr>
         <tr>
-            <td>$O(\log n)$ - złożoność logarytmiczna</td>
+            <td>\(O(\log n)\) - złożoność logarytmiczna</td>
             <td>Składanie kartki</td>
         </tr>
         <tr>
-            <td>$O(n)$ - złożoność liniowa</td>
+            <td>\(O(n)\) - złożoność liniowa</td>
             <td>Pojedyncza pętla</td>
         </tr>
         <tr>
-            <td>$O(n \log n)$</td>
+            <td>\(O(n \log n)\)</td>
             <td>Składanie <span class="variable">n</span> kartek</td>
         </tr>
         <tr>
-            <td>$O(n^2)$ - złożoność kwadratowa</td>
+            <td>\(O(n^2)\) - złożoność kwadratowa</td>
             <td>Dwie zagnieżdżone pętle (jedna pętla w drugiej)</td>
         </tr>
         <tr>
-            <td>$O(n^3)$ - złożoność sześcienna</td>
+            <td>\(O(n^3)\) - złożoność sześcienna</td>
             <td>Trzy zagnieżdżone pętle</td>
         </tr>
     </table>
@@ -185,11 +178,11 @@
     <span class="io">if</span> (<span class="variable">i</span> == <span class="variable">szukana</span>)
         <span class="io">cout</span> &lt;&lt; <span class="variable">i</span> &lt;&lt; <span class="string">" znalezione!"</span> &lt;&lt; <span class="io">endl</span>;
 </code></pre>
-    <p>Jak opisałbyś jego złożoność? Cóż, spójrzmy, co by się stało, gdybyśmy na wejściu podali wartość <span class="number">2</span>. Program wykonałby jedną iterację pętli i natychmiast znalazłby szukaną wartość. Możemy wtedy powiedzieć: "Ponieważ pętla wykonała się tylko <span class="number">1</span> raz, to złożoność tego programu to $O(1)$. Wow! Jest bardzo szybki!", ale czy to prawda? Odpowiedź brzmi: nie, program nie zmienia swojej złożoności tylko dlatego, że dostał wygodniejsze dane. Notacja dużego O opisuje <strong>najgorszy przypadek</strong>. Gdybyśmy do tego programu podali na przykład <span class="number">5</span>, to musiałby on przejść po każdym elemencie wektora i to jest najgorszy możliwy przypadek. Czas $O(n)$ to tak na prawdę zapewnienie, że program <strong>na pewno</strong> nie wykona więcej, niż <span class="variable">n</span> operacji.</p>
+    <p>Jak opisałbyś jego złożoność? Cóż, spójrzmy, co by się stało, gdybyśmy na wejściu podali wartość <span class="number">2</span>. Program wykonałby jedną iterację pętli i natychmiast znalazłby szukaną wartość. Możemy wtedy powiedzieć: "Ponieważ pętla wykonała się tylko <span class="number">1</span> raz, to złożoność tego programu to \(O(1)\). Wow! Jest bardzo szybki!", ale czy to prawda? Odpowiedź brzmi: nie, program nie zmienia swojej złożoności tylko dlatego, że dostał wygodniejsze dane. Notacja dużego O opisuje <strong>najgorszy przypadek</strong>. Gdybyśmy do tego programu podali na przykład <span class="number">5</span>, to musiałby on przejść po każdym elemencie wektora i to jest najgorszy możliwy przypadek. Czas \(O(n)\) to tak na prawdę zapewnienie, że program <strong>na pewno</strong> nie wykona więcej, niż <span class="variable">n</span> operacji.</p>
     
 <div id="6" class="odnosnik"></div>	
     <h2>Jak określić maksymalny czas działania na podstawie notacji dużego O?</h2>
-    <p>Jak już powiedziałem, notacja dużego O nie konwertuje się bezpośrednio na jednostki czasu, ponieważ do tego nie służy i zawiera zbyt dużo pominięć. Możemy jednak posłużyć się pewnym przybliżeniem. Współczesne komputery wykonują około $10^8$ operacji na sekundę. Musimy też znać maksymalny rozmiar naszego wejścia, lub chociaż orientacyjnie wiedzieć w jaki przedziale będzie się znajdować. Dzięki temu będziemy mogli przewidzieć jak nasz program będzie się zachowywać w najgorszym przypadku. Jeśli np. nasze maksymalne <span class="variable">n</span> wynosi $100000$ a nasz program ma złożoność kwadratową, to maksymalna liczba operacji to $100000^2 = 10^{10}$, czyli program dla <span class="variable">n</span> = $100000$ będzie się wykonywał $10^{10}/10^{8} = 10^2 = 100$ sekund. Dane te nie są jednak dokładne, a jest to jedynie przybliżenie. Jak w takim razie przewidzieć czas działania?</p>
+    <p>Jak już powiedziałem, notacja dużego O nie konwertuje się bezpośrednio na jednostki czasu, ponieważ do tego nie służy i zawiera zbyt dużo pominięć. Możemy jednak posłużyć się pewnym przybliżeniem. Współczesne komputery wykonują około \(10^8\) operacji na sekundę. Musimy też znać maksymalny rozmiar naszego wejścia, lub chociaż orientacyjnie wiedzieć w jaki przedziale będzie się znajdować. Dzięki temu będziemy mogli przewidzieć jak nasz program będzie się zachowywać w najgorszym przypadku. Jeśli np. nasze maksymalne <span class="variable">n</span> wynosi \(100000\) a nasz program ma złożoność kwadratową, to maksymalna liczba operacji to \(100000^2 = 10^{10}\), czyli program dla <span class="variable">n</span> = \(100000\) będzie się wykonywał \(10^{10}/10^{8} = 10^2 = 100\) sekund. Dane te nie są jednak dokładne, a jest to jedynie przybliżenie. Jak w takim razie przewidzieć czas działania?</p>
 
 <div id="7" class="odnosnik"></div>	
     <h2>Jak ocenić wydajność programu?</h2>
@@ -199,7 +192,7 @@
     <span class="inne">for</span> (<span class="type">int</span> <span class="variable">j</span> = 1; <span class="variable">i</span> &lt;= <span class="variable">j</span>; <span class="variable">j</span>++)
     <span>     <span class="variable">wynik</span>++;</code></pre>
 
-    <p>Jaką złożoność ma taki kod? Są to 2 zagnieżdżone pętle, zatem złożoność to $O(n^2)$. To rozwiązanie można jednak łatwo przyspieszyć - zauważ, że zwiększanie wyniku o <span class="variable">i</span> da dokładnie ten sam rezultat (jest to dokładnie to, co osiągamy drugą pętlą). Oto bardziej zoptymalizowany kod:</p>
+    <p>Jaką złożoność ma taki kod? Są to 2 zagnieżdżone pętle, zatem złożoność to \(O(n^2)\). To rozwiązanie można jednak łatwo przyspieszyć - zauważ, że zwiększanie wyniku o <span class="variable">i</span> da dokładnie ten sam rezultat (jest to dokładnie to, co osiągamy drugą pętlą). Oto bardziej zoptymalizowany kod:</p>
 
     <pre><code><span class="inne">for</span> (<span class="type">int</span> <span class="variable">i</span> = 1; <span class="variable">i</span> &lt;= <span class="variable">n</span>; <span class="variable">i</span>++)
         <span class="variable">wynik</span> += <span class="variable">i</span>;</code></pre>
@@ -208,7 +201,7 @@
 
     <pre><code><span class="variable">wynik</span> = (<span class="variable">n</span> * (<span class="variable">n</span> + 1)) / <span class="number">2</span>;</code></pre>
 
-    <p>Zwróć uwagę, że liczba operacji jest niezależna od wejścia - dla każdego <span class="variable">n</span> wykonamy 1 mnożenie, 1 dodawanie i 1 dzielenie, zatem złożoność tego programu to $O(1)$. Szybciej się już nie da!</p>
+    <p>Zwróć uwagę, że liczba operacji jest niezależna od wejścia - dla każdego <span class="variable">n</span> wykonamy 1 mnożenie, 1 dodawanie i 1 dzielenie, zatem złożoność tego programu to \(O(1)\). Szybciej się już nie da!</p>
 
     <p>Powyższy przykład pokazuje, że istnieją różne złożoności dla tego samego problemu. Możemy jednak bez przeszkód ocenić, który algorytm jest najlepszy. W miarę kontynuacji nauki coraz lepiej będzie Ci szło rozpoznawanie, czy da się coś zrobić wydajniej, czy nie.</p>
 
