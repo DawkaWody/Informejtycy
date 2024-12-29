@@ -7,20 +7,19 @@
 	--tlo-kodu: #eaeaea;
 	--granica-paneli-bocznych: #ccc;
 	--granica-stopki: #ccc;
-
 	--linki-paneli-bocznych: underline;
 	/* tego nie zmieniać */
 	--tlo-gornego-paska: #2C3857;
 	/* tego nie zmieniać */
 
 	/* do kodu */
-	--type: #5862bd;
-	--variable: #b66921;
-	--string: #265c00;
-	--number: #535309;
-	--comment: #7F848E;
-	--io: #88000b;
-	--inne: #8f4ca5;
+	--type: #c95400;
+	--variable: #d68017;
+	--string: #9B9B1B;
+	--number: #9b6dc9;
+	--comment: #6a737d;
+	--io: #ad5216;
+	--inne: #085d6e;
 }
 
 /* Zmienne dla trybu ciemnego */
@@ -32,20 +31,19 @@
 	--tlo-kodu: #252526;
 	--granica-paneli-bocznych: #3e3e42;
 	--granica-stopki: #3e3e42;
-
 	--linki-paneli-bocznych: underline;
 	/* tego nie zmieniać */
 	--tlo-gornego-paska: #2C3857;
 	/* tego nie zmieniać */
 
 	/* do kodu */
-	--type: #56B6C2;
-	--variable: #E06C75;
-	--string: #98C379;
-	--number: #D19A66;
-	--comment: #7F8C8D;
-	--io: #61AFEF;
-	--inne: #C678DD;
+	--type: #FF8F40;
+	--variable: #F7AD52;
+	--string: #9B9B1B;
+	--number: #D2A6FF;
+	--comment: #6a737d;
+	--io: #ff6a00;
+	--inne: #e1c5fd;
 }
 
 html {
@@ -229,10 +227,12 @@ footer {
 
 .string {
 	color: var(--string);
+	font-weight: bold;
 }
 
 .number {
 	color: var(--number);
+	font-weight: bold;
 }
 
 .comment {
@@ -242,7 +242,6 @@ footer {
 
 .inne {
 	color: var(--inne);
-	font-weight: bold;
 }
 
 .io {
