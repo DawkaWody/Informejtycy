@@ -93,7 +93,7 @@
     <span class="io">cout</span> &lt;&lt; <span class="variable">kwadrat</span> + <span class="variable">liczba</span> &lt;&lt; <span class="io">endl</span>;
 }
 </code></pre>
-    <p>Spróbujmy zmierzyć czas wykonywania tego kodu. Za pomocą nagłówka <span class="io">&lt;iostream&gt;</span> można uzyskać czas w milisekundach. Taki kod z dodatkiem mierzenia czasu wyglądałby tak:</p>
+    <p>Spróbujmy zmierzyć czas wykonywania tego kodu. Za pomocą nagłówka <code>&lt;iostream&gt;</code> można uzyskać czas w milisekundach. Taki kod z dodatkiem mierzenia czasu wyglądałby tak:</p>
     <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
 <span class="inne">#include</span> <span class="io">&lt;chrono&gt;</span>
 
@@ -136,7 +136,7 @@
     <span class="io">cout</span> &lt;&lt; <span class="variable">kwadrat</span> + <span class="variable">liczba</span> &lt;&lt; <span class="io">endl</span>;
 }
 </code></pre>
-    <p>Dominująca jest operacja w linii drugiej czyli pętla <span class="io">for</span>. Wykona się dokładnie <span class="variable">n</span> razy, a ile to <span class="variable">n</span> wynosi to już zależy od danych wejściowych. Idealne dla notacji dużego O, ponieważ opisuje ona zależność <strong>od danych wejściowych</strong>. Dlatego złożoność tego programu w notacji dużego O to <strong>$O(n)$</strong> gdzie <span class="variable">n</span> jest wielkością wczytywaną z wejścia.</p>
+    <p>Dominująca jest operacja w linii drugiej czyli pętla <code>for</code>. Wykona się dokładnie <span class="variable">n</span> razy, a ile to <span class="variable">n</span> wynosi to już zależy od danych wejściowych. Idealne dla notacji dużego O, ponieważ opisuje ona zależność <strong>od danych wejściowych</strong>. Dlatego złożoność tego programu w notacji dużego O to <strong>$O(n)$</strong> gdzie <span class="variable">n</span> jest wielkością wczytywaną z wejścia.</p>
     <p>Notacja dużego O nie konwertuje się na sekundy, natomiast wiemy, że jeśli podamy programowi liczbę <span class="number">150</span> to wykona on <span class="number">150</span> operacji. Ale zaraz, zaraz! Przecież w tym przykładzie widzimy, że program w każdej iteracji pętli wykonuje trzy operacje. Policzenie kwadratu, dodanie do niego zmiennej <span class="variable">liczba</span> i wypisanie wyniku na standardowe wyjście. To prawda, jednak w notacji dużego O <strong>ignoruje się stałe</strong>, ponieważ podobnie jak operacje niedominujące, nie mają one realnego wpływu na czas działania programu. Tak naprawdę $O(n)$ oznacza $O(c * n)$, gdzie <span class="variable">c</span> to jakaś stała liczba operacji, która nie ma wpływu na czas działania programu (liczba operacji w jednej iteracji pętli). Notacja dużego O ma być tak prosta, jak to tylko możliwe - zero niepotrzebnych informacji.</p>
     
 <div id="4" class="odnosnik"></div>	
@@ -189,7 +189,7 @@
     
 <div id="6" class="odnosnik"></div>	
     <h2>Jak określić maksymalny czas działania na podstawie notacji dużego O?</h2>
-    <p>Jak już powiedziałem, notacja dużego O nie konwertuje się bezpośrednio na jednostki czasu, ponieważ do tego nie służy i zawiera zbyt dużo pominięć. Możemy jednak posłużyć się pewnym przybliżeniem. Współczesne komputery wykonują około 10⁸ operacji na sekundę. Musimy też znać maksymalny rozmiar naszego wejścia, lub chociaż orientacyjnie wiedzieć w jaki przedziale będzie się znajdować. Dzięki temu będziemy mogli przewidzieć jak nasz program będzie się zachowywać w najgorszym przypadku. Jeśli np. nasze maksymalne <span class="variable">n</span> wynosi $100000$ a nasz program ma złożoność kwadratową, to maksymalna liczba operacji to $100000^2 = 10^{10}$, czyli program dla <span class="variable">n</span> = $100000$ będzie się wykonywał $10^{10}/10^{8} = 10^2 = 100$ sekund. Dane te nie są jednak dokładne, a jest to jedynie przybliżenie. Jak w takim razie przewidzieć czas działania?</p>
+    <p>Jak już powiedziałem, notacja dużego O nie konwertuje się bezpośrednio na jednostki czasu, ponieważ do tego nie służy i zawiera zbyt dużo pominięć. Możemy jednak posłużyć się pewnym przybliżeniem. Współczesne komputery wykonują około $10^8$ operacji na sekundę. Musimy też znać maksymalny rozmiar naszego wejścia, lub chociaż orientacyjnie wiedzieć w jaki przedziale będzie się znajdować. Dzięki temu będziemy mogli przewidzieć jak nasz program będzie się zachowywać w najgorszym przypadku. Jeśli np. nasze maksymalne <span class="variable">n</span> wynosi $100000$ a nasz program ma złożoność kwadratową, to maksymalna liczba operacji to $100000^2 = 10^{10}$, czyli program dla <span class="variable">n</span> = $100000$ będzie się wykonywał $10^{10}/10^{8} = 10^2 = 100$ sekund. Dane te nie są jednak dokładne, a jest to jedynie przybliżenie. Jak w takim razie przewidzieć czas działania?</p>
 
 <div id="7" class="odnosnik"></div>	
     <h2>Jak ocenić wydajność programu?</h2>
@@ -204,7 +204,7 @@
     <pre><code><span class="inne">for</span> (<span class="type">int</span> <span class="variable">i</span> = 1; <span class="variable">i</span> &lt;= <span class="variable">n</span>; <span class="variable">i</span>++)
         <span class="variable">wynik</span> += <span class="variable">i</span>;</code></pre>
 
-    <p>Teraz "ulepszyliśmy" nasz program do złożoności liniowej! Ale da się jeszcze szybciej. Wystarczy, że użyjemy wzoru na sumę ciągu od 1 do <span class="variable">n</span> (<a class="string" href="https://pl.wikipedia.org/wiki/Szereg_1_%2B_2_%2B_3_%2B_4_%2B_%E2%80%A6" target="_blank">1 + 2 + ... + n</a>). Używając tego wzoru możemy napisać taki program:</p>
+    <p>Teraz "ulepszyliśmy" nasz program do złożoności liniowej! Ale da się jeszcze szybciej. Wystarczy, że użyjemy <a class="string" href="https://pl.wikipedia.org/wiki/Szereg_1_%2B_2_%2B_3_%2B_4_%2B_%E2%80%A6" target="_blank">wzoru na sumę ciągu od 1 do <code>n</code></a> . Używając tego wzoru możemy napisać taki program:</p>
 
     <pre><code><span class="variable">wynik</span> = (<span class="variable">n</span> * (<span class="variable">n</span> + 1)) / <span class="number">2</span>;</code></pre>
 
