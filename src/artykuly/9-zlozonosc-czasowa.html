@@ -12,6 +12,19 @@
 		href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap"
 		rel="stylesheet">
 	<link rel="stylesheet" href="../style.css">
+
+	<style>
+
+        table {
+            width: 100%;
+            text-align: left;
+        }
+
+        td, th {
+            padding: 10px;
+        }
+    </style>
+
 	<script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
@@ -69,20 +82,19 @@
     <p>Podczas nauki <code>C++</code> nie sposób nie wspomnieć o jego prędkości. Jest on jednym z najszybszych języków programowania jednocześnie dostarczając wiele użytecznych funkcjonalności. Jednak jakby się postarać, to w każdym języku programowania można napisać coś co będzie baaardzo wolne. No właśnie - ale jak bardzo wolne?</p>
     
 <div id="2" class="odnosnik"></div>	
-	<h2>Jak zmierzyć czas wykonywania programu?</h2>
-    <p>Do mierzenia szybkości programu wykorzystywana jest notacja dużego $O$. Zanim powiem na czym polega, przeanalizujmy dlaczego zwykłe mierzenie czasu wykonywania programu nie jest zbyt miarodajne. Przypuśćmy, że bierzemy pod lupę taki fragment kodu:</p>
-    <pre><code><span class="type">int</span> <span class="variable">liczba</span> = <span class="number">123</span>;
-<span class="type">int</span> <span class="variable">n</span>; 
-<span class="io">cin</span> >> <span class="variable">n</span>;
-
-<span class="inne">for</span> (<span class="type">int</span> <span class="variable">i</span> = <span class="number">1</span>; <span class="variable">i</span> &lt;= <span class="variable">n</span>; <span class="variable">i</span>++)
+    <h2>Jak zmierzyć czas wykonywania programu?</h2>
+    <p>Do mierzenia szybkości programu wykorzystywana jest notacja dużego O. Zanim powiem na czym polega, przeanalizujmy dlaczego zwykłe mierzenie czasu wykonywania programu nie jest zbyt miarodajne. Przypuśćmy, że bierzemy pod lupę taki fragment kodu:</p>
+    <pre><code><span class="type">int</span> <span class="type">liczba</span> = <span class="number">123</span>;
+<span class="type">int</span> <span class="variable">n</span>;
+<span class="io">cin</span> &gt;&gt; <span class="variable">n</span>;
+<span class="io">for</span> (<span class="type">int</span> <span class="variable">i</span> = <span class="number">1</span>; <span class="variable">i</span> &lt;= <span class="variable">n</span>; <span class="variable">i</span>++) 
 {
     <span class="type">int</span> <span class="variable">kwadrat</span> = <span class="variable">i</span> * <span class="variable">i</span>;
-    <span class="io">cout</span> << <span class="variable">kwadrat</span> + <span class="variable">liczba</span> << <span class="io">endl</span>;
+    <span class="io">cout</span> &lt;&lt; <span class="variable">kwadrat</span> + <span class="variable">liczba</span> &lt;&lt; <span class="io">endl</span>;
 }
 </code></pre>
-<p>Spróbujmy zmierzyć czas wykonywania tego kodu. Za pomocą nagłówka <code>&lt;chrono&gt;</code> można uzyskać czas w milisekundach. Taki kod z dodatkiem mierzenia czasu wyglądałby tak:</p>
-<pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+    <p>Spróbujmy zmierzyć czas wykonywania tego kodu. Za pomocą nagłówka <span class="io">&lt;iostream&gt;</span> można uzyskać czas w milisekundach. Taki kod z dodatkiem mierzenia czasu wyglądałby tak:</p>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
 <span class="inne">#include</span> <span class="io">&lt;chrono&gt;</span>
 
 <span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
@@ -91,70 +103,130 @@
 <span class="type">int</span> <span class="variable">main</span>()
 {
     <span class="type">unsigned long long</span> <span class="variable">start</span> = <span class="io">duration_cast</span>&lt;<span class="io">milliseconds</span>&gt;(
-        <span class="io">system_clock</span>::<span class="io">now</span>().<span class="io">time_since_epoch</span>()
+        <span class="io">system_clock::now</span>().<span class="io">time_since_epoch</span>()
     ).<span class="io">count</span>();
     <span class="type">int</span> <span class="variable">liczba</span> = <span class="number">123</span>;
     <span class="type">int</span> <span class="variable">n</span>;
-    <span class="io">cin</span> >> <span class="variable">n</span>;
-
-    <span class="inne">for</span> (<span class="type">int</span> <span class="variable">i</span> = <span class="number">1</span>; <span class="variable">i</span> &lt;= <span class="variable">n</span>; <span class="variable">i</span>++)
+    <span class="io">cin</span> &gt;&gt; <span class="variable">n</span>;
+    <span class="io">for</span> (<span class="type">int</span> <span class="variable">i</span> = <span class="number">1</span>; <span class="variable">i</span> &lt;= <span class="variable">n</span>; <span class="variable">i</span>++)
     {
         <span class="type">int</span> <span class="variable">kwadrat</span> = <span class="variable">i</span> * <span class="variable">i</span>;
-        <span class="io">cout</span> << <span class="variable">kwadrat</span> + <span class="variable">liczba</span> << <span class="io">endl</span>;
+        <span class="io">cout</span> &lt;&lt; <span class="variable">kwadrat</span> + <span class="variable">liczba</span> &lt;&lt; <span class="io">endl</span>;
     }
     <span class="type">unsigned long long</span> <span class="variable">koniec</span> = <span class="io">duration_cast</span>&lt;<span class="io">milliseconds</span>&gt;(
-        <span class="io">system_clock</span>::<span class="io">now</span>().<span class="io">time_since_epoch</span>()
+        <span class="io">system_clock::now</span>().<span class="io">time_since_epoch</span>()
     ).<span class="io">count</span>();
 
     <span class="type">unsigned long long</span> <span class="variable">czas</span> = <span class="variable">koniec</span> - <span class="variable">start</span>;
-    <span class="io">cout</span> << <span class="string">"Czas wykonywania programu: "</span> << <span class="variable">czas</span> << <span class="string">"ms"</span> << <span class="io">endl</span>;
+    <span class="io">cout</span> &lt;&lt; <span class="string">"Czas wykonywania programu: "</span> &lt;&lt; <span class="variable">czas</span> &lt;&lt; <span class="string">"ms"</span> &lt;&lt; <span class="io">endl</span>;
 }
 </code></pre>
-<p>Nie przejmuj się, jeśli czegoś tu nie rozumiesz, ale w skrócie uzyskujemy czas przed i po wykonaniu tego fragmentu kodu a następnie obliczamy różnicę uzyskując czas wykonania programu w milisekundach. Jednak takie podejście nie jest idealne. Czas wykonania programu jest zależny od wielu czynników, takich jak: wydajność komputera, obciążenie systemu, wielkość danych wejściowych, itp. Zatem mierzenie czasu nie jest wystarczające, aby określić, jak program będzie się zachowywał w przypadku dużych danych wejściowych.</p>
-
+    <p>Nie przejmuj się, jeśli czegoś tu nie rozumiesz, ale w skrócie uzyskujemy czas przed i po wykonaniu tego fragmentu kodu a następnie obliczamy różnicę. Jeśli teraz uruchomisz ten program i podasz wartość <span class="number">n</span> to powinieneś zobaczyć na ekranie trochę liczb a na dole czas wykonywania tego programu. U mnie było to <span class="number">13</span> milisekund dla <span class="number">n</span> = <span class="number">150</span>.</p>
+    <p>Tu pojawia się problem mierzenia szybkości w ten sposób: jeśli podasz programowi tę samą liczbę, prawdopodobnie zobaczysz inną wartość! Dzieje się tak, ponieważ czas wykonywania programu zależy od komputera, kompilatora i wielu innych rzeczy. Spróbuj uruchomić ten program kilka razy. Twoje wyniki (dla tych samych wartości <span class="variable">n</span>) powinny się od siebie odrobinę różnić. Czasami program wykonuje się dłużej, a czasami krócej. Dlatego mierzenie czasu wykonywania programu w ten sposób nie ma sensu - nawet na tym samym sprzęcie wynik nie jest stały. Jak w takim razie opisać jak szybki jest program?</p>
+    
 <div id="3" class="odnosnik"></div>	
-<h2>Co to jest notacja dużego O?</h2>
-<p>Notacja dużego $O$ jest sposobem opisywania złożoności algorytmów. Pomaga ona określić, jak szybko rośnie czas wykonania programu w zależności od wielkości danych wejściowych. Zamiast mierzyć czas w jednostkach takich jak sekundy czy milisekundy, notacja $O$ pozwala nam określić, jak czas wykonania zmienia się w zależności od rozmiaru problemu. W praktyce jest to sposób oceny algorytmów w kontekście ich efektywności.</p>
-
-<h3>Przykłady notacji dużego O</h3>
-<ul>
-    <li>$O(1)$ - Złożoność stała: czas wykonania nie zależy od rozmiaru danych wejściowych.</li>
-    <li>$O(n)$ - Złożoność liniowa: czas wykonania rośnie liniowo z rozmiarem danych wejściowych.</li>
-    <li>$O(n^2)$ - Złożoność kwadratowa: czas wykonania rośnie proporcjonalnie do kwadratu rozmiaru danych wejściowych.</li>
-    <li>$O(\log n)$ - Złożoność logarytmiczna: czas wykonania rośnie wolniej niż w przypadku złożoności liniowej.</li>
-    <li>$O(n \log n)$ - Złożoność $n \log n$: często spotykana w algorytmach sortowania, jak sortowanie szybkie (QuickSort).</li>
-</ul>
-
-<h2>Analiza przykładu</h2>
-<p>Przykładowy fragment kodu:</p>
-<pre><code><span class="type">int</span> <span class="variable">n</span>;
-<span class="io">cin</span> >> <span class="variable">n</span>;
-
-<span class="inne">for</span> (<span class="type">int</span> <span class="variable">i</span> = <span class="number">0</span>; <span class="variable">i</span> &lt; <span class="variable">n</span>; <span class="variable">i</span>++)
-    <span class="inne">for</span> (<span class="type">int</span> <span class="variable">j</span> = <span class="number">0</span>; <span class="variable">j</span> &lt; <span class="variable">n</span>; <span class="variable">j</span>++)
-        <span class="io">cout</span> << <span class="string">"Hello"</span> << <span class="io">endl</span>;
+    <h2>Notacja dużego O</h2>
+    <p>Z pomocą przychodzi notacja dużego O, która nie opisuje <strong>czasu</strong> wykonywania programu, a <strong>liczbę operacji</strong>, którą wykonuje w stosunku do danych wejściowych. Operacja to np. stworzenie zmiennej, dodanie dwóch liczb lub wypisanie czegoś na wyjście. Jednak gdybyśmy liczyli wszystkie operacje wykonywane przez nasz program wyszłoby ich bardzo wiele, dlatego w notacji dużego O uwzględnia się <em>tylko operacje dominujące</em>, czyli takie, które wykonają się najwięcej razy i mają realny wpływ na prędkość działania programu. Mały test: która operacja w tym fragmencie kodu jest dominująca?</p>
+    <pre><code><span class="type">int</span> <span class="type">liczba</span> = <span class="number">123</span>;
+<span class="type">int</span> <span class="variable">n</span>; 
+<span class="io">cin</span> &gt;&gt; <span class="variable">n</span>;
+<span class="io">for</span> (<span class="type">int</span> <span class="variable">i</span> = <span class="number">1</span>; <span class="variable">i</span> &lt;= <span class="variable">n</span>; <span class="variable">i</span>++)
+{
+    <span class="type">int</span> <span class="variable">kwadrat</span> = <span class="variable">i</span> * <span class="variable">i</span>;
+    <span class="io">cout</span> &lt;&lt; <span class="variable">kwadrat</span> + <span class="variable">liczba</span> &lt;&lt; <span class="io">endl</span>;
+}
 </code></pre>
-<p>W tym przypadku mamy dwie zagnieżdżone pętle, z których każda iteruje przez <code>n</code> elementów. Zatem złożoność tego algorytmu to $O(n^2)$, ponieważ dla każdego elementu z pierwszej pętli wykonujemy całą drugą pętlę.</p>
-
+    <p>Dominująca jest operacja w linii drugiej czyli pętla <span class="io">for</span>. Wykona się dokładnie <span class="variable">n</span> razy, a ile to <span class="variable">n</span> wynosi to już zależy od danych wejściowych. Idealne dla notacji dużego O, ponieważ opisuje ona zależność <strong>od danych wejściowych</strong>. Dlatego złożoność tego programu w notacji dużego O to <strong>$O(n)$</strong> gdzie <span class="variable">n</span> jest wielkością wczytywaną z wejścia.</p>
+    <p>Notacja dużego O nie konwertuje się na sekundy, natomiast wiemy, że jeśli podamy programowi liczbę <span class="number">150</span> to wykona on <span class="number">150</span> operacji. Ale zaraz, zaraz! Przecież w tym przykładzie widzimy, że program w każdej iteracji pętli wykonuje trzy operacje. Policzenie kwadratu, dodanie do niego zmiennej <span class="variable">liczba</span> i wypisanie wyniku na standardowe wyjście. To prawda, jednak w notacji dużego O <strong>ignoruje się stałe</strong>, ponieważ podobnie jak operacje niedominujące, nie mają one realnego wpływu na czas działania programu. Tak naprawdę $O(n)$ oznacza $O(c * n)$, gdzie <span class="variable">c</span> to jakaś stała liczba operacji, która nie ma wpływu na czas działania programu (liczba operacji w jednej iteracji pętli). Notacja dużego O ma być tak prosta, jak to tylko możliwe - zero niepotrzebnych informacji.</p>
+    
 <div id="4" class="odnosnik"></div>	
-<h2>Wzrost złożoności</h2>
-<p>Różne algorytmy mogą mieć różne złożoności, a analiza tej złożoności jest kluczowa przy wyborze odpowiedniego algorytmu. Złożoność $O(1)$ oznacza, że algorytm będzie działał w stałym czasie, niezależnie od rozmiaru danych wejściowych, podczas gdy algorytm o złożoności $O(n^2)$ będzie działał znacznie dłużej, gdy rozmiar danych wejściowych rośnie.</p>
-
-<p>Wybór odpowiedniego algorytmu jest szczególnie ważny w kontekście pracy z dużymi zbiorami danych. Jeśli algorytm ma złożoność kwadratową, może okazać się zbyt wolny dla dużych danych. Z tego powodu warto poszukać algorytmów o lepszej złożoności, takich jak algorytmy o złożoności liniowej lub logarytmicznej.</p>
-
+    <h2>Typowe złożoności programów</h2>
+    <p>Złożoność to inaczej ilość wykonywanych przez program operacji, czyli idealnie to co opisuje notacja dużego O. Poznałeś już jedną złożoność programu - $O(n)$ nazywaną również <em>czasem liniowym</em>. Jakie inne złożoności jeszcze istnieją? Wyobraź sobie, że chcesz podzielić kwadratową kartkę na <span class="number">16</span> równych kwadratowych części. Możesz rysować kwadraty po kolei. To jest czas liniowy. Można to jednak zrobić szybciej. Zauważ, że jeśli będziesz zginał kartkę na pół, to za każdym razem otrzymasz <span class="number">2</span> razy więcej kratek niż poprzednio. Zatem potrzebna ilość złożeń kartki to $\log_2 {16}$ czyli <span class="number">4</span>. Logarytm dwójkowy z $16$ oznacza "do jakiej potęgi podnieść <span class="number">2</span> aby otrzymać <span class="number">16</span>?". Złożoność takiego składania kartki to $O(\log n)$. Przeanalizujmy teraz te najpowszechniejsze złożoności programów, z którymi możesz się spotkać. Złożoności są przedstawione od najszybszej do najwolniejszej</p>
+    
+    <table border="1">
+        <tr>
+            <th>Złożoność</th>
+            <th>Przykład</th>
+        </tr>
+        <tr>
+            <td>$O(1)$ - złożoność stała</td>
+            <td>Operacja niezależna od wejścia np. policzenie czegoś ze wzoru</td>
+        </tr>
+        <tr>
+            <td>$O(\log n)$ - złożoność logarytmiczna</td>
+            <td>Składanie kartki</td>
+        </tr>
+        <tr>
+            <td>$O(n)$ - złożoność liniowa</td>
+            <td>Pojedyncza pętla</td>
+        </tr>
+        <tr>
+            <td>$O(n \log n)$</td>
+            <td>Składanie <span class="variable">n</span> kartek</td>
+        </tr>
+        <tr>
+            <td>$O(n^2)$ - złożoność kwadratowa</td>
+            <td>Dwie zagnieżdżone pętle (jedna pętla w drugiej)</td>
+        </tr>
+        <tr>
+            <td>$O(n^3)$ - złożoność sześcienna</td>
+            <td>Trzy zagnieżdżone pętle</td>
+        </tr>
+    </table>
+    
 <div id="5" class="odnosnik"></div>	
-<h2>Podsumowanie</h2>
-<p>Notacja dużego $O$ jest narzędziem, które pozwala na ocenę efektywności algorytmów w kontekście ich złożoności obliczeniowej. Zamiast mierzyć czas wykonania w jednostkach takich jak milisekundy, notacja $O$ pozwala na analizę, jak czas wykonania algorytmu rośnie wraz z rozmiarem danych wejściowych. Dzięki temu programiści mogą wybierać najbardziej efektywne algorytmy do rozwiązywania różnych problemów.</p>
-</div>
+    <h2>Notacja dużego O określa najgorszy przypadek</h2>
+    <p>Spójrz teraz na ten fragment kodu:</p>
+    <pre><code><span class="io">vector</span>&lt;<span class="type">int</span>&gt; <span class="variable">w</span> = { <span class="number">2</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">5</span> };
+<span class="io">cout</span> &lt;&lt; <span class="string">"Podaj szukana wartosc: "</span>;
+<span class="type">int</span> <span class="variable">szukana</span>;
+<span class="io">cin</span> &gt;&gt; <span class="variable">szukana</span>;
+<span class="io">for</span> (<span class="type">int</span> <span class="variable">i</span> : <span class="variable">w</span>)
+    <span class="io">if</span> (<span class="variable">i</span> == <span class="variable">szukana</span>)
+        <span class="io">cout</span> &lt;&lt; <span class="variable">i</span> &lt;&lt; <span class="string">" znalezione!"</span> &lt;&lt; <span class="io">endl</span>;
+</code></pre>
+    <p>Jak opisałbyś jego złożoność? Cóż, spójrzmy, co by się stało, gdybyśmy na wejściu podali wartość <span class="number">2</span>. Program wykonałby jedną iterację pętli i natychmiast znalazłby szukaną wartość. Możemy wtedy powiedzieć: "Ponieważ pętla wykonała się tylko <span class="number">1</span> raz, to złożoność tego programu to $O(1)$. Wow! Jest bardzo szybki!", ale czy to prawda? Odpowiedź brzmi: nie, program nie zmienia swojej złożoności tylko dlatego, że dostał wygodniejsze dane. Notacja dużego O opisuje <strong>najgorszy przypadek</strong>. Gdybyśmy do tego programu podali na przykład <span class="number">5</span>, to musiałby on przejść po każdym elemencie wektora i to jest najgorszy możliwy przypadek. Czas $O(n)$ to tak na prawdę zapewnienie, że program <strong>na pewno</strong> nie wykona więcej, niż <span class="variable">n</span> operacji.</p>
+    
+<div id="6" class="odnosnik"></div>	
+    <h2>Jak określić maksymalny czas działania na podstawie notacji dużego O?</h2>
+    <p>Jak już powiedziałem, notacja dużego O nie konwertuje się bezpośrednio na jednostki czasu, ponieważ do tego nie służy i zawiera zbyt dużo pominięć. Możemy jednak posłużyć się pewnym przybliżeniem. Współczesne komputery wykonują około 10⁸ operacji na sekundę. Musimy też znać maksymalny rozmiar naszego wejścia, lub chociaż orientacyjnie wiedzieć w jaki przedziale będzie się znajdować. Dzięki temu będziemy mogli przewidzieć jak nasz program będzie się zachowywać w najgorszym przypadku. Jeśli np. nasze maksymalne <span class="variable">n</span> wynosi $100000$ a nasz program ma złożoność kwadratową, to maksymalna liczba operacji to $100000^2 = 10^{10}$, czyli program dla <span class="variable">n</span> = $100000$ będzie się wykonywał $10^{10}/10^{8} = 10^2 = 100$ sekund. Dane te nie są jednak dokładne, a jest to jedynie przybliżenie. Jak w takim razie przewidzieć czas działania?</p>
 
+<div id="7" class="odnosnik"></div>	
+    <h2>Jak ocenić wydajność programu?</h2>
+    <p>Zastanówmy się teraz nad programem, który dla danego <span class="variable">n</span> policzy sumę liczb od 1 do <span class="variable">n</span>. Istnieje kilka różnych podejść prowadzących do tego celu. Oto pierwsze z nich:</p>
+
+    <pre><code><span class="inne">for</span> (<span class="type">int</span> <span class="variable">i</span> = 1; <span class="variable">i</span> &lt;= <span class="variable">n</span>; <span class="variable">i</span>++)
+    <span class="inne">for</span> (<span class="type">int</span> <span class="variable">j</span> = 1; <span class="variable">i</span> &lt;= <span class="variable">j</span>; <span class="variable">j</span>++)
+    <span>     <span class="variable">wynik</span>++;</code></pre>
+
+    <p>Jaką złożoność ma taki kod? Są to 2 zagnieżdżone pętle, zatem złożoność to $O(n^2)$. To rozwiązanie można jednak łatwo przyspieszyć - zauważ, że zwiększanie wyniku o <span class="variable">i</span> da dokładnie ten sam rezultat (jest to dokładnie to, co osiągamy drugą pętlą). Oto bardziej zoptymalizowany kod:</p>
+
+    <pre><code><span class="inne">for</span> (<span class="type">int</span> <span class="variable">i</span> = 1; <span class="variable">i</span> &lt;= <span class="variable">n</span>; <span class="variable">i</span>++)
+        <span class="variable">wynik</span> += <span class="variable">i</span>;</code></pre>
+
+    <p>Teraz "ulepszyliśmy" nasz program do złożoności liniowej! Ale da się jeszcze szybciej. Wystarczy, że użyjemy wzoru na sumę ciągu od 1 do <span class="variable">n</span> (<a class="string" href="https://pl.wikipedia.org/wiki/Szereg_1_%2B_2_%2B_3_%2B_4_%2B_%E2%80%A6" target="_blank">1 + 2 + ... + n</a>). Używając tego wzoru możemy napisać taki program:</p>
+
+    <pre><code><span class="variable">wynik</span> = (<span class="variable">n</span> * (<span class="variable">n</span> + 1)) / <span class="number">2</span>;</code></pre>
+
+    <p>Zwróć uwagę, że liczba operacji jest niezależna od wejścia - dla każdego <span class="variable">n</span> wykonamy 1 mnożenie, 1 dodawanie i 1 dzielenie, zatem złożoność tego programu to $O(1)$. Szybciej się już nie da!</p>
+
+    <p>Powyższy przykład pokazuje, że istnieją różne złożoności dla tego samego problemu. Możemy jednak bez przeszkód ocenić, który algorytm jest najlepszy. W miarę kontynuacji nauki coraz lepiej będzie Ci szło rozpoznawanie, czy da się coś zrobić wydajniej, czy nie.</p>
+
+<div id="8" class="odnosnik"></div>	
+    <h2>Podsumowanie</h2>
+    <p>Dzięki notacji dużego O umiesz już oceniać szybkość programu. Jest to lepsza alternatywa dla czasu w milisekundach powszechnie używana w opisach algorytmów. Na twojej przygodzie programistycznej dużo razy spotkasz się z tym sposobem zapisu.</p>
+		</div>
 		<div id="sidebar-right">
 			<h2>Spis treści</h2>
 			<ul>
 				<li><a href="#1">1. Wstęp</a></li>
 				<li><a href="#2">2. Zmierzenie czasu</a></li>
 				<li><a href="#3">3. Notacja dużego O</a></li>
-				<li><a href="#4">4. Wzrost złożoności</a></li>
-				<li><a href="#5">5. Podsumowanie</a></li>
+				<li><a href="#4">4. Typowe złożoności</a></li>
+				<li><a href="#5">5. Najgorszy przypadek</a></li>
+				<li><a href="#6">6. Jak określić czas?</a></li>
+				<li><a href="#7">7. Jak ocenić wydajność?</a></li>
+				<li><a href="#8">8. Podsumowanie</a></li>
 			</ul>
 		</div>
 	</div>
