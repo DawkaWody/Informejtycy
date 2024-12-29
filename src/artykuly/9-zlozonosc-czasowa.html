@@ -77,7 +77,7 @@
 <div id="2" class="odnosnik"></div>	
     <h2>Jak zmierzyć czas wykonywania programu?</h2>
     <p>Do mierzenia szybkości programu wykorzystywana jest notacja dużego O. Zanim powiem na czym polega, przeanalizujmy dlaczego zwykłe mierzenie czasu wykonywania programu nie jest zbyt miarodajne. Przypuśćmy, że bierzemy pod lupę taki fragment kodu:</p>
-    <pre><code><span class="type">int</span> <span class="type">liczba</span> = <span class="number">123</span>;
+    <pre><code><span class="type">int</span> <span class="variable">liczba</span> = <span class="number">123</span>;
 <span class="type">int</span> <span class="variable">n</span>;
 <span class="io">cin</span> &gt;&gt; <span class="variable">n</span>;
 <span class="io">for</span> (<span class="type">int</span> <span class="variable">i</span> = <span class="number">1</span>; <span class="variable">i</span> &lt;= <span class="variable">n</span>; <span class="variable">i</span>++) 
@@ -120,7 +120,7 @@
 <div id="3" class="odnosnik"></div>	
     <h2>Notacja dużego O</h2>
     <p>Z pomocą przychodzi notacja dużego O, która nie opisuje <strong>czasu</strong> wykonywania programu, a <strong>liczbę operacji</strong>, którą wykonuje w stosunku do danych wejściowych. Operacja to np. stworzenie zmiennej, dodanie dwóch liczb lub wypisanie czegoś na wyjście. Jednak gdybyśmy liczyli wszystkie operacje wykonywane przez nasz program wyszłoby ich bardzo wiele, dlatego w notacji dużego O uwzględnia się <em>tylko operacje dominujące</em>, czyli takie, które wykonają się najwięcej razy i mają realny wpływ na prędkość działania programu. Mały test: która operacja w tym fragmencie kodu jest dominująca?</p>
-    <pre><code><span class="type">int</span> <span class="type">liczba</span> = <span class="number">123</span>;
+    <pre><code><span class="type">int</span> <span class="variable">liczba</span> = <span class="number">123</span>;
 <span class="type">int</span> <span class="variable">n</span>; 
 <span class="io">cin</span> &gt;&gt; <span class="variable">n</span>;
 <span class="io">for</span> (<span class="type">int</span> <span class="variable">i</span> = <span class="number">1</span>; <span class="variable">i</span> &lt;= <span class="variable">n</span>; <span class="variable">i</span>++)
@@ -197,7 +197,7 @@
     <pre><code><span class="inne">for</span> (<span class="type">int</span> <span class="variable">i</span> = 1; <span class="variable">i</span> &lt;= <span class="variable">n</span>; <span class="variable">i</span>++)
         <span class="variable">wynik</span> += <span class="variable">i</span>;</code></pre>
 
-    <p>Teraz "ulepszyliśmy" nasz program do złożoności liniowej! Ale da się jeszcze szybciej. Wystarczy, że użyjemy <a class="string" href="https://pl.wikipedia.org/wiki/Szereg_1_%2B_2_%2B_3_%2B_4_%2B_%E2%80%A6" target="_blank">wzoru na sumę ciągu od 1 do <code>n</code></a> . Używając tego wzoru możemy napisać taki program:</p>
+    <p>Teraz "ulepszyliśmy" nasz program do złożoności liniowej! Ale da się jeszcze szybciej. Wystarczy, że użyjemy <a class="string" href="https://pl.wikipedia.org/wiki/Szereg_1_%2B_2_%2B_3_%2B_4_%2B_%E2%80%A6" target="_blank">wzoru na sumę ciągu od 1 do n</a> . Używając tego wzoru możemy napisać taki program:</p>
 
     <pre><code><span class="variable">wynik</span> = (<span class="variable">n</span> * (<span class="variable">n</span> + 1)) / <span class="number">2</span>;</code></pre>
 
