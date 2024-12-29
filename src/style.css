@@ -155,7 +155,7 @@ h3 {
 
 code {
 	background-color: var(--tlo-kodu);
-	padding: 4px 7px;
+	padding: 2px 6px;
 	font-size: 1em;
 	font-family: Consolas, monospace;
 	border-radius: 5px;

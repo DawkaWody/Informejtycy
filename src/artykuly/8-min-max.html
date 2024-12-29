@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Podstawowa struktura programu w C++</title>
+	<link rel="icon" type="image/x-icon" href="../img/kolko-logo.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="../style.css">
+
+    <style>
+
+        table {
+            width: 100%;
+            text-align: left;
+        }
+
+        td, th {
+            padding: 10px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+	<header class="no-select">
+		<div id="menu">
+			<img id="menu-img" src="../img/menu.png">
+		</div>
+		<div id="baner">
+			<a href="../menu/glowna.html">
+				<img id="baner-img" src="../img/baner-ciemne.png">
+			</a>
+		</div>
+		<img src="../img/theme.png" id="theme-toggle">
+	</header>
+
+	<div id="srodek">
+		<div id="sidebar-left">
+			<h2>Lista tematów</h2>
+			<ul>
+				<li><a href="1-struktura-programu.html">1. Struktura programu w C++</a></li>
+				<li><a href="2-input-output.html">2. Input-output, zmienne</a></li>
+				<li><a href="3-if.html">3. If</a></li>
+				<li><a href="4-for-while.html">4. For, while</a></li>
+				<li><a href="5-tablice-vector.html">5. Tablice, vector</a></li>
+				<li><a href="6-ascii.html">6. ASCII</a></li>
+				<li><a href="7-string.html">7. String</a></li>
+				<li><a href="8-min-max.html" id="aktualny-temat">8. Min, max, swap i inne</a></li>
+				<li><a href="9-zlozonosc-czasowa.html">9. Złożoność czasowa</a></li>
+				<li><a href="10-wlasne-funkcje.html">10. Własne funkcje</a></li>
+				<li><a href="11-pair-struct.html">11. Pair, struct</a></li>
+				<li><a href="12-custom-sort.html">12. Custom sort</a></li>
+				<li><a href="13-queue-deque.html">13. Queue, deque</a></li>
+				<li><a href="14-priority-queue.html">14. Priority queue</a></li>
+				<li><a href="15-set.html">15. Set, multiset</a></li>
+				<li><a href="16-map.html">16. Unordered map, map</a></li>
+				<li><a href="17-stack.html">17. Stack</a></li>
+				<li><a href="18-rekurencja.html">18. Rekurencja</a></li>
+			</ul>
+		</div>
+
+		<div id="artykul">
+    <h1>Podstawowe funkcje z biblioteki <code>algorithm</code> w C++</h1>
+    <p>
+        W tym artykule zaprezentujemy podstawowe funkcje z biblioteki <code>algorithm</code> w języku C++, takie jak 
+        <code>min</code>, <code>max</code>, <code>swap</code>, <code>reverse</code>, <code>empty</code> oraz <code>pow</code>. 
+        Są to narzędzia, które pozwalają na łatwe i efektywne rozwiązywanie różnych problemów związanych z manipulowaniem 
+        danymi czy obliczeniami matematycznymi. Dzięki prostym przykładom omówimy, jak wykorzystać te funkcje w praktyce, by 
+        usprawnić pisanie kodu i poprawić jego wydajność. Poznamy również ich zastosowanie w bardziej złożonych algorytmach, 
+        takich jak sortowanie bąbelkowe czy losowanie elementów z kolekcji.
+    </p>
+
+    <h2><code>min</code></h2>
+    <p>
+        Funkcja <code>min</code> znajduje mniejszą z dwóch wartości. Jeśli wartości są równe, zwraca pierwszą z nich. Jest częścią 
+        nagłówka <code>algorithm</code>.
+    </p>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;algorithm&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="type">int</span> <span class="variable">a</span>, <span class="variable">b</span>;
+    <span class="io">cout</span> &lt;&lt; <span class="string">"Podaj liczbę kalorii w pierwszej potrawie: "</span>;
+    <span class="io">cin</span> &gt;&gt; <span class="variable">a</span>;
+    <span class="io">cout</span> &lt;&lt; <span class="string">"Podaj liczbę kalorii w drugiej potrawie: "</span>;
+    <span class="io">cin</span> &gt;&gt; <span class="variable">b</span>;
+    <span class="type">int</span> <span class="variable">minimum</span> = <span class="io">min</span>(<span class="variable">a</span>, <span class="variable">b</span>);
+    <span class="io">cout</span> &lt;&lt; <span class="string">"Mniejsza liczba kalorii to: "</span> &lt;&lt; <span class="variable">minimum</span> &lt;&lt; <span class="string">endl</span>;
+    <span class="inne">return</span> <span class="number">0</span>;
+}</code></pre>
+    <p>
+        Użytkownik podaje liczbę kalorii zawartą w potrawie <code>a</code>, a potem w potrawie <code>b</code>. Program deklaruje 
+        zmienną <code>minimum</code> przechowującą najmniejszą liczbę kalorii w potrawie, a potem ją wypisuje.
+    </p>
+
+    <h2><code>max</code></h2>
+    <p>
+        Funkcja <code>max</code> znajduje większą z dwóch wartości. Również jest częścią <code>algorithm</code>.
+    </p>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;vector&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;algorithm&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="type">int</span> <span class="variable">n</span>;
+    <span class="io">cin</span> &gt;&gt; <span class="variable">n</span>;
+    <span class="io">vector</span>&lt;<span class="type">int</span>&gt; <span class="variable">tab</span>(<span class="variable">n</span>);
+
+    <span class="inne">for</span> (<span class="type">int</span> <span class="variable">i</span> = <span class="number">0</span>; <span class="variable">i</span> &lt; <span class="variable">n</span>; <span class="variable">i</span>++) 
+        <span class="io">cin</span> &gt;&gt; <span class="variable">tab</span>[<span class="variable">i</span>];
+    
+    <span class="type">int</span> <span class="variable">maks</span> = <span class="number">0</span>;
+    <span class="inne">for</span> (<span class="type">int</span> <span class="variable">i</span> = <span class="number">0</span>; <span class="variable">i</span> &lt; <span class="variable">n</span>; <span class="variable">i</span>++) 
+        <span class="variable">maks</span> = <span class="io">max</span>(<span class="variable">maks</span>, <span class="variable">tab</span>[<span class="variable">i</span>]);
+
+    <span class="io">cout</span> &lt;&lt; <span class="variable">maks</span> &lt;&lt; <span class="string">endl</span>;
+    <span class="inne">return</span> <span class="number">0</span>;
+}</code></pre>
+    <p>
+        Program wczytuje liczbę elementów w tablicy, oraz jej elementy. Inicjalizuje pętlę, w której przechodzi przez tablicę i 
+        korzystając z funkcji <code>max</code>, przypisuje zmiennej <code>maks</code> największą wartość, a na koniec ją wypisuje.
+    </p>
+
+    <h2><code>swap</code></h2>
+    <p>
+        Funkcja <code>swap</code> zamienia miejscami wartości dwóch zmiennych. 
+    </p>
+    <p>
+        Funkcja <code>swap</code> ma swoje zastosowanie w sortowaniu bąbelkowym (ang. bubble sort). Polega ono na wielokrotnym 
+        przechodzeniu przez listę, porównywaniu sąsiadujących elementów i zamienianiu ich miejscami, jeśli występują w 
+        niewłaściwej kolejności.
+    </p>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;vector&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="inne">void</span> <span class="variable">bubbleSort</span>(<span class="io">vector</span>&lt;<span class="type">int</span>&gt; &<span class="variable">tab</span>) {
+    <span class="type">int</span> <span class="variable">n</span> = <span class="variable">tab</span>.size();
+    <span class="inne">for</span> (<span class="type">int</span> <span class="variable">i</span> = <span class="number">0</span>; <span class="variable">i</span> &lt; <span class="variable">n</span> - <span class="number">1</span>; <span class="variable">i</span>++) {
+        <span class="inne">for</span> (<span class="type">int</span> <span class="variable">j</span> = <span class="number">0</span>; <span class="variable">j</span> &lt; <span class="variable">n</span> - <span class="variable">i</span> - <span class="number">1</span>; <span class="variable">j</span>++) {
+            <span class="inne">if</span> (<span class="variable">tab</span>[<span class="variable">j</span>] &gt; <span class="variable">tab</span>[<span class="variable">j</span> + <span class="number">1</span>]) 
+                <span class="io">swap</span>(<span class="variable">tab</span>[<span class="variable">j</span>], <span class="variable">tab</span>[<span class="variable">j</span> + <span class="number">1</span>]);
+        }
+    }
+}
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="io">vector</span>&lt;<span class="type">int</span>&gt; <span class="variable">tab</span> = {<span class="number">64</span>, <span class="number">34</span>, <span class="number">25</span>, <span class="number">12</span>, <span class="number">22</span>, <span class="number">11</span>, <span class="number">90</span>};
+    <span class="io">cout</span> &lt;&lt; <span class="string">"Przed sortowaniem:"</span> &lt;&lt; <span class="string">endl</span>;
+    <span class="inne">for</span> (<span class="type">int</span> <span class="variable">x</span> : <span class="variable">tab</span>) <span class="io">cout</span> &lt;&lt; <span class="variable">x</span> &lt;&lt; <span class="string">" "</span>;
+    <span class="io">cout</span> &lt;&lt; <span class="string">endl</span>;
+
+    <span class="variable">bubbleSort</span>(<span class="variable">tab</span>);
+
+    <span class="io">cout</span> &lt;&lt; <span class="string">"Po sortowaniu:"</span> &lt;&lt; <span class="string">endl</span>;
+    <span class="inne">for</span> (<span class="type">int</span> <span class="variable">x</span> : <span class="variable">tab</span>) <span class="io">cout</span> &lt;&lt; <span class="variable">x</span> &lt;&lt; <span class="string">" "</span>;
+    <span class="io">cout</span> << <span class="io">endl</span>;
+    <span class="inne">return</span> <span class="number">0</span>;
+}</code></pre>
+    <p>
+        Program implementuje algorytm sortowania bąbelkowego, używając funkcji <code>swap</code> do zamiany elementów, które są w 
+        niewłaściwej kolejności.
+    </p>
+
+    <h2><code>reverse</code></h2>
+    <p>
+        Funkcja <code>reverse</code> odwraca kolejność elementów w zakresie (np. w wektorze lub tablicy).
+    </p>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;vector&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;algorithm&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="io">vector</span>&lt;<span class="type">int</span>&gt; <span class="variable">tab</span> = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>};
+
+    <span class="io">cout</span> &lt;&lt; <span class="string">"Przed odwróceniem:"</span> &lt;&lt; <span class="string">endl</span>;
+    <span class="inne">for</span> (<span class="type">int</span> <span class="variable">x</span> : <span class="variable">tab</span>) <span class="io">cout</span> &lt;&lt; <span class="variable">x</span> &lt;&lt; <span class="string">" "</span>;
+    <span class="io">cout</span> &lt;&lt; <span class="string">endl</span>;
+
+    <span class="io">reverse</span>(<span class="variable">tab</span>.begin(), <span class="variable">tab</span>.end());
+
+    <span class="io">cout</span> &lt;&lt; <span class="string">"Po odwróceniu:"</span> &lt;&lt; <span class="string">endl</span>;
+    <span class="inne">for</span> (<span class="type">int</span> <span class="variable">x</span> : <span class="variable">tab</span>) <span class="io">cout</span> &lt;&lt; <span class="variable">x</span> &lt;&lt; <span class="string">" "</span>;
+    <span class="io">cout</span> &lt;&lt; <span class="string">endl</span>;
+
+    <span class="inne">return</span> <span class="number">0</span>;
+}</code></pre>
+    <p>
+        Program odwraca kolejność elementów wektora, a następnie wyświetla je przed i po użyciu funkcji <code>reverse</code>.
+    </p>
+
+    <h2><code>empty</code></h2>
+    <p>
+        Funkcja <code>empty</code> sprawdza, czy kontener (np. wektor, lista) jest pusty. Zwraca wartość <code>true</code>, jeśli 
+        kontener jest pusty, w przeciwnym razie zwraca <code>false</code>.
+    </p>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;vector&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="io">vector</span>&lt;<span class="type">int</span>&gt; <span class="variable">tab</span>;
+
+    <span class="inne">if</span> (<span class="variable">tab</span>.<span class="io">empty</span>()) 
+        <span class="io">cout</span> &lt;&lt; <span class="string">"Kontener jest pusty."</span> &lt;&lt; <span class="string">endl</span>;
+    <span class="inne">else</span> 
+        <span class="io">cout</span> &lt;&lt; <span class="string">"Kontener zawiera elementy."</span> &lt;&lt; <span class="string">endl</span>;
+
+    <span class="inne">return</span> <span class="number">0</span>;
+}</code></pre>
+    <p>
+        Program tworzy pusty wektor i sprawdza, czy jest pusty, wyświetlając odpowiedni komunikat.
+    </p>
+
+    <h2><code>pow</code></h2>
+    <p>
+        Funkcja <code>pow</code> oblicza potęgę liczby. Jest częścią biblioteki <code>cmath</code>.
+    </p>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;cmath&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="type">double</span> <span class="variable">x</span>, <span class="variable">y</span>;
+    <span class="io">cout</span> &lt;&lt; <span class="string">"Podaj podstawę potęgi: "</span>;
+    <span class="io">cin</span> &gt;&gt; <span class="variable">x</span>;
+    <span class="io">cout</span> &lt;&lt; <span class="string">"Podaj wykładnik: "</span>;
+    <span class="io">cin</span> &gt;&gt; <span class="variable">y</span>;
+
+    <span class="type">double</span> <span class="variable">wynik</span> = <span class="io">M_PI</span> * <span class="io">pow</span>(<span class="variable">x</span>, <span class="variable">y</span>);
+    <span class="io">cout</span> &lt;&lt; <span class="string">"Wynik: "</span> &lt;&lt; <span class="variable">wynik</span> &lt;&lt; <span class="string">endl</span>;
+
+    <span class="inne">return</span> <span class="number">0</span>;
+}</code></pre>
+    <p>
+        Program wczytuje podstawę i wykładnik, oblicza potęgę za pomocą funkcji <code>pow</code>, a następnie wyświetla wynik.
+    </p><p>
+        Wzór na pole koła to:
+    </p>
+    $$ P = \pi \cdot r^2 $$
+    <p>
+        Używamy funkcji <code>M_PI</code> z biblioteki <code>cmath</code>, która daje wiarygodne przybliżenie liczby 
+        <i>π</i>, następnie mnożymy tę wartość przez promień podniesiony do kwadratu funkcją <code>pow</code>.
+    </p>
+</div>
+
+		<div id="sidebar-right">
+			<h2>Spis treści</h2>
+			<ul>
+				<li><a href="#1">1. Wstęp</a></li>
+				<li><a href="#2">2. Inicjowanie stringa</a></li>
+				<li><a href="#3">3. <code>std::string</code></a></li>
+				<li><a href="#4">4. Funkcje i metody</a></li>
+				<li><a href="#5">5. Konwertowanie stringów</a></li>
+				<li><a href="#6">6. Podsumowanie</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<footer>
+		Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
+		&copy; 2024 Wszelkie prawa zastrzeżone
+	</footer>
+    <script src="../theme.js"></script>
+
+</body>
+
+</html>
