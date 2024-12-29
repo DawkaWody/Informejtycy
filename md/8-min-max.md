@@ -1,3 +1,5 @@
+### Wstęp
+
 W tym artykule zaprezentujemy podstawowe funkcje z biblioteki `algorithm` w języku C++, takie jak `min`, `max`, `swap`, `reverse`, `empty` oraz `pow`. Są to narzędzia, które pozwalają na łatwe i efektywne rozwiązywanie różnych problemów związanych z manipulowaniem danymi czy obliczeniami matematycznymi. Dzięki prostym przykładom omówimy, jak wykorzystać te funkcje w praktyce, by usprawnić pisanie kodu i poprawić jego wydajność. Poznamy również ich zastosowanie w bardziej złożonych algorytmach, takich jak sortowanie bąbelkowe czy losowanie elementów z kolekcji.
 # `min`  
 Funkcja `min` znajduje mniejszą z dwóch wartości. Jesli wartości są równe,
