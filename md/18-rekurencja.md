@@ -13,7 +13,7 @@ Wartością struktury 1 zostanie 36, gdyż struktura 2 zwróci wartość 8.
 
 ## Rekurencja w praktyce
 
-<a href="https://pl.wikipedia.org/wiki/Ci%C4%85g_Fibonacciego" target="_blank">Ciąg Fibonacciego</a> to popularna sekwencja liczb, w której \(fib(N)\) jest sumą \(fib(N-1) + fib(N-2)\). Jak się okazuje, jest to dokładnie to, czym jest rekurencja. Napiszmy taką funkcję.
+<a href="https://pl.wikipedia.org/wiki/Ci%C4%85g_Fibonacciego" target="_blank">Ciąg Fibonacciego</a> to popularna sekwencja liczb, w której $fib(N)$ jest sumą $fib(N-1) + fib(N-2)$. Jak się okazuje, jest to dokładnie to, czym jest rekurencja. Napiszmy taką funkcję.
 
 ```cpp
 int fib(int n)
@@ -22,7 +22,7 @@ int fib(int n)
 }
 ```
 
-Piękna informatyczna reprezentacja matematycznej formuły określającej ciąg Fibonacciego. Niestety, uruchomiona raz, **nigdy się nie zakończy.** Nie istnieje bowiem \(fib(0), fib(-1), fib(-2), \dots\), a nasz program własnie to będzie próbował obliczyć. Należy więc dodać warunek, który poda programowi podstawowe wartości: \(fib(1)\) oraz \(fib(2)\).
+Piękna informatyczna reprezentacja matematycznej formuły określającej ciąg Fibonacciego. Niestety, uruchomiona raz, **nigdy się nie zakończy.** Nie istnieje bowiem $fib(0), fib(-1), fib(-2), \dots$, a nasz program własnie to będzie próbował obliczyć. Należy więc dodać warunek, który poda programowi podstawowe wartości: $fib(1)$ oraz $fib(2)$.
 
 ```cpp
 int fib(int n)
