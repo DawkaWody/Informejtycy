@@ -94,7 +94,7 @@
 
 <div id="3" class="odnosnik"></div>	
     <h2>String ze standardowej biblioteki</h2>
-    <p>Tablica znaków ma jednak pewną wadę – <strong>jest stałej długości</strong>, nie da się dodać do niej znaków. Istnieje jednak sposób, żeby to obejść: skorzystać z typu <span class="type">string</span>. Aby to zrobić, należy dodać do pliku zawartość biblioteki <span class="inne">#include <span class="io">&lt;string&gt;</span></span> i utworzyć zmienną tego typu.</p>
+    <p>Tablica znaków ma jednak pewną wadę – <strong>jest stałej długości</strong>, nie da się dodać do niej znaków. Istnieje jednak sposób, żeby to obejść: skorzystać z typu <span class="type">string</span>. Aby to zrobić, należy dodać do pliku zawartość biblioteki <span class="io">&lt;string&gt;</span> i utworzyć zmienną tego typu.</p>
 
     <pre><code><span class="inne">#include <span class="io">&lt;string&gt;</span></span>
 <span class="io">using</span> <span class="inne">namespace</span> <span class="variable">std</span>;
@@ -187,8 +187,8 @@
     <span class="variable">slowo</span>.<span class="variable">replace</span>(<span class="number">0</span>, <span class="number">13</span>, <span class="string">"granie"</span>); <span class="comment">// "granie jest super"</span>
 
     <span class="variable">slowo</span> = <span class="string">"witaj swiecie"</span>;
-    <span class="io">cout</span> << <span class="variable">slowo</span>.<span class="variable">substr</span>(<span class="number">6</span>) << <span class="io">endl</span>;<span class="comment"> // zwróci "swiecie"</span>
-    <span class="io">cout</span> << <span class="variable">slowo</span>.<span class="variable">substr</span>(<span class="number">2</span>, <span class="number">5</span>) << <span class="io">endl</span>; <span class="comment">// zwróci "taj s"</span>
+    <span class="io">cout</span> << <span class="variable">slowo</span>.<span class="variable">substr</span>(<span class="number">6</span>) << <span class="io">endl</span>;<span class="comment"> // wypisze "swiecie"</span>
+    <span class="io">cout</span> << <span class="variable">slowo</span>.<span class="variable">substr</span>(<span class="number">2</span>, <span class="number">5</span>) << <span class="io">endl</span>; <span class="comment">// wypisze "taj s"</span>
 }</code></pre>
 
 <div id="5" class="odnosnik"></div>	
@@ -209,6 +209,35 @@
     <span class="type">string</span> <span class="variable">liczba3</span> = <span class="inne">to_string</span>(<span class="variable">liczba1_jako_int</span>);
     <span class="type">string</span> <span class="variable">liczba4</span> = <span class="inne">to_string</span>(<span class="variable">liczba2_jako_long_long</span>);
 }</code></pre>
+
+  <table border="1" style="border-collapse: collapse; text-align: left;">
+        <thead>
+            <tr>
+                <th>Funkcja</th>
+                <th>Zwracana wartość</th>
+                <th>Opis</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>stoi()</code></td>
+                <td>int</td>
+                <td>Konwertuje tylko string na int</td>
+            </tr>
+            <tr>
+                <td><code>stoll()</code></td>
+                <td>long long</td>
+                <td>Konwertuje tylko string na long long</td>
+            </tr>
+            <tr>
+                <td><code>to_string()</code></td>
+                <td>string</td>
+                <td>Konwertuje int/long long/float na string</td>
+            </tr>
+        </tbody>
+    </table>
+
+<p><code>stoi</code> to skrót od <code>string to int</code>, a <code>stoll</code> to skrót od <code>string to long long</code>. Teraz spróbuj utworzyć nazwy funkcji, które konwertują <code>string</code> na liczby całkowite bez znaku (a takowe istnieją).</p>
 
 <div id="6" class="odnosnik"></div>	
     <h2>Podsumowanie</h2>
