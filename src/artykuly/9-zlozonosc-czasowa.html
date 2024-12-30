@@ -76,7 +76,7 @@
     
 <div id="2" class="odnosnik"></div>	
     <h2>Jak zmierzyć czas wykonywania programu?</h2>
-    <p>Do mierzenia szybkości programu wykorzystywana jest notacja dużego O. Zanim powiem na czym polega, przeanalizujmy dlaczego zwykłe mierzenie czasu wykonywania programu nie jest zbyt miarodajne. Przypuśćmy, że bierzemy pod lupę taki fragment kodu:</p>
+    <p>Do mierzenia szybkości programu wykorzystywana jest notacja dużego O. Zanim powiemy na czym polega, przeanalizujmy dlaczego zwykłe mierzenie czasu wykonywania programu nie jest zbyt miarodajne. Przypuśćmy, że bierzemy pod lupę taki fragment kodu:</p>
     <pre><code><span class="type">int</span> <span class="variable">liczba</span> = <span class="number">123</span>;
 <span class="type">int</span> <span class="variable">n</span>;
 <span class="io">cin</span> &gt;&gt; <span class="variable">n</span>;
@@ -86,18 +86,19 @@
     <span class="io">cout</span> &lt;&lt; <span class="variable">kwadrat</span> + <span class="variable">liczba</span> &lt;&lt; <span class="io">endl</span>;
 }
 </code></pre>
-    <p>Spróbujmy zmierzyć czas wykonywania tego kodu. Za pomocą nagłówka <code>&lt;iostream&gt;</code> można uzyskać czas w milisekundach. Taki kod z dodatkiem mierzenia czasu wyglądałby tak:</p>
+    <p>Spróbujmy zmierzyć czas wykonywania tego kodu. Za pomocą nagłówka <code>&lt;chrono&gt;</code> można uzyskać czas w milisekundach. Taki kod z dodatkiem mierzenia czasu wyglądałby tak:</p>
     <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
 <span class="inne">#include</span> <span class="io">&lt;chrono&gt;</span>
 
-<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
-<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std::chrono</span>;
+<span class="inne">using</span> <span class="type">namespace</span> <span class="variable">std</span>;
+<span class="inne">using</span> <span class="type">namespace</span> <span class="variable">std::chrono</span>;
 
 <span class="type">int</span> <span class="variable">main</span>()
 {
     <span class="type">unsigned long long</span> <span class="variable">start</span> = <span class="io">duration_cast</span>&lt;<span class="io">milliseconds</span>&gt;(
         <span class="io">system_clock::now</span>().<span class="io">time_since_epoch</span>()
     ).<span class="io">count</span>();
+
     <span class="type">int</span> <span class="variable">liczba</span> = <span class="number">123</span>;
     <span class="type">int</span> <span class="variable">n</span>;
     <span class="io">cin</span> &gt;&gt; <span class="variable">n</span>;
@@ -134,7 +135,7 @@
     
 <div id="4" class="odnosnik"></div>	
     <h2>Typowe złożoności programów</h2>
-    <p>Złożoność to inaczej ilość wykonywanych przez program operacji, czyli idealnie to co opisuje notacja dużego O. Poznałeś już jedną złożoność programu - \(O(n)\) nazywaną również <em>czasem liniowym</em>. Jakie inne złożoności jeszcze istnieją? Wyobraź sobie, że chcesz podzielić kwadratową kartkę na <span class="number">16</span> równych kwadratowych części. Możesz rysować kwadraty po kolei. To jest czas liniowy. Można to jednak zrobić szybciej. Zauważ, że jeśli będziesz zginał kartkę na pół, to za każdym razem otrzymasz <span class="number">2</span> razy więcej kratek niż poprzednio. Zatem potrzebna ilość złożeń kartki to \(\log_2 {16}\)  czyli <span class="number">4</span>. Logarytm dwójkowy z \(16\) oznacza "do jakiej potęgi podnieść <span class="number">2</span> aby otrzymać <span class="number">16</span>?". Złożoność takiego składania kartki to \(O(\log n)\). Przeanalizujmy teraz te najpowszechniejsze złożoności programów, z którymi możesz się spotkać. Złożoności są przedstawione od najszybszej do najwolniejszej</p>
+    <p>Złożoność to inaczej ilość wykonywanych przez program operacji, czyli idealnie to co opisuje notacja dużego O. Poznałeś już jedną złożoność programu - \(O(n)\) nazywaną również <em>czasem liniowym</em>. Jakie inne złożoności jeszcze istnieją? Wyobraź sobie, że chcesz podzielić kwadratową kartkę na <span class="number">16</span> równych kwadratowych części. Możesz rysować kwadraty po kolei. To jest czas liniowy. Można to jednak zrobić szybciej. Zauważ, że jeśli będziesz zginał kartkę na pół, to za każdym razem otrzymasz <span class="number">2</span> razy więcej kratek niż poprzednio. Zatem potrzebna ilość złożeń kartki to \(\log_2 {16}\)  czyli <span class="number">4</span>. Logarytm dwójkowy z \(16\) oznacza "do jakiej potęgi podnieść <span class="number">2</span> aby otrzymać <span class="number">16</span>?". Złożoność takiego składania kartki to \(O(\log n)\). Przeanalizujmy teraz te najpowszechniejsze złożoności programów, z którymi możesz się spotkać. Złożoności są przedstawione od najszybszej do najwolniejszej.</p>
     
     <table border="1">
         <tr>
@@ -170,7 +171,7 @@
 <div id="5" class="odnosnik"></div>	
     <h2>Notacja dużego O określa najgorszy przypadek</h2>
     <p>Spójrz teraz na ten fragment kodu:</p>
-    <pre><code><span class="io">vector</span>&lt;<span class="type">int</span>&gt; <span class="variable">w</span> = { <span class="number">2</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">5</span> };
+    <pre><code><span class="inne">vector</span>&lt;<span class="type">int</span>&gt; <span class="variable">w</span> = { <span class="number">2</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">5</span> };
 <span class="io">cout</span> &lt;&lt; <span class="string">"Podaj szukana wartosc: "</span>;
 <span class="type">int</span> <span class="variable">szukana</span>;
 <span class="io">cin</span> &gt;&gt; <span class="variable">szukana</span>;
@@ -195,7 +196,7 @@
     <p>Jaką złożoność ma taki kod? Są to 2 zagnieżdżone pętle, zatem złożoność to \(O(n^2)\). To rozwiązanie można jednak łatwo przyspieszyć - zauważ, że zwiększanie wyniku o <span class="variable">i</span> da dokładnie ten sam rezultat (jest to dokładnie to, co osiągamy drugą pętlą). Oto bardziej zoptymalizowany kod:</p>
 
     <pre><code><span class="inne">for</span> (<span class="type">int</span> <span class="variable">i</span> = 1; <span class="variable">i</span> &lt;= <span class="variable">n</span>; <span class="variable">i</span>++)
-        <span class="variable">wynik</span> += <span class="variable">i</span>;</code></pre>
+    <span class="variable">wynik</span> += <span class="variable">i</span>;</code></pre>
 
     <p>Teraz "ulepszyliśmy" nasz program do złożoności liniowej! Ale da się jeszcze szybciej. Wystarczy, że użyjemy <a class="string" href="https://pl.wikipedia.org/wiki/Szereg_1_%2B_2_%2B_3_%2B_4_%2B_%E2%80%A6" target="_blank">wzoru na sumę ciągu od 1 do n</a> . Używając tego wzoru możemy napisać taki program:</p>
 

@@ -80,9 +80,8 @@
     <p>Ten ciąg na razie jest pusty, ale możemy go zainicjować. Można to zrobić na dwa sposoby:</p>
     <ul>
         <li><strong>Manualnie:</strong> jak tablicę znaków.</li>
-        <li><strong>Dedykowanie:</strong> zawartość stringa pomiędzy <span class="string">" "</span>.</li>
+        <li><strong>Dedykowanie:</strong> zawartość stringa pomiędzy <span class="string">" "</span>. Koniecznie musi to być <span class="string">" "</span>, a nie <span class="string">' '</span>, gdyż <span class="string">' '</span> używamy do inicjacji pojedynczego znaku.</li>
     </ul>
-    <p>Koniecznie musi to być <span class="string">" "</span>, a nie <span class="string">' '</span>, gdyż <span class="string">' '</span> używamy do inicjacji pojedynczego znaku.</p>
 
     <pre><code><span class="type">char</span> <span class="variable">przywitanie_1</span>[<span class="number">6</span>] = {<span class="string">'h'</span>, <span class="string">'e'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>, <span class="string">'\0'</span>}; <span class="comment">// inicjacja manualna</span>
 <span class="type">char</span> <span class="variable">przywitanie_2</span>[<span class="number">6</span>] = <span class="string">"witaj"</span>; <span class="comment">// inicjacja dedykowana</span></code></pre>
@@ -95,10 +94,11 @@
 
 <div id="3" class="odnosnik"></div>	
     <h2>String ze standardowej biblioteki</h2>
-    <p>Tablica znaków ma jednak pewną wadę – <strong>jest stałej długości</strong>, nie da się dodać do niej znaków. Istnieje jednak sposób, żeby to obejść: skorzystać z typu <span class="type">string</span>. Aby to zrobić, należy dodać do pliku zawartość biblioteki <span class="inne">#include &lt;string&gt;</span> i utworzyć zmienną tego typu.</p>
+    <p>Tablica znaków ma jednak pewną wadę – <strong>jest stałej długości</strong>, nie da się dodać do niej znaków. Istnieje jednak sposób, żeby to obejść: skorzystać z typu <span class="type">string</span>. Aby to zrobić, należy dodać do pliku zawartość biblioteki <span class="inne">#include <span class="io">&lt;string&gt;</span></span> i utworzyć zmienną tego typu.</p>
 
-    <pre><code><span class="inne">#include &lt;string&gt;</span>
+    <pre><code><span class="inne">#include <span class="io">&lt;string&gt;</span></span>
 <span class="io">using</span> <span class="inne">namespace</span> <span class="variable">std</span>;
+
 <span class="inne">int</span> <span class="variable">main</span>()
 {
     <span class="type">string</span> <span class="variable">slowo</span> = <span class="string">"jakies fajne slowo"</span>;
@@ -109,7 +109,7 @@
 
     <p>Oczywiście, dalej możemy korzystać z funkcjonalności, na które pozwalała nam tablica znaków, jak pozyskanie znaku spod indeksu.</p>
 
-    <pre><code><span class="inne">#include &lt;string&gt;</span>
+    <pre><code><span class="inne">#include <span class="io">&lt;string&gt;</span></span>
 <span class="io">using</span> <span class="inne">namespace</span> <span class="variable">std</span>;
 
 <span class="inne">int</span> <span class="variable">main</span>()
@@ -121,7 +121,7 @@
 
 <div id="4" class="odnosnik"></div>	
     <h2>Funkcje i metody na stringach</h2>
-    <p><span class="type">string</span> dostarcza nam wiele przydatnych metod, a biblioteka <span class="inne">&lt;string&gt;</span> zapewnia szereg funkcji na tym typie. Oto kilka z nich:</p>
+    <p><span class="type">string</span> dostarcza nam wiele przydatnych metod, a biblioteka <span class="inne"><span class="io">&lt;string&gt;</span></span> zapewnia szereg funkcji na tym typie. Oto kilka z nich:</p>
 
     <table border="1">
         <thead>
@@ -130,40 +130,40 @@
                 <th>Opis</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td><span class="type">string.insert()</span></td>
-                <td>Wkleja znak/ciąg znaków/string do stringa</td>
-            </tr>
-            <tr>
-                <td><span class="type">string.erase()</span></td>
-                <td>Usuwa znak/ciąg znaków ze stringa</td>
-            </tr>
-            <tr>
-                <td><span class="type">string.push_back()</span></td>
-                <td>Dodaje jeden znak do stringa</td>
-            </tr>
-            <tr>
-                <td><span class="type">string.append()</span></td>
-                <td>Dodaje znak/ciąg znaków do stringa</td>
-            </tr>
-            <tr>
-                <td><span class="type">string.replace()</span></td>
-                <td>Zastępuje fragment stringa ciągiem znaków</td>
-            </tr>
-            <tr>
-                <td><span class="type">string += "..."</span></td>
-                <td>Dodaje znak/ciąg znaków do stringa</td>
-            </tr>
-            <tr>
-                <td><span class="type">string.substr()</span></td>
-                <td>Kopiuje i zwraca wycinek stringa</td>
-            </tr>
-        </tbody>
+        <tbody><tr>
+    <td><span class="type">string</span>.insert()</td>
+    <td>Wkleja znak/ciąg znaków/string do stringa</td>
+</tr>
+<tr>
+    <td><span class="type">string</span>.erase()</td>
+    <td>Usuwa znak/ciąg znaków ze stringa</td>
+</tr>
+<tr>
+    <td><span class="type">string</span>.push_back()</td>
+    <td>Dodaje jeden znak do stringa</td>
+</tr>
+<tr>
+    <td><span class="type">string</span>.append()</td>
+    <td>Dodaje znak/ciąg znaków do stringa</td>
+</tr>
+<tr>
+    <td><span class="type">string</span>.replace()</td>
+    <td>Zastępuje fragment stringa ciągiem znaków</td>
+</tr>
+<tr>
+    <td><span class="type">string</span> += <span class="string">"..."</span></td>
+    <td>Dodaje znak/ciąg znaków do stringa</td>
+</tr>
+<tr>
+    <td><span class="type">string</span>.substr()</td>
+    <td>Kopiuje i zwraca wycinek stringa</td>
+</tr>
+
+</tbody>
     </table>
 
     <pre><code><span class="inne">#include</span><span class="io"> &lt;iostream&gt;</span>
-<span class="inne">#include</span><span class="io"> &lt;string&gt;</span>
+<span class="inne">#include</span><span class="io"> <span class="io">&lt;string&gt;</span></span>
 <span class="io">using</span> <span class="inne">namespace</span> <span class="variable">std</span>;
 
 <span class="inne">int</span> <span class="variable">main</span>()
@@ -195,7 +195,7 @@
     <h2>Funkcje konwertujące</h2>
     <p>Oto funkcje konwertujące pomiędzy typami:</p>
 
-    <pre><code><span class="inne">#include &lt;string&gt;</span>
+    <pre><code><span class="inne">#include <span class="io">&lt;string&gt;</span></span>
 <span class="io">using</span> <span class="inne">namespace</span> <span class="variable">std</span>;
 
 <span class="inne">int</span> <span class="variable">main</span>()

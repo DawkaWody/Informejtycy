@@ -76,7 +76,7 @@
     </p>
     <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
 <span class="inne">#include</span> <span class="io">&lt;algorithm&gt;</span>
-<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+<span class="inne">using</span> <span class="type">namespace</span> <span class="variable">std</span>;
 
 <span class="type">int</span> <span class="variable">main</span>() {
     <span class="type">int</span> <span class="variable">a</span>, <span class="variable">b</span>;
@@ -101,12 +101,12 @@
     <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
 <span class="inne">#include</span> <span class="io">&lt;vector&gt;</span>
 <span class="inne">#include</span> <span class="io">&lt;algorithm&gt;</span>
-<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+<span class="inne">using</span> <span class="type">namespace</span> <span class="variable">std</span>;
 
 <span class="type">int</span> <span class="variable">main</span>() {
     <span class="type">int</span> <span class="variable">n</span>;
     <span class="io">cin</span> &gt;&gt; <span class="variable">n</span>;
-    <span class="io">vector</span>&lt;<span class="type">int</span>&gt; <span class="variable">tab</span>(<span class="variable">n</span>);
+    <span class="inne">vector</span>&lt;<span class="type">int</span>&gt; <span class="variable">tab</span>(<span class="variable">n</span>);
 
     <span class="inne">for</span> (<span class="type">int</span> <span class="variable">i</span> = <span class="number">0</span>; <span class="variable">i</span> &lt; <span class="variable">n</span>; <span class="variable">i</span>++) 
         <span class="io">cin</span> &gt;&gt; <span class="variable">tab</span>[<span class="variable">i</span>];
@@ -135,9 +135,9 @@
     </p>
     <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
 <span class="inne">#include</span> <span class="io">&lt;vector&gt;</span>
-<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+<span class="inne">using</span> <span class="type">namespace</span> <span class="variable">std</span>;
 
-<span class="inne">void</span> <span class="variable">bubbleSort</span>(<span class="io">vector</span>&lt;<span class="type">int</span>&gt; &<span class="variable">tab</span>) {
+<span class="inne">void</span> <span class="variable">bubbleSort</span>(<span class="inne">vector</span>&lt;<span class="type">int</span>&gt; &<span class="variable">tab</span>) {
     <span class="type">int</span> <span class="variable">n</span> = <span class="variable">tab</span>.size();
     <span class="inne">for</span> (<span class="type">int</span> <span class="variable">i</span> = <span class="number">0</span>; <span class="variable">i</span> &lt; <span class="variable">n</span> - <span class="number">1</span>; <span class="variable">i</span>++) {
         <span class="inne">for</span> (<span class="type">int</span> <span class="variable">j</span> = <span class="number">0</span>; <span class="variable">j</span> &lt; <span class="variable">n</span> - <span class="variable">i</span> - <span class="number">1</span>; <span class="variable">j</span>++) {
@@ -148,7 +148,7 @@
 }
 
 <span class="type">int</span> <span class="variable">main</span>() {
-    <span class="io">vector</span>&lt;<span class="type">int</span>&gt; <span class="variable">tab</span> = {<span class="number">64</span>, <span class="number">34</span>, <span class="number">25</span>, <span class="number">12</span>, <span class="number">22</span>, <span class="number">11</span>, <span class="number">90</span>};
+    <span class="inne">vector</span>&lt;<span class="type">int</span>&gt; <span class="variable">tab</span> = {<span class="number">64</span>, <span class="number">34</span>, <span class="number">25</span>, <span class="number">12</span>, <span class="number">22</span>, <span class="number">11</span>, <span class="number">90</span>};
     <span class="io">cout</span> &lt;&lt; <span class="string">"Przed sortowaniem:"</span> &lt;&lt; <span class="string">endl</span>;
     <span class="inne">for</span> (<span class="type">int</span> <span class="variable">x</span> : <span class="variable">tab</span>) <span class="io">cout</span> &lt;&lt; <span class="variable">x</span> &lt;&lt; <span class="string">" "</span>;
     <span class="io">cout</span> &lt;&lt; <span class="string">endl</span>;
@@ -173,10 +173,10 @@
     <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
 <span class="inne">#include</span> <span class="io">&lt;vector&gt;</span>
 <span class="inne">#include</span> <span class="io">&lt;algorithm&gt;</span>
-<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+<span class="inne">using</span> <span class="type">namespace</span> <span class="variable">std</span>;
 
 <span class="type">int</span> <span class="variable">main</span>() {
-    <span class="io">vector</span>&lt;<span class="type">int</span>&gt; <span class="variable">tab</span> = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>};
+    <span class="inne">vector</span>&lt;<span class="type">int</span>&gt; <span class="variable">tab</span> = {<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>};
 
     <span class="io">cout</span> &lt;&lt; <span class="string">"Przed odwróceniem:"</span> &lt;&lt; <span class="string">endl</span>;
     <span class="inne">for</span> (<span class="type">int</span> <span class="variable">x</span> : <span class="variable">tab</span>) <span class="io">cout</span> &lt;&lt; <span class="variable">x</span> &lt;&lt; <span class="string">" "</span>;
@@ -202,12 +202,12 @@
     </p>
     <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
 <span class="inne">#include</span> <span class="io">&lt;vector&gt;</span>
-<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+<span class="inne">using</span> <span class="type">namespace</span> <span class="variable">std</span>;
 
 <span class="type">int</span> <span class="variable">main</span>() {
-    <span class="io">vector</span>&lt;<span class="type">int</span>&gt; <span class="variable">tab</span>;
+    <span class="inne">vector</span>&lt;<span class="type">int</span>&gt; <span class="variable">tab</span>;
 
-    <span class="inne">if</span> (<span class="variable">tab</span>.<span class="io">empty</span>()) 
+    <span class="inne">if</span> (<span class="variable">tab</span>.<span class="inne">empty</span>()) 
         <span class="io">cout</span> &lt;&lt; <span class="string">"Kontener jest pusty."</span> &lt;&lt; <span class="string">endl</span>;
     <span class="inne">else</span> 
         <span class="io">cout</span> &lt;&lt; <span class="string">"Kontener zawiera elementy."</span> &lt;&lt; <span class="string">endl</span>;
@@ -225,7 +225,7 @@
     </p>
     <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
 <span class="inne">#include</span> <span class="io">&lt;cmath&gt;</span>
-<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+<span class="inne">using</span> <span class="type">namespace</span> <span class="variable">std</span>;
 
 <span class="type">int</span> <span class="variable">main</span>() {
     <span class="type">double</span> <span class="variable">x</span>, <span class="variable">y</span>;
