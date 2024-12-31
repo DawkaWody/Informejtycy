@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Podstawowa struktura programu w C++</title>
+	<link rel="icon" type="image/x-icon" href="../img/kolko-logo.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="../style.css">
+
+	<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+</head>
+
+<body>
+	
+	<header class="no-select">
+		<div id="menu">
+			<img id="menu-img" src="../img/menu.png">
+		</div>
+		<div id="baner">
+			<a href="../menu/glowna.html">
+				<img id="baner-img" src="../img/baner-ciemne.png">
+			</a>
+		</div>
+		<img src="../img/theme.png" id="theme-toggle">
+	</header>
+
+	<div id="srodek">
+		<div id="sidebar-left">
+			<h2>Lista tematów</h2>
+			<ul>
+				<li><a href="1-struktura-programu.html">1. Struktura programu w C++</a></li>
+				<li><a href="2-input-output.html">2. Input-output, zmienne</a></li>
+				<li><a href="3-if.html">3. If</a></li>
+				<li><a href="4-for-while.html">4. For, while</a></li>
+				<li><a href="5-tablice-vector.html">5. Tablice, vector</a></li>
+				<li><a href="6-ascii.html">6. ASCII</a></li>
+				<li><a href="7-string.html">7. String</a></li>
+				<li><a href="8-min-max.html">8. Min, max, swap i inne</a></li>
+				<li><a href="9-zlozonosc-czasowa.html">9. Złożoność czasowa</a></li>
+				<li><a href="10-wlasne-funkcje.html">10. Własne funkcje</a></li>
+				<li><a href="11-pair-struct.html" id="aktualny-temat">11. Pair, struct</a></li>
+				<li><a href="12-custom-sort.html">12. Custom sort</a></li>
+				<li><a href="13-queue-deque.html">13. Queue, deque</a></li>
+				<li><a href="14-priority-queue.html">14. Priority queue</a></li>
+				<li><a href="15-set.html">15. Set, multiset</a></li>
+				<li><a href="16-map.html">16. Unordered map, map</a></li>
+				<li><a href="17-stack.html">17. Stack</a></li>
+				<li><a href="18-rekurencja.html">18. Rekurencja</a></li>
+			</ul>
+		</div>
+
+		<div id="artykul">    <h1>Pair i struct</h1>
+<div id="1" class="odnosnik"></div>	
+    <h2>Czym jest para?</h2>
+    <p>Jak można spodziewać się po samej nazwie, <strong>para</strong> to struktura danych służąca do przechowywania <strong>dwóch wartości</strong>. Może ona przechowywać zarówno takie same, jak i różne typy danych.</p>
+    
+<div id="2" class="odnosnik"></div>	
+    <h2>Inicjowanie pary</h2>
+    <p>Parę tworzymy podając dwa typy zmiennych w nawiasie ostrokątnym oraz jej nazwę:</p><pre><code><span class="type">pair</span>&lt;<span class="type">string</span>, <span class="type">int</span>&gt; <span class="variable">p1</span>;</code></pre>
+    <p>Co ciekawe w parze możemy przechowywać inne pary, np.:</p>
+    <pre><code><span class="type">pair</span>&lt;<span class="type">int</span>, <span class="type">pair</span>&lt;<span class="type">long long</span>, <span class="type">string</span>&gt;&gt; <span class="variable">p2</span>;</code></pre>
+    
+<div id="3" class="odnosnik"></div>	
+    <h2>Przypisywanie danych</h2><p>Mamy dwa sposoby na przypisanie danych. W pierwszym używamy komendy <code>make_pair()</code>. Natomiast w drugim nie stosujemy żadnych komend. Musimy jednak pamiętać o nawiasie klamrowym:</p>
+    <pre><code><span class="type">string</span> <span class="variable">imie</span> = <span class="string">"Hela"</span>;
+<span class="type">int</span> <span class="variable">wiek</span> = <span class="number">12</span>;
+<span class="type">pair</span>&lt;<span class="type">string</span>, <span class="type">int</span>&gt; <span class="variable">p3</span> = <span class="io">make_pair</span>(<span class="variable">imie</span>, <span class="variable">wiek</span>);
+<span class="type">pair</span>&lt;<span class="type">string</span>, <span class="type">int</span>&gt; <span class="variable">p4</span> = {<span class="variable">imie</span>, <span class="variable">wiek</span>};</code></pre>
+    
+<div id="4" class="odnosnik"></div>	
+    <h2>Odwoływanie się do elementów pary</h2>
+    <p>Odwoływanie się do elementów pary jest bardzo proste. Stosujemy jedynie konstrukcję <code>nazwa_pary.first</code> lub <code>nazwa_pary.second</code>. Częstym błędem w tej konstrukcji jest dodawanie nawiasów na końcu. Poniżej znajduje się przykład zastosowania tych konstrukcji przy wypisywaniu elementów pary:</p>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="type">string</span> <span class="variable">produkt</span> = <span class="string">"chleb"</span>;
+    <span class="type">double</span> <span class="variable">koszt</span> = <span class="number">5.5</span>;
+    <span class="type">pair</span>&lt;<span class="type">string</span>, <span class="type">double</span>&gt; <span class="variable">p5</span> = <span class="io">make_pair</span>(<span class="variable">produkt</span>, <span class="variable">koszt</span>);
+    <span class="io">cout</span> &lt;&lt; <span class="variable">p5</span>.<span class="variable">first</span> &lt;&lt; <span class="string">"\n"</span>;
+    <span class="io">cout</span> &lt;&lt; <span class="variable">p5</span>.<span class="variable">second</span> &lt;&lt; <span class="string">"\n"</span>;
+}</code></pre>
+    
+<div id="5" class="odnosnik"></div>	
+    <h2>Pary w tablicach i wektorach</h2>
+    <p>Par możemy używać także jako typów zmiennych w tablicach i wektorach.</p>
+    <p>Tablica par:</p>
+    <pre><code><span class="type">pair</span>&lt;<span class="type">int</span>, <span class="type">int</span>&gt; <span class="variable">t</span>[<span class="number">100</span>];</code></pre>
+    <p>Vector par:</p>
+    <pre><code><span class="type">vector</span>&lt;<span class="type">pair</span>&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt; <span class="variable">v</span>;</code></pre>
+    <p>Dzięki temu możemy sortować pary...</p>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;vector&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="type">vector</span>&lt;<span class="type">pair</span>&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt; <span class="variable">v</span> = {{<span class="number">1</span>, <span class="number">2</span>}, {<span class="number">2</span>, <span class="number">0</span>}, {<span class="number">1</span>, <span class="number">1</span>}};
+    <span class="io">sort</span>(<span class="variable">v</span>.<span class="variable">begin</span>(), <span class="variable">v</span>.<span class="variable">end</span>());
+    <span class="inne">for</span> (<span class="type">int</span> <span class="variable">i</span> = <span class="number">0</span>; <span class="variable">i</span> &lt; <span class="variable">v</span>.<span class="variable">size</span>(); <span class="variable">i</span>++) {
+        <span class="io">cout</span> &lt;&lt; <span class="variable">v</span>[<span class="variable">i</span>].<span class="variable">first</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; <span class="variable">v</span>[<span class="variable">i</span>].<span class="variable">second</span> &lt;&lt; <span class="string">"\n"</span>;
+    }
+}</code></pre>
+<div id="6" class="odnosnik"></div>	
+    <h2>Do czego służy struct?</h2>
+    <p>Najprościej mówiąc, <code>struct</code> służy do zgrupowania powiązanych ze sobą zmiennych. Aby przedstawić to obrazowo, możemy odnieść się do przykładu z życia. Tworząc listę kontaktów, zapisujemy imię, nazwisko oraz telefon kontaktowy. Pisząc program, możemy to zmieścić w jednym miejscu - jednej strukturze:</p><pre><code><span class="inne">struct</span> {
+    <span class="type">string</span> <span class="variable">imie</span>;
+    <span class="type">string</span> <span class="variable">nazwisko</span>;
+    <span class="type">int</span> <span class="variable">telefon</span>;
+} <span class="variable">kontakt</span>;</code></pre>
+    <p>W takiej strukturze możemy przechowywać zmienne o różnych typach (np. <code>char</code>, <code>long long</code>, <code>bool</code>). Pamiętajmy, że nazwę zapisujemy po zamykającym nawiasie klamrowym.</p>
+    
+<div id="7" class="odnosnik"></div>	
+    <h2>Jak odwoływać się do elementów structa?</h2>
+    <p>Aby odwołać się do elementów structa, wystarczy zapisać nazwę struktury, postawić kropkę, a następnie podać nazwę elementu, który nas interesuje:</p>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="inne">struct</span> {
+    <span class="type">string</span> <span class="variable">imie</span>;
+    <span class="type">string</span> <span class="variable">nazwisko</span>;
+    <span class="type">int</span> <span class="variable">telefon</span>;
+} <span class="variable">kontakt</span>;
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="variable">kontakt</span>.<span class="variable">imie</span> = <span class="string">"Ala"</span>;
+    <span class="variable">kontakt</span>.<span class="variable">nazwisko</span> = <span class="string">"Kwadrat"</span>;
+    <span class="variable">kontakt</span>.<span class="variable">telefon</span> = <span class="number">123456789</span>;
+}</code></pre>
+    <p>Tutaj warto zaznaczyć, że możemy "powielać tę samą strukturę". Obrazując to na powyższym przykładzie:</p>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="inne">struct</span> {
+    <span class="type">string</span> <span class="variable">imie</span>;
+    <span class="type">string</span> <span class="variable">nazwisko</span>;
+    <span class="type">int</span> <span class="variable">telefon</span>;
+} <span class="variable">kontakt_Ala</span>, <span class="variable">kontakt_Basia</span>;
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="variable">kontakt_Ala</span>.<span class="variable">imie</span> = <span class="string">"Ala"</span>;
+    <span class="variable">kontakt_Ala</span>.<span class="variable">nazwisko</span> = <span class="string">"Kwadrat"</span>;
+    <span class="variable">kontakt_Ala</span>.<span class="variable">telefon</span> = <span class="number">123456789</span>;
+    
+    <span class="variable">kontakt_Basia</span>.<span class="variable">imie</span> = <span class="string">"Basia"</span>;
+    <span class="variable">kontakt_Basia</span>.<span class="variable">nazwisko</span> = <span class="string">"Kolo"</span>;
+    <span class="variable">kontakt_Basia</span>.<span class="variable">telefon</span> = <span class="number">987654321</span>;
+    
+    <span class="io">cout</span> &lt;&lt; <span class="variable">kontakt_Ala</span>.<span class="variable">imie</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; <span class="variable">kontakt_Ala</span>.<span class="variable">telefon</span> &lt;&lt; <span class="io">endl</span>;
+    <span class="io">cout</span> &lt;&lt; <span class="variable">kontakt_Basia</span>.<span class="variable">imie</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; <span class="variable">kontakt_Basia</span>.<span class="variable">telefon</span> &lt;&lt; <span class="io">endl</span>;
+}</code></pre>
+    <p>Reasumując, możemy tego dokonać, nadając wiele nazw naszej strukturze.</p>
+    
+<div id="8" class="odnosnik"></div>	
+    <h2>Struct jako typ danych</h2>
+    <p>Jest przypadek, w którym nazwę <code>struct</code> zapisuje się przed otwierającym nawiasem klamrowym. W takiej sytuacji taką strukturę traktujemy jako typ danych. Oznacza to, że tworzymy zmienną i tam, gdzie normalnie stawiamy np. <code>int</code>, piszemy nazwę struktury. Ważny jest fakt, że po zamykającym nawiasie klamrowym <strong>stawiamy średnik</strong>:</p>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="inne">struct</span> <span class="variable">kontakt</span> {
+    <span class="type">string</span> <span class="variable">nazwisko</span>;
+    <span class="type">int</span> <span class="variable">telefon</span>;
+};
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="variable">kontakt</span> <span class="variable">Ala</span>;
+    <span class="variable">Ala</span>.<span class="variable">nazwisko</span> = <span class="string">"Kwadrat"</span>;
+    <span class="variable">Ala</span>.<span class="variable">telefon</span> = <span class="number">123456789</span>;
+    
+    <span class="variable">kontakt</span> <span class="variable">Basia</span>;
+    <span class="variable">Basia</span>.<span class="variable">nazwisko</span> = <span class="string">"Kolo"</span>;
+    <span class="variable">Basia</span>.<span class="variable">telefon</span> = <span class="number">987654321</span>;
+
+    <span class="io">cout</span> &lt;&lt; <span class="variable">Ala</span>.<span class="variable">nazwisko</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; <span class="variable">Ala</span>.<span class="variable">telefon</span> &lt;&lt; <span class="io">endl</span>;
+    <span class="io">cout</span> &lt;&lt; <span class="variable">Basia</span>.<span class="variable">nazwisko</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; <span class="variable">Basia</span>.<span class="variable">telefon</span> &lt;&lt; <span class="io">endl</span>;
+}</code></pre>
+
+</div>
+
+		<div id="sidebar-right">
+			<h2>Spis treści</h2>
+			<ul>
+				<li><a href="#1">1. Czym jest para?</a></li>
+				<li><a href="#2">2. Inicjowanie pary</a></li>
+				<li><a href="#3">3. Przypisywanie danych</a></li>
+				<li><a href="#4">4. Odwoływanie się do elementów pary</a></li>
+				<li><a href="#5">5. Pary w tablicach i wektorach</a></li>
+				<li><a href="#6">6. Do czego służy struct?</a></li>
+				<li><a href="#7">7. Odwoływanie się do elementów structa</a></li>
+				<li><a href="#8">8. Struct jako typ danych</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<footer>
+		Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
+		&copy; 2024 Wszelkie prawa zastrzeżone
+	</footer>
+    <script src="../theme.js"></script>
+	
+
+</body>
+
+</html>
