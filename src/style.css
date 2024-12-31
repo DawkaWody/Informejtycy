@@ -180,6 +180,15 @@ pre {
 	cursor: pointer;
 }
 
+table {
+	width: 100%;
+	text-align: left;
+}
+
+td, th {
+    padding: 10px;
+}
+
 .odnosnik {
 	margin-top: -20px;
 	padding-top: 20px;
