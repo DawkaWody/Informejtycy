@@ -58,31 +58,34 @@
 			</ul>
 		</div>
 
-		<div id="artykul">    <h2>Wstęp</h2>
+		<div id="artykul">    <h1>Własne funkcje</h1>
+<div id="1" class="odnosnik"></div>	
     <p>Funkcje piszemy, aby nasz kod stał się czytelniejszy. Jest to pewien rodzaj podprogramu, znajdującego się poza funkcją <code class="variable">main</code>. Zazwyczaj korzysta się z funkcji, kiedy program ma wielokrotnie wykonać jakieś operacje. Funkcja wykonuje określone operacje i może zwracać jakąś wartość.</p>
     
+<div id="2" class="odnosnik"></div>	
     <h2>Deklaracja funkcji</h2>
     <p>Najpierw, <strong>przed funkcją <code class="variable">main</code></strong>, piszemy typ zmiennej, który ma zwracać, lub <code class="inne">void</code>, jeśli funkcja nic nie zwraca. Następnie, po spacji, piszemy nazwę funkcji. Po nazwie, w nawiasach okrągłych piszemy argumenty, jakie funkcja przyjmuje, poprzedzone ich typem danych. Jeśli funkcja nie przyjmuje argumentów, pozostawiamy puste nawiasy.</p>
-    <pre><code><span class="type">int</span> <span class="variable">policz_iloczyn</span>(<span class="type">int</span> <span class="variable">a</span>, <span class="type">int</span> <span class="variable">b</span>)
+    <pre><code><span class="type">int</span> <span class="variable">iloczyn</span>(<span class="type">int</span> <span class="variable">a</span>, <span class="type">int</span> <span class="variable">b</span>)
 </code></pre>
     <p>Z powyższej linii możemy dowiedzieć się, że jest to funkcja zwracająca wartość typu <code class="type">int</code>, przyjmująca dwie wartości, również typu <code class="type">int</code>.</p>
     
+<div id="3" class="odnosnik"></div>	
     <h2>Ciało funkcji</h2>
-    <p>Ciało funkcji znajduje się w całości w nawiasach klamrowych, wszystko co jest poza nimi nie będzie wykonywane po wywołaniu funkcji. Każda funkcja, oprócz funkcji <code class="inne">void</code>, powinna coś zwracać. Do zwracania wartości używamy komendy <code class="inne">return</code>, a następnie podajemy nazwę zmiennej i kończymy średnikiem. Funkcja <code class="variable">policz_iloczyn</code>, będzie wyglądała tak:</p>
-    <pre><code><span class="type">int</span> <span class="variable">policz_iloczyn</span>(<span class="type">int</span> <span class="variable">a</span>, <span class="type">int</span> <span class="variable">b</span>)
+    <p>Ciało funkcji znajduje się w całości w nawiasach klamrowych, wszystko co jest poza nimi nie będzie wykonywane po wywołaniu funkcji. Każda funkcja, oprócz funkcji <code class="inne">void</code>, powinna coś zwracać. Do zwracania wartości używamy komendy <code class="inne">return</code>, a następnie podajemy nazwę zmiennej i kończymy średnikiem. Funkcja <code class="variable">iloczyn</code>, będzie wyglądała tak:</p>
+    <pre><code><span class="type">int</span> <span class="variable">iloczyn</span>(<span class="type">int</span> <span class="variable">a</span>, <span class="type">int</span> <span class="variable">b</span>)
 {
     <span class="type">int</span> <span class="variable">wynik</span> = <span class="variable">a</span> * <span class="variable">b</span>;
     <span class="inne">return</span> <span class="variable">wynik</span>;
 }
 </code></pre>
-    <p>Aby wywołać daną funkcję, należy napisać jej nazwę, następnie nawiasy okrągłe - w nich należy umieścić argumenty przyjmowane przez funkcje, bez typów danych, lub nic nie umieszczać, jeśli funkcja nie przyjmuje żadnych argumentów. Wywołanie funkcji <code class="variable">policz_iloczyn</code> będzie wyglądało tak:</p>
-    <pre><code><span class="variable">policz_iloczyn</span>(<span class="variable">czynnik1</span>, <span class="variable">czynnik2</span>)
+    <p>Aby wywołać daną funkcję, należy napisać jej nazwę, następnie nawiasy okrągłe - w nich należy umieścić argumenty przyjmowane przez funkcje, bez typów danych, lub nic nie umieszczać, jeśli funkcja nie przyjmuje żadnych argumentów. Wywołanie funkcji <code class="variable">iloczyn</code> będzie wyglądało tak:</p>
+    <pre><code><span class="variable">iloczyn</span>(<span class="variable">czynnik1</span>, <span class="variable">czynnik2</span>)
 </code></pre>
     <p>Można wartość zwracaną przez tę funkcję bezpośrednio wypisać, lub przypisać do jakiejś zmiennej. Poniższy program będzie wczytywał dwie liczby i wypisywał ich iloczyn:</p>
     <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
 <span class="inne">using</span> <span class="type">namespace</span> <span class="variable">std</span>;
 
-<span class="type">int</span> <span class="variable">policz_iloczyn</span>(<span class="type">int</span> <span class="variable">a</span>, <span class="type">int</span> <span class="variable">b</span>){
+<span class="type">int</span> <span class="variable">iloczyn</span>(<span class="type">int</span> <span class="variable">a</span>, <span class="type">int</span> <span class="variable">b</span>){
     <span class="type">int</span> <span class="variable">wynik</span> = <span class="variable">a</span> * <span class="variable">b</span>;
     <span class="inne">return</span> <span class="variable">wynik</span>;
 }
@@ -91,11 +94,13 @@
 {
     <span class="type">int</span> <span class="variable">czynnik1</span>, <span class="variable">czynnik2</span>;
     <span class="io">cin</span> &gt;&gt; <span class="variable">czynnik1</span> &gt;&gt; <span class="variable">czynnik2</span>;
-    <span class="io">cout</span> &lt;&lt; <span class="variable">policz_iloczyn</span>(<span class="variable">czynnik1</span>, <span class="variable">czynnik2</span>);
+    <span class="io">cout</span> &lt;&lt; <span class="variable">iloczyn</span>(<span class="variable">czynnik1</span>, <span class="variable">czynnik2</span>);
     <span class="inne">return</span> <span class="number">0</span>;
 }
 </code></pre>
     <p>Co ważne, zmienne zadeklarowane w funkcji <code class="variable">main</code> nie będą dostępne w innych funkcjach, i odwrotnie. Oznacza to, że zmienne możemy nazwać tak samo w funkcji <code class="variable">main</code> jak w innych funkcjach i nie wystąpi kolizja oznaczeń. Jeśli zadeklarujemy jakąś zmienną poza funkcjami, będzie ona zmienną globalną - będzie dostępna we wszystkich funkcjach.</p>
+  
+<div id="4" class="odnosnik"></div>	
     <h2>Inne typy funkcji - przykłady</h2>
     <p>Przykładowa funkcja typu <code class="inne">void</code> - funkcja przyjmująca liczbę i napis, a następnie wypisuje ten napis tyle razy ile podano:</p>
     <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
@@ -122,6 +127,8 @@
 }
 </code></pre>
     <p>W tym przypadku nie potrzebujemy umieszczać konstrukcji <code class="inne">else</code> w tej funkcji, ponieważ komenda <code class="inne">return</code> automatycznie kończy jej wykonywanie.</p>
+    
+<div id="5" class="odnosnik"></div>	
     <h2>Przydatne informacje:</h2>
     <ul>
         <li>Funkcje mogą zwracać <strong>maksymalnie jedną wartość</strong> (może to być m.in. zmienna, vector/tablica)</li>
@@ -134,13 +141,10 @@
 			<h2>Spis treści</h2>
 			<ul>
 				<li><a href="#1">1. Wstęp</a></li>
-				<li><a href="#2">2. Zmierzenie czasu</a></li>
-				<li><a href="#3">3. Notacja dużego O</a></li>
-				<li><a href="#4">4. Typowe złożoności</a></li>
-				<li><a href="#5">5. Najgorszy przypadek</a></li>
-				<li><a href="#6">6. Jak określić czas?</a></li>
-				<li><a href="#7">7. Jak ocenić wydajność?</a></li>
-				<li><a href="#8">8. Podsumowanie</a></li>
+				<li><a href="#2">2. Deklaracja funkcji</a></li>
+				<li><a href="#3">3. Ciało funkcji</a></li>
+				<li><a href="#4">4. Różne typy funkcji</a></li>
+				<li><a href="#5">5. Przydatne informacje</a></li>
 			</ul>
 		</div>
 	</div>
