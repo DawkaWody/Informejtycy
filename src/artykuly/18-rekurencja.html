@@ -67,7 +67,7 @@
 
 <p>Wyobraźmy sobie, że analizujemy strukturę. Jej wartość określa się, jako sumę jej wartości. Wartościami struktury mogą być liczby, albo inne struktury. Program, który obliczyłby wartość danej struktury, musiałby zsumować jej wartości. Co jeśli wartość jest mu nie znana - musi ją pozyskać, a więc zsumować jej wartości. Co jeśli wartością tej kolejnej struktury jest jeszcze kolejna struktura? Znowu musimy pozyskać jej wartość. Cały proces się zapętla, a program może zrobić się bardzo skomplikowany. Funkcja rekurencja rozwiązuje ten problem. Najpierw implementujemy jej działanie dla <em>idealnej</em> struktury, czyli takiej, której wartościami są jedynie liczby. Teraz dodajemy warunek, jeżeli jakąś wartością struktury jest inna struktura, uruchom się dla niej. Dzięki temu, niezależnie czy ta głębsza struktura będzie idealna czy nie, funkcja poprawnie obliczy jej wartość. Jeśli bowiem natrafi na kolejną strukturę, wywoła się dla niej - niezależnie od tego jak bardzo <em>zagnieżdżone</em> są te struktury, funkcja ta policzy wszystkie ich wartości. </p>
 
-<p><img src="../img/rekurencja-obrazek.png" alt="Obrazek prezentujący rekurencję na opisanej strukturze"></p>
+<p><img src="../img/rekurencja-obrazek.png" style="width: auto;" alt="Obrazek prezentujący rekurencję na opisanej strukturze"></p>
 
 <p>Wartością struktury 1 zostanie 36, gdyż struktura 2 zwróci wartość 8.</p>
 
