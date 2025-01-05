@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Podstawowa struktura programu w C++</title>
+	<link rel="icon" type="image/x-icon" href="../img/kolko-logo.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="../style.css">
+
+	<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+</head>
+
+<body>
+	
+	<header class="no-select">
+		<div id="menu">
+			<img id="menu-img" src="../img/menu.png">
+		</div>
+		<div id="baner">
+			<a href="../glowna.html">
+				<img id="baner-img" src="../img/baner-ciemne.png">
+			</a>
+		</div>
+		<img src="../img/theme.png" id="theme-toggle">
+	</header>
+
+	<div id="srodek">
+		<div id="sidebar-left">
+			<h2>Lista tematów</h2>
+			<ul>
+				<li><a href="1-struktura-programu.html">1. Struktura programu w C++</a></li>
+				<li><a href="2-input-output.html">2. Input-output, zmienne</a></li>
+				<li><a href="3-if.html">3. If</a></li>
+				<li><a href="4-for-while.html">4. For, while</a></li>
+				<li><a href="5-tablice-vector.html">5. Tablice, vector</a></li>
+				<li><a href="6-ascii.html">6. ASCII</a></li>
+				<li><a href="7-string.html">7. String</a></li>
+				<li><a href="8-min-max.html">8. Min, max, swap i inne</a></li>
+				<li><a href="9-zlozonosc-czasowa.html">9. Złożoność czasowa</a></li>
+				<li><a href="10-wlasne-funkcje.html">10. Własne funkcje</a></li>
+				<li><a href="11-pair-struct.html">11. Pair, struct</a></li>
+				<li><a href="12-custom-sort.html">12. Custom sort</a></li>
+				<li><a href="13-queue-deque.html">13. Queue, deque</a></li>
+				<li><a href="14-priority-queue.html" id="aktualny-temat">14. Priority queue</a></li>
+				<li><a href="15-set.html">15. Set, multiset</a></li>
+				<li><a href="16-map.html">16. Unordered map, map</a></li>
+				<li><a href="17-stack.html">17. Stack</a></li>
+				<li><a href="18-rekurencja.html">18. Rekurencja</a></li>
+			</ul>
+		</div>
+
+		<div id="artykul"><h1>Mapa</h1>
+<div id="1" class="odnosnik"></div>	
+    <p>Mapa służy do przyporządkowywania danym kluczom pewnych wartości. Aby jej użyć należy zaincludować bibliotekę map. Klucz to wartość występująca jako pierwsza.</p>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;map&gt;</span>
+</code></pre>
+
+<div id="2" class="odnosnik"></div>	
+    <h2>Inicjowanie mapy</h2>
+    <p>Mapę tworzy się bardzo podobnie do pary. Należy podać w nawiasie ostrokątnym dwa typy zmiennych, gdyż pierwszy element jest odpowiednikiem drugiego.</p>
+    <pre><code><span class="inne">map</span> &lt;<span class="type">string</span>, <span class="type">string</span>&gt; <span class="variable">glosy</span> = {{<span class="string">"Ania"</span>, <span class="string">"mezzosopran"</span>}, {<span class="string">"Beatka"</span>, <span class="string">"alt"</span>}, {<span class="string">"Czarek"</span>, <span class="string">"tenor"</span>}};
+</code></pre>
+
+<div id="3" class="odnosnik"></div>	
+    <h2>Odwoływanie się do elementów mapy</h2>
+    <p>Odwoływanie się w mapie polega na dostawaniu się do wartości kryjącej się pod kluczem. Robimy to, stosując nawiasy kwadratowe lub komendę <code>nazwa_mapy.at(wartość)</code>. Co ciekawe jeśli odwołujemy się do klucza, który nie istnieje, automatycznie się on tworzy. Jeśli nie podamy wartości, jakiej powinien przypadać klucz, to ten drugi element będzie się równał:</p>
+    <ul>
+        <li><code class="type">string</code> -          <code class="string">""</code></li>
+        <li><code class="type">int</code> -             <code class="number">0</code></li>
+        <li><code class="type">long long</code> -       <code class="number">0</code></li>
+        <li><code class="type">bool</code> -            <code class="number">0 </code> (<span class="variable">false</span>) </li>
+    </ul>
+    <pre><code><span class="inne">map</span> &lt;<span class="type">string</span>, <span class="type">string</span>&gt; <span class="variable">glosy</span> = {{<span class="string">"Ania"</span>, <span class="string">"mezzosopran"</span>}, {<span class="string">"Beatka"</span>, <span class="string">"alt"</span>}, {<span class="string">"Czarek"</span>, <span class="string">"tenor"</span>}};
+<span class="io">cout</span> &lt;&lt; <span class="variable">glosy</span>[<span class="string">"Beatka"</span>] &lt;&lt; <span class="io">endl</span>;
+</code></pre>
+    <p>W tym przypadku wypisze się wyraz "alt".</p>
+
+<div id="4" class="odnosnik"></div>	
+    <h2>Dodawanie elementów</h2>
+    <p>Elementy dodajemy do mapy poprzez użycie nawiasów kwadratowych lub komendy <code>nazwa_mapy.insert(wartość)</code>.</p>
+    <pre><code><span class="inne">map</span> &lt;<span class="type">string</span>, <span class="type">string</span>&gt; <span class="variable">glosy</span> = {{<span class="string">"Ania"</span>, <span class="string">"mezzosopran"</span>}, {<span class="string">"Beatka"</span>, <span class="string">"alt"</span>}, {<span class="string">"Czarek"</span>, <span class="string">"tenor"</span>}};
+
+<span class="variable">glosy</span>[<span class="string">"Darek"</span>] = <span class="string">"bas"</span>;
+<span class="variable">glosy</span>[<span class="string">"Ela"</span>] = <span class="string">"sopran"</span>;
+<span class="variable">glosy</span>.<span class="inne">insert</span>({<span class="string">"Franek"</span>, <span class="string">"baryton"</span>});
+</code></pre>
+    <p>Jeżeli dwa razy dodamy metodą insert ten sam klucz, ale z inną drugą wartością, zachowana zostanie jedynie ta, którą dodaliśmy jako pierwszą, np.:</p>
+    <pre><code><span class="inne">map</span> &lt;<span class="type">string</span>, <span class="type">string</span>&gt; <span class="variable">glosy</span> = {{<span class="string">"Ania"</span>, <span class="string">"mezzosopran"</span>}, {<span class="string">"Beatka"</span>, <span class="string">"alt"</span>}, {<span class="string">"Czarek"</span>, <span class="string">"tenor"</span>}};
+
+<span class="variable">glosy</span>.<span class="inne">insert</span>({<span class="string">"Darek"</span>, <span class="string">"bas"</span>});
+<span class="variable">glosy</span>.<span class="inne">insert</span>({<span class="string">"Darek"</span>, <span class="string">"kontratenor"</span>});
+
+<span class="io">cout</span> &lt;&lt; <span class="variable">glosy</span>[<span class="string">"Darek"</span>] &lt;&lt; <span class="io">endl</span>;
+</code></pre>
+    <p>W takim wypadku pod kluczem "Darek" jest zachowany "bas".</p>
+    <p>Nie oznacza to jednak, że nie możemy zmieniać wartości przypadających kluczom. Możemy tego dokonać, używając nawiasów kwadratowych:</p>
+    <pre><code><span class="inne">map</span> &lt;<span class="type">string</span>, <span class="type">string</span>&gt; <span class="variable">glosy</span> = {{<span class="string">"Ania"</span>, <span class="string">"mezzosopran"</span>}, {<span class="string">"Beatka"</span>, <span class="string">"alt"</span>}, {<span class="string">"Czarek"</span>, <span class="string">"tenor"</span>}};
+
+<span class="variable">glosy</span>[<span class="string">"Darek"</span>] = <span class="string">"bas"</span>;
+<span class="variable">glosy</span>[<span class="string">"Darek"</span>] = <span class="string">"kontratenor"</span>;
+
+<span class="io">cout</span> &lt;&lt; <span class="variable">glosy</span>[<span class="string">"Darek"</span>] &lt;&lt; <span class="io">endl</span>;
+</code></pre>
+    <p>W tej sytuacji wypisze się wyraz "kontratenor".</p>
+	
+<div id="5" class="odnosnik"></div>	<h2>Funkcje używane przy mapie</h2>
+    <p>Aby dowiedzieć się, jaki rozmiar ma mapa, stosujemy:</p>
+    <pre><code><span class="variable">glosy</span>.<span class="inne">size</span>();
+</code></pre>
+    <p>Aby usunąć dany klucz, wykorzystujemy:</p>
+    <pre><code><span class="variable">glosy</span>.<span class="inne">erase</span>(<span class="string">"Czarek"</span>);
+</code></pre>
+    <p>Aby usunąć wszystkie elementy mapy, korzystamy z:</p>
+    <pre><code><span class="variable">glosy</span>.<span class="inne">clear</span>();
+</code></pre>
+    <p>Aby sprawdzić, czy mapa jest pusta, używamy:</p>
+    <pre><code><span class="variable">glosy</span>.<span class="inne">empty</span>();
+</code></pre>
+    <p>Jeżeli wypisze się <code>0</code>, to mapa nie jest pusta. Natomiast, gdy dostaniemy <code>1</code>, będzie to oznaczało, że w mapie nic się nie znajduje.</p>
+    <p>Aby sprawdzić, czy dany element znajduje się w mapie, wykorzystujemy:</p>
+    <pre><code><span class="variable">glosy</span>.<span class="inne">count</span>(<span class="string">"Ania"</span>);
+</code></pre>
+    <p>Aby odnaleźć pierwszy element niemniejszy od <code>x</code>, zapisujemy:</p>
+    <pre><code><span class="variable">glosy</span>.<span class="inne">lower_bound</span>(<span class="variable">x</span>);
+</code></pre>
+    <p>Aby odnaleźć pierwszy element większy od <code>x</code>, stosujemy:</p>
+    <pre><code><span class="variable">glosy</span>.<span class="inne">upper_bound</span>(<span class="variable">x</span>);
+</code></pre>
+
+<div id="6" class="odnosnik"></div>	
+    <h2>Pętla przez mapę</h2>
+    <p>Jeśli chcemy przejść pętlą po całej mapie i wypisać klucze oraz odpowiadające im wartości, wykorzystujemy <code>.first</code> oraz <code>.second</code>:</p>
+    <pre><code><span class="inne">map</span> &lt;<span class="type">string</span>, <span class="type">string</span>&gt; <span class="variable">glosy</span> = {{<span class="string">"Ania"</span>, <span class="string">"mezzosopran"</span>}, {<span class="string">"Beatka"</span>, <span class="string">"alt"</span>}, {<span class="string">"Czarek"</span>, <span class="string">"tenor"</span>}};
+
+<span class="inne">for</span> (<span class="inne">pair</span> <span class="variable">osoby</span> : <span class="variable">glosy</span>) {
+	<span class="io">cout</span> &lt;&lt; <span class="variable">osoby</span>.<span class="inne">first</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; <span class="variable">osoby</span>.<span class="inne">second</span> &lt;&lt; <span class="io">endl</span>;
+}
+</code></pre>
+    <p>W powyższym przykładzie <code>osoby</code> odpowiada każdemu kluczowi.</p>
+
+<div id="7" class="odnosnik"></div>	
+    <h2>Unordered map</h2>
+    <p>Jeśli chcemy użyć unordered map, musimy zaincludować odpowiednią bibliotekę.</p>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;unordered_map&gt;</span>
+</code></pre>
+    <p>Różnica pomiędzy zwykłą mapą a unordered map polega na tym, że ta druga nie jest automatycznie sortowana po kluczach. Dzięki temu szacowana złożoność czasowa wynosi \(O(1)\). Oznacza to jednak, że ten typ mapy nie zawsze działa w czasie stałym. W najgorszym wypadku jej złożoność będzie równa \(O(n)\). Jednakże, przy wykonaniu wielu operacji, złożoność się uśrednia i wyjątki te nie odgrywają aż tak istotnej roli. W związku z tym ten rodzaj mapy jest z reguły szybszy od zwykłego jej wariantu.</p>
+    <p>Aby zobrazować różnicę między tymi mapami, możemy prześledzić wyniki poniższych programów:</p>
+    <pre><code><span class="inne">map</span> &lt;<span class="type">string</span>, <span class="type">string</span>&gt; <span class="variable">glosy</span> = {{<span class="string">"Czarek"</span>, <span class="string">"tenor"</span>}, {<span class="string">"Ania"</span>, <span class="string">"mezzosopran"</span>}, {<span class="string">"Beatka"</span>, <span class="string">"alt"</span>}};
+
+<span class="inne">for</span> (<span class="inne">auto</span> <span class="variable">osoby</span> : <span class="variable">glosy</span>) {
+    <span class="io">cout</span> &lt;&lt; <span class="variable">osoby</span>.<span class="inne">first</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; <span class="variable">osoby</span>.<span class="inne">second</span> &lt;&lt; <span class="io">endl</span>;
+}
+</code></pre>
+    <p>W tym wypadku wynikiem będzie:</p>
+    <pre><code>Ania mezzosopran
+Beatka alt
+Czarek tenor
+</code></pre>
+    <p>Natomiast gdy to samo wykonamy w unordered map:</p>
+    <pre><code><span class="inne">unordered_map</span> &lt;<span class="type">string</span>, <span class="type">string</span>&gt; <span class="variable">glosy</span> = {{<span class="string">"Czarek"</span>, <span class="string">"tenor"</span>}, {<span class="string">"Ania"</span>, <span class="string">"mezzosopran"</span>}, {<span class="string">"Beatka"</span>, <span class="string">"alt"</span>}};
+
+<span class="inne">for</span> (<span class="inne">pair</span> <span class="variable">osoby</span> : <span class="variable">glosy</span>) {
+    <span class="io">cout</span> &lt;&lt; <span class="variable">osoby</span>.<span class="inne">first</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; <span class="variable">osoby</span>.<span class="inne">second</span> &lt;&lt; <span class="io">endl</span>;
+}
+</code></pre>
+    <p>Dostaniemy:</p>
+    <pre><code>Beatka alt
+Ania mezzosopran
+Czarek tenor
+</code></pre>
+    <p>Jest to przykład, że w unordered map kolejność elementów jest losowa, a w zwykłej mapie - posortowana.</p>
+    <p>Funkcje działające w unordered map nie różnią się od tych dotyczących normalnej mapy, oczywiście oprócz <code>lower_bound</code> i <code>upper_bound</code>.</p>
+</div>
+
+		<div id="sidebar-right">
+			<h2>Spis treści</h2>
+			<ul>
+				<li><a href="#1">1. Wstęp</a></li>
+				<li><a href="#2">2. Inicjowanie mapy</a></li>
+				<li><a href="#3">3. Odwoływanie się do elementów</a></li>
+				<li><a href="#4">4. Dodawanie elementów</a></li>
+				<li><a href="#5">5. Funkcje</a></li>
+				<li><a href="#6">6. Iteracja po mapie</a></li>
+				<li><a href="#7">7. Unordered map</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<footer>
+		Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
+		Kontakt: kontakt.informejtycy@gmail.com<br>
+		&copy; 2025 Wszelkie prawa zastrzeżone
+	</footer>
+    <script src="../theme.js"></script>
+	
+
+</body>
+
+</html>
