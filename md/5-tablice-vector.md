@@ -58,7 +58,7 @@ liczby.push_back(a);
 ```
 Jeżeli chcemy zmienić dane lub początkowo zadeklarowaliśmy wielkość vectora, możemy przypisywać jego elementom wartości tak samo jak w tablicy:
 ```cpp
-vector <int> liczby[4];
+vector <int> liczby(4);
 cin >> liczby[3]; 
 ```
 ## Odwołanie się do elementów vectorów
@@ -73,4 +73,38 @@ Dodatkową funkcjonalością vectorów jest między innymi funkcja `size()`, kt�
 vector <int> liczby;
 liczby.push_back(3);
 cout << liczby.size();
+```
+
+## Sortowanie tablic i wektorów
+
+Funkcja sort z biblioteki <algorithm> pozwala na posortowanie elementów w tablicy lub wektorze w porządku rosnącym lub niestandardowym (zdefiniowanym przez użytkownika). Działa w złożoności $O(n \log n)$.
+
+Składnia:
+
+```cpp
+sort(poczatek, koniec);
+```
+
+- poczatek: iterator wskazujący na początek zakresu do posortowania.
+- koniec: iterator wskazujący na koniec zakresu do posortowania (nie włączając tego elementu).
+
+Sortowanie tablicy:
+
+```cpp
+int T[5] = {5, 3, 8, 1, 4};
+
+sort(T, T + 5); // Sortowanie rosnąco
+for (int i = 0; i < n; i++) {
+    cout << T[i] << " ";
+} // wyjście: 1 3 4 5 8
+```
+
+Sortowanie wektora:
+
+```cpp
+vector<int> V = {5, 3, 8, 1, 4};
+sort(V.begin(), V.end(), greater<int>()); // sortowanie malejąco - greater<int>()
+for (int x : V) {
+    cout << x << " ";
+} // wyjście: 1 3 4 5 8
 ```
