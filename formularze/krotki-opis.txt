@@ -1,1 +1,0 @@
-Projekt "Informejtycy" to darmowa platforma online, oferująca edukację informatyczną dla każdego, niezależnie od statusu materialnego, wieku czy doświadczenia. Umożliwia naukę programowania i algorytmiki poprzez zadania i unikalne ćwiczenia, takie jak debugowanie kodu.

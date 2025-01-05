@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Podstawowa struktura programu w C++</title>
+	<link rel="icon" type="image/x-icon" href="../img/kolko-logo.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="../style.css">
+
+	<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+</head>
+
+<body>
+	
+	<header class="no-select">
+		<div id="menu">
+			<img id="menu-img" src="../img/menu.png">
+		</div>
+		<div id="baner">
+			<a href="../glowna.html">
+				<img id="baner-img" src="../img/baner-ciemne.png">
+			</a>
+		</div>
+		<img src="../img/theme.png" id="theme-toggle">
+	</header>
+
+	<div id="srodek">
+		<div id="sidebar-left">
+			<h2>Lista tematów</h2>
+			<ul>
+				<li><a href="1-struktura-programu.html">1. Struktura programu w C++</a></li>
+				<li><a href="2-input-output.html">2. Input-output, zmienne</a></li>
+				<li><a href="3-if.html">3. If</a></li>
+				<li><a href="4-for-while.html">4. For, while</a></li>
+				<li><a href="5-tablice-vector.html">5. Tablice, vector</a></li>
+				<li><a href="6-ascii.html">6. ASCII</a></li>
+				<li><a href="7-string.html">7. String</a></li>
+				<li><a href="8-min-max.html">8. Min, max, swap i inne</a></li>
+				<li><a href="9-zlozonosc-czasowa.html">9. Złożoność czasowa</a></li>
+				<li><a href="10-wlasne-funkcje.html">10. Własne funkcje</a></li>
+				<li><a href="11-pair-struct.html">11. Pair, struct</a></li>
+				<li><a href="12-custom-sort.html">12. Własne sortowanie</a></li>
+				<li><a href="13-queue-deque.html">13. Queue, deque</a></li>
+				<li><a href="14-priority-queue.html">14. Priority queue</a></li>
+				<li><a href="15-set.html">15. Set, multiset</a></li>
+				<li><a href="16-map.html">16. Unordered map, map</a></li>
+				<li><a href="17-stack.html">17. Stack</a></li>
+				<li><a href="18-rekurencja.html" id="aktualny-temat">18. Rekurencja</a></li>
+			</ul>
+		</div>
+
+		<div id="artykul" style="width: 600px;"><h1>Rekurencja</h1>
+<div id="1" class="odnosnik"></div>	
+
+<p><strong>Funkcja rekurencyjna</strong> to funkcja, która uruchamia samą siebie. Pytanie brzmi - kiedy takie funkcje są nam potrzebne?</p>
+
+<h2>Po co nam rekurencja?</h2>
+
+<p>Wyobraźmy sobie, że analizujemy strukturę. Jej wartość określa się, jako sumę jej wartości. Wartościami struktury mogą być liczby, albo inne struktury. Program, który obliczyłby wartość danej struktury, musiałby zsumować jej wartości. Co jeśli wartość jest mu nie znana - musi ją pozyskać, a więc zsumować jej wartości. Co jeśli wartością tej kolejnej struktury jest jeszcze kolejna struktura? Znowu musimy pozyskać jej wartość. Cały proces się zapętla, a program może zrobić się bardzo skomplikowany. Funkcja rekurencja rozwiązuje ten problem. Najpierw implementujemy jej działanie dla <em>idealnej</em> struktury, czyli takiej, której wartościami są jedynie liczby. Teraz dodajemy warunek, jeżeli jakąś wartością struktury jest inna struktura, uruchom się dla niej. Dzięki temu, niezależnie czy ta głębsza struktura będzie idealna czy nie, funkcja poprawnie obliczy jej wartość. Jeśli bowiem natrafi na kolejną strukturę, wywoła się dla niej - niezależnie od tego jak bardzo <em>zagnieżdżone</em> są te struktury, funkcja ta policzy wszystkie ich wartości. </p>
+<img src="../img/rekurencja-obrazek.png" style="width: 90%; display: block; margin-left: auto; margin-right: auto;" alt="Obrazek prezentujący rekurencję na opisanej strukturze">
+
+<p>Wartością struktury 1 zostanie 36, gdyż struktura 2 zwróci wartość 8.</p>
+
+<div id="2" class="odnosnik"></div>	
+<h2>Rekurencja w praktyce</h2>
+
+<p><a href="https://pl.wikipedia.org/wiki/Ci%C4%85g_Fibonacciego" target="_blank">Ciąg Fibonacciego</a> to popularna sekwencja liczb, w której <span class="variable"><span class="variable">fib</span>(<span class="variable">n</span>)</span> jest sumą <span class="variable"><span class="variable">fib</span>(<span class="variable">n</span> - 1) + <span class="variable">fib</span>(<span class="variable">n</span> - 2)</span>. Jak się okazuje, jest to dokładnie to, czym jest rekurencja. Napiszmy taką funkcję.</p>
+
+<pre><code><span class="type">int</span> <span class="variable">fib</span>(<span class="type">int</span> <span class="variable">n</span>)
+{
+    <span class="inne">return</span> <span class="variable">fib</span>(<span class="variable">n</span> - 1) + <span class="variable">fib</span>(<span class="variable">n</span> - 2);
+}
+</code></pre>
+
+<p>Piękna informatyczna reprezentacja matematycznej formuły określającej ciąg Fibonacciego. Niestety, uruchomiona raz, <strong>nigdy się nie zakończy.</strong> Nie istnieje bowiem <span class="variable"><span class="variable">fib</span>(0)</span>, <span class="variable"><span class="variable">fib</span>(-1)</span>, <span class="variable"><span class="variable">fib</span>(-2)</span>, <span class="variable">...</span>, a nasz program własnie to będzie próbował obliczyć. Należy więc dodać warunek, który poda programowi podstawowe wartości: <span class="variable"><span class="variable">fib</span>(1)</span> oraz <span class="variable"><span class="variable">fib</span>(2)</span>.</p>
+
+<pre><code><span class="type">int</span> <span class="variable">fib</span>(<span class="type">int</span> <span class="variable">n</span>)
+{
+    <span class="variable">if</span> (<span class="variable">n</span> == 1) {
+        <span class="inne">return</span> 1;
+    } <span class="variable">else if</span> (<span class="variable">n</span> == 2) {
+        <span class="inne">return</span> 1;
+    } <span class="variable">else</span> {
+        <span class="inne">return</span> <span class="variable">fib</span>(<span class="variable">n</span> - 1) + <span class="variable">fib</span>(<span class="variable">n</span> - 2);
+    }
+}
+</code></pre>
+
+<p>Funkcję tę można uprościć do następującego zapisu:</p>
+
+<pre><code><span class="type">int</span> <span class="variable">fib</span>(<span class="type">int</span> <span class="variable">n</span>)
+{
+    <span class="variable">if</span> (<span class="variable">n</span> &lt;= 2)
+        <span class="inne">return</span> 1;
+    <span class="inne">return</span> <span class="variable">fib</span>(<span class="variable">n</span> - 1) + <span class="variable">fib</span>(<span class="variable">n</span> - 2);
+}
+</code></pre>
+
+<div id="3" class="odnosnik"></div>	
+<h2>Ograniczenia rekurencji</h2>
+
+<p>Największym problemem rekurencji jest zużycie pamięci. Gdy wykorzystana wcześniej jako przykład funkcja <span class="variable"><span class="variable">fib</span></span> wywoła kolejną funkcję, jej zmienna <span class="variable"><span class="variable">n</span></span> cały czas pozostanie w pamięci komputera. Wywołana funkcja <span class="variable"><span class="variable">fib</span></span> również będzie miała zmienną <span class="variable"><span class="variable">n</span></span>, a więc mamy już dwie zmienne. Każdy kolejny <span class="variable"><span class="variable">fib</span></span> będzie trzymał kolejną <span class="variable"><span class="variable">n</span></span> - w przypadku większych programów pamięć bardzo szybko może się wypełnić, prowadząc do błędu <code>stack overflow</code> (przepełnienia pamięci na stosie).</p>
+
+<div id="4" class="odnosnik"></div>	
+<h2>Podsumowanie</h2>
+
+<p>Dzisiaj nauczyłeś się używania funkcji rekurencyjnych. Wiesz, dlaczego je stosujemy, zrozumiałeś w jakich rzeczywistych problemach rekurencja może okazać się pomocna oraz poznałeś zagrożenia płynące z używania rekurencji w nieprzemyślany sposób.</p>
+</div>
+
+		<div id="sidebar-right">
+			<h2>Spis treści</h2>
+			<ul>
+				<li><a href="#1">1. Wstęp</a></li>
+				<li><a href="#2">2. Rekurencja w praktyce</a></li>
+				<li><a href="#3">3. Ograniczenia rekurencji</a></li>
+				<li><a href="#4">4. Podsumowanie</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<footer>
+		Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
+		Kontakt: kontakt.informejtycy@gmail.com<br>
+		&copy; 2025 Wszelkie prawa zastrzeżone
+	</footer>
+    <script src="../theme.js"></script>
+	
+
+</body>
+
+</html>

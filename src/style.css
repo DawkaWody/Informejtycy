@@ -104,7 +104,7 @@ body {
 
 #sidebar-left li,
 #sidebar-right li {
-	margin: 5px 0;
+	margin-top: 5px;
 }
 
 #sidebar-left h2,
@@ -145,6 +145,10 @@ body {
 
 #artykul h1 {
 	margin: 0;
+}
+
+a {
+	color: var(--naglowki);
 }
 
 h1,
