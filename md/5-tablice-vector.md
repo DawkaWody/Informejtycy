@@ -42,7 +42,7 @@ vector <int> liczby;
 
 vector <int> liczby_2 = {1, 3, 5, 2};
 
-vector <int> liczby_3[4];
+vector <int> liczby_3(4);
 ```
 Aby możliwe było używanie vectorów konieczne jest zapisanie następującej linijki na początku kodu:
 ```cpp
