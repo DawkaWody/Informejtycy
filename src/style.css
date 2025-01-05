@@ -104,7 +104,7 @@ body {
 
 #sidebar-left li,
 #sidebar-right li {
-	margin: 5px 0;
+	margin-top: 5px;
 }
 
 #sidebar-left h2,
