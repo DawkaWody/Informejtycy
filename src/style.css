@@ -147,6 +147,10 @@ body {
 	margin: 0;
 }
 
+a {
+	color: var(--naglowki);
+}
+
 h1,
 h2,
 h3 {
