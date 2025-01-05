@@ -174,7 +174,9 @@
 
 <div id="6" class="odnosnik"></div>	
     <h2>Iteracja po kolejce priorytetowej</h2>
-    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+
+<p>Iteracja, czyli przejście po kolejce priorytetowej nie jest takie proste. <span class="variable">priority_queue</span> (tak jak <span class="variable">queue</span> i stos) nie udostępnia żadnych iteratorów, co za tym idzie, wypisanie na wyjście wszystkich elementów kolejki nie jest procesem optymalnym. Należy skopiować kolejkę priorytetową, a następnie wypisywać i usuwać elementy stojące na jej przodzie.</p>
+<pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
 <span class="inne">#include</span> <span class="io">&lt;queue&gt;</span>
 <span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
 
@@ -186,26 +188,29 @@
     <span class="variable">pq</span>.push(<span class="number">3</span>);
     <span class="variable">pq</span>.push(<span class="number">1</span>);
     
-    <span class="type">priority_queue</span>&lt;<span class="type">int</span>&gt; <span class="variable">pq_kopia</span> = <span class="variable">pq</span>;
+    <span class="type">priority_queue</span>&lt;<span class="type">int</span>&gt; <span class="variable">pq_kopia</span> = <span class="variable">pq</span>;    <span class="comment">// utworzenie kopii pq</span>
     
-    <span class="inne">while</span> (<span class="inne">not</span> <span class="variable">pq_kopia</span>.empty()) {
-        <span class="io">cout</span> << <span class="variable">pq_kopia</span>.top() << <span class="io">endl</span>;
-        <span class="variable">pq_kopia</span>.pop();
+    <span class="inne">while</span> (<span class="inne">not</span> <span class="variable">pq_kopia</span>.empty()) {    
+        <span class="io">cout</span> << <span class="variable">pq_kopia</span>.top() << <span class="io">endl</span>;   <span class="comment">// wypisanie pierwszego elementu</span>
+        <span class="variable">pq_kopia</span>.pop();   <span class="comment">// usunięcie pierwszego elementu </span>
     }
 }
     </code></pre>
 
-    <h3>Funkcja:</h3>
-    <pre><code><span class="type">void</span> <span class="variable">wypisz_pq</span>(<span class="type">priority_queue</span>&lt;<span class="type">int</span>&gt; <span class="variable">pq</span>) {
+<p>Oczywiście nie trzeba kopiować <span class="variable">priority_queue</span>, można wypisywać i usuwać elementy z oryginalnej kolejki. Należy tylko liczyć się z tym, że utracimy jej zawartość.</p>
+
+<p>Gdy funkcja przyjmie parametr o typie <span class="variable">priority_queue</span>, kolejka skopiuje się sama, więc możemy utworzyć procedurę wypisującą zawartość kolejki priorytetowej.</p>
+
+<pre><code><span class="type">void</span> <span class="variable">wypisz_pq</span>(<span class="type">priority_queue</span>&lt;<span class="type">int</span>&gt; <span class="variable">pq</span>) {
     <span class="inne">while</span> (<span class="inne">not</span> <span class="variable">pq</span>.empty()) {
         <span class="io">cout</span> << <span class="variable">pq</span>.top() << <span class="io">endl</span>;
         <span class="variable">pq</span>.pop();
     }
-}
-    </code></pre>
-<div id="7" class="odnosnik"></div>	
-    <h2>Podsumowanie</h2>
-    <p>Na dzisiejszej lekcji poznałeś narzędzie jakim jest kolejka priorytetowa. Dowiedziałeś się dlaczego z niej korzystamy i poznałeś metody udostępniane na owej kolejce przez standardową bibliotekę języka C++.</p>
+}    </code></pre>
+
+<h2>Podsumowanie</h2>
+
+<p>Na dzisiejszej lekcji poznałeś narzędzie jakim jest kolejka priorytetowa. Dowiedziałeś się dlaczego z niej korzystamy i poznałeś metody udostępniane na owej kolejce przez standardową bibliotekę języka C++.</p>
 </div>
 
 		<div id="sidebar-right">
