@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Podstawowa struktura programu w C++</title>
+	<link rel="icon" type="image/x-icon" href="../img/kolko-logo.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="../style.css">
+
+	<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+</head>
+
+<body>
+	
+	<header class="no-select">
+		<div id="menu">
+			<img id="menu-img" src="../img/menu.png">
+		</div>
+		<div id="baner">
+			<a href="../menu/glowna.html">
+				<img id="baner-img" src="../img/baner-ciemne.png">
+			</a>
+		</div>
+		<img src="../img/theme.png" id="theme-toggle">
+	</header>
+
+	<div id="srodek">
+		<div id="sidebar-left">
+			<h2>Lista tematów</h2>
+			<ul>
+				<li><a href="1-struktura-programu.html">1. Struktura programu w C++</a></li>
+				<li><a href="2-input-output.html">2. Input-output, zmienne</a></li>
+				<li><a href="3-if.html">3. If</a></li>
+				<li><a href="4-for-while.html">4. For, while</a></li>
+				<li><a href="5-tablice-vector.html">5. Tablice, vector</a></li>
+				<li><a href="6-ascii.html">6. ASCII</a></li>
+				<li><a href="7-string.html">7. String</a></li>
+				<li><a href="8-min-max.html">8. Min, max, swap i inne</a></li>
+				<li><a href="9-zlozonosc-czasowa.html">9. Złożoność czasowa</a></li>
+				<li><a href="10-wlasne-funkcje.html">10. Własne funkcje</a></li>
+				<li><a href="11-pair-struct.html">11. Pair, struct</a></li>
+				<li><a href="12-custom-sort.html">12. Custom sort</a></li>
+				<li><a href="13-queue-deque.html">13. Queue, deque</a></li>
+				<li><a href="14-priority-queue.html" id="aktualny-temat">14. Priority queue</a></li>
+				<li><a href="15-set.html">15. Set, multiset</a></li>
+				<li><a href="16-map.html">16. Unordered map, map</a></li>
+				<li><a href="17-stack.html">17. Stack</a></li>
+				<li><a href="18-rekurencja.html">18. Rekurencja</a></li>
+			</ul>
+		</div>
+
+		<div id="artykul"><h1>Kolejka priorytetowa</h1>
+<div id="1" class="odnosnik"></div>	
+    <p>Poznałeś już, czym jest zwykła kolejka. Każdy dodany element ustawia się w niej i czeka na chwilę, gdy znajdzie się na jej przodzie. Niekiedy jednak przydatne mogłoby okazać się narzędzie, umożliwiające na trzymanie elementów w dowolnej kolejności - najlepiej tak, aby wpasowywało ono nowo dodany fragment w już istniejący. Standardowa biblioteka C++ oczywiście posiada takie narzędzie. Nosi ono nazwę <code>priority_queue</code> i zawiera się w nagłówku <code>&lt;queue&gt;</code>.</p>
+    <p>By zainicjować kolejkę priorytetową wystarczy napisać <code>priority_queue</code> i w nawiasach ostrokątnych podać typ, jaki będzie przechowywany w kolejce. Domyślnie kolejka przechowuje elementy malejąco.</p>
+    <pre><code><span class="type">priority_queue</span>&lt;<span class="type">int</span>&gt; <span class="variable">pq</span>; <span class="comment">// kolejka priorytetowa liczb całkowitych</span></code></pre>
+    
+<div id="2" class="odnosnik"></div>	<h2>Działanie kolejki priorytetowej</h2>
+    <p>Wyobraź sobie, że do naszej kolejki priorytetowej, będziemy dodawać kolejne elementy zbioru <code>{10, 15, 7, 8, 20, 13}</code>. Prześledźmy stan kolejki w każdym kroku.</p>
+    <ul>
+        <li><code>{}</code> - kolejka jest pusta.</li>
+        <li><code>{10}</code> - po dodaniu <code>10</code>.</li>
+        <li><code>{15, 10}</code> - po dodaniu <code>15</code>.</li>
+        <li><code>{15, 10, 7}</code> - po dodaniu <code>7</code>.</li>
+        <li><code>{15, 10, 8, 7}</code> - po dodaniu <code>8</code>.</li>
+        <li><code>{20, 15, 10, 8, 7}</code> - po dodaniu <code>20</code>.</li>
+        <li><code>{20, 15, 13, 10, 8, 7}</code> - po dodaniu <code>13</code>.</li>
+    </ul>
+    <p>Jak więc widać, pomimo iż <code>7</code> pojawiło się w kolejce jako trzecia liczba, na początek dotrze jako ostatnia. Ostatecznym rezultatem jest posortowany zbiór początkowy, jakie są więc zalety korzystania z kolejki priorytetowej?</p>
+    
+<div id="3" class="odnosnik"></div>	<h2>Użycie kolejki priorytetowej</h2>
+    <p>Załóżmy, że zawiadujemy kolejką łapówkową. Pozycja w niej zależy od tego, jak dużo zapłacisz. Musimy być w stanie dodać do kolejki nową osobę oraz wypuszczać z kolejki <code>k</code> pierwszych osób. Sposobem, który dotychczas poznałeś, można tę kolejkę trzymać w wektorze, który z dodaniem każdej osoby będzie na nowo sortowany. Pytanie więc brzmi - po co w takiej sytuacji korzystać z <code>priority_queue</code>? <strong>Dla wydajności i własnej wygody.</strong> Kolejka priorytetowa ma złożoność czasową <code>O(n log n)</code>, a wektor sortowany po dodaniu każdego elementu około <code>O(n^2 log n)</code>.</p>
+    <p><strong>Zakładamy, że w rozwiązaniu dodajemy pojedynczo każdą nową osobę do kolejki i wektor sortujemy za każdym razem. Oczywiście, wektor może być sortowany dopiero przy "wypuszczeniu" <code>k</code> pierwszych osób, ale zakładamy wariant faworyzujący kolejkę priorytetową.</strong></p>
+    <h3>Sortowany wektor</h3>
+    <ul>
+        <li>Dodanie osoby do wektora to złożoność \( O(1) \), co robimy \(n\) razy, więc wychodzi \( O(n) \).</li>
+        <li>Posortowanie to \( O(n \log n) \), co również robimy \(n\) razy, więc otrzymujemy \( O(n^2 \log n) \).</li>
+        <li>Ostateczna złożoność to \( O(n + n^2 \log n) \), czyli około \( O(n^2 \log n) \).</li>
+    </ul>
+
+    <h3>Kolejka priorytetowa</h3>
+    <ul>
+        <li>Dodanie osoby do kolejki to złożoność \( O(\log n) \), co robimy \(n\) razy, więc wychodzi \( O(n \log n) \).</li>
+    </ul>
+<div id="4" class="odnosnik"></div>	
+    <h2>Własna funkcja porównująca</h2>
+    <p>Jak wspomniałem wcześniej, kolejka priorytetowa jest narzędziem pozwalającym na trzymanie elementów w dowolnej kolejności - nie tylko malejąco. By to zrobić musimy dodać zawartość nagłówka <code>&lt;vector&gt;</code> i <code>&lt;functional&gt;</code>, dla kolejno obiektów <code>std::vector</code> i <code>std::function</code>. Tworzymy funkcję porównującą <code>bool cmp(int a, int b)</code>, która będzie sortowała rosnąco. Schemat deklarowania funkcji porównującej dla kolejki priorytetowej wygląda następująco.</p>
+    <pre><code><span class="type">priority_queue</span>&lt;<span class="type">typ</span>, <span class="type">vector</span>&lt;<span class="type">typ</span>&gt;, <span class="type">function</span>&lt;<span class="type">bool</span>(<span class="variable">typy_argumentow_funkcji_cmp</span>)&gt;&gt; <span class="variable">pq</span>(<span class="variable">cmp</span>);</code></pre>
+    <p>Oto przykład dla funkcji sortującej rosnąco i kolejki priorytetowej typu <code class="type">int</code></p>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;queue&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;vector&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;functional&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="io">std</span>;
+
+<span class="type">bool</span> <span class="variable">cmp</span>(<span class="type">int</span> <span class="variable">a</span>, <span class="type">int</span> <span class="variable">b</span>) {
+    <span class="inne">return</span> <span class="variable">a</span> > <span class="variable">b</span>;
+}
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="type">priority_queue</span>&lt;<span class="type">int</span>, <span class="type">vector</span>&lt;<span class="type">int</span>&gt;, <span class="type">function</span>&lt;<span class="type">bool</span>(<span class="type">int</span>, <span class="type">int</span>)&gt;&gt; <span class="variable">kolejka</span>(<span class="variable">cmp</span>);
+    
+    <span class="variable">kolejka</span>.push(<span class="number">1</span>);
+    <span class="variable">kolejka</span>.push(<span class="number">3</span>);
+    <span class="variable">kolejka</span>.push(-<span class="number">2</span>);
+    <span class="variable">kolejka</span>.push(<span class="number">2</span>);
+    
+    <span class="comment">// kolejka to {-2, 1, 2, 3}</span>
+}
+    </code></pre>
+
+<div id="5" class="odnosnik"></div>	
+    <h2>Metody na <code>priority_queue</code></h2>
+    <table border="1px">
+        <thead>
+            <tr>
+                <th>Metoda</th>
+                <th>Opis</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>priority_queue.push()</code></td>
+                <td>Dodaje element do kolejki</td>
+            </tr>
+            <tr>
+                <td><code>priority_queue.pop()</code></td>
+                <td>Usuwa pierwszy element kolejki</td>
+            </tr>
+            <tr>
+                <td><code>priority_queue.top()</code></td>
+                <td>Zwraca pierwszy element kolejki</td>
+            </tr>
+            <tr>
+                <td><code>priority_queue.empty()</code></td>
+                <td>Zwraca wartość logiczną - informację czy kolejka jest pusta</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Przykład:</h2>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;queue&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="type">priority_queue</span>&lt;<span class="type">int</span>&gt; <span class="variable">kolejka</span>;
+    
+    <span class="variable">kolejka</span>.push(<span class="number">15</span>);
+    <span class="variable">kolejka</span>.push(<span class="number">10</span>);
+    <span class="variable">kolejka</span>.push(<span class="number">100</span>);
+    <span class="variable">kolejka</span>.push(-<span class="number">100</span>);
+    
+    <span class="io">cout</span> << <span class="variable">kolejka</span>.top() << <span class="io">endl</span>; <span class="comment">// wypisze 100</span>
+    <span class="io">cout</span> << <span class="variable">kolejka</span>.top() << <span class="io">endl</span>; <span class="comment">// znowu wypisze 100 - top() nie usuwa górnego elementu</span>
+    
+    <span class="variable">kolejka</span>.pop();
+    
+    <span class="io">cout</span> << <span class="variable">kolejka</span>.top() << <span class="io">endl</span>; <span class="comment">// wypisze 15</span>
+    
+    <span class="io">cout</span> << <span class="inne">boolalpha</span>; <span class="comment">// zamienia bool'owe 0 na false i 1 na true</span>
+    <span class="io">cout</span> << <span class="variable">kolejka</span>.empty() << <span class="io">endl</span>; <span class="comment">// wypisze false</span>
+}
+    </code></pre>
+
+<div id="6" class="odnosnik"></div>	
+    <h2>Iteracja po kolejce priorytetowej</h2>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;queue&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="io">std</span>;
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="type">priority_queue</span>&lt;<span class="type">int</span>&gt; <span class="variable">pq</span>;
+    
+    <span class="variable">pq</span>.push(<span class="number">5</span>);
+    <span class="variable">pq</span>.push(-<span class="number">2</span>);
+    <span class="variable">pq</span>.push(<span class="number">3</span>);
+    <span class="variable">pq</span>.push(<span class="number">1</span>);
+    
+    <span class="type">priority_queue</span>&lt;<span class="type">int</span>&gt; <span class="variable">pq_kopia</span> = <span class="variable">pq</span>;
+    
+    <span class="inne">while</span> (<span class="inne">not</span> <span class="variable">pq_kopia</span>.empty()) {
+        <span class="io">cout</span> << <span class="variable">pq_kopia</span>.top() << <span class="io">endl</span>;
+        <span class="variable">pq_kopia</span>.pop();
+    }
+}
+    </code></pre>
+
+    <h3>Funkcja:</h3>
+    <pre><code><span class="type">void</span> <span class="variable">wypisz_pq</span>(<span class="type">priority_queue</span>&lt;<span class="type">int</span>&gt; <span class="variable">pq</span>) {
+    <span class="inne">while</span> (<span class="inne">not</span> <span class="variable">pq</span>.empty()) {
+        <span class="io">cout</span> << <span class="variable">pq</span>.top() << <span class="io">endl</span>;
+        <span class="variable">pq</span>.pop();
+    }
+}
+    </code></pre>
+<div id="7" class="odnosnik"></div>	
+    <h2>Podsumowanie</h2>
+    <p>Na dzisiejszej lekcji poznałeś narzędzie jakim jest kolejka priorytetowa. Dowiedziałeś się dlaczego z niej korzystamy i poznałeś metody udostępniane na owej kolejce przez standardową bibliotekę języka C++.</p>
+</body>
+</html>
+</div>
+
+		<div id="sidebar-right">
+			<h2>Spis treści</h2>
+			<ul>
+				<li><a href="#1">1. Wstęp</a></li>
+				<li><a href="#2">2. Działanie kolejki priorytetowej</a></li>
+				<li><a href="#3">3. Użycie kolejki priorytetowej</a></li>
+				<li><a href="#4">4. Własne porównywanie</a></li>
+				<li><a href="#5">5. Dostępne metody</a></li>
+				<li><a href="#6">6. Iteracja</a></li>
+				<li><a href="#7">7. Podsumowanie</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<footer>
+		Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
+		&copy; 2024 Wszelkie prawa zastrzeżone
+	</footer>
+    <script src="../theme.js"></script>
+	
+
+</body>
+
+</html>

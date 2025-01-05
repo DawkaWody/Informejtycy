@@ -1,1 +1,0 @@
-Artykuły wrzucajcie do folderu md z roszerzeniem .md !!! Artukuły polecam pisać w Obsidianie
