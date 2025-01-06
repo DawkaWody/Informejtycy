@@ -218,35 +218,30 @@
 
 <div id="7" class="odnosnik"></div>	
     <h2><code>pow</code></h2>
-    <p>
-        Funkcja <code>pow</code> oblicza potęgę liczby. Jest częścią biblioteki <code>cmath</code>.
-    </p>
-    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
-<span class="inne">#include</span> <span class="io">&lt;cmath&gt;</span>
+<p>Funkcja <code class="inne">pow</code> podnosi liczbę do danej potęgi.</p>
+<p>Dzięki <code class="inne">pow</code> możemy obliczyć np. pole koła.</p>
+
+<pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;cmath&gt;</span> <span class="comment">// pow</span>
 <span class="inne">using</span> <span class="type">namespace</span> <span class="variable">std</span>;
 
 <span class="type">int</span> <span class="variable">main</span>() {
-    <span class="type">double</span> <span class="variable">x</span>, <span class="variable">y</span>;
-    <span class="io">cout</span> &lt;&lt; <span class="string">"Podaj podstawę potęgi: "</span>;
-    <span class="io">cin</span> &gt;&gt; <span class="variable">x</span>;
-    <span class="io">cout</span> &lt;&lt; <span class="string">"Podaj wykładnik: "</span>;
-    <span class="io">cin</span> &gt;&gt; <span class="variable">y</span>;
 
-    <span class="type">double</span> <span class="variable">wynik</span> = <span class="io">M_PI</span> * <span class="io">pow</span>(<span class="variable">x</span>, <span class="variable">y</span>);
-    <span class="io">cout</span> &lt;&lt; <span class="string">"Wynik: "</span> &lt;&lt; <span class="variable">wynik</span> &lt;&lt; <span class="string">endl</span>;
+    <span class="type">double</span> <span class="variable">promien</span>;
+    <span class="io">cout</span> &lt;&lt; <span class="string">"Podaj promien kola: "</span>;
+    <span class="io">cin</span> &gt;&gt; <span class="variable">promien</span>;
 
+    <span class="type">double</span> <span class="variable">pole</span> = <span class="variable">M_PI</span> * <span class="variable">pow</span>(<span class="variable">promien</span>, <span class="number">2</span>); 
+
+    <span class="io">cout</span> &lt;&lt; <span class="string">"Pole kola o promieniu "</span> &lt;&lt; <span class="variable">promien</span> &lt;&lt; <span class="string">" wynosi: "</span> &lt;&lt; <span class="variable">pole</span> &lt;&lt; <span class="string">endl</span>;
     <span class="inne">return</span> <span class="number">0</span>;
-}</code></pre>
-    <p>
-        Program wczytuje podstawę i wykładnik, oblicza potęgę za pomocą funkcji <code>pow</code>, a następnie wyświetla wynik.
-    </p><p>
-        Wzór na pole koła to:
-    </p>
-    $$ P = \pi \cdot r^2 $$
-    <p>
-        Używamy funkcji <code>M_PI</code> z biblioteki <code>cmath</code>, która daje wiarygodne przybliżenie liczby 
-        <i>π</i>, następnie mnożymy tę wartość przez promień podniesiony do kwadratu funkcją <code>pow</code>.
-    </p>
+}
+</code></pre>
+
+<p>Program wczytuje promień koła od użytkownika, następnie używa wzoru na pole koła:</p>
+ $$ P = \pi \cdot r^2 $$
+<p>Używamy funkcji <code class="variable">M_PI</code> z biblioteki <code class="io">cmath</code>, która daje wiarygodne przybliżenie liczby \(\pi\), następnie mnożymy tę wartość przez promień podniesiony do kwadratu funkcją <code class="inne">pow</code>.</p>
+
 </div>
 
 		<div id="sidebar-right">
