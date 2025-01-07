@@ -56,14 +56,14 @@
 		<div id="artykul"><h1>Input-output, zmienne</h1>
 
 <div id="1" class="odnosnik"></div>
-<p>C++ to wszechstronny język programowania, który oferuje wiele narzędzi do zarządzania danymi i interakcji z użytkownikiem. W tym artykule przyjrzymy się bliżej operacjom wejścia-wyjścia, zmiennym i ich typom.</p>
+<p>C++ oferuje wiele narzędzi do zarządzania danymi i interakcji z użytkownikiem. W tym artykule przyjrzymy się bliżej operacjom wejścia-wyjścia, zmiennym i ich typom.</p>
 
 <h2>Operacje wejścia-wyjścia</h2>
 <p>Operacje wejścia-wyjścia (ang. <code>input-output</code>, I/O) w C++ umożliwiają komunikację między użytkownikiem a programem.</p>
 
 <div id="2" class="odnosnik"></div>
-<h3><code>std::cout</code> - Wyjście na konsolę</h3>
-<p>Aby wyświetlić tekst lub dane na konsoli, używamy obiektu <code>std::cout</code>:</p>
+<h3><code>cout</code> - Wyjście na konsolę</h3>
+<p>Aby wyświetlić tekst lub dane na konsoli, używamy <code>cout</code>:</p>
 
 <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
 <span class="inne">using</span> <span class="variable">namespace</span> <span class="io">std</span>;
@@ -78,8 +78,8 @@
 <p>- <code>endl</code> wstawia znak nowej linii.</p>
 
 <div id="3" class="odnosnik"></div>
-<h3><code>std::cin</code> - Wejście z klawiatury</h3>
-<p>Aby pobrać dane od użytkownika, używamy obiektu <code>std::cin</code>:</p>
+<h3><code>cin</code> - Wejście z klawiatury</h3>
+<p>Aby pobrać dane od użytkownika, używamy <code>cin</code>:</p>
 
 <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
 <span class="inne">using</span> <span class="variable">namespace</span> <span class="io">std</span>;
@@ -180,6 +180,7 @@
 </ul>
 
 <p>Na typach liczbowych dostępne są operacje takie jak dodawanie (<code>+</code>), odejmowanie (<code>-</code>), mnożenie (<code>*</code>), dzielenie całkowite (<code>/</code>) oraz reszta z dzielenia (<code>%</code>). </p>
+<p>Dla dociekliwych polecam lekturę: <a href="https://learn.microsoft.com/pl-pl/cpp/cpp/data-type-ranges?view=msvc-170" target="_blank">Zakresy typu danych</a>.</p>
 
 <div id="7" class="odnosnik"></div>
 <h2>Typowanie w C++</h2>
@@ -188,10 +189,6 @@
 <pre><code><span class="type">auto</span> <span class="variable">liczba</span> = <span class="number">42</span>;   <span class="comment">// Kompilator sam określi typ jako int.</span>
 <span class="type">auto</span> <span class="variable">wynik</span> = <span class="number">3.14</span>;  <span class="comment">// Kompilator określi typ jako double.</span>
 </code></pre>
-
-<div id="8" class="odnosnik"></div>
-<h2>Podsumowanie</h2>
-<p>Zrozumienie operacji wejścia-wyjścia, zmiennych i typów danych to podstawa programowania w C++. Umożliwia to tworzenie dynamicznych aplikacji oraz efektywne zarządzanie pamięcią. W kolejnych artykułach rozwiniemy te zagadnienia, omawiając bardziej zaawansowane techniki, takie jak instrukcje warunkowe, pętle czy tablice.</p>
 </div>
 
 		<div id="sidebar-right">
@@ -204,7 +201,6 @@
 				<li><a href="#5">5. Zmienne</a></li>
 				<li><a href="#6">6. Typy zmiennych</a></li>
 				<li><a href="#7">7. Typowanie w C++</a></li>
-				<li><a href="#8">9. Podsumowanie</a></li>
 			</ul>
 		</div>
 	</div>
