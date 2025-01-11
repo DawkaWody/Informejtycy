@@ -233,7 +233,7 @@ footer {
     align-items: center; /* Wyrównuje elementy w pionie */
     position: relative; /* Aby pozycjonować "Zadania" */
     width: 100%;
-	margin-top: 25px;
+	margin-top: 48px;
 	font-size: 20px;
 }
 
@@ -242,6 +242,7 @@ footer {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+	font-size: 28px;
 }
 
 #poprzedni {

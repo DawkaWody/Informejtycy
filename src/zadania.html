@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Podstawowa struktura programu w C++</title>
+	<link rel="icon" type="image/x-icon" href="img/kolko-logo.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<style>
+
+.menu-form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.menu-form label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+}
+
+#sidebar-right h2 {
+	margin-bottom: 15px !important;
+}
+
+select,
+textarea {
+    width: 100%; /* Oba elementy zajmują pełną szerokość kontenera */
+    padding: 10px; /* Ujednolicone marginesy wewnętrzne */
+	margin-top: 5px;
+	margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 4px; /* Spójne zaokrąglenie rogów */
+    background: #f9f9f9;
+    font-size: 14px; /* Taka sama wielkość czcionki */
+    color: #333333;
+    outline: none;
+    box-sizing: border-box; /* Ujednolica sposób obliczania szerokości */
+}
+
+textarea {
+    resize: none; /* Opcjonalnie, jeśli nie chcesz, by pole można było zmieniać */
+    font-family: monospace; /* Styl czcionki jak w edytorze kodu */
+    line-height: 1.5; /* Lepsze odstępy między wierszami w textarea */
+}
+
+select:focus,
+textarea:focus {
+    border-color: #007BFF;
+    background: #ffffff;
+}
+
+button {
+    padding: 10px 20px;
+
+	width: 15vw;
+	margin-bottom: 20px;
+
+    border: solid var(--tlo-gornego-paska) 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-radius 0.3s ease;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+button:hover {
+    border-radius: 15px;
+}
+
+	</style>
+</head>
+
+<body>
+
+	<header class="no-select">
+		<div id="baner">
+			<a href="glowna.html">
+				<img id="baner-img" src="img/baner-ciemne.png">
+			</a>
+		</div>
+		<img src="img/theme.png" id="theme-toggle">
+	</header>
+
+	<div id="srodek">
+		<div id="sidebar-left">
+			<h2>Lista tematów</h2>
+			<ul>
+				<li><a href="articles/1-struktura-programu.html">1. Struktura programu w C++</a></li>
+				<li><a href="articles/2-input-output.html">2. Input-output, zmienne</a></li>
+				<li><a href="articles/3-if.html">3. If</a></li>
+				<li><a href="articles/4-for-while.html">4. For, while</a></li>
+				<li><a href="articles/5-tablice-vector.html">5. Tablice, vector</a></li>
+				<li><a href="articles/6-ascii.html">6. ASCII</a></li>
+				<li><a href="articles/7-string.html">7. String</a></li>
+				<li><a href="articles/8-min-max.html">8. Min, max, swap i inne</a></li>
+				<li><a href="articles/9-zlozonosc-czasowa.html">9. Złożoność czasowa</a></li>
+				<li><a href="articles/10-wlasne-funkcje.html">10. Własne funkcje</a></li>
+				<li><a href="articles/11-pair-struct.html">11. Pair, struct</a></li>
+				<li><a href="articles/12-custom-sort.html">12. Własne sortowanie</a></li>
+				<li><a href="articles/13-queue-deque.html">13. Queue, deque</a></li>
+				<li><a href="articles/14-priority-queue.html">14. Priority queue</a></li>
+				<li><a href="articles/15-set.html">15. Set, multiset</a></li>
+				<li><a href="articles/16-map.html">16. Unordered map, map</a></li>
+				<li><a href="articles/17-stack.html">17. Stack</a></li>
+				<li><a href="articles/18-rekurencja.html">18. Rekurencja</a></li>
+			</ul>
+		</div>
+
+		<div id="artykul">
+			<h1>Lista zadań</h1>
+		</div>
+
+		<div id="sidebar-right">
+    <h2>Prześlij rozwiązanie</h2>
+
+    <form id="solutionForm">
+        <label for="topic">Wybierz temat:</label>
+        <select id="topic" name="topic">
+		    <option value="" disabled selected>...</option>
+		    <option value="1">1. Struktura programu w C++</option>
+		    <option value="2">2. Input-output, zmienne</option>
+		    <option value="3">3. If</option>
+		    <option value="4">4. For, while</option>
+		    <option value="5">5. Tablice, vector</option>
+		    <option value="6">6. ASCII</option>
+		    <option value="7">7. String</option>
+		    <option value="8">8. Min, max, swap i inne</option>
+		    <option value="9">9. Złożoność czasowa</option>
+		    <option value="10">10. Własne funkcje</option>
+		    <option value="11">11. Pair, struct</option>
+		    <option value="12">12. Własne sortowanie</option>
+		    <option value="13">13. Queue, deque</option>
+		    <option value="14">14. Priority queue</option>
+		    <option value="15">15. Set, multiset</option>
+		    <option value="16">16. Unordered map, map</option>
+		    <option value="17">17. Stack</option>
+		    <option value="18">18. Rekurencja</option>
+		</select>
+
+
+        <label for="problem">Wybierz zadanie:</label>
+        <select id="problem" name="problem" disabled>
+            <option value="" disabled selected>...</option>
+        </select>
+
+        <label for="code">Kod:</label>
+        <textarea id="code" name="code" rows="10" placeholder="Wklej tutaj swój kod..."></textarea>
+
+        <button id="submit-button" type="submit">Prześlij rozwiązanie</button>
+    </form>
+</div>
+
+<script>// Dane dotyczące tematów i odpowiadających im zadań
+const tasks = {
+    1: ["Zadanie 1"],
+    2: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
+    3: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
+    4: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
+    5: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
+    6: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
+    7: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
+    8: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
+    9: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
+    10: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
+    11: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
+    12: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
+    13: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
+    14: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
+    15: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
+    16: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
+    17: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
+    18: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"]
+};
+
+// Funkcja, która zmienia dostępne zadania na podstawie wybranego tematu
+document.getElementById("topic").addEventListener("change", function() {
+    const topic = this.value;
+    const problemSelect = document.getElementById("problem");
+    problemSelect.innerHTML = ''; // Wyczyść poprzednie opcje
+
+    if (topic && tasks[topic]) {
+        problemSelect.disabled = false;
+        // Dodaj opcję domyślną
+        let defaultOption = document.createElement("option");
+        defaultOption.value = "";
+        defaultOption.disabled = true;
+        defaultOption.selected = true;
+        defaultOption.text = "...";
+        problemSelect.appendChild(defaultOption);
+
+        // Sprawdzenie, czy temat to 1
+        if (topic == 1) {
+            // Temat 1 ma tylko jedno zadanie
+            let option = document.createElement("option");
+            option.value = 1;
+            option.text = tasks[topic][0] + " " + 1;
+            problemSelect.appendChild(option);
+        } else {
+            // Oblicz początkowy numer zadania na podstawie tematu
+            let startValue = (topic - 1) * 5 - 3;
+
+            // Dodaj zadania dla wybranego tematu
+            tasks[topic].forEach((task, index) => {
+                let taskNumber = startValue + index;
+                let option = document.createElement("option");
+                option.value = taskNumber;
+                option.text = task + " " + taskNumber; // Treść zadania i jego numer
+                problemSelect.appendChild(option);
+            });
+        }
+    } else {
+        // Jeśli temat jest pusty lub nie znaleziono, wyłącz pole zadań
+        problemSelect.disabled = true;
+        let defaultOption = document.createElement("option");
+        defaultOption.value = "";
+        defaultOption.disabled = true;
+        defaultOption.selected = true;
+        defaultOption.text = "...";
+        problemSelect.appendChild(defaultOption);
+    }
+});
+</script>
+
+	</div>
+
+	<footer>
+		Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
+		Kontakt: kontakt.informejtycy@gmail.com<br>
+		&copy; 2025 Wszelkie prawa zastrzeżone
+	</footer>
+
+    <script src="theme.js"></script>
+
+</body>
+
+</html>
