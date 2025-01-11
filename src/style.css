@@ -227,6 +227,54 @@ footer {
 	width: 200px;
 }
 
+#dol-nav {
+    display: flex;
+    justify-content: space-between; /* Rozdziela elementy na krańcach */
+    align-items: center; /* Wyrównuje elementy w pionie */
+    position: relative; /* Aby pozycjonować "Zadania" */
+    width: 100%;
+	margin-top: 25px;
+	font-size: 20px;
+}
+
+#zadania {
+    position: absolute; /* Umieszcza "Zadania" na środku */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+#poprzedni {
+    text-align: left; /* Link po lewej stronie */
+    margin-left: 20px; /* Opcjonalne odsunięcie od lewej krawędzi */
+}
+
+#prev-img {
+	content: url("img/previous.png");
+	width: 36px;
+}
+
+#nastepny {
+    text-align: right; /* Link po prawej stronie */
+    margin-right: 20px; /* Opcjonalne odsunięcie od prawej krawędzi */
+}
+
+#next-img {
+	content: url("img/next.png");
+	width: 36px;
+}
+
+/* Dla ciemnego motywu */
+[data-theme="dark"] #prev-img {
+    content: url("img/previous-dark.png");
+	width: 36px;
+}
+
+[data-theme="dark"] #next-img {
+    content: url("img/next-dark.png");
+	width: 36px;
+}
+
 .type {
 	color: var(--type);
 	font-weight: bold;
