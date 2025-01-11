@@ -33,19 +33,49 @@
 	margin-bottom: 15px !important;
 }
 
+
+/* Zmienne dla trybu jasnego */
+:root {
+    --border-color: black;
+    --border-select: #cccccc;
+    --bg-select: #f9f9f9;
+    --font-select: #333333;
+    --topic-color: #e0e0e0;
+}
+
+/* Zmienne dla trybu ciemnego */
+[data-theme="dark"] {
+    --border-color: white;
+    --border-select: #cccccc;
+    --bg-select: #252526;
+    --font-select: white;
+    --topic-color: #252526;
+}
+
+
+select:focus, textarea:focus {
+  color: #333; /* Kolor tekstu również nie zmienia się */
+}
+
 select,
 textarea {
     width: 100%; /* Oba elementy zajmują pełną szerokość kontenera */
     padding: 10px; /* Ujednolicone marginesy wewnętrzne */
 	margin-top: 5px;
 	margin-bottom: 15px;
-    border: 1px solid #cccccc;
+    border: 1px solid var(--border-select);
     border-radius: 4px; /* Spójne zaokrąglenie rogów */
-    background: #f9f9f9;
+    background: var(--bg-select);
     font-size: 14px; /* Taka sama wielkość czcionki */
-    color: #333333;
+    color: var(--font-select);
     outline: none;
     box-sizing: border-box; /* Ujednolica sposób obliczania szerokości */
+}
+
+select, option {
+	font-family: inherit;
+	font-size: 15px;
+	font-weight: inherit;
 }
 
 textarea {
@@ -76,10 +106,52 @@ button {
 }
 
 button:hover {
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
-	</style>
+table {
+	margin-top: 25px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 8px 12px 8px 12px;
+    text-align: left;
+}
+
+.topic {
+    font-weight: bold;
+    background-color: var(--topic-color);
+}
+
+.pole-wyniku {
+	width: 30px;
+}
+
+td a {
+	text-decoration: none;
+	color: inherit;	
+}
+td a:hover {
+	color: var(--naglowki);
+}
+
+tr td:first-child {
+    text-align: left; /* Ustawia tekst pierwszej komórki w wierszu do lewej */
+}
+
+tr td:nth-child(2) {
+    width: 50px;
+    text-align: center; /* Ustawia tekst drugiej komórki w wierszu do środka */
+}
+
+:target {
+    scroll-margin-top: 50px; /* Przewiń 20px w górę od miejsca, do którego przewijasz */
+}
+
+</style>
 </head>
 
 <body>
@@ -95,31 +167,452 @@ button:hover {
 
 	<div id="srodek">
 		<div id="sidebar-left">
-			<h2>Lista tematów</h2>
+			<h2>Spis treści</h2>
 			<ul>
-				<li><a href="articles/1-struktura-programu.html">1. Struktura programu w C++</a></li>
-				<li><a href="articles/2-input-output.html">2. Input-output, zmienne</a></li>
-				<li><a href="articles/3-if.html">3. If</a></li>
-				<li><a href="articles/4-for-while.html">4. For, while</a></li>
-				<li><a href="articles/5-tablice-vector.html">5. Tablice, vector</a></li>
-				<li><a href="articles/6-ascii.html">6. ASCII</a></li>
-				<li><a href="articles/7-string.html">7. String</a></li>
-				<li><a href="articles/8-min-max.html">8. Min, max, swap i inne</a></li>
-				<li><a href="articles/9-zlozonosc-czasowa.html">9. Złożoność czasowa</a></li>
-				<li><a href="articles/10-wlasne-funkcje.html">10. Własne funkcje</a></li>
-				<li><a href="articles/11-pair-struct.html">11. Pair, struct</a></li>
-				<li><a href="articles/12-custom-sort.html">12. Własne sortowanie</a></li>
-				<li><a href="articles/13-queue-deque.html">13. Queue, deque</a></li>
-				<li><a href="articles/14-priority-queue.html">14. Priority queue</a></li>
-				<li><a href="articles/15-set.html">15. Set, multiset</a></li>
-				<li><a href="articles/16-map.html">16. Unordered map, map</a></li>
-				<li><a href="articles/17-stack.html">17. Stack</a></li>
-				<li><a href="articles/18-rekurencja.html">18. Rekurencja</a></li>
+				<li><a href="#1">1. Struktura programu w C++</a></li>
+				<li><a href="#2">2. Input-output, zmienne</a></li>
+				<li><a href="#3">3. If</a></li>
+				<li><a href="#4">4. For, while</a></li>
+				<li><a href="#5">5. Tablice, vector</a></li>
+				<li><a href="#6">6. ASCII</a></li>
+				<li><a href="#7">7. String</a></li>
+				<li><a href="#8">8. Min, max, swap i inne</a></li>
+				<li><a href="#9">9. Złożoność czasowa</a></li>
+				<li><a href="#10">10. Własne funkcje</a></li>
+				<li><a href="#11">11. Pair, struct</a></li>
+				<li><a href="#12">12. Własne sortowanie</a></li>
+				<li><a href="#13">13. Queue, deque</a></li>
+				<li><a href="#14">14. Priority queue</a></li>
+				<li><a href="#15">15. Set, multiset</a></li>
+				<li><a href="#16">16. Unordered map, map</a></li>
+				<li><a href="#17">17. Stack</a></li>
+				<li><a href="#18">18. Rekurencja</a></li>
 			</ul>
 		</div>
 
 		<div id="artykul">
 			<h1>Lista zadań</h1>
+
+<table>
+    <tbody>
+        <!-- temat -->
+        <tr class="topic" id="1">
+            <td colspan="2">1. Struktura programu w C++</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-1"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="2">
+            <td colspan="2">2. Input-output, zmienne</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-2"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-3"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-4"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-5"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-6"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="3">
+            <td colspan="2">3. If</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-7"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-8"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-9"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-10"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-11"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="4">
+            <td colspan="2">4. For, while</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-12"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-13"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-14"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-15"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-16"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="5">
+            <td colspan="2">5. Tablice, vector</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-17"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-18"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-19"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-20"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-21"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="6">
+            <td colspan="2">6. ASCII</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-22"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-23"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-24"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-25"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-26"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="7">
+            <td colspan="2">7. String</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-27"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-28"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-29"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-30"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-31"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="8">
+            <td colspan="2">8. Min, max, swap i inne</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-32"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-33"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-34"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-35"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-36"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="9">
+            <td colspan="2">9. Złożoność czasowa</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-37"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-38"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-39"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-40"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-41"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="10">
+            <td colspan="2">10. Własne funkcje</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-42"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-43"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-44"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-45"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-46"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="11">
+            <td colspan="2">11. Pair, struct</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-47"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-48"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-49"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-50"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-51"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="12">
+            <td colspan="2">12. Własne sortowanie</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-52"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-53"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-54"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-55"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-56"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="13">
+            <td colspan="2">13. Queue, deque</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-57"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-58"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-59"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-60"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-61"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="14">
+            <td colspan="2">14. Priority queue</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-62"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-63"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-64"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-65"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-66"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="15">
+            <td colspan="2">15. Set, multiset</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-67"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-68"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-69"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-70"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-71"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="16">
+            <td colspan="2">16. Unordered map, map</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-72"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-73"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-74"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-75"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-76"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="17">
+            <td colspan="2">17. Stack</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-77"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-78"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-79"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-80"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-81"> &ndash; </td>
+        </tr>
+		<!-- temat -->
+        <tr class="topic" id="18">
+            <td colspan="2">18. Rekurencja</td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-82"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-83"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-84"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-85"> &ndash; </td>
+        </tr>
+        <tr>
+            <td><a href="tresci-zadan/abc.pdf" target="_blank">[tytuł zadania]</a></td>
+            <td class="pole-wyniku" id="zad-86"> &ndash; </td>
+        </tr></tbody>
+</table>
+
 		</div>
 
 		<div id="sidebar-right">
@@ -162,7 +655,9 @@ button:hover {
     </form>
 </div>
 
-<script>// Dane dotyczące tematów i odpowiadających im zadań
+<script>
+
+// Dane dotyczące tematów i odpowiadających im zadań
 const tasks = {
     1: ["Zadanie 1"],
     2: ["Zadanie 1", "Zadanie 2", "Zadanie 3", "Zadanie 4", "Zadanie 5"],
@@ -202,7 +697,7 @@ document.getElementById("topic").addEventListener("change", function() {
 
         // Sprawdzenie, czy temat to 1
         if (topic == 1) {
-            // Temat 1 ma tylko jedno zadanie
+            // temat 1 ma tylko jedno zadanie
             let option = document.createElement("option");
             option.value = 1;
             option.text = tasks[topic][0] + " " + 1;
@@ -216,7 +711,7 @@ document.getElementById("topic").addEventListener("change", function() {
                 let taskNumber = startValue + index;
                 let option = document.createElement("option");
                 option.value = taskNumber;
-                option.text = task + " " + taskNumber; // Treść zadania i jego numer
+                option.text = task + " - [" + taskNumber + "]"; // Treść zadania i jego numer
                 problemSelect.appendChild(option);
             });
         }
