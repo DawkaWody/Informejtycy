@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Podstawowa struktura programu w C++</title>
+	<link rel="icon" type="image/x-icon" href="../img/kolko-logo.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="../style.css">
+
+	<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+</head>
+
+<body>
+	
+	<header class="no-select">
+		
+		<div id="baner">
+			<a href="../glowna.html">
+				<img id="baner-img" src="../img/baner-ciemne.png">
+			</a>
+		</div>
+		<img src="../img/theme.png" id="theme-toggle">
+	</header>
+
+	<div id="srodek">
+		<div id="sidebar-left">
+			<h2>Lista tematów</h2>
+			<ul>
+				<li><a href="1-struktura-programu.html">1. Struktura programu w C++</a></li>
+				<li><a href="2-input-output.html">2. Input-output, zmienne</a></li>
+				<li><a href="3-if.html">3. If</a></li>
+				<li><a href="4-for-while.html">4. For, while</a></li>
+				<li><a href="5-tablice-vector.html">5. Tablice, vector</a></li>
+				<li><a href="6-ascii.html">6. ASCII</a></li>
+				<li><a href="7-string.html">7. String</a></li>
+				<li><a href="8-min-max.html">8. Min, max, swap i inne</a></li>
+				<li><a href="9-zlozonosc-czasowa.html">9. Złożoność czasowa</a></li>
+				<li><a href="10-wlasne-funkcje.html">10. Własne funkcje</a></li>
+				<li><a href="11-pair-struct.html">11. Pair, struct</a></li>
+				<li><a href="12-custom-sort.html">12. Własne sortowanie</a></li>
+				<li><a href="13-queue-deque.html">13. Queue, deque</a></li>
+				<li><a href="14-priority-queue.html">14. Priority queue</a></li>
+				<li><a href="15-set.html" id="aktualny-temat">15. Set, multiset</a></li>
+				<li><a href="16-map.html">16. Unordered map, map</a></li>
+				<li><a href="17-stack.html">17. Stack</a></li>
+				<li><a href="18-rekurencja.html">18. Rekurencja</a></li>
+			</ul>
+		</div>
+
+		<div id="artykul"><h1>Set</h1>
+<div id="1" class="odnosnik"></div>
+    <p><code>set</code> jest strukturą danych, która przechowuje unikalne elementy w porządku rosnącym (domyślnie, ale porządek ten można dostosować).</p>
+
+<div id="2" class="odnosnik"></div>
+    <h2>Podstawowe cechy <code>set</code>:</h2>
+    <ul>
+        <li><strong>Unikalność elementów</strong> – <code>set</code> nie dopuszcza powtarzających się elementów. Każdy element w zbiorze występuje tylko raz.</li>
+        <li><strong>Porządek</strong> – elementy w <code>set</code> są przechowywane w uporządkowanej kolejności.</li>
+    </ul>
+
+<div id="3" class="odnosnik"></div>
+    <h2>Operacje na <code>set</code>:</h2>
+    <ul>
+        <li><code>insert()</code> – dodaje element do zbioru (jeśli nie istnieje).</li>
+        <li><code>find()</code> – wyszukuje element w zbiorze.</li>
+        <li><code>erase()</code> – usuwa element ze zbioru.</li>
+        <li><code>size()</code> – zwraca liczbę elementów w zbiorze.</li>
+        <li><code>empty()</code> – sprawdza, czy zbiór jest pusty.</li>
+        <li><code>lower_bound</code> – zwraca iterator* do pierwszego elementu, który nie jest mniejszy od podanej wartości (czyli jest większy lub równy).</li>
+        <li><code>upper_bound</code> – zwraca iterator* do pierwszego elementu, który jest większy od podanej wartości (czyli jest większy, nierówny).</li>
+    </ul>
+    <p>* Iterator to obiekt, który pozwala na przechodzenie przez elementy kontenera (np. <code>vector</code>, <code>set</code>). Umożliwia dostęp do elementów, ich modyfikację oraz poruszanie się po nich.</p>
+
+<div id="4" class="odnosnik"></div>
+    <h2>Deklaracja i użycie <code>set</code>:</h2>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;set&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="type">int</span> <span class="variable">main</span> (){
+    <span class="type">set</span>&lt;<span class="type">int</span>&gt; <span class="variable">s</span>;
+
+    <span class="comment">// Deklaracja iteratorów</span>
+    <span class="type">set</span>&lt;<span class="type">int</span>&gt;::<span class="inne">iterator</span> <span class="variable">lb</span>, <span class="variable">ub</span>;
+
+    <span class="comment">// Dodawanie elementów</span>
+    <span class="variable">s</span>.<span class="inne">insert</span>(<span class="number">5</span>);
+    <span class="variable">s</span>.<span class="inne">insert</span>(<span class="number">2</span>);
+    <span class="variable">s</span>.<span class="inne">insert</span>(<span class="number">5</span>); <span class="comment">// Nie zostanie dodane, ponieważ już istnieje w zbiorze</span>
+
+    <span class="comment">// Nadanie wartości iteratorom</span>
+    <span class="variable">lb</span> = <span class="variable">s</span>.<span class="inne">lower_bound</span>(<span class="number">2</span>);
+    <span class="variable">ub</span> = <span class="variable">s</span>.<span class="inne">upper_bound</span>(<span class="number">2</span>);
+    <span class="io">cout</span> &lt;&lt; *<span class="variable">lb</span> &lt;&lt; <span class="io">endl</span>; <span class="comment">// 2</span>
+    <span class="io">cout</span> &lt;&lt; *<span class="variable">ub</span> &lt;&lt; <span class="io">endl</span>; <span class="comment">// 5</span>
+
+    <span class="comment">// Sprawdzanie istnienia elementu</span>
+    <span class="inne">if</span> (<span class="variable">s</span>.<span class="inne">find</span>(<span class="number">5</span>) != <span class="variable">s</span>.<span class="inne">end</span>()) {
+        <span class="io">cout</span> &lt;&lt; <span class="string">"Element jest w zbiorze!"</span> &lt;&lt; <span class="io">endl</span>;
+    }
+
+    <span class="comment">// Usuwanie elementu</span>
+    <span class="variable">s</span>.<span class="inne">erase</span>(<span class="number">2</span>);
+
+    <span class="comment">// Sprawdzanie czy set jest pusty</span>
+    <span class="inne">if</span> (<span class="variable">s</span>.<span class="inne">empty</span>()) {
+        <span class="io">cout</span> &lt;&lt; <span class="string">"Zbiór jest pusty!"</span> &lt;&lt; <span class="io">endl</span>;
+    }
+
+    <span class="inne">return</span> <span class="number">0</span>;
+}    </code></pre>
+
+<div id="5" class="odnosnik"></div>
+    <h2>Zastosowanie:</h2>
+    <p><code>set</code> jest często używane, gdy potrzebujesz zbioru unikalnych elementów, które mają być przechowywane w określonym porządku, i operacji na nich muszą być szybkie (np. dodawanie, usuwanie, sprawdzanie obecności).</p>
+
+<div id="6" class="odnosnik"></div>
+    <h1>Multiset</h1>
+    <p>Podobnie jak <code>set</code>, struktura danych <code>multiset</code> przechowuje elementy w porządku rosnącym (domyślnie), ale <strong>dopuszcza powtarzające się elementy</strong>.</p>
+
+<div id="7" class="odnosnik"></div>
+    <h2>Różnica od <code>set</code>:</h2>
+    <p><strong>Powtarzające się elementy</strong> – w przeciwieństwie do <code>set</code>, <code>multiset</code> pozwala na przechowywanie elementów, które mogą się powtarzać. Możesz dodać ten sam element wiele razy.</p>
+
+<div id="8" class="odnosnik"></div>
+    <h2>Operacje na <code>multiset</code>:</h2>
+    <ul>
+        <li><code>count()</code> – zwraca liczbę wystąpień danego elementu w <code>multiset</code>.</li>
+        <li>Wszystkie operacje wcześniej opisane przy <code>set</code>, przy czym w przypadku <code>set</code> funkcja <code>find()</code> znajduje <strong>tylko jeden element</strong>, ponieważ <code>set</code> przechowuje unikalne elementy. Z kolei w przypadku <code>multiset</code> funkcja <code>find()</code> znajdzie <strong>pierwsze wystąpienie</strong> danego elementu.</li>
+    </ul>
+
+<div id="9" class="odnosnik"></div>
+    <h2>Deklaracja i użycie <code>multiset</code>:</h2>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">#include</span> <span class="io">&lt;set&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="type">int</span> <span class="variable">main</span> (){
+    <span class="type">multiset</span>&lt;<span class="type">int</span>&gt; <span class="variable">ms</span>;
+
+    <span class="comment">// Dodawanie elementów</span>
+    <span class="variable">ms</span>.<span class="inne">insert</span>(<span class="number">5</span>);
+    <span class="variable">ms</span>.<span class="inne">insert</span>(<span class="number">2</span>);
+    <span class="variable">ms</span>.<span class="inne">insert</span>(<span class="number">5</span>); <span class="comment">// Można dodać powtórnie, ponieważ multiset pozwala na duplikaty</span>
+
+    <span class="comment">// Sprawdzanie liczby wystąpień elementu</span>
+    <span class="io">cout</span> &lt;&lt; <span class="string">"Liczba wystąpień 5: "</span> &lt;&lt; <span class="variable">ms</span>.<span class="inne">count</span>(<span class="number">2</span>) &lt;&lt; <span class="io">endl</span>; <span class="comment">// Wypisze: 2</span>
+
+    <span class="comment">// Usuwanie elementu</span>
+    <span class="variable">ms</span>.<span class="inne">erase</span>(<span class="number">2</span>); <span class="comment">// Usunie wszystkie wystąpienia liczby 2</span>
+
+    <span class="inne">return</span> <span class="number">0</span>;
+}    </code></pre>
+
+<div id="10" class="odnosnik"></div>
+    <h2>Zastosowanie:</h2>
+    <p><code>multiset</code> jest przydatny, gdy potrzebujesz zbioru, w którym mogą występować duplikaty, ale chcesz mieć zachowany porządek elementów. Często stosuje się go w sytuacjach, gdzie liczba wystąpień elementów jest istotna, np. w analizie częstotliwości wystąpień.</p>
+</div>
+
+		<div id="sidebar-right">
+			<h2>Spis treści</h2>
+			<ul>
+				<li><a href="#1">1. Set</a></li>
+				<li><a href="#2">2. Podstawowe cechy</a></li>
+				<li><a href="#3">3. Operacje na secie</a></li>
+				<li><a href="#4">4. Deklaracja i użycie seta</a></li>
+				<li><a href="#5">5. Zastosowanie</a></li>
+				<li><a href="#6">6. Multiset</a></li>
+				<li><a href="#7">7. Różnica</a></li>
+				<li><a href="#8">8. Operacje na multisecie</a></li>
+				<li><a href="#9">9. Deklaracja i użycie multiseta</a></li>
+				<li><a href="#10">10. Zastosowanie</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<footer>
+		Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
+		Kontakt: kontakt.informejtycy@gmail.com<br>
+		&copy; 2025 Wszelkie prawa zastrzeżone
+	</footer>
+    <script src="../theme.js"></script>
+	
+
+</body>
+
+</html>

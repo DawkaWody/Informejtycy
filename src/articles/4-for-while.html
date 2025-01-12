@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Podstawowa struktura programu w C++</title>
+	<link rel="icon" type="image/x-icon" href="../img/kolko-logo.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+	<header class="no-select">
+		
+		<div id="baner">
+			<a href="../glowna.html">
+				<img id="baner-img" src="../img/baner-ciemne.png">
+			</a>
+		</div>
+		<img src="../img/theme.png" id="theme-toggle">
+	</header>
+
+	<div id="srodek">
+		<div id="sidebar-left">
+			<h2>Lista tematów</h2>
+			<ul>
+				<li><a href="1-struktura-programu.html">1. Struktura programu w C++</a></li>
+				<li><a href="2-input-output.html">2. Input-output, zmienne</a></li>
+				<li><a href="3-if.html">3. If</a></li>
+				<li><a href="4-for-while.html" id="aktualny-temat">4. For, while</a></li>
+				<li><a href="5-tablice-vector.html">5. Tablice, vector</a></li>
+				<li><a href="6-ascii.html">6. ASCII</a></li>
+				<li><a href="7-string.html">7. String</a></li>
+				<li><a href="8-min-max.html">8. Min, max, swap i inne</a></li>
+				<li><a href="9-zlozonosc-czasowa.html">9. Złożoność czasowa</a></li>
+				<li><a href="10-wlasne-funkcje.html">10. Własne funkcje</a></li>
+				<li><a href="11-pair-struct.html">11. Pair, struct</a></li>
+				<li><a href="12-custom-sort.html">12. Własne sortowanie</a></li>
+				<li><a href="13-queue-deque.html">13. Queue, deque</a></li>
+				<li><a href="14-priority-queue.html">14. Priority queue</a></li>
+				<li><a href="15-set.html">15. Set, multiset</a></li>
+				<li><a href="16-map.html">16. Unordered map, map</a></li>
+				<li><a href="17-stack.html">17. Stack</a></li>
+				<li><a href="18-rekurencja.html">18. Rekurencja</a></li>
+
+			</ul>
+		</div>
+
+		<div id="artykul"><h1>Pętle w C++</h1>
+
+    <h2>While</h2>
+<div id="1" class="odnosnik"></div>
+    <p><strong>Pętla</strong> <code>while</code> służy do wielokrotnego wykonywania bloku kodu, dopóki warunek pętli jest spełniony (czyli dopóki warunek jest prawdziwy). Pętla ta jest używana, gdy nie znamy z góry liczby iteracji, a raczej zależy nam na wykonywaniu kodu, aż spełniony zostanie określony warunek.</p>
+
+<div id="2" class="odnosnik"></div>
+    <h3>Składnia pętli <code>while</code>:</h3>
+    <pre><code><span class="inne">while</span> (<span class="inne">warunek</span>) {
+    <span class="comment">// kod do wykonania</span>
+}    </code></pre>
+
+    <ol>
+        <li><strong>Warunek:</strong> Przed każdą iteracją pętla sprawdza warunek. Jeśli warunek jest <strong>prawdziwy</strong>, blok kodu wewnątrz pętli jest wykonywany. Jeśli warunek jest <strong>fałszywy</strong>, pętla kończy działanie.</li>
+        <li><strong>Kod do wykonania:</strong> Blok kodu wewnątrz pętli, który będzie wykonywany wielokrotnie, dopóki warunek będzie prawdziwy.</li>
+    </ol>
+
+<div id="3" class="odnosnik"></div>
+    <h3>Przykład pętli <code>while</code>:</h3>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="type">int</span> <span class="variable">i</span> = <span class="number">1</span>;
+
+    <span class="comment">// Pętla, która wypisuje liczby od 1 do 5</span>
+    <span class="inne">while</span> (<span class="variable">i</span> &lt;= <span class="number">5</span>) {
+        <span class="io">cout</span> &lt;&lt; <span class="variable">i</span> &lt;&lt; <span class="string">" "</span>;
+        <span class="variable">i</span>++;
+    }
+    <span class="comment">// Wypisze: 1 2 3 4 5</span>
+
+    <span class="inne">return</span> <span class="number">0</span>;
+}    </code></pre>
+
+<div id="4" class="odnosnik"></div>
+    <h3>Wyjaśnienie:</h3>
+    <ul>
+        <li><strong>Warunek:</strong> <code>i &lt;= 5</code> – pętla będzie wykonywana, dopóki zmienna <code>i</code> będzie mniejsza lub równa 5.</li>
+        <li><strong>Kod do wykonania:</strong> <code>cout &lt;&lt; i &lt;&lt; " ";</code> – wypisuje wartość <code>i</code>, a następnie <code>++i</code> zwiększa ją o 1 po każdej iteracji.</li>
+    </ul>
+
+<div id="5" class="odnosnik"></div>
+    <h3>Zastosowanie:</h3>
+    <p>Pętla <code>while</code> jest użyteczna, gdy chcesz, aby kod wykonywał się tak długo, jak spełniany jest określony warunek, ale nie masz wcześniej określonej liczby iteracji. Często stosuje się ją w przypadkach, gdy warunek zatrzymania pętli zależy od danych w czasie wykonywania programu (np. od wyników obliczeń, wczytywania danych czy interakcji użytkownika).</p>
+
+<div id="6" class="odnosnik"></div>
+    <h2>For</h2>
+    <p>Funkcję <code>for</code> można traktować jako skróconą wersję pętli <code>while</code>, której używamy, gdy znamy z góry liczbę powtórzeń.</p>
+
+<div id="7" class="odnosnik"></div>
+    <h3>Pętla <code>for</code>:</h3>
+    <pre><code><span class="inne">for</span> (<span class="inne">inicjalizacja</span>; <span class="inne">warunek</span>; <span class="inne">zmiana</span>) {
+    <span class="comment">// kod do wykonania</span>
+}    </code></pre>
+
+<div id="8" class="odnosnik"></div>
+    <h3>Przykład z <code>for:</code></h3>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="inne">for</span> (<span class="type">int</span> <span class="variable">i</span> = <span class="number">1</span>; <span class="variable">i</span> &lt;= <span class="number">5</span>; <span class="variable">i</span>++) {
+        <span class="io">cout</span> &lt;&lt; <span class="variable">i</span> &lt;&lt; <span class="string">" "</span>;
+    }
+
+    <span class="inne">return</span> <span class="number">0</span>;
+}    </code></pre>
+
+<div id="9" class="odnosnik"></div>
+    <h3>Podobieństwa i różnice:</h3>
+    <ul>
+        <li><strong>Podobieństwa:</strong> Obie pętle wykonują tę samą operację — drukują liczby od 1 do 5.</li>
+        <li><strong>Różnice:</strong> W pętli <code>for</code> wszystko jest zapisane w jednej linii, natomiast w <code>while</code> musimy osobno zadbać o inicjalizację, warunek i zmianę wartości.</li>
+    </ul>
+
+<div id="10" class="odnosnik"></div>
+    <h2>Do-while</h2>
+    <p>Pętla <code>do-while</code> jest podobna do pętli <code>while</code>, ale z tą różnicą, że warunek sprawdzany jest <strong>po</strong> wykonaniu kodu wewnątrz pętli.</p>
+
+<div id="11" class="odnosnik"></div>
+    <h3>Składnia pętli <code>do-while</code>:</h3>
+    <pre><code><span class="inne">do</span> {
+    <span class="comment">// kod do wykonania</span>
+} <span class="inne">while</span> (<span class="inne">warunek</span>);    </code></pre>
+
+<div id="12" class="odnosnik"></div>
+    <h3>Przykład pętli <code>do-while</code>:</h3>
+    <pre><code><span class="inne">#include</span> <span class="io">&lt;iostream&gt;</span>
+<span class="inne">using</span> <span class="io">namespace</span> <span class="variable">std</span>;
+
+<span class="type">int</span> <span class="variable">main</span>() {
+    <span class="type">int</span> <span class="variable">i</span> = <span class="number">1</span>;
+
+    <span class="comment">// Pętla, która wypisuje liczby od 1 do 5</span>
+    <span class="inne">do</span> {
+        <span class="io">cout</span> &lt;&lt; <span class="variable">i</span> &lt;&lt; <span class="string">" "</span>;
+        <span class="variable">i</span>++;
+    } <span class="inne">while</span> (<span class="variable">i</span> &lt;= <span class="number">5</span>);
+    <span class="comment">// Wypisze: 1 2 3 4 5</span>
+
+    <span class="inne">return</span> <span class="number">0</span>;
+}    </code></pre>
+
+<div id="13" class="odnosnik"></div>
+    <h3>Zastosowanie:</h3>
+    <p>Pętla <code>do-while</code> jest użyteczna, gdy chcesz, aby kod w pętli wykonał się przynajmniej raz, zanim zostanie sprawdzony warunek.</p>
+</div>
+
+		<div id="sidebar-right">
+			<h2>Spis treści</h2>
+			<ul>
+				<li><a href="#1">1. While</a></li>
+				<li><a href="#2">2. Składnia pętli while</a></li>
+				<li><a href="#3">3. Przykład z while</a></li>
+				<li><a href="#4">4. Wyjaśnienie</a></li>
+				<li><a href="#5">5. Zastosowanie</a></li>
+				<li><a href="#6">6. For</a></li>
+				<li><a href="#7">7. Składnia</a></li>
+				<li><a href="#8">8. Przykład z for</a></li>
+				<li><a href="#9">9. Podobieństwa i różnice</a></li>
+				<li><a href="#10">10. Do-while</a></li>
+				<li><a href="#11">11. Składnia do-while</a></li>
+				<li><a href="#12">12. Przykład z do-while</a></li>
+				<li><a href="#13">13. Zastosowanie</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<footer>
+		Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
+		Kontakt: kontakt.informejtycy@gmail.com<br>
+		&copy; 2025 Wszelkie prawa zastrzeżone
+	</footer>
+
+    <script src="../theme.js"></script>
+
+</body>
+
+</html>
