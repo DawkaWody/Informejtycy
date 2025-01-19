@@ -155,15 +155,15 @@
 <ul>
     <li><strong>Liczby całkowite</strong>:
         <ul>
-            <li><code>int</code> - liczby całkowite o standardowym zakresie.</li>
-            <li><code>long long</code> - dłuższa wersja typu <code>int</code>.</li>
+            <li><code>int</code> - liczby całkowite o standardowym zakresie (od -2,147,483,648 do 2,147,483,647)</li>
+            <li><code>long long</code> - dłuższa wersja typu <code>int</code> (od -9,223,372,036,854,775,808 do 9,223,372,036,854,775,807)</li>
             <li><code>unsigned</code> - liczby całkowite bez znaku (tylko dodatnie).</li>
         </ul>
     </li>
     <li><strong>Liczby zmiennoprzecinkowe</strong>:
         <ul>
-            <li><code>float</code> - liczby zmiennoprzecinkowe o pojedynczej precyzji.</li>
-            <li><code>double</code> - liczby zmiennoprzecinkowe o podwójnej precyzji.</li>
+            <li><code>float</code> - liczby zmiennoprzecinkowe o pojedynczej precyzji (7 cyfr)</li>
+            <li><code>double</code> - liczby zmiennoprzecinkowe o podwójnej precyzji (15 cyfr)</li>
             <li><code>long double</code> - liczby zmiennoprzecinkowe o zwiększonej precyzji.</li>
         </ul>
     </li>
@@ -179,6 +179,7 @@
     </li>
 </ul>
 
+<p>Aby zadeklarować zmienną, której wartość nie będzie ulegać zmianie, możemy napisać <code>const</code>, np. <code>const int MODULO = 1e9 + 7</code>. <code>1e9</code> oznacza 10 do potęgi 9.</p>
 <p>Na typach liczbowych dostępne są operacje takie jak dodawanie (<code>+</code>), odejmowanie (<code>-</code>), mnożenie (<code>*</code>), dzielenie całkowite (<code>/</code>) oraz reszta z dzielenia (<code>%</code>). </p>
 <p>Dla dociekliwych polecam lekturę: <a href="https://learn.microsoft.com/pl-pl/cpp/cpp/data-type-ranges?view=msvc-170" target="_blank">Zakresy typu danych</a>.</p>
 
