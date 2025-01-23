@@ -42,6 +42,7 @@ def main() -> None:
 		print(source_file)
 		print(destination_file)
 		print('\\'.join(destination_file.split("\\")[:-1]))
+		
 		if not os.path.exists('\\'.join(destination_file.split("\\")[:-1])):
 			os.mkdir('\\'.join(destination_file.split("\\")[:-1]))
 		
