@@ -6,15 +6,17 @@ $$
 P = \frac{(a + b) \cdot h}{2}
 $$
 
-Gdzie:  
-- $a$ – długość większej podstawy,  
-- $b$ – długość mniejszej podstawy,  
-- $h$ – wysokość trapezu.  
+Gdzie:
 
-### Twoim zadaniem jest napisanie programu, który:  
+- $a$ – długość większej podstawy,
+- $b$ – długość mniejszej podstawy,
+- $h$ – wysokość trapezu.
+
+### Twoim zadaniem jest napisanie programu, który:
+
 - wczyta trzy liczby: $a$, $b$ i $h$.
-- obliczy pole trapezu na podstawie podanych wartości.  
-- wypisze wynik z dokładnością do 2 miejsc po przecinku. 
+- obliczy pole trapezu na podstawie podanych wartości.
+- wypisze wynik z dokładnością do 2 miejsc po przecinku.
 
 ### Przykład działania programu:
 
