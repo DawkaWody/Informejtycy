@@ -1,0 +1,15 @@
+header-includes: |
+  \usepackage[a4paper, total={5.5in, 8in}]{geometry}
+  \usepackage{fancyhdr}
+  \usepackage{datetime}
+  \renewcommand{\dateseparator}{.}
+  \pagestyle{fancy}
+  \fancyhead{}
+  \fancyhead[L]{informejtycy.pl}
+  \fancyhead[C]{\thepage}
+  \fancyhead[R]{\ddmmyyyydate{\today}}
+  \fancyfoot{}
+  \fancyfoot[L]{Projekt organizowany w ramach olimpiady Zwolnieni z Teorii \\ \textcopyright{} 2025 Wszystkie prawa zastrzeżone}
+  \fancyfoot[R]{\itshape{Antoni Janicki}}
+  \renewcommand{\headrulewidth}{0.1pt}
+  \renewcommand{\footrulewidth}{0.1pt}
