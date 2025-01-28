@@ -1,0 +1,12 @@
+<style>
+    #realizowany-img {
+        width: 30vw;
+        border-radius: 12px;
+    }
+</style>
+
+<a href="https://zwolnienizteorii.pl/" target="_blank">
+    {{ with resources.Get "images/emitel.png" }}
+        <img src="{{ .RelPermalink }}" id="realizowany-img">
+    {{ end }}
+</a>

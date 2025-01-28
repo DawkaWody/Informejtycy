@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+  
+  {{ if .Param "math"}}
+    {{ partialCached "math.html" . }}
+  {{ end }}
+</head>
+<body>
+  <header>
+    {{ partial "header.html" . }}
+  </header>
+  <main>
+    <div id="srodek">
+      <div id="sidebar-left">
+        {{ partial "article_list.html" . }}
+      </div>
+      <div id="artykul">
+        {{ block "main" . }}{{ end }}
+      </div>
+      <div id="sidebar-right">
+        {{ .TableOfContents }}
+      </div>
+    </div>
+  </main>
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+  <script src="/js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{{ define "main" }}
+  dinadsa
+  {{ .Content }}
+  <style>
+    #realizowany {
+			margin-top: 5vh;
+			text-align: center;
+    }
+  </style>
+  <div id="realizowany">
+    {{ partial "project_as.html" . }}
+  </div>
+{{ end }}

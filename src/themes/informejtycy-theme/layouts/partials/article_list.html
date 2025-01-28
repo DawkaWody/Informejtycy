@@ -1,0 +1,6 @@
+<h2>Lista tematów</h2>
+<ul>
+    {{ range sort .Site.RegularPages "Params.id" }}
+        <li><a href="{{ .RelPermalink }}" {{ if eq .Permalink $.Permalink }}id="aktualny-temat"{{ end }}>{{ .Params.id }}. {{ .Title }}</a></li>
+    {{ end }}
+</ul>

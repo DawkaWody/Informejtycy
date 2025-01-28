@@ -1,0 +1,35 @@
+baseURL = 'https://example.org/'
+languageCode = 'pl-pl'
+title = 'Informejtycy.pl'
+theme = 'informejtycy-theme'
+
+[markup]
+    [markup.tableOfContents]
+        startLevel = 2
+        endLevel = 4
+        ordered = true
+
+    [markup.goldmark]
+        [markup.goldmark.extensions]
+            [markup.goldmark.extensions.passthrough]
+                enable = true
+                [markup.goldmark.extensions.passthrough.delimiters]
+                    block = [['\[', '\]'], ['$$', '$$']]
+                    inline = [['$', '$']]
+
+    [markup.highlight]
+        anchorLineNos = true
+        codeFences = true
+        guessSyntax = true
+        hl_Lines = ''
+        hl_inline = false
+        lineAnchors = ''
+        lineNoStart = 1
+        lineNos = false
+        lineNumbersInTable = true
+        noClasses = false
+        tabWidth = 4
+        wrapperClass = 'highlight'
+
+[params]
+    math = true
