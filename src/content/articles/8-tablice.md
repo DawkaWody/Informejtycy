@@ -5,7 +5,7 @@ title: 'Tablice'
 id: 8
 ---
 # Tablice
-Nadszedł czas poznać pierwszą struktórę pozwalającą przechowywać wiele wartości. Jest nią tablica, czyli wiele zmiennych tego samego typu, które są zebrane pod jedną nazwą, a do konkretnej zmiennej tj. komórki tablicy uzyskujemy dostęp poprzez wskazanie jej numeru. Na pierwszy rzut oka nietypowym zjawiskiem jest numeracja komórek tablicy od zera, jednak jak się niedługo dowiecie w wielu przypadkach jest to naprawdę przydatne.
+Nadszedł czas poznać pierwszą strukturę pozwalającą przechowywać wiele wartości. Jest nią tablica, czyli wiele zmiennych tego samego typu, które są zebrane pod jedną nazwą, a do konkretnej zmiennej tj. komórki tablicy uzyskujemy dostęp poprzez wskazanie jej numeru. Na pierwszy rzut oka nietypowym zjawiskiem jest numeracja komórek tablicy od zera, jednak jak się niedługo dowiecie w wielu przypadkach jest to naprawdę przydatne.
 
 ## Inicjowanie
 Tworzenie tablicy jest bardzo podobne do tworzenia zmiennej, jednak dodatkowym elementem jest to że musimy napisać po jej nazwie, w nawiasach kwadratowych liczbę naturalnej oznaczającej wielkość tablicy.
@@ -15,7 +15,7 @@ Tworzenie tablicy jest bardzo podobne do tworzenia zmiennej, jednak dodatkowym e
 using namespace std;
 
 int main(){
-    int a; // Przypomienie, tak tworzymy zmienną
+    int a; // Przypomnienie, tak tworzymy zmienną
     int a[10]; // Nowość, tak wygląda tworzenie tablicy dziesięcio elementowej, liczb całkowitych
     double b[5]; // To samo tylko że liczb zmiennoprzecinkowych
     bool c[2]; // Wartości logicznych bool
@@ -34,7 +34,7 @@ int main(){
 }
 ```
 
-Okazuje się, że c++ jest trochę leniwy, ponieważ jeśli tablica zostanie zadeklarowana w głównej funkcji $main$ to c++ nie wysili się aby ją posprzątać, przez co jej komórki będą miały przeróżne dowolne wartości. Aby zmuśić program do wyzerowania tablicy należy zadeklarować ją poza funkcją $main$:
+Okazuje się, że c++ jest trochę leniwy, ponieważ jeśli tablica zostanie zadeklarowana w głównej funkcji $main$ to c++ nie wysili się aby ją posprzątać, przez co jej komórki będą miały przeróżne dowolne wartości. Aby zmusić program do wyzerowania tablicy należy zadeklarować ją poza funkcją $main$:
 ```cpp
 #include <iostream>
 using namespace std;
@@ -46,7 +46,7 @@ int main(){
 }
 ```
 
-## Przypisywanie i odczytawanie danych
+## Przypisywanie i odczytywanie danych
 Wszystko fajnie, ale nadal nie umiemy używać tablicy tj. wpisywać do komórek jakieś wartości i je z nich odczytywać. Przypisanie wartość do komórki jest identyczne jak do zmiennej, z takim wyjątkiem, że przy nazwie tablicy trzeba podać w nawiasach prostokątnych numer komórki do której mają być przypisane dane, tak samo przy odczycie:
 
 ```cpp
@@ -86,3 +86,4 @@ int main(){
     }
 }
 ```
+
