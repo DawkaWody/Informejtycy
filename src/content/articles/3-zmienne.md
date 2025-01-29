@@ -1,5 +1,5 @@
 ---
-date: '2025-01-27T19:39:00+01:00'
+date: 2025-01-27T19:39:00+01:00
 draft: false
 title: 'Zmienne i operatory matematyczne'
 id: 3

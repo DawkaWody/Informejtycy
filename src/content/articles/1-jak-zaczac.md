@@ -1,5 +1,5 @@
 ---
-date: '2025-01-06T10:53:00+01:00'
+date: 2025-01-06T10:53:00+01:00
 draft: false
 title: 'Jak zacząć?'
 id: 1
