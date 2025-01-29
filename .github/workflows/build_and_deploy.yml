@@ -1,0 +1,49 @@
+name: Site build and deployment
+
+on:
+  push:
+    branches:
+      - main
+    
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+      
+      - name: Checkout destination branch
+        uses: actions/checkout@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          ref: gh-pages # Destination branch name
+          path: build-site
+        
+      - name: Setup hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 0.139.3
+          extended: true
+
+      - name: Build site
+        env:
+          TZ: 'Europe/Warsaw'
+        run: cd ./src && hugo --minify
+      
+      - name: Deploy site
+        if: github.ref == 'refs/heads/main'
+        run: |
+          cd ./src
+          cp -R public/* ${GITHUB_WORKSPACE}/build-site
+          cd ${GITHUB_WORKSPACE}/build-site
+          git add .
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git commit -m "Site build no. ${{ github.run_number }} at $(date)"
+          git push
