@@ -55,8 +55,13 @@ body {
 }
 
 :target {
-    scroll-margin-top: 50px; /* Przewiń 50px w górę od miejsca, do którego przewijasz */
+    scroll-margin-top: 40px;
 }
+
+ol {
+	padding-left: 15px;
+}
+
 
 #sidebar-left,
 #sidebar-right {

@@ -16,6 +16,13 @@
       <description>&lt;h1 id=&#34;testowy-artykuł-czy-działa-strona&#34;&gt;Testowy artykuł czy działa strona&lt;/h1&gt;&#xA;&lt;p&gt;asdfagsdnagsnjajnakls&#xA;afgs&#xA;gd&#xA;gasd&#xA;gasd&#xA;adgs&lt;/p&gt;&#xA;&lt;h2 id=&#34;asdfgadgsagsd-test-spisu-treści&#34;&gt;ASDFGADGSAGSd (test spisu treści)&lt;/h2&gt;&#xA;&lt;p&gt;fsaFafaSafs&lt;/p&gt;&#xA;&lt;h2 id=&#34;dgdasdgasags&#34;&gt;dgdasdgasags&lt;/h2&gt;&#xA;&lt;p&gt;$a^2 + b^2 = c^2$&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;koniec&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
+      <title>NWD,  Algorytm Euklidesa i NWW</title>
+      <link>http://localhost:1313/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww-kopia/</link>
+      <pubDate>Sat, 25 Jan 2025 13:35:47 +0100</pubDate>
+      <guid>http://localhost:1313/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww-kopia/</guid>
+      <description>&lt;h1 id=&#34;nwd--algorytm-euklidesa-i-nww&#34;&gt;NWD,  Algorytm Euklidesa i NWW&lt;/h1&gt;&#xA;&lt;h2 id=&#34;nwd&#34;&gt;NWD&lt;/h2&gt;&#xA;&lt;p&gt;Zapewne spotkałeś się już z takim skrótem jak NWD. Oznacza on Największy Wspólny Dzielnik, czyli największą możliwą liczbę, która dzieli liczbę $a$ i liczbę $b$ bez reszty. Czy zastanawiałeś się już, jak można znaleźć NWD pisząc program w C++? Można to zrobić w bardzo prosty sposób. Już wiesz, jak znaleźć dzielniki liczby $a$, dlatego teraz wystarczy sprawdzić, czy dzielniki $a$ dzielą także $b$. Warto zauważyć, że jeśli $a$ jest większe od $b$ to niektóre dzielniki $a$ mogą być większe od $b$, dlatego warto jest sprawdzać dzielniki liczby mniejszej.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Wyszukiwanie liniowe i binarne</title>
       <link>http://localhost:1313/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/</link>
       <pubDate>Sat, 25 Jan 2025 13:35:47 +0100</pubDate>

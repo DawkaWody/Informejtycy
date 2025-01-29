@@ -55,6 +55,10 @@
     
         <li><a href="/Informejtycy/articles/test/" >1. Test</a></li>
     
+        <li><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww-kopia/" >7. NWD,  Algorytm Euklidesa i NWW</a></li>
+    
+        <li><a href="/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/" >15. Wyszukiwanie liniowe i binarne</a></li>
+    
 </ul>
       </div>
       <div id="artykul">
@@ -75,6 +79,50 @@ adgs</p>
 <h2 id="dgdasdgasags">dgdasdgasags</h2>
 <p>$a^2 + b^2 = c^2$</p>
 <p><em>koniec</em></p>
+  
+    <h2><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww-kopia/">NWD,  Algorytm Euklidesa i NWW</a></h2>
+    <h1 id="nwd--algorytm-euklidesa-i-nww">NWD,  Algorytm Euklidesa i NWW</h1>
+<h2 id="nwd">NWD</h2>
+<p>Zapewne spotkałeś się już z takim skrótem jak NWD. Oznacza on Największy Wspólny Dzielnik, czyli największą możliwą liczbę, która dzieli liczbę $a$ i liczbę $b$ bez reszty. Czy zastanawiałeś się już, jak można znaleźć NWD pisząc program w C++? Można to zrobić w bardzo prosty sposób. Już wiesz, jak znaleźć dzielniki liczby $a$, dlatego teraz wystarczy sprawdzić, czy dzielniki $a$ dzielą także $b$. Warto zauważyć, że jeśli $a$ jest większe od $b$ to niektóre dzielniki $a$ mogą być większe od $b$, dlatego warto jest sprawdzać dzielniki liczby mniejszej.</p>
+  
+    <h2><a href="/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/">Wyszukiwanie liniowe i binarne</a></h2>
+    <h1 id="wyszukiwanie-liniowe-i-binarne">Wyszukiwanie liniowe i binarne</h1>
+<h2 id="wyszukiwanie-liniowe">Wyszukiwanie liniowe</h2>
+<p>Czym jest wyszukiwanie liniowe? Nazwa może przerażać, ale jest to najprostszy sposób na wyszukanie odpowiedzi na nasze zapytanie w danym ciągi. Polega on jedynie na przejściu przez ciąg. Wyobraźmy sobie, że mamy ciąg liczb i dostajemy $k$ zapytań o dane liczby, czy występują one w ciągu. Jak wyglądałby taki kod?</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;iostream&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include&lt;vector&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">vector</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ciag</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">liczba</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">liczba</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ciag</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">liczba</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="n">liczba_do_spr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">k</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">liczba_do_spr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">bool</span> <span class="n">czy_wystepuje</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//to w tej pętli przechodzimy po całym ciągu, czyli stosujemy wyszukiwanie liniowe
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">ciag</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="n">liczba_do_spr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="n">czy_wystepuje</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">czy_wystepuje</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;TAK&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;NIE&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Ten sposób sprawdza się, kiedy mamy nieposortowany ciąg, a także jak nasze $n$, czyli długość ciągu, jest stosunkowo małe.</p>
   
 
       </div>
