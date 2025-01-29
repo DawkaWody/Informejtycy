@@ -252,3 +252,141 @@ footer {
     content: url("../images/next-dark.png");
 	width: 36px;
 }
+
+
+.menu-form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.menu-form label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+}
+
+#sidebar-right h2 {
+	margin-bottom: 15px !important;
+}
+
+
+/* Zmienne dla trybu jasnego */
+:root {
+    --border-color: var(--granica-stopki);
+    --border-select: #cccccc;
+    --bg-select: #f9f9f9;
+    --font-select: #333333;
+    --topic-color: #e0e0e0;
+}
+
+/* Zmienne dla trybu ciemnego */
+[data-theme="dark"] {
+    --border-color: var(--granica-stopki);
+    --border-select: #cccccc;
+    --bg-select: #252526;
+    --font-select: white;
+    --topic-color: #252526;
+}
+
+
+select:focus, textarea:focus {
+  color: #333; /* Kolor tekstu również nie zmienia się */
+}
+
+select,
+textarea {
+    width: 100%; /* Oba elementy zajmują pełną szerokość kontenera */
+    padding: 10px; /* Ujednolicone marginesy wewnętrzne */
+	margin-top: 5px;
+	margin-bottom: 15px;
+    border: 1px solid var(--border-select);
+    border-radius: 4px; /* Spójne zaokrąglenie rogów */
+    background: var(--bg-select);
+    font-size: 14px; /* Taka sama wielkość czcionki */
+    color: var(--font-select);
+    outline: none;
+    box-sizing: border-box; /* Ujednolica sposób obliczania szerokości */
+}
+
+select, option {
+	font-family: inherit;
+	font-size: 15px;
+	font-weight: inherit;
+}
+
+textarea {
+    resize: none; /* Opcjonalnie, jeśli nie chcesz, by pole można było zmieniać */
+    font-family: monospace; /* Styl czcionki jak w edytorze kodu */
+    line-height: 1.5; /* Lepsze odstępy między wierszami w textarea */
+}
+
+select:focus,
+textarea:focus {
+    border-color: #007BFF;
+    background: #ffffff;
+}
+
+button {
+    padding: 10px 20px;
+
+	width: 15vw;
+	margin-bottom: 20px;
+
+    border: solid var(--tlo-gornego-paska) 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-radius 0.3s ease;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+button:hover {
+    border-radius: 10px;
+}
+
+table {
+	margin-top: 25px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 8px 12px 8px 12px;
+    text-align: left;
+}
+
+.topic {
+    font-weight: bold;
+    background-color: var(--topic-color);
+}
+
+.pole-wyniku {
+	width: 30px;
+}
+
+td a {
+	text-decoration: none;
+	color: inherit;	
+}
+td a:hover {
+	color: var(--naglowki);
+}
+
+tr td:first-child {
+    text-align: left; /* Ustawia tekst pierwszej komórki w wierszu do lewej */
+}
+
+tr td:nth-child(2) {
+    width: 50px;
+    text-align: center; /* Ustawia tekst drugiej komórki w wierszu do środka */
+}
+
+:target {
+    scroll-margin-top: 50px; /* Przewiń 20px w górę od miejsca, do którego przewijasz */
+}
