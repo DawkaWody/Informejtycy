@@ -20,6 +20,7 @@
         {{ block "main" . }}{{ end }}
       </div>
       <div id="sidebar-right">
+        <h2>Spis treści</h2>
         {{ .TableOfContents }}
       </div>
     </div>
@@ -27,6 +28,6 @@
   <footer>
     {{ partial "footer.html" . }}
   </footer>
-  <script src="/js/theme.js"></script>
+  <script src="{{ .Site.BaseURL }}js/theme.js"></script>
 </body>
 </html>
