@@ -1,5 +1,5 @@
 ---
-date: '2025-01-29T20:00:00+01:00'
+date: 2025-01-29T20:00:00+01:00
 draft: false
 title: 'Tablice'
 id: 8
