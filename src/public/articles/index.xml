@@ -2,32 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Articles on Informejtycy.pl</title>
-    <link>http://localhost:1313/articles/</link>
+    <link>http://localhost:1313/Informejtycy/articles/</link>
     <description>Recent content in Articles on Informejtycy.pl</description>
     <generator>Hugo</generator>
     <language>pl-pl</language>
-    <lastBuildDate>Sun, 26 Jan 2025 10:41:10 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/articles/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jan 2025 18:06:54 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/Informejtycy/articles/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Zmienne i operatory</title>
-      <link>http://localhost:1313/articles/2_zmienne-i-operatory/</link>
-      <pubDate>Sun, 26 Jan 2025 10:41:10 +0100</pubDate>
-      <guid>http://localhost:1313/articles/2_zmienne-i-operatory/</guid>
-      <description>&lt;h1 id=&#34;asggsgsgs&#34;&gt;asggsgsgs&lt;/h1&gt;&#xA;&lt;p&gt;asfegasgsasgdfgsfsgf&#xA;ga&#xA;fga&lt;/p&gt;&#xA;&lt;p&gt;gsfd&#xA;asg&#xA;ags&#xA;d&#xA;agsd&#xA;asdg&lt;/p&gt;&#xA;&lt;h2 id=&#34;gejegegejgejgejgejegj&#34;&gt;Gejegegejgejgejgejegj&lt;/h2&gt;&#xA;&lt;p&gt;fdsaADSG&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;koniec&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Pierwszy Program</title>
-      <link>http://localhost:1313/articles/1_pierwszy-program/</link>
-      <pubDate>Sat, 25 Jan 2025 13:35:47 +0100</pubDate>
-      <guid>http://localhost:1313/articles/1_pierwszy-program/</guid>
-      <description>&lt;h1 id=&#34;pierwszy-program-w-c&#34;&gt;Pierwszy program w C++&lt;/h1&gt;&#xA;&lt;p&gt;Spróbujmy najpierw napisać program, który coś wypisze. Mówi się, że komputer &lt;em&gt;wypisuje coś na wyjście&lt;/em&gt;, czyli, że tekst pojawi się na ekranie. Oto linijka, która to robi:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Witaj uzytkowniku!&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;&#xA;&lt;p&gt;Na ten moment nie przejmuj się tym &lt;code&gt;std::&lt;/code&gt;, zaraz wyjaśni się, dlaczego jest to potrzebne i jak tego uniknąć.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Każda linijka musi się kończyć znakiem &lt;code&gt;;&lt;/code&gt; - tak został stworzony język, żeby jasno oddzielić od siebie linie. &lt;code&gt;cout&lt;/code&gt; to z angielskiego &lt;em&gt;character output&lt;/em&gt;, czyli wyjście znaków. Komputer oczekuje po nim znaku &lt;code&gt;&amp;lt;&amp;lt;&lt;/code&gt;, po którym powinna znaleźć się wartość do wypisania. Z racji na to, że program ma wypisać słowo (albo zdanie), a nie na przykład liczbę, musi ona znaleźć się między znakami &lt;code&gt;&amp;quot; &amp;quot;&lt;/code&gt;. Co istotne, na razie dopuszczane są tylko litery alfabetu łacińskiego.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Nwd i nww</title>
-      <link>http://localhost:1313/articles/6_nwd_nww/</link>
-      <pubDate>Sun, 01 Jan 2023 08:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/articles/6_nwd_nww/</guid>
-      <description>&lt;h2 id=&#34;nwd&#34;&gt;NWD&lt;/h2&gt;&#xA;&lt;p&gt;Zapewne spotkałeś się już z takim skrótem jak NWD. Oznacza on Największy Wspólny Dzielnik, czyli największą możliwą liczbę, która dzieli liczbę $a$ i liczbę $b$ bez reszty. Czy zastanawiałeś się już, jak można znaleźć NWD pisząc program w C++? Można to zrobić w bardzo prosty sposób. Już wiesz, jak znaleźć dzielniki liczby $a$, dlatego teraz wystarczy sprawdzić, czy dzielniki $a$ dzielą także $b$. Warto zauważyć, że jeśli $a$ jest większe od $b$ to niektóre dzielniki $a$ mogą być większe od $b$, dlatego warto jest sprawdzać dzielniki liczby mniejszej.&lt;/p&gt;</description>
+      <title>Test</title>
+      <link>http://localhost:1313/Informejtycy/articles/test/</link>
+      <pubDate>Wed, 29 Jan 2025 18:06:54 +0100</pubDate>
+      <guid>http://localhost:1313/Informejtycy/articles/test/</guid>
+      <description>&lt;h1 id=&#34;testowy-artykuł-czy-działa-strona&#34;&gt;Testowy artykuł czy działa strona&lt;/h1&gt;&#xA;&lt;p&gt;asdfagsdnagsnjajnakls&#xA;afgs&#xA;gd&#xA;gasd&#xA;gasd&#xA;adgs&lt;/p&gt;&#xA;&lt;h2 id=&#34;asdfgadgsagsd-test-spisu-treści&#34;&gt;ASDFGADGSAGSd (test spisu treści)&lt;/h2&gt;&#xA;&lt;p&gt;fsaFafaSafs&lt;/p&gt;&#xA;&lt;h2 id=&#34;dgdasdgasags&#34;&gt;dgdasdgasags&lt;/h2&gt;&#xA;&lt;p&gt;$a^2 + b^2 = c^2$&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;koniec&lt;/em&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
