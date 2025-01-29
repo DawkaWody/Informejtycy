@@ -25,7 +25,7 @@ typ nazwa = wartosc;
 | `bool`           | Wartość logiczna - zero lub jeden.                                                                                                                                                                                                    |
 | `void`           | Z pierwszego artykułu wiesz już że *prawie* każda funkcja coś zwraca. Funkcje, które nic nie zwracają (czyli nie obliczają żadnej wartości), są oznaczane właśnie tym typem.                                                          |
 
-> Dla dociekliwych, [pod koniec artykułu](#skadtakienazwy) wyjaśniam również, dlaczego użyto takich nazw.
+> Dla dociekliwych, [pod koniec artykułu](#dla-dociekliwych-nr-1-skąd-pochodzą-nazwy-typów-danych) wyjaśniam również, dlaczego użyto takich nazw.
 
 ## Operatory matematyczne i zmienne w praktyce
 
@@ -81,7 +81,7 @@ int main()
 }
 ```
 
-> Dla dociekliwych, [pod koniec artykułu](#czaswykonaniaikompilacji) wyjaśniam różnicę między czasem kompilacji, a czasem wykonania.
+> Dla dociekliwych, [pod koniec artykułu](#dla-dociekliwych-nr-2-czas-wykonania-i-czas-kompilacji-programu) wyjaśniam różnicę między czasem kompilacji, a czasem wykonania.
 
 `std::cin` to słówko, które podobnie jak `std::cout` jest "tłumaczone" językowi przez plik `<iostream>`. C++ spodziewa się po nim operatora `>>` i zmiennej, do której powinien *wczytać* wartość (czyli "wrzucić do pudełka").
 
@@ -157,11 +157,11 @@ int main()
 }
 ```
 
-## Dla dociekliwych nr 1: skąd pochodzą nazwy typów danych? <a name="skadtakienazwy"></a>
+## Dla dociekliwych nr 1: skąd pochodzą nazwy typów danych?
 
 `int` to skrót angielskiego *integer*, czyli liczba całkowita. `float`/`double` pochodzą od formatu liczb "z przecinkiem". Liczby te na komputerze mogą być przechowywane w kilku rozmiarach. Te "krótsze" (zajmujące mniej miejsca w pamięci) to `float`, a "dłuższe" (zajmujące więcej miejsca) to `double`. Stąd wynikają różnice w precyzji typów. `char` pochodzi od angielskiego *character*, czyli znak. Są to znaki w kodowaniu [ASCII](https://pl.wikipedia.org/wiki/ASCII) - w późniejszym czasie dowiesz się więcej na temat tego kodowania. `bool` zaś pochodzi od matematyka George'a Boole'a, który opracował taki system i nazwał go *logiką*.
 
-## Dla dociekliwych nr 2: Czas wykonania i czas kompilacji programu <a name="czaswykonaniaikompilacji"></a>
+## Dla dociekliwych nr 2: Czas wykonania i czas kompilacji programu
 
 W C++ mówimy o *czasie kompilacji* i *czasie wykonania*.
 
