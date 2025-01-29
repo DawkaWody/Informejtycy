@@ -1,8 +1,8 @@
 +++
-date: '2025-01-29T18:06:54+01:00'
-draft: false
-title: 'Test'
-id: 1
+date = '2025-01-29T18:06:54+01:00'
+draft = false
+title = 'Test'
+id = 1
 +++
 
 # Testowy artykuł czy działa strona
