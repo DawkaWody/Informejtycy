@@ -1,5 +1,5 @@
 ---
-date: '2025-01-25T12:20:00+01:00'
+date: 2025-01-25T12:20:00+01:00
 draft: false
 title: 'Pierwszy Program w C++'
 id: 2
