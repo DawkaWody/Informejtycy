@@ -5,7 +5,11 @@ title: 'Tablice'
 id: 8
 ---
 # Tablice
-Nadszedł czas poznać pierwszą struktórę pozwalającą przechowywać wiele wartości. Jest nią tablica, czyli wiele zmiennych tego samego typu, które są zebrane pod jedną nazwą, a do konkretnej zmiennej tj. komórki tablicy uzyskujemy dostęp poprzez wskazanie jej numeru. Na pierwszy rzut oka nietypowym zjawiskiem jest numeracja komórek tablicy od zera, jednak jak się niedługo dowiecie w wielu przypadkach jest to naprawdę przydatne. Tworzenie tablicy jest bardzo podobne do tworzenia zmiennej, jednak dodatkowym elementem jest to że musimy napisać po jej nazwie, w nawiasach kwadratowych liczbę naturalnej oznaczającej wielkość tablicy.
+Nadszedł czas poznać pierwszą struktórę pozwalającą przechowywać wiele wartości. Jest nią tablica, czyli wiele zmiennych tego samego typu, które są zebrane pod jedną nazwą, a do konkretnej zmiennej tj. komórki tablicy uzyskujemy dostęp poprzez wskazanie jej numeru. Na pierwszy rzut oka nietypowym zjawiskiem jest numeracja komórek tablicy od zera, jednak jak się niedługo dowiecie w wielu przypadkach jest to naprawdę przydatne.
+
+## Inicjowanie
+Tworzenie tablicy jest bardzo podobne do tworzenia zmiennej, jednak dodatkowym elementem jest to że musimy napisać po jej nazwie, w nawiasach kwadratowych liczbę naturalnej oznaczającej wielkość tablicy.
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -42,7 +46,9 @@ int main(){
 }
 ```
 
+## Przypisywanie i odczytawanie danych
 Wszystko fajnie, ale nadal nie umiemy używać tablicy tj. wpisywać do komórek jakieś wartości i je z nich odczytywać. Przypisanie wartość do komórki jest identyczne jak do zmiennej, z takim wyjątkiem, że przy nazwie tablicy trzeba podać w nawiasach prostokątnych numer komórki do której mają być przypisane dane, tak samo przy odczycie:
+
 ```cpp
 #include <iostream>
 using namespace std;
