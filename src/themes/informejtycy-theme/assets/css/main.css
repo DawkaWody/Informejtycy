@@ -193,8 +193,7 @@ footer {
     margin-top: 7px;
     margin-left: 5px;
     width: 200px;
-    outline: none !important;
-    border: none !important;
+	box-shadow: none !important;
 }
 
 #dol-nav {
