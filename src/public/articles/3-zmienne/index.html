@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pl-pl" dir="ltr">
+<head><script src="/Informejtycy/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Informejtycy/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"&gt>
+
+<title>Zmienne i operatory matematyczne | Informejtycy.pl</title>
+
+    <link rel="stylesheet" href="/Informejtycy/css/main.css">
+
+
+      <script src="/Informejtycy/js/main.js"></script>
+
+
+
+
+
+<link rel="preload stylesheet" as="style" href="http://localhost:1313/Informejtycy/css/highlight_dark.min.css">
+<link rel="preload stylesheet" as="style" href="http://localhost:1313/Informejtycy/css/highlight_light.min.css">
+
+  
+  
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['$', '$']] 
+    }
+  };
+</script>
+  
+</head>
+<body>
+  <header>
+    
+    <div id="baner">
+        <a href="http://localhost:1313/Informejtycy/">
+            
+                <img id="baner-img" src="/Informejtycy/images/baner-ciemne.png" alt="baner">
+            
+        </a>
+    </div>
+    
+        <img id="theme-toggle" src="/Informejtycy/images/theme.png" alt="theme">
+    
+
+  </header>
+  <main>
+    <div id="srodek">
+      <div id="sidebar-left">
+        <h2>Lista tematów</h2>
+<ul>
+    
+        <li><a href="/Informejtycy/articles/test/" >1. Test</a></li>
+    
+        <li><a href="/Informejtycy/articles/1-jak-zaczac/" >1. Jak zacząć?</a></li>
+    
+        <li><a href="/Informejtycy/articles/2-pierwszy-program/" >2. Pierwszy Program w C&#43;&#43;</a></li>
+    
+        <li><a href="/Informejtycy/articles/3-zmienne/" id="aktualny-temat">3. Zmienne i operatory matematyczne</a></li>
+    
+        <li><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww-kopia/" >7. NWD,  Algorytm Euklidesa i NWW</a></li>
+    
+        <li><a href="/Informejtycy/articles/8-tablice/" >8. Tablice</a></li>
+    
+        <li><a href="/Informejtycy/articles/13-vector/" >13. Vector</a></li>
+    
+        <li><a href="/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/" >15. Wyszukiwanie liniowe i binarne</a></li>
+    
+</ul>
+      </div>
+      <div id="artykul">
+        
+  <h1 id="zmienne-i-operatory-matematyczne">Zmienne i operatory matematyczne</h1>
+<h2 id="czym-są-zmienne">Czym są zmienne?</h2>
+<p><em>Zmienne</em> w informatyce można porównać do pudełek. Pudełko ma rozmiar i kształt, toteż mogą się w nim znaleźć tylko pasujące rzeczy. Ma również swoją nazwę, aby język mógł odróżnić je od innych. Kształt i rozmiar określa <em>typ danych.</em> Na przykład, do &ldquo;pudełka&rdquo; z typem <code>int</code>, od angielskiego <em>integer</em>, możemy wrzucić tylko liczby całkowite. W C++ tworzymy zmienne w następujący sposób.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">typ nazwa = wartosc;
+</span></span></code></pre></div><h2 id="typy-danych">Typy danych</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Typ danych</th>
+          <th style="text-align: center">Opis</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><code>int</code></td>
+          <td style="text-align: center">Przechowuje liczby całkowite.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>float</code>/<code>double</code></td>
+          <td style="text-align: center">Przechowuje liczby rzeczywiste (z przecinkiem). <code>double</code> pozwala przechować liczby o wyższej <em>precyzji</em> - albo liczby większe, albo z większą ilością cyfr po przecinku. Jeżeli wahasz się przy wyborze jednego z nich, weź <code>double</code>.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>char</code></td>
+          <td style="text-align: center">Przechowuje znaki (w kodowaniu ASCII, co oznacza między innymi brak polskich znaków). Znaki przechowuje się między znakami <code>' '</code> (a ciągi znaków między <code>&quot; &quot;</code>).</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>bool</code></td>
+          <td style="text-align: center">Wartość logiczna - zero lub jeden.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>void</code></td>
+          <td style="text-align: center">Z pierwszego artykułu wiesz już że <em>prawie</em> każda funkcja coś zwraca. Funkcje, które nic nie zwracają (czyli nie obliczają żadnej wartości), są oznaczane właśnie tym typem.</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>Dla dociekliwych, <a href="#dla-dociekliwych-nr-1-sk%C4%85d-pochodz%C4%85-nazwy-typ%C3%B3w-danych">pod koniec artykułu</a> wyjaśniam również, dlaczego użyto takich nazw.</p>
+</blockquote>
+<h2 id="operatory-matematyczne-i-zmienne-w-praktyce">Operatory matematyczne i zmienne w praktyce</h2>
+<p>Utwórzmy sobie pierwszą zmienną. Niech przechowuje ona liczby całkowite.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">liczba</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span></code></pre></div><p>Od razu <em>przypisałem</em> do niej wartość <code>5</code>. Oznacza to, że pod tą zmienną kryje się wartość <code>5</code>. Spróbujmy coś z nią zrobić. W języku C++ mamy pięć operatorów matematycznych: dodawanie <code>+</code>, odejmowanie <code>-</code>, mnożenie <code>*</code>, dzielenie <code>/</code> i reszta z dzielenia <code>%</code>, tak zwane <em>modulo</em>. Dodajmy sobie do naszej zmiennej <code>3</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">liczba</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">liczba</span> <span class="o">=</span> <span class="n">liczba</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span>
+</span></span></code></pre></div><p>Samo <code>liczba + 3</code> nie zmieniłoby wartości zmiennej <code>liczba</code> na <code>8</code>, bo program obliczyłby, że <code>5+3</code> to <code>8</code>, ale nie wiedziałby, co należy z tym zrobić dalej. Istnieje pewna skrócona wersja tego zapisu, z użyciem operatora <code>+=</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">liczba</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">liczba</span> <span class="o">+=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span></code></pre></div><p>Język, gdy napotyka operator <code>+=</code>, ustawia wartość zmiennej <code>liczba</code> na sumę jej i liczby <code>3</code>. <code>a += b</code> to więc dokładnie to samo co <code>a = a + b</code>. To samo zachodzi dla pozostałych operatorów. Przyjrzyjmy się teraz programowi, który wypisze na wyjście wynik mnożenia zmiennej liczba i wartości 5.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">liczba</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">liczba</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Pytanie brzmi &ldquo;po co w tej sytuacji zmienna? Nie wystarczy napisać <code>cout &lt;&lt; 5*5 &lt;&lt; endl;</code> albo <code>cout &lt;&lt; 25 &lt;&lt; endl;</code>?&rdquo;. W tej sytuacji wystarczy. Niekiedy jednak użycie zmiennych jest konieczne. Przyjrzyjmy się <em>wczytywaniu danych.</em></p>
+<h2 id="wczytywanie-danych">Wczytywanie danych</h2>
+<p>Wczytywanie danych to nic innego, jak uzupełnianie wartości zmiennych po uruchomieniu programu. Profesjonalnie mówi się, że są one uzupełniane <em>w czasie wykonania programu.</em> Możemy jednak utworzyć zmienną, której domyślna wartość jest nieokreślona (albo równa <code>0</code>), a program w pewnym momencie zatrzyma się, czekając aż podamy mu jej wartość. Odpowiada za to <code>std::cin</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">liczba</span><span class="p">;</span> <span class="c1">// Jest to zmienna, której wartość jest nieokreślona.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="c1">// Może być równa zero, ale nie musi - może być to każda inna liczba.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">liczba</span><span class="p">;</span> <span class="c1">// Teraz program będzie czekał, aż podamy mu liczbę.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">liczba</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><blockquote>
+<p>Dla dociekliwych, <a href="#dla-dociekliwych-nr-2-czas-wykonania-i-czas-kompilacji-programu">pod koniec artykułu</a> wyjaśniam różnicę między czasem kompilacji, a czasem wykonania.</p>
+</blockquote>
+<p><code>std::cin</code> to słówko, które podobnie jak <code>std::cout</code> jest &ldquo;tłumaczone&rdquo; językowi przez plik <code>&lt;iostream&gt;</code>. C++ spodziewa się po nim operatora <code>&gt;&gt;</code> i zmiennej, do której powinien <em>wczytać</em> wartość (czyli &ldquo;wrzucić do pudełka&rdquo;).</p>
+<h2 id="wczytywanie-wielu-liczb">Wczytywanie wielu liczb</h2>
+<p>Program wczytujący trzy liczby może wyglądać tak:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">liczba1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">liczba2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">liczba3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">liczba1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">liczba2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">liczba3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Zmienne te mogą mieć od razu ustawione pewne wartości, ale nie muszą. <code>std::cin</code> je całkowicie nadpisuje. Można też skrócić ten kod, do następującego zapisu.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">liczba1</span><span class="p">,</span> <span class="n">liczba2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">liczba3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">liczba1</span> <span class="o">&gt;&gt;</span> <span class="n">liczba2</span> <span class="o">&gt;&gt;</span> <span class="n">liczba3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Warto zaznaczyć, że <code>std::cin</code> po uruchomieniu programu wie, w którym miejscu kończy się pierwsza liczba, a zaczyna druga dzięki spacjom i nowym liniom. Dlatego, niezależnie czy wpiszemy programowi <em>wejście_1</em>, czy <em>wejście_2</em> (patrz poniżej), to program i tak dobrze załaduje wartości zmiennych.</p>
+<p><em>wejście_1:</em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">12 56 15.3
+</span></span></code></pre></div><p><em>wejście_2:</em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">12
+</span></span><span class="line"><span class="cl">56
+</span></span><span class="line"><span class="cl">15.3
+</span></span></code></pre></div><h2 id="podsumowanie">Podsumowanie</h2>
+<p>Oto kod, który powinieneś rozumieć po dzisiejszej lekcji.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">liczba1</span><span class="p">,</span> <span class="n">liczba2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">rzeczywista</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Wpisz dwie liczby: &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">liczba1</span> <span class="o">&gt;&gt;</span> <span class="n">rzeczywista</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">liczba2</span> <span class="o">=</span> <span class="n">liczba1</span> <span class="o">/</span> <span class="mi">15</span><span class="p">;</span> <span class="c1">// Dzielenie zachodzi na int&#39;ach, więc wynik jest zaokrąglany w dół
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Pierwsza liczba podzielona na 15: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">liczba2</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Druga liczba podzielona na 15: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">rzeczywista</span> <span class="o">/</span> <span class="mi">15</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="dla-dociekliwych-nr-1-skąd-pochodzą-nazwy-typów-danych">Dla dociekliwych nr 1: skąd pochodzą nazwy typów danych?</h2>
+<p><code>int</code> to skrót angielskiego <em>integer</em>, czyli liczba całkowita. <code>float</code>/<code>double</code> pochodzą od formatu liczb &ldquo;z przecinkiem&rdquo;. Liczby te na komputerze mogą być przechowywane w kilku rozmiarach. Te &ldquo;krótsze&rdquo; (zajmujące mniej miejsca w pamięci) to <code>float</code>, a &ldquo;dłuższe&rdquo; (zajmujące więcej miejsca) to <code>double</code>. Stąd wynikają różnice w precyzji typów. <code>char</code> pochodzi od angielskiego <em>character</em>, czyli znak. Są to znaki w kodowaniu <a href="https://pl.wikipedia.org/wiki/ASCII">ASCII</a> - w późniejszym czasie dowiesz się więcej na temat tego kodowania. <code>bool</code> zaś pochodzi od matematyka George&rsquo;a Boole&rsquo;a, który opracował taki system i nazwał go <em>logiką</em>.</p>
+<h2 id="dla-dociekliwych-nr-2-czas-wykonania-i-czas-kompilacji-programu">Dla dociekliwych nr 2: Czas wykonania i czas kompilacji programu</h2>
+<p>W C++ mówimy o <em>czasie kompilacji</em> i <em>czasie wykonania</em>.</p>
+<ul>
+<li>
+<p>Czas kompilacji - proces zamiany kod C++ w plik <code>.exe</code>. Zmienne i inne wartości w tym procesie fizycznie znajdują się w kodzie C++.</p>
+</li>
+<li>
+<p>Czasie wykonania - wykonanie programu, po uruchomieniu pliku <code>.exe</code>. Wartości w tym procesie są wyznaczane dopiero po uruchomieniu.</p>
+</li>
+</ul>
+<blockquote>
+<p>Edytory typu Code::Blocks najczęściej <em>kompilują</em> program (czyli tworzą z niego plik <code>.exe</code>) automatycznie, zanim zostanie uruchomiony program.</p>
+</blockquote>
+
+  
+  <div id="dol-nav">
+    
+
+
+
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+<a id="poprzedni" href="http://localhost:1313/Informejtycy/articles/2-pierwszy-program/"><img id="prev-img"></a>
+
+
+<a id="zadania" href="http://localhost:1313/Informejtycy/">Zadania</a>
+
+<a id="nastepny" href="http://localhost:1313/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww-kopia/"><img id="next-img"></a>
+
+
+  </div>
+
+
+      </div>
+      <div id="sidebar-right">
+        <h2>Spis treści</h2>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#czym-są-zmienne">Czym są zmienne?</a></li>
+    <li><a href="#typy-danych">Typy danych</a></li>
+    <li><a href="#operatory-matematyczne-i-zmienne-w-praktyce">Operatory matematyczne i zmienne w praktyce</a></li>
+    <li><a href="#wczytywanie-danych">Wczytywanie danych</a></li>
+    <li><a href="#wczytywanie-wielu-liczb">Wczytywanie wielu liczb</a></li>
+    <li><a href="#podsumowanie">Podsumowanie</a></li>
+    <li><a href="#dla-dociekliwych-nr-1-skąd-pochodzą-nazwy-typów-danych">Dla dociekliwych nr 1: skąd pochodzą nazwy typów danych?</a></li>
+    <li><a href="#dla-dociekliwych-nr-2-czas-wykonania-i-czas-kompilacji-programu">Dla dociekliwych nr 2: Czas wykonania i czas kompilacji programu</a></li>
+  </ol>
+</nav>
+      </div>
+    </div>
+  </main>
+  <footer>
+    Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
+Kontakt: kontakt.informejtycy@gmail.com<br>
+&copy; 2025 Wszelkie prawa zastrzeżone
+  </footer>
+  <script src="http://localhost:1313/Informejtycy/js/theme.js"></script>
+</body>
+</html>

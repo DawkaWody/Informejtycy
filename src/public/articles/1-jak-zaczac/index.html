@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pl-pl" dir="ltr">
+<head><script src="/Informejtycy/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Informejtycy/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"&gt>
+
+<title>Jak zacząć? | Informejtycy.pl</title>
+
+    <link rel="stylesheet" href="/Informejtycy/css/main.css">
+
+
+      <script src="/Informejtycy/js/main.js"></script>
+
+
+
+
+
+<link rel="preload stylesheet" as="style" href="http://localhost:1313/Informejtycy/css/highlight_dark.min.css">
+<link rel="preload stylesheet" as="style" href="http://localhost:1313/Informejtycy/css/highlight_light.min.css">
+
+  
+  
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['$', '$']] 
+    }
+  };
+</script>
+  
+</head>
+<body>
+  <header>
+    
+    <div id="baner">
+        <a href="http://localhost:1313/Informejtycy/">
+            
+                <img id="baner-img" src="/Informejtycy/images/baner-ciemne.png" alt="baner">
+            
+        </a>
+    </div>
+    
+        <img id="theme-toggle" src="/Informejtycy/images/theme.png" alt="theme">
+    
+
+  </header>
+  <main>
+    <div id="srodek">
+      <div id="sidebar-left">
+        <h2>Lista tematów</h2>
+<ul>
+    
+        <li><a href="/Informejtycy/articles/test/" >1. Test</a></li>
+    
+        <li><a href="/Informejtycy/articles/1-jak-zaczac/" id="aktualny-temat">1. Jak zacząć?</a></li>
+    
+        <li><a href="/Informejtycy/articles/2-pierwszy-program/" >2. Pierwszy Program w C&#43;&#43;</a></li>
+    
+        <li><a href="/Informejtycy/articles/3-zmienne/" >3. Zmienne i operatory matematyczne</a></li>
+    
+        <li><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww-kopia/" >7. NWD,  Algorytm Euklidesa i NWW</a></li>
+    
+        <li><a href="/Informejtycy/articles/8-tablice/" >8. Tablice</a></li>
+    
+        <li><a href="/Informejtycy/articles/13-vector/" >13. Vector</a></li>
+    
+        <li><a href="/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/" >15. Wyszukiwanie liniowe i binarne</a></li>
+    
+</ul>
+      </div>
+      <div id="artykul">
+        
+  <h1 id="jak-zacząć">Jak zacząć?</h1>
+<h2 id="kompilatory-online-i-edytory">Kompilatory online i edytory</h2>
+<p>Podstawowym narzędziem, bez którego nie da się rozpocząć nauki programowania, jest kompilator. Jest to miejsce, w którym nasz kod jest tłumaczony na język zrozumiały przez komputer, a następnie uruchamiany. Na samym początku można korzystać z kompilatorów online. W tym celu polecamy używanie:</p>
+<ul>
+<li><a href="https://ideone.com/l/cpp">ideone.com</a></li>
+<li><a href="https://www.programiz.com/cpp-programming/online-compiler/">Programiz</a></li>
+<li><a href="https://www.mycompiler.io/new/cpp">myCompiler</a></li>
+</ul>
+<p>Jeśli chcesz mieć pobrany program z wbudowanym kompilatorem, aby móc zapisywać swoje odpowiedzi do zadań, polecamy:</p>
+<ul>
+<li>Dla systemu Windows:
+<ul>
+<li><strong>[REKOMENDOWANE]</strong> <a href="https://www.codeblocks.org">Code::Blocks</a> - istotne jest to by wersja kończyła się na <code>mingw-setup</code>, na przykład <code>codeblocks-20.03mingw-setup.exe</code> (ta wersja ma instalator i wbudowany kompilator, czyli język C++).</li>
+<li><a href="https://code.visualstudio.com">Visual Studio Code</a></li>
+</ul>
+</li>
+<li>Dla systemu macOS:
+<ul>
+<li><a href="https://developer.apple.com/xcode/">Xcode</a></li>
+<li><a href="https://code.visualstudio.com">Visual Studio Code</a></li>
+</ul>
+</li>
+</ul>
+<p>Kompilatorem C++ jest <em>g++</em>. Jest on automatycznie wbudowany w Code::Blocks oraz Xcode, ale można go też uruchomić, korzystając z terminala. Zachęcamy do zapoznania się z nim, aczkolwiek na sam początek proponujemy pobrać jeden z wymienionych wyżej programów.</p>
+<h2 id="manualna-instalacja-kompilatora-g-na-windowsie">Manualna instalacja kompilatora g++ na Windowsie</h2>
+<p><strong>Uwaga:</strong> instalacja kompilatora i korzystanie z niego wymaga obsługi konsoli (wiersza poleceń) systemu Linux. <strong>Na początek rekomendujemy korzystanie z edytora Code::Blocks lub kompilatorów online.</strong></p>
+<p>Jeżeli nie zdecydowałeś się na Code::Blocks&rsquo;a lub chcesz korzystać z Visual Studio Code, należy pobrać kompilator bezpośrednio. Na Windowsie, kompilator G++ instalujemy przez środowisko MSYS2 - na naszym komputerze zostanie zainstalowane kilka konsoli: <code>MINGW</code>, <code>CLANG</code> i <code>UCRT</code>.</p>
+<ol>
+<li>Wchodzimy na <a href="https://github.com/msys2/msys2-installer/releases/tag/nightly-x86_64">github msys2</a>.</li>
+<li>Wybieramy pozycję <code>msys2-x86_64-latest.exe</code> i po pobraniu go uruchamiamy.</li>
+<li>Instalujemy MSYS2 - zostawiamy domyślną ścieżkę instalacji i wybieramy, czy chcemy mieć skróty konsol w menu start.</li>
+<li>Kiedy się zainstaluje, uruchamiamy <code>mingw64.exe</code>.</li>
+<li>Wpisujemy <code>pacman -S mingw64/mingw-w64-x86_64-gcc</code> i po komunikacie <code>Proceed with installation? [Y/n]</code> klikamy <code>y</code>.</li>
+<li>Teraz możemy sprawdzić, czy <code>g++</code> został zainstalowany, wpisując <code>g++ -v</code> albo <code>gcc -v</code>. Powinno wypisać się sporo tekstu.</li>
+<li>Następnie wpisujemy <code>cd c:</code> - umieści nas to w katalogu dysku C. Z niego możemy znawigować folder, w którym będziemy pisać nasze programy.</li>
+</ol>
+<h2 id="podsumowanie">Podsumowanie</h2>
+<p>Jeżeli masz już przygotowany kompilator online, zainstalowany Code::Blocks lub pobrany kompilator bezpośrednio, możesz przejść do pierwszej lekcji.</p>
+
+  
+  <div id="dol-nav">
+    
+
+
+
+
+    
+
+    
+        
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+<a id="poprzedni" href="http://localhost:1313/Informejtycy/articles/test/"><img id="prev-img"></a>
+
+
+<a id="zadania" href="http://localhost:1313/Informejtycy/">Zadania</a>
+
+<a id="nastepny" href="http://localhost:1313/Informejtycy/articles/2-pierwszy-program/"><img id="next-img"></a>
+
+
+  </div>
+
+
+      </div>
+      <div id="sidebar-right">
+        <h2>Spis treści</h2>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#kompilatory-online-i-edytory">Kompilatory online i edytory</a></li>
+    <li><a href="#manualna-instalacja-kompilatora-g-na-windowsie">Manualna instalacja kompilatora g++ na Windowsie</a></li>
+    <li><a href="#podsumowanie">Podsumowanie</a></li>
+  </ol>
+</nav>
+      </div>
+    </div>
+  </main>
+  <footer>
+    Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
+Kontakt: kontakt.informejtycy@gmail.com<br>
+&copy; 2025 Wszelkie prawa zastrzeżone
+  </footer>
+  <script src="http://localhost:1313/Informejtycy/js/theme.js"></script>
+</body>
+</html>

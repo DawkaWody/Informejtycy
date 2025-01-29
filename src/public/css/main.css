@@ -62,7 +62,6 @@ ol {
 	padding-left: 15px;
 }
 
-
 #sidebar-left,
 #sidebar-right {
 	width: 15vw;
@@ -252,4 +251,16 @@ footer {
 [data-theme="dark"] #next-img {
     content: url("../images/next-dark.png");
 	width: 36px;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+td, th {
+	padding: 10px;
+	border: solid 1px var(--granica-paneli-bocznych);
+	text-align: left;
 }

@@ -55,7 +55,17 @@
     
         <li><a href="/Informejtycy/articles/test/" >1. Test</a></li>
     
+        <li><a href="/Informejtycy/articles/1-jak-zaczac/" >1. Jak zacząć?</a></li>
+    
+        <li><a href="/Informejtycy/articles/2-pierwszy-program/" >2. Pierwszy Program w C&#43;&#43;</a></li>
+    
+        <li><a href="/Informejtycy/articles/3-zmienne/" >3. Zmienne i operatory matematyczne</a></li>
+    
         <li><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww-kopia/" >7. NWD,  Algorytm Euklidesa i NWW</a></li>
+    
+        <li><a href="/Informejtycy/articles/8-tablice/" >8. Tablice</a></li>
+    
+        <li><a href="/Informejtycy/articles/13-vector/" >13. Vector</a></li>
     
         <li><a href="/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/" >15. Wyszukiwanie liniowe i binarne</a></li>
     
@@ -65,6 +75,18 @@
         
   <h1>Articles</h1>
   
+  
+    <h2><a href="/Informejtycy/articles/8-tablice/">Tablice</a></h2>
+    <h1 id="tablice">Tablice</h1>
+<p>Nadszedł czas poznać pierwszą strukturę pozwalającą przechowywać wiele wartości. Jest nią tablica, czyli wiele zmiennych tego samego typu, które są zebrane pod jedną nazwą, a do konkretnej zmiennej tj. komórki tablicy uzyskujemy dostęp poprzez wskazanie jej numeru. Na pierwszy rzut oka nietypowym zjawiskiem jest numeracja komórek tablicy od zera, jednak jak się niedługo dowiecie w wielu przypadkach jest to naprawdę przydatne.</p>
+<h2 id="inicjowanie">Inicjowanie</h2>
+<p>Tworzenie tablicy jest bardzo podobne do tworzenia zmiennej, jednak dodatkowym elementem jest to że musimy napisać po jej nazwie, w nawiasach kwadratowych liczbę naturalnej oznaczającej wielkość tablicy.</p>
+  
+    <h2><a href="/Informejtycy/articles/13-vector/">Vector</a></h2>
+    <h1 id="vector">Vector</h1>
+<p>Tablice są bardzo dobrym rozwiązaniem do przechowywania wielu danych, jednak konieczność ścisłego ustalenia ich wielkości, po czym nie wykorzystywania znacznej części, bo np. okazało się że w takim przypadku potrzebujemy mniej miejsca, może czasem być denerwujące. Dlatego możemy używać vectorów zamiast tablic, wiele spośród ich mechanik są analogiczne do tych tablicy, jednak zawiera on również dodatkowe przydatne funkcje.</p>
+<h2 id="inicjowanie">Inicjowanie</h2>
+<p>Aby móc korzystać z <code>vecotrów</code>, na początku trzeba zaimportować <code>#include &lt;vector&gt;</code>, potem tworzymy go poprzez zapisanie nazwy <code>vector</code>, natępnie typu danych w nawiasach ostrokątnych <code>&lt;typ_danych&gt;</code> oraz nazwy na końcu <code>nazwa</code>, po której opcjonalnym elementem jest wielkości vectora w nawiasach okrągłych <code>(wielkość_początkowa)</code>:</p>
   
     <h2><a href="/Informejtycy/articles/test/">Test</a></h2>
     <h1 id="testowy-artykuł-czy-działa-strona">Testowy artykuł czy działa strona</h1>
@@ -79,6 +101,45 @@ adgs</p>
 <h2 id="dgdasdgasags">dgdasdgasags</h2>
 <p>$a^2 + b^2 = c^2$</p>
 <p><em>koniec</em></p>
+  
+    <h2><a href="/Informejtycy/articles/3-zmienne/">Zmienne i operatory matematyczne</a></h2>
+    <h1 id="zmienne-i-operatory-matematyczne">Zmienne i operatory matematyczne</h1>
+<h2 id="czym-są-zmienne">Czym są zmienne?</h2>
+<p><em>Zmienne</em> w informatyce można porównać do pudełek. Pudełko ma rozmiar i kształt, toteż mogą się w nim znaleźć tylko pasujące rzeczy. Ma również swoją nazwę, aby język mógł odróżnić je od innych. Kształt i rozmiar określa <em>typ danych.</em> Na przykład, do &ldquo;pudełka&rdquo; z typem <code>int</code>, od angielskiego <em>integer</em>, możemy wrzucić tylko liczby całkowite. W C++ tworzymy zmienne w następujący sposób.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">typ nazwa = wartosc;
+</span></span></code></pre></div><h2 id="typy-danych">Typy danych</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Typ danych</th>
+          <th style="text-align: center">Opis</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><code>int</code></td>
+          <td style="text-align: center">Przechowuje liczby całkowite.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>float</code>/<code>double</code></td>
+          <td style="text-align: center">Przechowuje liczby rzeczywiste (z przecinkiem). <code>double</code> pozwala przechować liczby o wyższej <em>precyzji</em> - albo liczby większe, albo z większą ilością cyfr po przecinku. Jeżeli wahasz się przy wyborze jednego z nich, weź <code>double</code>.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>char</code></td>
+          <td style="text-align: center">Przechowuje znaki (w kodowaniu ASCII, co oznacza między innymi brak polskich znaków). Znaki przechowuje się między znakami <code>' '</code> (a ciągi znaków między <code>&quot; &quot;</code>).</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>bool</code></td>
+          <td style="text-align: center">Wartość logiczna - zero lub jeden.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>void</code></td>
+          <td style="text-align: center">Z pierwszego artykułu wiesz już że <em>prawie</em> każda funkcja coś zwraca. Funkcje, które nic nie zwracają (czyli nie obliczają żadnej wartości), są oznaczane właśnie tym typem.</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>Dla dociekliwych, <a href="#dla-dociekliwych-nr-1-sk%C4%85d-pochodz%C4%85-nazwy-typ%C3%B3w-danych">pod koniec artykułu</a> wyjaśniam również, dlaczego użyto takich nazw.</p>
   
     <h2><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww-kopia/">NWD,  Algorytm Euklidesa i NWW</a></h2>
     <h1 id="nwd--algorytm-euklidesa-i-nww">NWD,  Algorytm Euklidesa i NWW</h1>
@@ -123,6 +184,42 @@ adgs</p>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Ten sposób sprawdza się, kiedy mamy nieposortowany ciąg, a także jak nasze $n$, czyli długość ciągu, jest stosunkowo małe.</p>
+  
+    <h2><a href="/Informejtycy/articles/2-pierwszy-program/">Pierwszy Program w C&#43;&#43;</a></h2>
+    <h1 id="pierwszy-program-w-c">Pierwszy program w C++</h1>
+<h2 id="pierwsze-kroki">Pierwsze kroki</h2>
+<p>Spróbujmy najpierw napisać program, który coś wypisze. Mówi się, że komputer <em>wypisuje coś na wyjście</em>, czyli, że tekst pojawi się na ekranie. Oto linijka, która to robi:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Witaj uzytkowniku!&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><blockquote>
+<p>Na ten moment nie przejmuj się tym <code>std::</code>, zaraz wyjaśni się, dlaczego jest to potrzebne i jak tego uniknąć.</p>
+</blockquote>
+<p>Każda linijka musi się kończyć znakiem <code>;</code> - tak został stworzony język, żeby jasno oddzielić od siebie linie. <code>cout</code> to z angielskiego <em>character output</em>, czyli wyjście znaków. Komputer oczekuje po nim znaku <code>&lt;&lt;</code>, po którym powinna znaleźć się wartość do wypisania. Z racji tego, że program ma wypisać słowo (albo zdanie), a nie na przykład liczbę, musi ona znaleźć się między znakami <code>&quot; &quot;</code>. Co istotne, na razie dopuszczane są tylko litery alfabetu łacińskiego.</p>
+  
+    <h2><a href="/Informejtycy/articles/1-jak-zaczac/">Jak zacząć?</a></h2>
+    <h1 id="jak-zacząć">Jak zacząć?</h1>
+<h2 id="kompilatory-online-i-edytory">Kompilatory online i edytory</h2>
+<p>Podstawowym narzędziem, bez którego nie da się rozpocząć nauki programowania, jest kompilator. Jest to miejsce, w którym nasz kod jest tłumaczony na język zrozumiały przez komputer, a następnie uruchamiany. Na samym początku można korzystać z kompilatorów online. W tym celu polecamy używanie:</p>
+<ul>
+<li><a href="https://ideone.com/l/cpp">ideone.com</a></li>
+<li><a href="https://www.programiz.com/cpp-programming/online-compiler/">Programiz</a></li>
+<li><a href="https://www.mycompiler.io/new/cpp">myCompiler</a></li>
+</ul>
+<p>Jeśli chcesz mieć pobrany program z wbudowanym kompilatorem, aby móc zapisywać swoje odpowiedzi do zadań, polecamy:</p>
+<ul>
+<li>Dla systemu Windows:
+<ul>
+<li><strong>[REKOMENDOWANE]</strong> <a href="https://www.codeblocks.org">Code::Blocks</a> - istotne jest to by wersja kończyła się na <code>mingw-setup</code>, na przykład <code>codeblocks-20.03mingw-setup.exe</code> (ta wersja ma instalator i wbudowany kompilator, czyli język C++).</li>
+<li><a href="https://code.visualstudio.com">Visual Studio Code</a></li>
+</ul>
+</li>
+<li>Dla systemu macOS:
+<ul>
+<li><a href="https://developer.apple.com/xcode/">Xcode</a></li>
+<li><a href="https://code.visualstudio.com">Visual Studio Code</a></li>
+</ul>
+</li>
+</ul>
+<p>Kompilatorem C++ jest <em>g++</em>. Jest on automatycznie wbudowany w Code::Blocks oraz Xcode, ale można go też uruchomić, korzystając z terminala. Zachęcamy do zapoznania się z nim, aczkolwiek na sam początek proponujemy pobrać jeden z wymienionych wyżej programów.</p>
   
 
       </div>
