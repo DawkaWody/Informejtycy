@@ -9,7 +9,43 @@ adgs&lt;/p>
 &lt;p>fsaFafaSafs&lt;/p>
 &lt;h2 id="dgdasdgasags">dgdasdgasags&lt;/h2>
 &lt;p>$a^2 + b^2 = c^2$&lt;/p>
-&lt;p>&lt;em>koniec&lt;/em>&lt;/p></description></item><item><title>NWD, Algorytm Euklidesa i NWW</title><link>https://dawkawody.github.io/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww-kopia/</link><pubDate>Sat, 25 Jan 2025 13:35:47 +0100</pubDate><guid>https://dawkawody.github.io/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww-kopia/</guid><description>&lt;h1 id="nwd--algorytm-euklidesa-i-nww">NWD, Algorytm Euklidesa i NWW&lt;/h1>
+&lt;p>&lt;em>koniec&lt;/em>&lt;/p></description></item><item><title>Zmienne i operatory matematyczne</title><link>https://dawkawody.github.io/Informejtycy/articles/3-zmienne/</link><pubDate>Mon, 27 Jan 2025 19:39:00 +0100</pubDate><guid>https://dawkawody.github.io/Informejtycy/articles/3-zmienne/</guid><description>&lt;h1 id="zmienne-i-operatory-matematyczne">Zmienne i operatory matematyczne&lt;/h1>
+&lt;h2 id="czym-są-zmienne">Czym są zmienne?&lt;/h2>
+&lt;p>&lt;em>Zmienne&lt;/em> w informatyce można porównać do pudełek. Pudełko ma rozmiar i kształt, toteż mogą się w nim znaleźć tylko pasujące rzeczy. Ma również swoją nazwę, aby język mógł odróżnić je od innych. Kształt i rozmiar określa &lt;em>typ danych.&lt;/em> Na przykład, do &amp;ldquo;pudełka&amp;rdquo; z typem &lt;code>int&lt;/code>, od angielskiego &lt;em>integer&lt;/em>, możemy wrzucić tylko liczby całkowite. W C++ tworzymy zmienne w następujący sposób.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">typ nazwa = wartosc;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="typy-danych">Typy danych&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">Typ danych&lt;/th>
+ &lt;th style="text-align: center">Opis&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;code>int&lt;/code>&lt;/td>
+ &lt;td style="text-align: center">Przechowuje liczby całkowite.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;code>float&lt;/code>/&lt;code>double&lt;/code>&lt;/td>
+ &lt;td style="text-align: center">Przechowuje liczby rzeczywiste (z przecinkiem). &lt;code>double&lt;/code> pozwala przechować liczby o wyższej &lt;em>precyzji&lt;/em> - albo liczby większe, albo z większą ilością cyfr po przecinku. Jeżeli wahasz się przy wyborze jednego z nich, weź &lt;code>double&lt;/code>.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;code>char&lt;/code>&lt;/td>
+ &lt;td style="text-align: center">Przechowuje znaki (w kodowaniu ASCII, co oznacza między innymi brak polskich znaków). Znaki przechowuje się między znakami &lt;code>' '&lt;/code> (a ciągi znaków między &lt;code>&amp;quot; &amp;quot;&lt;/code>).&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;code>bool&lt;/code>&lt;/td>
+ &lt;td style="text-align: center">Wartość logiczna - zero lub jeden.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;code>void&lt;/code>&lt;/td>
+ &lt;td style="text-align: center">Z pierwszego artykułu wiesz już że &lt;em>prawie&lt;/em> każda funkcja coś zwraca. Funkcje, które nic nie zwracają (czyli nie obliczają żadnej wartości), są oznaczane właśnie tym typem.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>Dla dociekliwych, &lt;a href="#skadtakienazwy">pod koniec artykułu&lt;/a> wyjaśniam również, dlaczego użyto takich nazw.&lt;/p></description></item><item><title>NWD, Algorytm Euklidesa i NWW</title><link>https://dawkawody.github.io/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww-kopia/</link><pubDate>Sat, 25 Jan 2025 13:35:47 +0100</pubDate><guid>https://dawkawody.github.io/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww-kopia/</guid><description>&lt;h1 id="nwd--algorytm-euklidesa-i-nww">NWD, Algorytm Euklidesa i NWW&lt;/h1>
 &lt;h2 id="nwd">NWD&lt;/h2>
 &lt;p>Zapewne spotkałeś się już z takim skrótem jak NWD. Oznacza on Największy Wspólny Dzielnik, czyli największą możliwą liczbę, która dzieli liczbę $a$ i liczbę $b$ bez reszty. Czy zastanawiałeś się już, jak można znaleźć NWD pisząc program w C++? Można to zrobić w bardzo prosty sposób. Już wiesz, jak znaleźć dzielniki liczby $a$, dlatego teraz wystarczy sprawdzić, czy dzielniki $a$ dzielą także $b$. Warto zauważyć, że jeśli $a$ jest większe od $b$ to niektóre dzielniki $a$ mogą być większe od $b$, dlatego warto jest sprawdzać dzielniki liczby mniejszej.&lt;/p></description></item><item><title>Wyszukiwanie liniowe i binarne</title><link>https://dawkawody.github.io/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/</link><pubDate>Sat, 25 Jan 2025 13:35:47 +0100</pubDate><guid>https://dawkawody.github.io/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/</guid><description>&lt;h1 id="wyszukiwanie-liniowe-i-binarne">Wyszukiwanie liniowe i binarne&lt;/h1>
 &lt;h2 id="wyszukiwanie-liniowe">Wyszukiwanie liniowe&lt;/h2>
@@ -47,4 +83,34 @@ adgs&lt;/p>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ten sposób sprawdza się, kiedy mamy nieposortowany ciąg, a także jak nasze $n$, czyli długość ciągu, jest stosunkowo małe.&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ten sposób sprawdza się, kiedy mamy nieposortowany ciąg, a także jak nasze $n$, czyli długość ciągu, jest stosunkowo małe.&lt;/p></description></item><item><title>Pierwszy Program w C++</title><link>https://dawkawody.github.io/Informejtycy/articles/2-pierwszy-program/</link><pubDate>Sat, 25 Jan 2025 12:20:00 +0100</pubDate><guid>https://dawkawody.github.io/Informejtycy/articles/2-pierwszy-program/</guid><description>&lt;h1 id="pierwszy-program-w-c">Pierwszy program w C++&lt;/h1>
+&lt;h2 id="pierwsze-kroki">Pierwsze kroki&lt;/h2>
+&lt;p>Spróbujmy najpierw napisać program, który coś wypisze. Mówi się, że komputer &lt;em>wypisuje coś na wyjście&lt;/em>, czyli, że tekst pojawi się na ekranie. Oto linijka, która to robi:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;Witaj uzytkowniku!&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Na ten moment nie przejmuj się tym &lt;code>std::&lt;/code>, zaraz wyjaśni się, dlaczego jest to potrzebne i jak tego uniknąć.&lt;/p>
+&lt;/blockquote>
+&lt;p>Każda linijka musi się kończyć znakiem &lt;code>;&lt;/code> - tak został stworzony język, żeby jasno oddzielić od siebie linie. &lt;code>cout&lt;/code> to z angielskiego &lt;em>character output&lt;/em>, czyli wyjście znaków. Komputer oczekuje po nim znaku &lt;code>&amp;lt;&amp;lt;&lt;/code>, po którym powinna znaleźć się wartość do wypisania. Z racji tego, że program ma wypisać słowo (albo zdanie), a nie na przykład liczbę, musi ona znaleźć się między znakami &lt;code>&amp;quot; &amp;quot;&lt;/code>. Co istotne, na razie dopuszczane są tylko litery alfabetu łacińskiego.&lt;/p></description></item><item><title>Jak zacząć?</title><link>https://dawkawody.github.io/Informejtycy/articles/1-jak-zaczac/</link><pubDate>Mon, 06 Jan 2025 10:53:00 +0100</pubDate><guid>https://dawkawody.github.io/Informejtycy/articles/1-jak-zaczac/</guid><description>&lt;h1 id="jak-zacząć">Jak zacząć?&lt;/h1>
+&lt;h2 id="kompilatory-online-i-edytory">Kompilatory online i edytory&lt;/h2>
+&lt;p>Podstawowym narzędziem, bez którego nie da się rozpocząć nauki programowania, jest kompilator. Jest to miejsce, w którym nasz kod jest tłumaczony na język zrozumiały przez komputer, a następnie uruchamiany. Na samym początku można korzystać z kompilatorów online. W tym celu polecamy używanie:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://ideone.com/l/cpp">ideone.com&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.programiz.com/cpp-programming/online-compiler/">Programiz&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.mycompiler.io/new/cpp">myCompiler&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Jeśli chcesz mieć pobrany program z wbudowanym kompilatorem, aby móc zapisywać swoje odpowiedzi do zadań, polecamy:&lt;/p>
+&lt;ul>
+&lt;li>Dla systemu Windows:
+&lt;ul>
+&lt;li>&lt;strong>[REKOMENDOWANE]&lt;/strong> &lt;a href="https://www.codeblocks.org">Code::Blocks&lt;/a> - istotne jest to by wersja kończyła się na &lt;code>mingw-setup&lt;/code>, na przykład &lt;code>codeblocks-20.03mingw-setup.exe&lt;/code> (ta wersja ma instalator i wbudowany kompilator, czyli język C++).&lt;/li>
+&lt;li>&lt;a href="https://code.visualstudio.com">Visual Studio Code&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Dla systemu macOS:
+&lt;ul>
+&lt;li>&lt;a href="https://developer.apple.com/xcode/">Xcode&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://code.visualstudio.com">Visual Studio Code&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Kompilatorem C++ jest &lt;em>g++&lt;/em>. Jest on automatycznie wbudowany w Code::Blocks oraz Xcode, ale można go też uruchomić, korzystając z terminala. Zachęcamy do zapoznania się z nim, aczkolwiek na sam początek proponujemy pobrać jeden z wymienionych wyżej programów.&lt;/p></description></item></channel></rss>
