@@ -1,7 +1,3 @@
-# Theme Name
+# Informejtycy-theme
 
-## Features
-
-## Installation
-
-## Configuration
+[logo](../../assets/images/logo.png)
