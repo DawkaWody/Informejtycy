@@ -6,10 +6,6 @@ on:
       - main
     paths:
       - 'src/**'
-    
-  pull_request:
-    branches:
-      - main
 
 jobs:
   deploy:
@@ -47,5 +43,9 @@ jobs:
           git add .
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git commit -m "Site build no. ${{ github.run_number }} at $(date)"
-          git push
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Site build no. ${{ github.run_number }} at $(date)"
+            git push
+          else
+            echo "No changes to the output on this push."
+          fi
