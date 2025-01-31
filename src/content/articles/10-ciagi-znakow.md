@@ -19,7 +19,7 @@ char slowo[6] = "Witaj";
 
 Podobnie jak w przypadku tablicy, możemu uzyskiwać kolejne literki poprzez kwadratowe nawiasy. Na przykład `slowo[2]` zwróci `t` (pamiętamy o indeksowaniu od zera). Zwróćmy uwagę na jedną rzecz, chociaż słowo "Witaj" ma długość pięciu znaków, tablica ma rozmiar `6`. Dlaczego? 
 
-## Jak komputer oddziela ciągi zdań?
+## Jak komputer oddziela ciągi znaków?
 
 W pamięci komputera trzeba odróżnić od siebie ciągi znaków. Dlatego, ktoś wpadł na pomysł, by robić to znakiem *null* `\0` (chociaż są to dwa znaki `\` i `0`, to komputer traktuje je jako jeden znak). Oczywiście, jest to tylko konwencja i można by wprowadzić zasadę, że od teraz robi to znak spacji. Byłoby to jednak mało praktyczne - spacja bowiem może być częścią zdania.
 
