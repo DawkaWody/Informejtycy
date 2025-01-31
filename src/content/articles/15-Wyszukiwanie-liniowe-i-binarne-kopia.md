@@ -6,7 +6,7 @@ id: 15
 ---
 # Wyszukiwanie liniowe i binarne
 ## Wyszukiwanie liniowe
-Czym jest wyszukiwanie liniowe? Nazwa może przerażać, ale jest to najprostszy sposób na wyszukanie odpowiedzi na nasze zapytanie w danym ciągi. Polega on jedynie na przejściu przez ciąg. Wyobraźmy sobie, że mamy ciąg liczb i dostajemy $k$ zapytań o dane liczby, czy występują one w ciągu. Jak wyglądałby taki kod?
+Czym jest wyszukiwanie liniowe? Nazwa może przerażać, ale jest to najprostszy sposób na wyszukanie odpowiedzi na nasze zapytanie w danym ciągu. Polega on jedynie na przejściu przez ciąg. Wyobraźmy sobie, że mamy ciąg liczb i dostajemy $k$ zapytań o dane liczby, czy występują one w ciągu. Jak wyglądałby taki kod?
 ```cpp
 #include<iostream>
 #include<vector>
