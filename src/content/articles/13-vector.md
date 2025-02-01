@@ -8,7 +8,7 @@ id: 13
 Tablice są bardzo dobrym rozwiązaniem do przechowywania wielu danych, jednak konieczność ścisłego ustalenia ich wielkości, po czym nie wykorzystywania znacznej części, bo np. okazało się że w takim przypadku potrzebujemy mniej miejsca, może czasem być denerwujące. Dlatego możemy używać vectorów zamiast tablic, wiele spośród ich mechanik są analogiczne do tych tablicy, jednak zawiera on również dodatkowe przydatne funkcje.
 
 ## Inicjowanie
-Aby móc korzystać z `vectrów`, na początku trzeba zaimportować `#include <vector>`, potem tworzymy go poprzez zapisanie nazwy `vector`, następnie typu danych w nawiasach ostrokątnych `<typ_danych>` oraz nazwy na końcu `nazwa`, po której opcjonalnym elementem jest wielkości vectora w nawiasach okrągłych `(wielkość_początkowa)`. :
+Aby móc korzystać z `vectorów`, na początku trzeba zaimportować `#include <vector>`, potem tworzymy go poprzez zapisanie nazwy `vector`, następnie typu danych w nawiasach ostrokątnych `<typ_danych>` oraz nazwy na końcu `nazwa`, po której opcjonalnym elementem jest wielkości vectora w nawiasach okrągłych `(wielkość_początkowa)`. :
 ```cpp
 #include <iostream>
 #include <vector>

@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Informejtycy.pl</title>
-    <link>http://localhost:1313/Informejtycy/tags/</link>
+    <link>https://dawkawody.github.io/Informejtycy/tags/</link>
     <description>Recent content in Tags on Informejtycy.pl</description>
     <generator>Hugo</generator>
     <language>pl-pl</language>
-    <atom:link href="http://localhost:1313/Informejtycy/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://dawkawody.github.io/Informejtycy/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

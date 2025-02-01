@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="pl-pl" dir="ltr">
-<head><script src="/Informejtycy/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Informejtycy/livereload" data-no-instant defer></script>
+<head>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"&gt>
 
 <title>Articles | Informejtycy.pl</title>
 
-    <link rel="stylesheet" href="/Informejtycy/css/main.css">
+      <link rel="stylesheet" href="/Informejtycy/css/main.min.7c6dab9dabd80d50d84ec5480d2d2653f80858ecca08470b5c790d1ed1ae9cc5.css" integrity="sha256-fG2rnavYDVDYTsVIDS0mU/gIWOzKCEcLXHkNHtGunMU=" crossorigin="anonymous">
 
 
-      <script src="/Informejtycy/js/main.js"></script>
+      <script src="/Informejtycy/js/main.f2979a93a325fecf9605263bd141398a311c8e23388ed7dcff74f92f7e632866.js" integrity="sha256-8peak6Ml/s&#43;WBSY70UE5ijEcjiM4jtfc/3T5L35jKGY=" crossorigin="anonymous"></script>
 
 
 
 
 
-<link rel="preload stylesheet" as="style" href="http://localhost:1313/Informejtycy/css/highlight_dark.min.css">
-<link rel="preload stylesheet" as="style" href="http://localhost:1313/Informejtycy/css/highlight_light.min.css">
+<link rel="preload stylesheet" as="style" href="https://dawkawody.github.io/Informejtycy/css/highlight_dark.min.css">
+<link rel="preload stylesheet" as="style" href="https://dawkawody.github.io/Informejtycy/css/highlight_light.min.css">
 
   
   
@@ -36,7 +36,7 @@
   <header>
     
     <div id="baner">
-        <a href="http://localhost:1313/Informejtycy/">
+        <a href="https://dawkawody.github.io/Informejtycy/">
             
                 <img id="baner-img" src="/Informejtycy/images/baner-ciemne.png" alt="baner">
             
@@ -59,9 +59,13 @@
     
         <li><a href="/Informejtycy/articles/3-zmienne/" >3. Zmienne i operatory matematyczne</a></li>
     
-        <li><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww-kopia/" >7. NWD,  Algorytm Euklidesa i NWW</a></li>
+        <li><a href="/Informejtycy/articles/6-pierwszosc-i-podzielnosc/" >6. Pierwszość i podzielność</a></li>
+    
+        <li><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww/" >7. NWD,  Algorytm Euklidesa i NWW</a></li>
     
         <li><a href="/Informejtycy/articles/8-tablice/" >8. Tablice</a></li>
+    
+        <li><a href="/Informejtycy/articles/10-ciagi-znakow/" >10. Ciągi znaków</a></li>
     
         <li><a href="/Informejtycy/articles/13-vector/" >13. Vector</a></li>
     
@@ -74,6 +78,13 @@
   <h1>Articles</h1>
   
   
+    <h2><a href="/Informejtycy/articles/10-ciagi-znakow/">Ciągi znaków</a></h2>
+    <h1 id="ciągi-znaków">Ciągi znaków</h1>
+<h2 id="czym-są-ciągi-znaków">Czym są ciągi znaków?</h2>
+<p>W komputerze wszystko to liczby. Pytanie więc brzmi, jak przechować słowo albo zdanie? Zdanie to nic innego jak <em>ciąg znaków.</em> Potrafimy przechować ciąg, za pomocą tablicy. Mamy typ <code>char</code>, który pozwala przechować znaki. Więc możemy przechować ciąg, za pomocą tablicy znaków.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">slowo</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;Witaj&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><p>Podobnie jak w przypadku tablicy, możemu uzyskiwać kolejne literki poprzez kwadratowe nawiasy. Na przykład <code>slowo[2]</code> zwróci <code>t</code> (pamiętamy o indeksowaniu od zera). Zwróćmy uwagę na jedną rzecz, chociaż słowo &ldquo;Witaj&rdquo; ma długość pięciu znaków, tablica ma rozmiar <code>6</code>. Dlaczego?</p>
+  
     <h2><a href="/Informejtycy/articles/8-tablice/">Tablice</a></h2>
     <h1 id="tablice">Tablice</h1>
 <p>Nadszedł czas poznać pierwszą strukturę pozwalającą przechowywać wiele wartości. Jest nią tablica, czyli wiele zmiennych tego samego typu, które są zebrane pod jedną nazwą, a do konkretnej zmiennej tj. komórki tablicy uzyskujemy dostęp poprzez wskazanie jej numeru. Na pierwszy rzut oka nietypowym zjawiskiem jest numeracja komórek tablicy od zera, jednak jak się niedługo dowiecie w wielu przypadkach jest to naprawdę przydatne.</p>
@@ -84,7 +95,7 @@
     <h1 id="vector">Vector</h1>
 <p>Tablice są bardzo dobrym rozwiązaniem do przechowywania wielu danych, jednak konieczność ścisłego ustalenia ich wielkości, po czym nie wykorzystywania znacznej części, bo np. okazało się że w takim przypadku potrzebujemy mniej miejsca, może czasem być denerwujące. Dlatego możemy używać vectorów zamiast tablic, wiele spośród ich mechanik są analogiczne do tych tablicy, jednak zawiera on również dodatkowe przydatne funkcje.</p>
 <h2 id="inicjowanie">Inicjowanie</h2>
-<p>Aby móc korzystać z <code>vectrów</code>, na początku trzeba zaimportować <code>#include &lt;vector&gt;</code>, potem tworzymy go poprzez zapisanie nazwy <code>vector</code>, następnie typu danych w nawiasach ostrokątnych <code>&lt;typ_danych&gt;</code> oraz nazwy na końcu <code>nazwa</code>, po której opcjonalnym elementem jest wielkości vectora w nawiasach okrągłych <code>(wielkość_początkowa)</code>. :</p>
+<p>Aby móc korzystać z <code>vectorów</code>, na początku trzeba zaimportować <code>#include &lt;vector&gt;</code>, potem tworzymy go poprzez zapisanie nazwy <code>vector</code>, następnie typu danych w nawiasach ostrokątnych <code>&lt;typ_danych&gt;</code> oraz nazwy na końcu <code>nazwa</code>, po której opcjonalnym elementem jest wielkości vectora w nawiasach okrągłych <code>(wielkość_początkowa)</code>. :</p>
   
     <h2><a href="/Informejtycy/articles/3-zmienne/">Zmienne i operatory matematyczne</a></h2>
     <h1 id="zmienne-i-operatory-matematyczne">Zmienne i operatory matematyczne</h1>
@@ -125,7 +136,7 @@
 <blockquote>
 <p>Dla dociekliwych, <a href="#dla-dociekliwych-nr-1-sk%C4%85d-pochodz%C4%85-nazwy-typ%C3%B3w-danych">pod koniec artykułu</a> wyjaśniam również, dlaczego użyto takich nazw.</p>
   
-    <h2><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww-kopia/">NWD,  Algorytm Euklidesa i NWW</a></h2>
+    <h2><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww/">NWD,  Algorytm Euklidesa i NWW</a></h2>
     <h1 id="nwd--algorytm-euklidesa-i-nww">NWD,  Algorytm Euklidesa i NWW</h1>
 <h2 id="nwd">NWD</h2>
 <p>Zapewne spotkałeś się już z takim skrótem jak NWD. Oznacza on Największy Wspólny Dzielnik, czyli największą możliwą liczbę, która dzieli liczbę $a$ i liczbę $b$ bez reszty. Czy zastanawiałeś się już, jak można znaleźć NWD pisząc program w C++? Można to zrobić w bardzo prosty sposób. Już wiesz, jak znaleźć dzielniki liczby $a$, dlatego teraz wystarczy sprawdzić, czy dzielniki $a$ dzielą także $b$. Warto zauważyć, że jeśli $a$ jest większe od $b$ to niektóre dzielniki $a$ mogą być większe od $b$, dlatego warto jest sprawdzać dzielniki liczby mniejszej.</p>
@@ -133,7 +144,7 @@
     <h2><a href="/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/">Wyszukiwanie liniowe i binarne</a></h2>
     <h1 id="wyszukiwanie-liniowe-i-binarne">Wyszukiwanie liniowe i binarne</h1>
 <h2 id="wyszukiwanie-liniowe">Wyszukiwanie liniowe</h2>
-<p>Czym jest wyszukiwanie liniowe? Nazwa może przerażać, ale jest to najprostszy sposób na wyszukanie odpowiedzi na nasze zapytanie w danym ciągi. Polega on jedynie na przejściu przez ciąg. Wyobraźmy sobie, że mamy ciąg liczb i dostajemy $k$ zapytań o dane liczby, czy występują one w ciągu. Jak wyglądałby taki kod?</p>
+<p>Czym jest wyszukiwanie liniowe? Nazwa może przerażać, ale jest to najprostszy sposób na wyszukanie odpowiedzi na nasze zapytanie w danym ciągu. Polega on jedynie na przejściu przez ciąg. Wyobraźmy sobie, że mamy ciąg liczb i dostajemy $k$ zapytań o dane liczby, czy występują one w ciągu. Jak wyglądałby taki kod?</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;iostream&gt;
 </span></span></span><span class="line"><span class="cl"><span class="cp">#include&lt;vector&gt;
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -168,6 +179,17 @@
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Ten sposób sprawdza się, kiedy mamy nieposortowany ciąg, a także jak nasze $n$, czyli długość ciągu, jest stosunkowo małe.</p>
+  
+    <h2><a href="/Informejtycy/articles/6-pierwszosc-i-podzielnosc/">Pierwszość i podzielność</a></h2>
+    <h1 id="sprawdzanie-pierwszości-i-liczby-dzielników-liczb">Sprawdzanie pierwszości i liczby dzielników liczb</h1>
+<h2 id="podzielność">Podzielność</h2>
+<p>Aby sprawdzić, czy liczba $a$ dzieli się przez liczbę $b$, możemy użyć operatora <code>%</code>. Sprawdzimy więc, czy reszta z dzielenia liczby $a$ przez liczbę $b$ jest równa 0.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">czy_a_dzieli_sie_przez_b</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">//poczatkowo ustawiamy falsz
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">czy_a_dzieli_sie_przez_b</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">//uzywamy operatora %
+</span></span></span></code></pre></div><p>Powyższy fragment kodu sprawdza, czy liczba</p>
+<h2 id="sprawdzanie-pierwszości">Sprawdzanie pierwszości</h2>
+<p>Korzystając z pętli while możemy sprawdzić, czy dana liczba jest pierwsza. Liczba pierwsza to taka, która ma dokładnie 2 różne dzielniki (1 i samą siebie). Dla przykładu, liczby 2, 3, 5, 7 są liczbami pierwszymi, a liczby 0, 1, 4, 8, 9 nie są. Więcej o liczbach pierwszych można wyczytać na <a href="https://pl.wikipedia.org/wiki/Liczby_pierwsze">https://pl.wikipedia.org/wiki/Liczby_pierwsze</a>.
+Spróbujmy się zastanowić, jak by miał działać prosty program, który wczytuje jedną liczbę naturalną $a$, taką, że $0 \leq a \leq 10^6$ i wypisuje TAK jeśli liczba jest pierwsza lub NIE w przeciwnym wypadku. Oto pomysł na program:</p>
   
     <h2><a href="/Informejtycy/articles/2-pierwszy-program/">Pierwszy Program w C&#43;&#43;</a></h2>
     <h1 id="pierwszy-program-w-c">Pierwszy program w C++</h1>
@@ -209,7 +231,7 @@
       </div>
       <div id="sidebar-right">
         <h2>Spis treści</h2>
-        <nav id="TableOfContents"></nav>
+<nav id="TableOfContents"></nav>
       </div>
     </div>
   </main>
@@ -218,6 +240,6 @@
 Kontakt: kontakt.informejtycy@gmail.com<br>
 &copy; 2025 Wszelkie prawa zastrzeżone
   </footer>
-  <script src="http://localhost:1313/Informejtycy/js/theme.js"></script>
+  <script src="https://dawkawody.github.io/Informejtycy/js/theme.js"></script>
 </body>
 </html>
