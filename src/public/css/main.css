@@ -48,6 +48,8 @@ body {
 	align-items: flex-start;
 	gap: 35px;
 	margin-top: 3vw;
+	/* Ensure the container does not shrink */
+	flex-shrink: 0;
 }
 
 .no-select {
@@ -64,13 +66,14 @@ ol {
 
 #sidebar-left,
 #sidebar-right {
-	width: 15vw;
+	width: 13vw;
 	padding: 20px;
 	padding-bottom: 0;
 	border-radius: 5px;
 	border: 1px solid var(--granica-paneli-bocznych);
 	position: sticky;
 	top: 3vw;
+	flex-shrink: 0; /* Prevent sidebars from shrinking */
 }
 
 #sidebar-left ul,
@@ -106,11 +109,10 @@ ol {
 }
 
 #sidebar-left {
-	overflow-y: none;
+	overflow-y: hidden;
 }
 
 #sidebar-right {
-	margin-left: auto;
 	right: 20px;
 }
 
@@ -119,6 +121,8 @@ ol {
 	margin: 0;
 	padding: 0;
 	line-height: 1.6;
+	/* Ensure the article takes the remaining space */
+	flex-grow: 1;
 }
 
 #artykul h1 {

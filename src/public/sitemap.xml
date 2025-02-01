@@ -2,41 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://dawkawody.github.io/Informejtycy/articles/</loc>
+    <loc>http://localhost:1313/Informejtycy/articles/</loc>
     <lastmod>2025-01-29T21:31:00+01:00</lastmod>
   </url><url>
-    <loc>https://dawkawody.github.io/Informejtycy/articles/10-ciagi-znakow/</loc>
+    <loc>http://localhost:1313/Informejtycy/articles/10-ciagi-znakow/</loc>
     <lastmod>2025-01-29T21:31:00+01:00</lastmod>
   </url><url>
-    <loc>https://dawkawody.github.io/Informejtycy/articles/8-tablice/</loc>
+    <loc>http://localhost:1313/Informejtycy/articles/8-tablice/</loc>
     <lastmod>2025-01-29T20:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://dawkawody.github.io/Informejtycy/articles/13-vector/</loc>
+    <loc>http://localhost:1313/Informejtycy/articles/13-vector/</loc>
     <lastmod>2025-01-29T20:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://dawkawody.github.io/Informejtycy/articles/3-zmienne/</loc>
+    <loc>http://localhost:1313/Informejtycy/articles/3-zmienne/</loc>
     <lastmod>2025-01-27T19:39:00+01:00</lastmod>
   </url><url>
-    <loc>https://dawkawody.github.io/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww/</loc>
+    <loc>http://localhost:1313/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww/</loc>
     <lastmod>2025-01-25T13:35:47+01:00</lastmod>
   </url><url>
-    <loc>https://dawkawody.github.io/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/</loc>
+    <loc>http://localhost:1313/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/</loc>
     <lastmod>2025-01-25T13:35:47+01:00</lastmod>
   </url><url>
-    <loc>https://dawkawody.github.io/Informejtycy/articles/6-pierwszosc-i-podzielnosc/</loc>
+    <loc>http://localhost:1313/Informejtycy/articles/6-pierwszosc-i-podzielnosc/</loc>
     <lastmod>2025-01-25T12:20:00+01:00</lastmod>
   </url><url>
-    <loc>https://dawkawody.github.io/Informejtycy/articles/2-pierwszy-program/</loc>
+    <loc>http://localhost:1313/Informejtycy/articles/2-pierwszy-program/</loc>
     <lastmod>2025-01-25T12:20:00+01:00</lastmod>
   </url><url>
-    <loc>https://dawkawody.github.io/Informejtycy/articles/1-jak-zaczac/</loc>
+    <loc>http://localhost:1313/Informejtycy/articles/1-jak-zaczac/</loc>
     <lastmod>2025-01-06T10:53:00+01:00</lastmod>
   </url><url>
-    <loc>https://dawkawody.github.io/Informejtycy/</loc>
+    <loc>http://localhost:1313/Informejtycy/</loc>
     <lastmod>2023-01-01T08:00:00-07:00</lastmod>
   </url><url>
-    <loc>https://dawkawody.github.io/Informejtycy/categories/</loc>
+    <loc>http://localhost:1313/Informejtycy/categories/</loc>
   </url><url>
-    <loc>https://dawkawody.github.io/Informejtycy/tags/</loc>
+    <loc>http://localhost:1313/Informejtycy/tags/</loc>
   </url>
 </urlset>
