@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pl-pl" dir="ltr">
+<head><script src="/Informejtycy/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Informejtycy/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"&gt>
+
+<title>Wyszukiwanie liniowe i binarne | Informejtycy.pl</title>
+
+    <link rel="stylesheet" href="/Informejtycy/css/main.css">
+
+
+      <script src="/Informejtycy/js/main.js"></script>
+
+
+
+
+
+<link rel="preload stylesheet" as="style" href="http://localhost:1313/Informejtycy/css/highlight_dark.min.css">
+<link rel="preload stylesheet" as="style" href="http://localhost:1313/Informejtycy/css/highlight_light.min.css">
+
+  
+  
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['$', '$']] 
+    }
+  };
+</script>
+  
+</head>
+<body>
+  <header>
+    
+    <div id="baner">
+        <a href="http://localhost:1313/Informejtycy/">
+            
+                <img id="baner-img" src="/Informejtycy/images/baner-ciemne.png" alt="baner">
+            
+        </a>
+    </div>
+    
+        <img id="theme-toggle" src="/Informejtycy/images/theme.png" alt="theme">
+    
+
+  </header>
+  <main>
+    <div id="srodek">
+      <div id="sidebar-left">
+        <h2>Lista tematów</h2>
+<ul>
+    
+        <li><a href="/Informejtycy/articles/1-jak-zaczac/" >1. Jak zacząć?</a></li>
+    
+        <li><a href="/Informejtycy/articles/2-pierwszy-program/" >2. Pierwszy Program w C&#43;&#43;</a></li>
+    
+        <li><a href="/Informejtycy/articles/3-zmienne/" >3. Zmienne i operatory matematyczne</a></li>
+    
+        <li><a href="/Informejtycy/articles/6-pierwszosc-i-podzielnosc/" >6. Pierwszość i podzielność</a></li>
+    
+        <li><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww/" >7. NWD,  Algorytm Euklidesa i NWW</a></li>
+    
+        <li><a href="/Informejtycy/articles/8-tablice/" >8. Tablice</a></li>
+    
+        <li><a href="/Informejtycy/articles/10-ciagi-znakow/" >10. Ciągi znaków</a></li>
+    
+        <li><a href="/Informejtycy/articles/13-vector/" >13. Vector</a></li>
+    
+        <li><a href="/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/" id="aktualny-temat">15. Wyszukiwanie liniowe i binarne</a></li>
+    
+</ul>
+      </div>
+      <div id="artykul">
+        
+  <h1 id="wyszukiwanie-liniowe-i-binarne">Wyszukiwanie liniowe i binarne</h1>
+<h2 id="wyszukiwanie-liniowe">Wyszukiwanie liniowe</h2>
+<p>Czym jest wyszukiwanie liniowe? Nazwa może przerażać, ale jest to najprostszy sposób na wyszukanie odpowiedzi na nasze zapytanie w danym ciągu. Polega on jedynie na przejściu przez ciąg. Wyobraźmy sobie, że mamy ciąg liczb i dostajemy $k$ zapytań o dane liczby, czy występują one w ciągu. Jak wyglądałby taki kod?</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;iostream&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include&lt;vector&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">vector</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ciag</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">liczba</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">liczba</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ciag</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">liczba</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="n">liczba_do_spr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">k</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">liczba_do_spr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">bool</span> <span class="n">czy_wystepuje</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//to w tej pętli przechodzimy po całym ciągu, czyli stosujemy wyszukiwanie liniowe
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">ciag</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="n">liczba_do_spr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="n">czy_wystepuje</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">czy_wystepuje</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;TAK&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;NIE&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Ten sposób sprawdza się, kiedy mamy nieposortowany ciąg, a także jak nasze $n$, czyli długość ciągu, jest stosunkowo małe.</p>
+<h2 id="wyszukiwanie-binarne">Wyszukiwanie binarne</h2>
+<p>Co zrobić jeśli długość naszego ciągu jest bardzo duża? Możemy zastosować wyszukiwanie binarne inaczej zwane binsearch&rsquo;em (ang. binary search). Ważne jest, aby zwrócić uwagę, że ten sposób działa jedynie dla posortowanego ciągu. Aby dobrze to zobrazować wyobraź sobie taką sytuację. Czytasz książkę mającą 120 stron. Zakończyłeś na 49 stronie, ale niestety nie włożyłeś zakładki. Chcesz otworzyć książkę z powrotem jak najszybciej. Optymalnym sposobem będzie, jeśli otworzysz książkę w połowie, czyli na 60 stronie. Wiesz, że 49 jest mniejsze od 60, więc otwierasz książkę na środku przedziału od 0 do 60, czyli na 30 stronie. 49 jest większe od 30, więc teraz otwierasz książkę w połowie, między 30 a 60, czyli na stronie 45. Robisz tak do momentu, w którym natrafisz na stronę 49. Jak widzisz wykonujesz zdecydowanie mniej kroków, niż gdybyś przechodził po kolei po wszystkich stronach. To jest właśnie wyszukiwanie binarne.</p>
+<h2 id="wykorzystanie-wyszukiwania-binarnego">Wykorzystanie wyszukiwania binarnego</h2>
+<p>Skoro już wiesz czym jest wyszukiwanie binarne, możesz spróbować się zastanowić jak napisać kod, który działałby w taki sposób. Weźmy na tapet zadanie, w którym musimy wypisać, pod którym indeksem znajduje się dana liczba. Kod do tego zagadnienia wygląda w następujący sposób:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;iostream&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include&lt;vector&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">vector</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">ciag</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">liczba</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">liczba</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ciag</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">liczba</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="n">liczba_do_spr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">k</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">liczba_do_spr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">poc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">kon</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">sr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">while</span> <span class="p">(</span><span class="n">poc</span> <span class="o">&lt;=</span> <span class="n">kon</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">sr</span> <span class="o">=</span> <span class="p">(</span><span class="n">poc</span> <span class="o">+</span> <span class="n">kon</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">ciag</span><span class="p">[</span><span class="n">sr</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">liczba_do_spr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="n">kon</span> <span class="o">=</span> <span class="n">sr</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="n">poc</span> <span class="o">=</span> <span class="n">sr</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">kon</span> <span class="o">+</span> <span class="mi">1</span>  <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Jak mogłeś zauważyć zmienna $sr$ to nasz środek, czyli ta liczba, z którą porównujemy, czy nasza liczba do sprawdzenia jest większa lub mniejsza. Jeżeli nasza szukana liczba jest mniejsza od liczby pod $ciag[sr]$ to przesuwamy nasz koniec na wartość naszego środka, ale możemy odjąć jeden, gdyż już wiemy, że pod indeksem $sr$ nie ma liczby, której poszukujemy. Natomiast jeżeli nasza szukana liczba jest większa od liczby pod $ciag[sr]$ to przesuwamy nasz początek na wartość naszego środka, ale możemy dodać jeden, gdyż już wiemy, że pod indeksem $sr$ nie ma liczby, której poszukujemy.</p>
+
+  
+  <div id="dol-nav">
+    
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+
+
+
+
+<a id="poprzedni" href="http://localhost:1313/Informejtycy/articles/13-vector/"><img id="prev-img"></a>
+
+
+<a id="zadania" href="http://localhost:1313/Informejtycy/">Zadania</a>
+
+<a id="nastepny" href=""><img id="next-img"></a>
+
+    <style> #nastepny {visibility: hidden} </style>
+
+
+  </div>
+
+
+      </div>
+      <div id="sidebar-right">
+        <h2>Spis treści</h2>
+<nav id="TableOfContents">
+  <ol>
+    <li><a href="#wyszukiwanie-liniowe">Wyszukiwanie liniowe</a></li>
+    <li><a href="#wyszukiwanie-binarne">Wyszukiwanie binarne</a></li>
+    <li><a href="#wykorzystanie-wyszukiwania-binarnego">Wykorzystanie wyszukiwania binarnego</a></li>
+  </ol>
+</nav>
+      </div>
+    </div>
+  </main>
+  <footer>
+    Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
+Kontakt: kontakt.informejtycy@gmail.com<br>
+&copy; 2025 Wszelkie prawa zastrzeżone
+  </footer>
+  <script src="http://localhost:1313/Informejtycy/js/theme.js"></script>
+</body>
+</html>

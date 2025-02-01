@@ -5,7 +5,8 @@ title: Pierwszość i podzielność
 id: 6
 ---
 # Sprawdzanie pierwszości i liczby dzielników liczb
-Podzielność
+
+## Podzielność
 Aby sprawdzić, czy liczba $a$ dzieli się przez liczbę $b$, możemy użyć operatora `%`. Sprawdzimy więc, czy reszta z dzielenia liczby $a$ przez liczbę $b$ jest równa 0.
 ```cpp
 bool czy_a_dzieli_sie_przez_b = false; //poczatkowo ustawiamy falsz
@@ -53,7 +54,7 @@ int main()
 }
 
 ```
-### Optymalizacja
+## Optymalizacja
 Zauważmy, że można przyspieszyć ten program. Po pierwsze, nie musimy sprawdzać czy liczba dzieli się przez 1 i samą siebie (jest naturalna, więc zawsze się dzieli). To ogranicza program do sprawdzania dzielników od 2 do $a-1$. Teraz w przypadku wykrycia jakiegokolwiek dzielnika będzie wiadomo, że jest to trzeci dzielnik i należy wypisać NIE i zakończyć program (nie działa to jednak dla 0 i 1, więc można przed pętlą *while* użyć instrukcji warunkowej *if*). Dodatkowo, zauważmy, że wystarczy sprawdzać wszystkie możliwe dzielniki do $\sqrt{a}$ (uwzględniając $\sqrt{a}$), ponieważ jeśli jakaś liczba ma dzielnik większy niż $\sqrt a$, to ma też dzielnik mniejszy niż $\sqrt a$, więc na pewno zostanie on wykryty. Tak będzie wyglądał przyspieszony program:
 ```cpp
 #include <iostream>
@@ -68,16 +69,19 @@ int main()
     //sprawdzamy, czy liczba jest równa 0 lub 1
     if (liczba < 2)
     {
-        cout << "NIE"; //jesli tak, wypisujemy NIE i konczymy dzialanie programu
+        //jesli tak, wypisujemy NIE i konczymy dzialanie programu
+        cout << "NIE";
         return 0;
     }
 
     int sprawdzany_dzielnik = 2;
-    while (sprawdzany_dzielnik * sprawdzany_dzielnik <= liczba) //uzyskujemy sprawdzanie do pierwiastka (a*a<=b to dla liczb naturalnych to samo co a<=pierwiastek z b)
+    //sprawdzamy do pierwiastka (a*a<=b to dla liczb naturalnych to samo co a<=pierwiastek z b)
+    while (sprawdzany_dzielnik * sprawdzany_dzielnik <= liczba)
     {
         if (liczba % sprawdzany_dzielnik == 0)
         {
-            cout << "NIE"; //Jesli znajdziemy jakikolwiek dzielnik, wypisujemy NIE i konczymy dzialanie programu
+            //Jesli znajdziemy jakikolwiek dzielnik, wypisujemy NIE i konczymy dzialanie programu
+            cout << "NIE";
             return 0;
         }
         sprawdzany_dzielnik++;
@@ -112,7 +116,8 @@ int main()
         }
         sprawdzany_dzielnik++;
     }
-    if (sprawdzany_dzielnik * sprawdzany_dzielnik == liczba) {//sprawdzamy pierwiastek i liczymy go pojedynczo
+    if (sprawdzany_dzielnik * sprawdzany_dzielnik == liczba) {
+        //sprawdzamy pierwiastek i liczymy go pojedynczo
         liczba_dzielnikow++;
     }
     cout << liczba_dzielnikow;
