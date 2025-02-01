@@ -140,6 +140,7 @@ code {
 	font-size: 1em;
 	font-family: Consolas, monospace;
 	border-radius: 5px;
+	tab-size: 4;
 }
 
 pre {
