@@ -121,7 +121,7 @@ ol {
 	margin: 0;
 	padding: 0;
 	line-height: 1.6;
-	/* Ensure the article takes the remaining space */
+	width: 20vw;
 	flex-grow: 1;
 }
 

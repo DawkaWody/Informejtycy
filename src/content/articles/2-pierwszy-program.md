@@ -1,7 +1,7 @@
 ---
 date: 2025-01-25T12:20:00+01:00
 draft: false
-title: 'Pierwszy Program w C++'
+title: 'Pierwszy program w C++'
 id: 2
 ---
 
@@ -15,7 +15,7 @@ Spróbujmy najpierw napisać program, który coś wypisze. Mówi się, że kompu
 std::cout << "Witaj uzytkowniku!";
 ```
 
-> Na ten moment nie przejmuj się tym `std::`, zaraz wyjaśni się, dlaczego jest to potrzebne i jak tego uniknąć.
+Na ten moment nie przejmuj się tym `std::`, zaraz wyjaśni się, dlaczego jest to potrzebne i jak tego uniknąć.
 
 Każda linijka musi się kończyć znakiem `;` - tak został stworzony język, żeby jasno oddzielić od siebie linie. `cout` to z angielskiego *character output*, czyli wyjście znaków. Komputer oczekuje po nim znaku `<<`, po którym powinna znaleźć się wartość do wypisania. Z racji tego, że program ma wypisać słowo (albo zdanie), a nie na przykład liczbę, musi ona znaleźć się między znakami `" "`. Co istotne, na razie dopuszczane są tylko litery alfabetu łacińskiego.
 
@@ -74,7 +74,6 @@ Tak oto napisałeś swój pierwszy program w języku C++!
 
 Gdy wypisujemy wiele lini tekstu, musimy oznajmić językowi, że ma "wypisać" tą nową linię, pomiędzy zdaniami, które chcemy oddzielić (tak, można *wypisać* nową linię, jest za to odpowiedzialny znak `\n` (*znak*, nie znaki), albo `std::endl`) .
 
-```cpp
 ```cpp
 #include <iostream>
 using namespace std;

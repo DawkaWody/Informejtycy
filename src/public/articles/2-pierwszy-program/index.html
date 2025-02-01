@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width">
 <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"&gt>
 
-<title>Pierwszy Program w C&#43;&#43; | Informejtycy.pl</title>
+<title>Pierwszy program w C&#43;&#43; | Informejtycy.pl</title>
 
     <link rel="stylesheet" href="/Informejtycy/css/main.css">
 
@@ -55,7 +55,7 @@
     
         <li><a href="/Informejtycy/articles/1-jak-zaczac/" >1. Jak zacząć?</a></li>
     
-        <li><a href="/Informejtycy/articles/2-pierwszy-program/" id="aktualny-temat">2. Pierwszy Program w C&#43;&#43;</a></li>
+        <li><a href="/Informejtycy/articles/2-pierwszy-program/" id="aktualny-temat">2. Pierwszy program w C&#43;&#43;</a></li>
     
         <li><a href="/Informejtycy/articles/3-zmienne/" >3. Zmienne i operatory matematyczne</a></li>
     
@@ -79,9 +79,7 @@
 <h2 id="pierwsze-kroki">Pierwsze kroki</h2>
 <p>Spróbujmy najpierw napisać program, który coś wypisze. Mówi się, że komputer <em>wypisuje coś na wyjście</em>, czyli, że tekst pojawi się na ekranie. Oto linijka, która to robi:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Witaj uzytkowniku!&#34;</span><span class="p">;</span>
-</span></span></code></pre></div><blockquote>
-<p>Na ten moment nie przejmuj się tym <code>std::</code>, zaraz wyjaśni się, dlaczego jest to potrzebne i jak tego uniknąć.</p>
-</blockquote>
+</span></span></code></pre></div><p>Na ten moment nie przejmuj się tym <code>std::</code>, zaraz wyjaśni się, dlaczego jest to potrzebne i jak tego uniknąć.</p>
 <p>Każda linijka musi się kończyć znakiem <code>;</code> - tak został stworzony język, żeby jasno oddzielić od siebie linie. <code>cout</code> to z angielskiego <em>character output</em>, czyli wyjście znaków. Komputer oczekuje po nim znaku <code>&lt;&lt;</code>, po którym powinna znaleźć się wartość do wypisania. Z racji tego, że program ma wypisać słowo (albo zdanie), a nie na przykład liczbę, musi ona znaleźć się między znakami <code>&quot; &quot;</code>. Co istotne, na razie dopuszczane są tylko litery alfabetu łacińskiego.</p>
 <p>Jest jeden problem, komputer nie wie co robi <code>std::cout</code>. Po prostu, ta instrukcja jest mu nie znana - musimy mu to wytłumaczyć. Robi to za nas <code>&lt;iostream&gt;</code>. Jest to plik, który mówi komputerowi: &ldquo;Jak natrafisz na znaki <code>std::cout</code>, to oczekuj <em>operatora</em> <code>&lt;&lt;</code>, a wtedy wypisz to, co się po nim znajduje&rdquo;. No dobrze, teraz trzeba tylko dodać te &ldquo;wytłumaczenie&rdquo; do naszego pliku. Robi to instrukcja <code>#include</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
@@ -116,8 +114,7 @@
 </span></span></code></pre></div><p>Tak oto napisałeś swój pierwszy program w języku C++!</p>
 <h2 id="wielokrotne-wypisywanie">Wielokrotne wypisywanie</h2>
 <p>Gdy wypisujemy wiele lini tekstu, musimy oznajmić językowi, że ma &ldquo;wypisać&rdquo; tą nową linię, pomiędzy zdaniami, które chcemy oddzielić (tak, można <em>wypisać</em> nową linię, jest za to odpowiedzialny znak <code>\n</code> (<em>znak</em>, nie znaki), albo <code>std::endl</code>) .</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="err">```</span><span class="n">cpp</span>
-</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
