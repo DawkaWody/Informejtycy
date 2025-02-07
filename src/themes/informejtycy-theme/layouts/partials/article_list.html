@@ -6,9 +6,7 @@
         <!-- Basic topics -->
         <a href="#" class="section-dropdown">
             <span class="section-title">Tematy podstawowe</span>
-            {{ with resources.Get "images/expand.png" }}
-                <img class="expand-img" src="{{ .RelPermalink }}" alt="Rozwiń">
-            {{ end }}
+                <img class="expand-img" alt="Rozwiń">
         </a>
         <ul class="submenu">
             {{ range where (sort .Site.RegularPages "Params.id") ".Params.nerd" false }}
@@ -24,9 +22,7 @@
         <!-- Advanced topics -->
         <a href="#" class="section-dropdown">
             <span class="section-title">Tematy zaawansowane</span>
-            {{ with resources.Get "images/expand.png" }}
-                <img class="expand-img" src="{{ .RelPermalink }}" alt="Rozwiń">
-            {{ end }}
+            <img class="expand-img" alt="Rozwiń">
         </a>
         <ul class="submenu">
             {{ range where (sort .Site.RegularPages "Params.id") ".Params.nerd" true }}

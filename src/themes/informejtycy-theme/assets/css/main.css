@@ -275,8 +275,13 @@ td, th {
 }
 
 .expand-img {
+	content: url("../images/expand.png");
 	width: 1.1rem;
 	transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .expand-img {
+	content: url("../images/expand-dark.png");
 }
 
 .expand-img.rotate {
