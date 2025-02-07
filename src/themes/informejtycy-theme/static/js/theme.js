@@ -1,5 +1,3 @@
-const themeToggleButton = document.getElementById("theme-toggle");
-
 function getStyleSheet(file_name) {
     for (var i = 0; i < document.styleSheets.length; i++) {
         var sheet = document.styleSheets[i];
@@ -42,7 +40,7 @@ if (savedTheme) {
     setTheme(defaultTheme);
 }
 
-themeToggleButton.addEventListener("click", () => {
+document.getElementById("theme-toggle").addEventListener("click", () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
     const newTheme = currentTheme === "dark" ? "light" : "dark";
     setTheme(newTheme);
