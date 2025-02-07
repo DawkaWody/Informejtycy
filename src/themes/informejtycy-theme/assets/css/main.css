@@ -295,7 +295,7 @@ td, th {
 }
 
 .section-title {
-	font-size: 1.3rem;
+	font-size: 1.4rem;
 	padding-left: 1rem;
 	flex-grow: 1;
 }
@@ -310,6 +310,6 @@ td, th {
 
 .submenu-article {
 	margin: 0.5rem 0;
-	font-size: 1.3rem;
+	font-size: 1.2rem;
 	color: var(--lista-i-spis);
 }
