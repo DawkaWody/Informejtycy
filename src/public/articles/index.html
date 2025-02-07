@@ -74,6 +74,9 @@
                 <li><a href="/Informejtycy/articles/3-zmienne/" class="submenu-article" >3. Zmienne i operatory matematyczne</a></li>
             
                 
+                <li><a href="/Informejtycy/articles/4-if-elseif-else-oraz-opratory-logiczne/" class="submenu-article" >4. If, else if, else, oraz operatory logiczne</a></li>
+            
+                
                 <li><a href="/Informejtycy/articles/6-pierwszosc-i-podzielnosc/" class="submenu-article" >6. Pierwszość i podzielność</a></li>
             
                 
@@ -84,6 +87,9 @@
             
                 
                 <li><a href="/Informejtycy/articles/10-ciagi-znakow/" class="submenu-article" >10. Ciągi znaków</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/12-systemy-liczbowe/" class="submenu-article" >12. Systemy liczbowe</a></li>
             
                 
                 <li><a href="/Informejtycy/articles/13-vector/" class="submenu-article" >13. Vector</a></li>
@@ -117,6 +123,13 @@
   <h1>Articles</h1>
   
   
+    <h2><a href="/Informejtycy/articles/10-ciagi-znakow/">Ciągi znaków</a></h2>
+    <h1 id="ciągi-znaków">Ciągi znaków</h1>
+<h2 id="czym-są-ciągi-znaków">Czym są ciągi znaków?</h2>
+<p>W komputerze wszystko to liczby. Pytanie więc brzmi, jak przechować słowo albo zdanie? Zdanie to nic innego jak <em>ciąg znaków.</em> Potrafimy przechować ciąg, za pomocą tablicy. Mamy typ <code>char</code>, który pozwala przechować znaki. Więc możemy przechować ciąg, za pomocą tablicy znaków.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">slowo</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;Witaj&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><p>Podobnie jak w przypadku tablicy, możemu uzyskiwać kolejne literki poprzez kwadratowe nawiasy. Na przykład <code>slowo[2]</code> zwróci <code>t</code> (pamiętamy o indeksowaniu od zera). Zwróćmy uwagę na jedną rzecz, chociaż słowo &ldquo;Witaj&rdquo; ma długość pięciu znaków, tablica ma rozmiar <code>6</code>. Dlaczego?</p>
+  
     <h2><a href="/Informejtycy/articles/4-if-elseif-else-oraz-opratory-logiczne/">If, else if, else, oraz operatory logiczne</a></h2>
     <h1 id="if-else-if-else-oraz-operatory-logiczne">If, else if, else, oraz operatory logiczne</h1>
 <h2 id="wstęp">Wstęp</h2>
@@ -131,17 +144,60 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">a</span> <span class="o">!=</span> <span class="n">b</span>   <span class="c1">//  a nie równa się b
 </span></span></span></code></pre></div><p>Takie operatory zwracają wartość zmiennej typu <code>bool</code>:</p>
   
+    <h2><a href="/Informejtycy/articles/1-jak-zaczac/">Jak zacząć?</a></h2>
+    <h1 id="jak-zacząć">Jak zacząć?</h1>
+<h2 id="kompilatory-online-i-edytory">Kompilatory online i edytory</h2>
+<p>Podstawowym narzędziem, bez którego nie da się rozpocząć nauki programowania, jest kompilator. Jest to miejsce, w którym nasz kod jest tłumaczony na język zrozumiały przez komputer, a następnie uruchamiany. Na samym początku można korzystać z kompilatorów online. W tym celu polecamy używanie:</p>
+<ul>
+<li><a href="https://ideone.com/l/cpp">ideone.com</a></li>
+<li><a href="https://www.programiz.com/cpp-programming/online-compiler/">Programiz</a></li>
+<li><a href="https://www.mycompiler.io/new/cpp">myCompiler</a></li>
+</ul>
+<p>Jeśli chcesz mieć pobrany program z wbudowanym kompilatorem, aby móc zapisywać swoje odpowiedzi do zadań, polecamy:</p>
+<ul>
+<li>Dla systemu Windows:
+<ul>
+<li><strong>[REKOMENDOWANE]</strong> <a href="https://www.codeblocks.org">Code::Blocks</a> - istotne jest to by wersja kończyła się na <code>mingw-setup</code>, na przykład <code>codeblocks-20.03mingw-setup.exe</code> (ta wersja ma instalator i wbudowany kompilator, czyli język C++).</li>
+<li><a href="https://code.visualstudio.com">Visual Studio Code</a></li>
+</ul>
+</li>
+<li>Dla systemu macOS:
+<ul>
+<li><a href="https://developer.apple.com/xcode/">Xcode</a></li>
+<li><a href="https://code.visualstudio.com">Visual Studio Code</a></li>
+</ul>
+</li>
+</ul>
+<p>Kompilatorem C++ jest <em>g++</em>. Jest on automatycznie wbudowany w Code::Blocks oraz Xcode, ale można go też uruchomić, korzystając z terminala. Zachęcamy do zapoznania się z nim, aczkolwiek na sam początek proponujemy pobrać jeden z wymienionych wyżej programów.</p>
+  
+    <h2><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww/">NWD,  Algorytm Euklidesa i NWW</a></h2>
+    <h1 id="nwd--algorytm-euklidesa-i-nww">NWD,  Algorytm Euklidesa i NWW</h1>
+<h2 id="nwd">NWD</h2>
+<p>Zapewne spotkałeś się już z takim skrótem jak NWD. Oznacza on Największy Wspólny Dzielnik, czyli największą możliwą liczbę, która dzieli liczbę $a$ i liczbę $b$ bez reszty. Czy zastanawiałeś się już, jak można znaleźć NWD pisząc program w C++? Można to zrobić w bardzo prosty sposób. Już wiesz, jak znaleźć dzielniki liczby $a$, dlatego teraz wystarczy sprawdzić, czy dzielniki $a$ dzielą także $b$. Warto zauważyć, że jeśli $a$ jest większe od $b$ to niektóre dzielniki $a$ mogą być większe od $b$, dlatego warto jest sprawdzać dzielniki liczby mniejszej.</p>
+  
+    <h2><a href="/Informejtycy/articles/6-pierwszosc-i-podzielnosc/">Pierwszość i podzielność</a></h2>
+    <h1 id="sprawdzanie-pierwszości-i-liczby-dzielników-liczb">Sprawdzanie pierwszości i liczby dzielników liczb</h1>
+<h2 id="podzielność">Podzielność</h2>
+<p>Aby sprawdzić, czy liczba $a$ dzieli się przez liczbę $b$, możemy użyć operatora <code>%</code>. Sprawdzimy więc, czy reszta z dzielenia liczby $a$ przez liczbę $b$ jest równa 0.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">czy_a_dzieli_sie_przez_b</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">//poczatkowo ustawiamy falsz
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">czy_a_dzieli_sie_przez_b</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">//uzywamy operatora %
+</span></span></span></code></pre></div><p>Powyższy fragment kodu sprawdza, czy liczba</p>
+<h2 id="sprawdzanie-pierwszości">Sprawdzanie pierwszości</h2>
+<p>Korzystając z pętli while możemy sprawdzić, czy dana liczba jest pierwsza. Liczba pierwsza to taka, która ma dokładnie 2 różne dzielniki (1 i samą siebie). Dla przykładu, liczby 2, 3, 5, 7 są liczbami pierwszymi, a liczby 0, 1, 4, 8, 9 nie są. Więcej o liczbach pierwszych można wyczytać na <a href="https://pl.wikipedia.org/wiki/Liczby_pierwsze">https://pl.wikipedia.org/wiki/Liczby_pierwsze</a>.
+Spróbujmy się zastanowić, jak by miał działać prosty program, który wczytuje jedną liczbę naturalną $a$, taką, że $0 \leq a \leq 10^6$ i wypisuje TAK jeśli liczba jest pierwsza lub NIE w przeciwnym wypadku. Oto pomysł na program:</p>
+  
+    <h2><a href="/Informejtycy/articles/2-pierwszy-program/">Pierwszy program w C&#43;&#43;</a></h2>
+    <h1 id="pierwszy-program-w-c">Pierwszy program w C++</h1>
+<h2 id="pierwsze-kroki">Pierwsze kroki</h2>
+<p>Spróbujmy najpierw napisać program, który coś wypisze. Mówi się, że komputer <em>wypisuje coś na wyjście</em>, czyli, że tekst pojawi się na ekranie. Oto linijka, która to robi:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Witaj uzytkowniku!&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><p>Na ten moment nie przejmuj się tym <code>std::</code>, zaraz wyjaśni się, dlaczego jest to potrzebne i jak tego uniknąć.</p>
+<p>Każda linijka musi się kończyć znakiem <code>;</code> - tak został stworzony język, żeby jasno oddzielić od siebie linie. <code>cout</code> to z angielskiego <em>character output</em>, czyli wyjście znaków. Komputer oczekuje po nim znaku <code>&lt;&lt;</code>, po którym powinna znaleźć się wartość do wypisania. Z racji tego, że program ma wypisać słowo (albo zdanie), a nie na przykład liczbę, musi ona znaleźć się między znakami <code>&quot; &quot;</code>. Co istotne, na razie dopuszczane są tylko litery alfabetu łacińskiego.</p>
+  
     <h2><a href="/Informejtycy/articles/12-systemy-liczbowe/">Systemy liczbowe</a></h2>
     <h1 id="systemy-liczbowe">Systemy Liczbowe</h1>
 <h2 id="system-dziesiętny">System dziesiętny</h2>
 <p>System dziesiętny to najpopularniejszy system liczbowy, którego używamy na co dzień. Składa się z dziesięciu cyfr: 0, 1, 2, 3, 4, 5, 6, 7, 8 i 9. Ważne jest też położenie cyfry w liczbie – określa ono jej wartość (np. w liczbie 2136: 2 oznacza tysiące, 1 oznacza setki, 3 – dziesiątki, a 6 – jedności). Uważa się, że na co dzień używamy właśnie systemu dziesiętnego, ponieważ jest najprostszy do nauki. Wynika to z faktu, że mamy 10 palców, za pomocą których jako dzieci uczymy się liczenia.</p>
-  
-    <h2><a href="/Informejtycy/articles/10-ciagi-znakow/">Ciągi znaków</a></h2>
-    <h1 id="ciągi-znaków">Ciągi znaków</h1>
-<h2 id="czym-są-ciągi-znaków">Czym są ciągi znaków?</h2>
-<p>W komputerze wszystko to liczby. Pytanie więc brzmi, jak przechować słowo albo zdanie? Zdanie to nic innego jak <em>ciąg znaków.</em> Potrafimy przechować ciąg, za pomocą tablicy. Mamy typ <code>char</code>, który pozwala przechować znaki. Więc możemy przechować ciąg, za pomocą tablicy znaków.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">slowo</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;Witaj&#34;</span><span class="p">;</span>
-</span></span></code></pre></div><p>Podobnie jak w przypadku tablicy, możemu uzyskiwać kolejne literki poprzez kwadratowe nawiasy. Na przykład <code>slowo[2]</code> zwróci <code>t</code> (pamiętamy o indeksowaniu od zera). Zwróćmy uwagę na jedną rzecz, chociaż słowo &ldquo;Witaj&rdquo; ma długość pięciu znaków, tablica ma rozmiar <code>6</code>. Dlaczego?</p>
   
     <h2><a href="/Informejtycy/articles/8-tablice/">Tablice</a></h2>
     <h1 id="tablice">Tablice</h1>
@@ -154,50 +210,6 @@
 <p>Tablice są bardzo dobrym rozwiązaniem do przechowywania wielu danych, jednak konieczność ścisłego ustalenia ich wielkości, po czym nie wykorzystywania znacznej części, bo np. okazało się że w takim przypadku potrzebujemy mniej miejsca, może czasem być denerwujące. Dlatego możemy używać vectorów zamiast tablic, wiele spośród ich mechanik są analogiczne do tych tablicy, jednak zawiera on również dodatkowe przydatne funkcje.</p>
 <h2 id="inicjowanie">Inicjowanie</h2>
 <p>Aby móc korzystać z <code>vectorów</code>, na początku trzeba zaimportować <code>#include &lt;vector&gt;</code>, potem tworzymy go poprzez zapisanie nazwy <code>vector</code>, następnie typu danych w nawiasach ostrokątnych <code>&lt;typ_danych&gt;</code> oraz nazwy na końcu <code>nazwa</code>, po której opcjonalnym elementem jest wielkości vectora w nawiasach okrągłych <code>(wielkość_początkowa)</code>. :</p>
-  
-    <h2><a href="/Informejtycy/articles/3-zmienne/">Zmienne i operatory matematyczne</a></h2>
-    <h1 id="zmienne-i-operatory-matematyczne">Zmienne i operatory matematyczne</h1>
-<h2 id="czym-są-zmienne">Czym są zmienne?</h2>
-<p><em>Zmienne</em> w informatyce można porównać do pudełek. Pudełko ma rozmiar i kształt, toteż mogą się w nim znaleźć tylko pasujące rzeczy. Ma również swoją nazwę, aby język mógł odróżnić je od innych. Kształt i rozmiar określa <em>typ danych.</em> Na przykład, do &ldquo;pudełka&rdquo; z typem <code>int</code>, od angielskiego <em>integer</em>, możemy wrzucić tylko liczby całkowite. W C++ tworzymy zmienne w następujący sposób.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">typ nazwa = wartosc;
-</span></span></code></pre></div><h2 id="typy-danych">Typy danych</h2>
-<table>
-  <thead>
-      <tr>
-          <th style="text-align: center">Typ danych</th>
-          <th style="text-align: center">Opis</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: center"><code>int</code></td>
-          <td style="text-align: center">Przechowuje liczby całkowite.</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><code>float</code>/<code>double</code></td>
-          <td style="text-align: center">Przechowuje liczby rzeczywiste (z przecinkiem). <code>double</code> pozwala przechować liczby o wyższej <em>precyzji</em> - albo liczby większe, albo z większą ilością cyfr po przecinku. Jeżeli wahasz się przy wyborze jednego z nich, weź <code>double</code>.</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><code>char</code></td>
-          <td style="text-align: center">Przechowuje znaki (w kodowaniu ASCII, co oznacza między innymi brak polskich znaków). Znaki przechowuje się między znakami <code>' '</code> (a ciągi znaków między <code>&quot; &quot;</code>).</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><code>bool</code></td>
-          <td style="text-align: center">Wartość logiczna - zero lub jeden.</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><code>void</code></td>
-          <td style="text-align: center">Z pierwszego artykułu wiesz już że <em>prawie</em> każda funkcja coś zwraca. Funkcje, które nic nie zwracają (czyli nie obliczają żadnej wartości), są oznaczane właśnie tym typem.</td>
-      </tr>
-  </tbody>
-</table>
-<blockquote>
-<p>Dla dociekliwych, <a href="#dla-dociekliwych-nr-1-sk%C4%85d-pochodz%C4%85-nazwy-typ%C3%B3w-danych">pod koniec artykułu</a> wyjaśniam również, dlaczego użyto takich nazw.</p>
-  
-    <h2><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww/">NWD,  Algorytm Euklidesa i NWW</a></h2>
-    <h1 id="nwd--algorytm-euklidesa-i-nww">NWD,  Algorytm Euklidesa i NWW</h1>
-<h2 id="nwd">NWD</h2>
-<p>Zapewne spotkałeś się już z takim skrótem jak NWD. Oznacza on Największy Wspólny Dzielnik, czyli największą możliwą liczbę, która dzieli liczbę $a$ i liczbę $b$ bez reszty. Czy zastanawiałeś się już, jak można znaleźć NWD pisząc program w C++? Można to zrobić w bardzo prosty sposób. Już wiesz, jak znaleźć dzielniki liczby $a$, dlatego teraz wystarczy sprawdzić, czy dzielniki $a$ dzielą także $b$. Warto zauważyć, że jeśli $a$ jest większe od $b$ to niektóre dzielniki $a$ mogą być większe od $b$, dlatego warto jest sprawdzać dzielniki liczby mniejszej.</p>
   
     <h2><a href="/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/">Wyszukiwanie liniowe i binarne</a></h2>
     <h1 id="wyszukiwanie-liniowe-i-binarne">Wyszukiwanie liniowe i binarne</h1>
@@ -238,50 +250,44 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>Ten sposób sprawdza się, kiedy mamy nieposortowany ciąg, a także jak nasze $n$, czyli długość ciągu, jest stosunkowo małe.</p>
   
-    <h2><a href="/Informejtycy/articles/6-pierwszosc-i-podzielnosc/">Pierwszość i podzielność</a></h2>
-    <h1 id="sprawdzanie-pierwszości-i-liczby-dzielników-liczb">Sprawdzanie pierwszości i liczby dzielników liczb</h1>
-<h2 id="podzielność">Podzielność</h2>
-<p>Aby sprawdzić, czy liczba $a$ dzieli się przez liczbę $b$, możemy użyć operatora <code>%</code>. Sprawdzimy więc, czy reszta z dzielenia liczby $a$ przez liczbę $b$ jest równa 0.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">czy_a_dzieli_sie_przez_b</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">//poczatkowo ustawiamy falsz
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">czy_a_dzieli_sie_przez_b</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">//uzywamy operatora %
-</span></span></span></code></pre></div><p>Powyższy fragment kodu sprawdza, czy liczba</p>
-<h2 id="sprawdzanie-pierwszości">Sprawdzanie pierwszości</h2>
-<p>Korzystając z pętli while możemy sprawdzić, czy dana liczba jest pierwsza. Liczba pierwsza to taka, która ma dokładnie 2 różne dzielniki (1 i samą siebie). Dla przykładu, liczby 2, 3, 5, 7 są liczbami pierwszymi, a liczby 0, 1, 4, 8, 9 nie są. Więcej o liczbach pierwszych można wyczytać na <a href="https://pl.wikipedia.org/wiki/Liczby_pierwsze">https://pl.wikipedia.org/wiki/Liczby_pierwsze</a>.
-Spróbujmy się zastanowić, jak by miał działać prosty program, który wczytuje jedną liczbę naturalną $a$, taką, że $0 \leq a \leq 10^6$ i wypisuje TAK jeśli liczba jest pierwsza lub NIE w przeciwnym wypadku. Oto pomysł na program:</p>
-  
-    <h2><a href="/Informejtycy/articles/2-pierwszy-program/">Pierwszy program w C&#43;&#43;</a></h2>
-    <h1 id="pierwszy-program-w-c">Pierwszy program w C++</h1>
-<h2 id="pierwsze-kroki">Pierwsze kroki</h2>
-<p>Spróbujmy najpierw napisać program, który coś wypisze. Mówi się, że komputer <em>wypisuje coś na wyjście</em>, czyli, że tekst pojawi się na ekranie. Oto linijka, która to robi:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Witaj uzytkowniku!&#34;</span><span class="p">;</span>
-</span></span></code></pre></div><p>Na ten moment nie przejmuj się tym <code>std::</code>, zaraz wyjaśni się, dlaczego jest to potrzebne i jak tego uniknąć.</p>
-<p>Każda linijka musi się kończyć znakiem <code>;</code> - tak został stworzony język, żeby jasno oddzielić od siebie linie. <code>cout</code> to z angielskiego <em>character output</em>, czyli wyjście znaków. Komputer oczekuje po nim znaku <code>&lt;&lt;</code>, po którym powinna znaleźć się wartość do wypisania. Z racji tego, że program ma wypisać słowo (albo zdanie), a nie na przykład liczbę, musi ona znaleźć się między znakami <code>&quot; &quot;</code>. Co istotne, na razie dopuszczane są tylko litery alfabetu łacińskiego.</p>
-  
-    <h2><a href="/Informejtycy/articles/1-jak-zaczac/">Jak zacząć?</a></h2>
-    <h1 id="jak-zacząć">Jak zacząć?</h1>
-<h2 id="kompilatory-online-i-edytory">Kompilatory online i edytory</h2>
-<p>Podstawowym narzędziem, bez którego nie da się rozpocząć nauki programowania, jest kompilator. Jest to miejsce, w którym nasz kod jest tłumaczony na język zrozumiały przez komputer, a następnie uruchamiany. Na samym początku można korzystać z kompilatorów online. W tym celu polecamy używanie:</p>
-<ul>
-<li><a href="https://ideone.com/l/cpp">ideone.com</a></li>
-<li><a href="https://www.programiz.com/cpp-programming/online-compiler/">Programiz</a></li>
-<li><a href="https://www.mycompiler.io/new/cpp">myCompiler</a></li>
-</ul>
-<p>Jeśli chcesz mieć pobrany program z wbudowanym kompilatorem, aby móc zapisywać swoje odpowiedzi do zadań, polecamy:</p>
-<ul>
-<li>Dla systemu Windows:
-<ul>
-<li><strong>[REKOMENDOWANE]</strong> <a href="https://www.codeblocks.org">Code::Blocks</a> - istotne jest to by wersja kończyła się na <code>mingw-setup</code>, na przykład <code>codeblocks-20.03mingw-setup.exe</code> (ta wersja ma instalator i wbudowany kompilator, czyli język C++).</li>
-<li><a href="https://code.visualstudio.com">Visual Studio Code</a></li>
-</ul>
-</li>
-<li>Dla systemu macOS:
-<ul>
-<li><a href="https://developer.apple.com/xcode/">Xcode</a></li>
-<li><a href="https://code.visualstudio.com">Visual Studio Code</a></li>
-</ul>
-</li>
-</ul>
-<p>Kompilatorem C++ jest <em>g++</em>. Jest on automatycznie wbudowany w Code::Blocks oraz Xcode, ale można go też uruchomić, korzystając z terminala. Zachęcamy do zapoznania się z nim, aczkolwiek na sam początek proponujemy pobrać jeden z wymienionych wyżej programów.</p>
+    <h2><a href="/Informejtycy/articles/3-zmienne/">Zmienne i operatory matematyczne</a></h2>
+    <h1 id="zmienne-i-operatory-matematyczne">Zmienne i operatory matematyczne</h1>
+<h2 id="czym-są-zmienne">Czym są zmienne?</h2>
+<p><em>Zmienne</em> w informatyce można porównać do pudełek. Pudełko ma rozmiar i kształt, toteż mogą się w nim znaleźć tylko pasujące rzeczy. Ma również swoją nazwę, aby język mógł odróżnić je od innych. Kształt i rozmiar określa <em>typ danych.</em> Na przykład, do &ldquo;pudełka&rdquo; z typem <code>int</code>, od angielskiego <em>integer</em>, możemy wrzucić tylko liczby całkowite. W C++ tworzymy zmienne w następujący sposób.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">typ nazwa = wartosc;
+</span></span></code></pre></div><h2 id="typy-danych">Typy danych</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Typ danych</th>
+          <th style="text-align: center">Opis</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><code>int</code></td>
+          <td style="text-align: center">Przechowuje liczby całkowite.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>float</code>/<code>double</code></td>
+          <td style="text-align: center">Przechowuje liczby rzeczywiste (z przecinkiem). <code>double</code> pozwala przechować liczby o wyższej <em>precyzji</em> - albo liczby większe, albo z większą ilością cyfr po przecinku. Jeżeli wahasz się przy wyborze jednego z nich, weź <code>double</code>.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>char</code></td>
+          <td style="text-align: center">Przechowuje znaki (w kodowaniu ASCII, co oznacza między innymi brak polskich znaków). Znaki przechowuje się między znakami <code>' '</code> (a ciągi znaków między <code>&quot; &quot;</code>).</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>bool</code></td>
+          <td style="text-align: center">Wartość logiczna - zero lub jeden.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>void</code></td>
+          <td style="text-align: center">Z pierwszego artykułu wiesz już że <em>prawie</em> każda funkcja coś zwraca. Funkcje, które nic nie zwracają (czyli nie obliczają żadnej wartości), są oznaczane właśnie tym typem.</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>Dla dociekliwych, <a href="#dla-dociekliwych-nr-1-sk%C4%85d-pochodz%C4%85-nazwy-typ%C3%B3w-danych">pod koniec artykułu</a> wyjaśniam również, dlaczego użyto takich nazw.</p>
   
 
       </div>
