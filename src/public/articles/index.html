@@ -51,25 +51,64 @@
     <div id="srodek">
       <div id="sidebar-left">
         <h2>Lista tematów</h2>
-<ul>
+<ul class="menu">
     
-        <li><a href="/Informejtycy/articles/1-jak-zaczac/" >1. Jak zacząć?</a></li>
     
-        <li><a href="/Informejtycy/articles/2-pierwszy-program/" >2. Pierwszy Program w C&#43;&#43;</a></li>
+    <li class="section" id="basic-section">
+        
+        <a href="#" class="section-dropdown">
+            <span class="section-title">Tematy Podstawowe</span>
+            
+                <img class="expand-img" src="/Informejtycy/images/expand.png" alt="Rozwiń">
+            
+        </a>
+        <ul class="submenu">
+            
+                
+                <li><a href="/Informejtycy/articles/1-jak-zaczac/" class="submenu-article" >1. Jak zacząć?</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/2-pierwszy-program/" class="submenu-article" >2. Pierwszy program w C&#43;&#43;</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/3-zmienne/" class="submenu-article" >3. Zmienne i operatory matematyczne</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/6-pierwszosc-i-podzielnosc/" class="submenu-article" >6. Pierwszość i podzielność</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww/" class="submenu-article" >7. NWD,  Algorytm Euklidesa i NWW</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/8-tablice/" class="submenu-article" >8. Tablice</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/10-ciagi-znakow/" class="submenu-article" >10. Ciągi znaków</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/13-vector/" class="submenu-article" >13. Vector</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/" class="submenu-article" >15. Wyszukiwanie liniowe i binarne</a></li>
+            
+        </ul>
+    </li>
+
+    <li class="section" id="avanced-section">
+        
+        <a href="#" class="section-dropdown">
+            <span class="section-title">Tematy Zaawansowane</span>
+            
+                <img class="expand-img" src="/Informejtycy/images/expand.png" alt="Rozwiń">
+            
+        </a>
+        <ul class="submenu">
+            
+        </ul>
+    </li>
+
     
-        <li><a href="/Informejtycy/articles/3-zmienne/" >3. Zmienne i operatory matematyczne</a></li>
-    
-        <li><a href="/Informejtycy/articles/6-pierwszosc-i-podzielnosc/" >6. Pierwszość i podzielność</a></li>
-    
-        <li><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww/" >7. NWD,  Algorytm Euklidesa i NWW</a></li>
-    
-        <li><a href="/Informejtycy/articles/8-tablice/" >8. Tablice</a></li>
-    
-        <li><a href="/Informejtycy/articles/10-ciagi-znakow/" >10. Ciągi znaków</a></li>
-    
-        <li><a href="/Informejtycy/articles/13-vector/" >13. Vector</a></li>
-    
-        <li><a href="/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/" >15. Wyszukiwanie liniowe i binarne</a></li>
+
     
 </ul>
       </div>
@@ -77,6 +116,25 @@
         
   <h1>Articles</h1>
   
+  
+    <h2><a href="/Informejtycy/articles/4-if-elseif-else-oraz-opratory-logiczne/">If, else if, else, oraz operatory logiczne</a></h2>
+    <h1 id="if-else-if-else-oraz-operatory-logiczne">If, else if, else, oraz operatory logiczne</h1>
+<h2 id="wstęp">Wstęp</h2>
+<p>Już wiesz, czym są <strong>zmienne</strong>, a teraz nauczymy Cię, jak z nimi pracować. W C++ istnieją tzw. operatory logiczne, które są w dużej mierze oparte na matematyce. Ten dział jest omawiany w pierwszej klasie liceum.</p>
+<h2 id="porównywanie-wartości">Porównywanie wartości</h2>
+<p>Zacznijmy od najprostszych operatorów porównania:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span>    <span class="c1">//  a jest mniejsze od b
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">a</span> <span class="o">&lt;=</span> <span class="n">b</span>   <span class="c1">//  a jest mniejsze bądź równe od b
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span>    <span class="c1">//  a jest większe od b
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span>   <span class="c1">//  a jest większe bądź równe od b
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span>   <span class="c1">//  a równa się b
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">a</span> <span class="o">!=</span> <span class="n">b</span>   <span class="c1">//  a nie równa się b
+</span></span></span></code></pre></div><p>Takie operatory zwracają wartość zmiennej typu <code>bool</code>:</p>
+  
+    <h2><a href="/Informejtycy/articles/12-systemy-liczbowe/">Systemy liczbowe</a></h2>
+    <h1 id="systemy-liczbowe">Systemy Liczbowe</h1>
+<h2 id="system-dziesiętny">System dziesiętny</h2>
+<p>System dziesiętny to najpopularniejszy system liczbowy, którego używamy na co dzień. Składa się z dziesięciu cyfr: 0, 1, 2, 3, 4, 5, 6, 7, 8 i 9. Ważne jest też położenie cyfry w liczbie – określa ono jej wartość (np. w liczbie 2136: 2 oznacza tysiące, 1 oznacza setki, 3 – dziesiątki, a 6 – jedności). Uważa się, że na co dzień używamy właśnie systemu dziesiętnego, ponieważ jest najprostszy do nauki. Wynika to z faktu, że mamy 10 palców, za pomocą których jako dzieci uczymy się liczenia.</p>
   
     <h2><a href="/Informejtycy/articles/10-ciagi-znakow/">Ciągi znaków</a></h2>
     <h1 id="ciągi-znaków">Ciągi znaków</h1>
@@ -191,14 +249,12 @@
 <p>Korzystając z pętli while możemy sprawdzić, czy dana liczba jest pierwsza. Liczba pierwsza to taka, która ma dokładnie 2 różne dzielniki (1 i samą siebie). Dla przykładu, liczby 2, 3, 5, 7 są liczbami pierwszymi, a liczby 0, 1, 4, 8, 9 nie są. Więcej o liczbach pierwszych można wyczytać na <a href="https://pl.wikipedia.org/wiki/Liczby_pierwsze">https://pl.wikipedia.org/wiki/Liczby_pierwsze</a>.
 Spróbujmy się zastanowić, jak by miał działać prosty program, który wczytuje jedną liczbę naturalną $a$, taką, że $0 \leq a \leq 10^6$ i wypisuje TAK jeśli liczba jest pierwsza lub NIE w przeciwnym wypadku. Oto pomysł na program:</p>
   
-    <h2><a href="/Informejtycy/articles/2-pierwszy-program/">Pierwszy Program w C&#43;&#43;</a></h2>
+    <h2><a href="/Informejtycy/articles/2-pierwszy-program/">Pierwszy program w C&#43;&#43;</a></h2>
     <h1 id="pierwszy-program-w-c">Pierwszy program w C++</h1>
 <h2 id="pierwsze-kroki">Pierwsze kroki</h2>
 <p>Spróbujmy najpierw napisać program, który coś wypisze. Mówi się, że komputer <em>wypisuje coś na wyjście</em>, czyli, że tekst pojawi się na ekranie. Oto linijka, która to robi:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Witaj uzytkowniku!&#34;</span><span class="p">;</span>
-</span></span></code></pre></div><blockquote>
-<p>Na ten moment nie przejmuj się tym <code>std::</code>, zaraz wyjaśni się, dlaczego jest to potrzebne i jak tego uniknąć.</p>
-</blockquote>
+</span></span></code></pre></div><p>Na ten moment nie przejmuj się tym <code>std::</code>, zaraz wyjaśni się, dlaczego jest to potrzebne i jak tego uniknąć.</p>
 <p>Każda linijka musi się kończyć znakiem <code>;</code> - tak został stworzony język, żeby jasno oddzielić od siebie linie. <code>cout</code> to z angielskiego <em>character output</em>, czyli wyjście znaków. Komputer oczekuje po nim znaku <code>&lt;&lt;</code>, po którym powinna znaleźć się wartość do wypisania. Z racji tego, że program ma wypisać słowo (albo zdanie), a nie na przykład liczbę, musi ona znaleźć się między znakami <code>&quot; &quot;</code>. Co istotne, na razie dopuszczane są tylko litery alfabetu łacińskiego.</p>
   
     <h2><a href="/Informejtycy/articles/1-jak-zaczac/">Jak zacząć?</a></h2>
@@ -241,5 +297,6 @@ Kontakt: kontakt.informejtycy@gmail.com<br>
 &copy; 2025 Wszelkie prawa zastrzeżone
   </footer>
   <script src="http://localhost:1313/Informejtycy/js/theme.js"></script>
+  <script src="http://localhost:1313/Informejtycy/js/section-dropdown.js"></script>
 </body>
 </html>

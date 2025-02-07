@@ -12,6 +12,7 @@
 	/* tego nie zmieniać */
 	--tlo-gornego-paska: #2C3857;
 	/* tego nie zmieniać */
+	--tlo-sekcji: #aeaeb8;
 }
 
 /* Zmienne dla trybu ciemnego */
@@ -28,6 +29,7 @@
 	/* tego nie zmieniać */
 	--tlo-gornego-paska: #2C3857;
 	/* tego nie zmieniać */
+	--tlo-sekcji: #2C3857;
 }
 
 html {
@@ -199,6 +201,8 @@ footer {
 #menu {
 	margin-top: 18px;
 	margin-left: 25px;
+	position: relative;
+	cursor: pointer;
 }
 
 
@@ -268,4 +272,44 @@ td, th {
 	padding: 10px;
 	border: solid 1px var(--granica-paneli-bocznych);
 	text-align: left;
+}
+
+.expand-img {
+	width: 1.1rem;
+	transition: all 0.3s ease;
+}
+
+.expand-img.rotate {
+	transform: rotate(90deg);
+}
+
+.menu {
+	overflow: hidden;
+}
+
+.section-dropdown {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	color: var(--lista-i-spis);
+}
+
+.section-title {
+	font-size: 1.4rem;
+	padding-left: 1rem;
+	flex-grow: 1;
+}
+
+.submenu {
+	width: 90%;
+	margin-left: auto;
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height 0.4s ease-out;
+}
+
+.submenu-article {
+	margin: 0.5rem 0;
+	font-size: 1.3rem;
+	color: var(--lista-i-spis);
 }

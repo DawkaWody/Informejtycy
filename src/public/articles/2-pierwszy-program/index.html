@@ -51,25 +51,76 @@
     <div id="srodek">
       <div id="sidebar-left">
         <h2>Lista tematów</h2>
-<ul>
+<ul class="menu">
     
-        <li><a href="/Informejtycy/articles/1-jak-zaczac/" >1. Jak zacząć?</a></li>
     
-        <li><a href="/Informejtycy/articles/2-pierwszy-program/" id="aktualny-temat">2. Pierwszy program w C&#43;&#43;</a></li>
+    <li class="section" id="basic-section">
+        
+        <a href="#" class="section-dropdown">
+            <span class="section-title">Tematy Podstawowe</span>
+            
+                <img class="expand-img" src="/Informejtycy/images/expand.png" alt="Rozwiń">
+            
+        </a>
+        <ul class="submenu">
+            
+                
+                <li><a href="/Informejtycy/articles/1-jak-zaczac/" class="submenu-article" >1. Jak zacząć?</a></li>
+            
+                
+                    
+                
+                <li><a href="/Informejtycy/articles/2-pierwszy-program/" class="submenu-article" id="aktualny-temat">2. Pierwszy program w C&#43;&#43;</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/3-zmienne/" class="submenu-article" >3. Zmienne i operatory matematyczne</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/6-pierwszosc-i-podzielnosc/" class="submenu-article" >6. Pierwszość i podzielność</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww/" class="submenu-article" >7. NWD,  Algorytm Euklidesa i NWW</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/8-tablice/" class="submenu-article" >8. Tablice</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/10-ciagi-znakow/" class="submenu-article" >10. Ciągi znaków</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/13-vector/" class="submenu-article" >13. Vector</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/" class="submenu-article" >15. Wyszukiwanie liniowe i binarne</a></li>
+            
+        </ul>
+    </li>
+
+    <li class="section" id="avanced-section">
+        
+        <a href="#" class="section-dropdown">
+            <span class="section-title">Tematy Zaawansowane</span>
+            
+                <img class="expand-img" src="/Informejtycy/images/expand.png" alt="Rozwiń">
+            
+        </a>
+        <ul class="submenu">
+            
+        </ul>
+    </li>
+
     
-        <li><a href="/Informejtycy/articles/3-zmienne/" >3. Zmienne i operatory matematyczne</a></li>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const section = document.getElementById('basic-section');
+                const content = section.querySelector('.submenu');
+                const img = section.querySelector('.expand-img');
+                window.rotateArrow(img, true);
+                window.expandCollapseSection(content, true);
+            });
+        </script>
     
-        <li><a href="/Informejtycy/articles/6-pierwszosc-i-podzielnosc/" >6. Pierwszość i podzielność</a></li>
-    
-        <li><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww/" >7. NWD,  Algorytm Euklidesa i NWW</a></li>
-    
-        <li><a href="/Informejtycy/articles/8-tablice/" >8. Tablice</a></li>
-    
-        <li><a href="/Informejtycy/articles/10-ciagi-znakow/" >10. Ciągi znaków</a></li>
-    
-        <li><a href="/Informejtycy/articles/13-vector/" >13. Vector</a></li>
-    
-        <li><a href="/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/" >15. Wyszukiwanie liniowe i binarne</a></li>
+
     
 </ul>
       </div>
@@ -155,6 +206,10 @@
 
     
 
+    
+
+    
+
 
 
 
@@ -191,5 +246,6 @@ Kontakt: kontakt.informejtycy@gmail.com<br>
 &copy; 2025 Wszelkie prawa zastrzeżone
   </footer>
   <script src="http://localhost:1313/Informejtycy/js/theme.js"></script>
+  <script src="http://localhost:1313/Informejtycy/js/section-dropdown.js"></script>
 </body>
 </html>

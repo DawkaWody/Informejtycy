@@ -1,8 +1,8 @@
 ---
-date: 2025-01-25T12:20:00+01:00
 draft: false
 title: Pierwszość i podzielność
 id: 6
+nerd: false
 ---
 # Sprawdzanie pierwszości i liczby dzielników liczb
 

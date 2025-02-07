@@ -1,8 +1,8 @@
 ---
-date: 2025-02-04T16:14:00+01:00
 draft: false
 title: 'If, else if, else, oraz operatory logiczne'
 id: 4
+nerd: false
 ---
 
 # If, else if, else, oraz operatory logiczne

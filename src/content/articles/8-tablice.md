@@ -1,8 +1,8 @@
 ---
-date: 2025-01-29T20:00:00+01:00
 draft: false
 title: 'Tablice'
 id: 8
+nerd: false
 ---
 # Tablice
 Nadszedł czas poznać pierwszą strukturę pozwalającą przechowywać wiele wartości. Jest nią tablica, czyli wiele zmiennych tego samego typu, które są zebrane pod jedną nazwą, a do konkretnej zmiennej tj. komórki tablicy uzyskujemy dostęp poprzez wskazanie jej numeru. Na pierwszy rzut oka nietypowym zjawiskiem jest numeracja komórek tablicy od zera, jednak jak się niedługo dowiecie w wielu przypadkach jest to naprawdę przydatne.

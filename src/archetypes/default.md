@@ -1,5 +1,6 @@
-+++
-date = '{{ .Date }}'
-draft = true
-title = '{{ replace .File.ContentBaseName "-" " " | title }}'
-+++
+---
+draft: false
+title: 'TYTUŁ ARTYKUŁU'
+id: NUMER ARTYKUŁU
+nerd: true / false (false jeśli jest podstawowy, true jeśli jest zaawansowany)
+---

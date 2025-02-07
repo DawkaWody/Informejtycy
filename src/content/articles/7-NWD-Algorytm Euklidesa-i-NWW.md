@@ -1,8 +1,8 @@
 ---
-date: 2025-01-25T13:35:47+01:00
 draft: false
 title: NWD,  Algorytm Euklidesa i NWW
 id: 7
+nerd: false
 ---
 # NWD,  Algorytm Euklidesa i NWW
 ## NWD

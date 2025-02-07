@@ -1,8 +1,8 @@
 ---
-date: 2025-01-29T21:31:00+01:00
 draft: false
 title: 'Ciągi znaków'
 id: 10
+nerd: false
 ---
 
 

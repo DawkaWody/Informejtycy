@@ -1,8 +1,8 @@
 ---
-date: 2025-01-25T12:20:00+01:00
 draft: false
 title: 'Pierwszy program w C++'
 id: 2
+nerd: false
 ---
 
 # Pierwszy program w C++

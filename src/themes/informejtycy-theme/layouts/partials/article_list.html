@@ -1,6 +1,64 @@
 <h2>Lista tematów</h2>
-<ul>
-    {{ range sort .Site.RegularPages "Params.id" }}
-        <li><a href="{{ .RelPermalink }}" {{ if eq .Permalink $.Permalink }}id="aktualny-temat"{{ end }}>{{ .Params.id }}. {{ .Title }}</a></li>
+<ul class="menu">
+    {{ $basicExpand := false }}
+    {{ $nerdExpand := false }}
+    <li class="section" id="basic-section">
+        <!-- Basic topics -->
+        <a href="#" class="section-dropdown">
+            <span class="section-title">Tematy Podstawowe</span>
+            {{ with resources.Get "images/expand.png" }}
+                <img class="expand-img" src="{{ .RelPermalink }}" alt="Rozwiń">
+            {{ end }}
+        </a>
+        <ul class="submenu">
+            {{ range where (sort .Site.RegularPages "Params.id") ".Params.nerd" false }}
+                {{ if eq .Permalink $.Permalink }}
+                    {{ $basicExpand = true }}
+                {{ end }}
+                <li><a href="{{ .RelPermalink }}" class="submenu-article" {{ if eq .Permalink $.Permalink }}id="aktualny-temat"{{ end }}>{{ .Params.id }}. {{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+    </li>
+
+    <li class="section" id="avanced-section">
+        <!-- Advanced topics -->
+        <a href="#" class="section-dropdown">
+            <span class="section-title">Tematy Zaawansowane</span>
+            {{ with resources.Get "images/expand.png" }}
+                <img class="expand-img" src="{{ .RelPermalink }}" alt="Rozwiń">
+            {{ end }}
+        </a>
+        <ul class="submenu">
+            {{ range where (sort .Site.RegularPages "Params.id") ".Params.nerd" true }}
+                {{ if eq .Permalink $.Permalink }}
+                    {{ $nerdExpand = true }}
+                {{ end }}
+                <li><a href="{{ .RelPermalink }}" class="submenu-article" {{ if eq .Permalink $.Permalink }}id="aktualny-temat"{{ end }}>{{ .Params.id }}. {{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+    </li>
+
+    {{ if $basicExpand }}
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const section = document.getElementById('basic-section');
+                const content = section.querySelector('.submenu');
+                const img = section.querySelector('.expand-img');
+                window.rotateArrow(img, true);
+                window.expandCollapseSection(content, true);
+            });
+        </script>
+    {{ end }}
+
+    {{ if $nerdExpand }}
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const section = document.getElementById('avanced-section');
+                const content = section.querySelector('.submenu');
+                const img = section.querySelector('.expand-img');
+                window.rotateArrow(img, true);
+                window.expandCollapseSection(content, true);
+            });
+        </script>
     {{ end }}
 </ul>

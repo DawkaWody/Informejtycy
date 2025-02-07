@@ -1,8 +1,8 @@
 ---
-date: 2025-01-29T20:00:00+01:00
 draft: false
 title: 'Vector'
 id: 13
+nerd: false
 ---
 # Vector
 Tablice są bardzo dobrym rozwiązaniem do przechowywania wielu danych, jednak konieczność ścisłego ustalenia ich wielkości, po czym nie wykorzystywania znacznej części, bo np. okazało się że w takim przypadku potrzebujemy mniej miejsca, może czasem być denerwujące. Dlatego możemy używać vectorów zamiast tablic, wiele spośród ich mechanik są analogiczne do tych tablicy, jednak zawiera on również dodatkowe przydatne funkcje.

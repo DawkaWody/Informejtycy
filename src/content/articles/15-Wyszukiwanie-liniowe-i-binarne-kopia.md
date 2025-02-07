@@ -1,8 +1,8 @@
 ---
-date: 2025-01-25T13:35:47+01:00
 draft: false
 title: Wyszukiwanie liniowe i binarne
 id: 15
+nerd: false
 ---
 # Wyszukiwanie liniowe i binarne
 ## Wyszukiwanie liniowe
