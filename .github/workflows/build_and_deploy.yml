@@ -35,7 +35,7 @@ jobs:
         run: cd ./src && hugo --minify
       
       - name: Copy all images
-        run: cp -f ./src/assets/images/ ./src/public/images/
+        run: cp -Rf ./src/assets/images/ ./src/public/images/
       
       - name: Deploy site
         if: github.ref == 'refs/heads/main'
