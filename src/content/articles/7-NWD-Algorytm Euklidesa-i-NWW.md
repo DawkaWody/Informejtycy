@@ -91,6 +91,7 @@ W ten oto sposób mamy naprawdę bardzo szybki sposób na znajdowanie NWD dwóch
 
 ## NWD więcej niż dwóch liczb
 Czy znalezienie NWD więcej niż dwóch liczb jest trudne? Wcale nie. Należy obliczyć 
+
 $$a = NWD(pierwsza, druga)$$
 $$b = NWD(a, trzecia)$$
 $$c = NWD(b, czwarta)$$
@@ -131,6 +132,7 @@ int main() {
 
 ## NWW
 Przy zagadnieniach związanych z NWD pojawia się NWW, czyli Najmniejsza Wspólna Wielokrotność dwóch liczb. Jak to policzyć? Wystarczy zapamiętać, że tak naprawdę:
+
 $$NWW(a, b) = a * b / NWD(a, b)$$
 Wynika to z rozkładu liczb na czynniki pierwsze. Jak wyglądałby taki kod?
 ```cpp

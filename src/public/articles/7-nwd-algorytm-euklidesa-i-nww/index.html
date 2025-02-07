@@ -210,6 +210,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>W ten oto sposób mamy naprawdę bardzo szybki sposób na znajdowanie NWD dwóch wybranych liczb.</p>
 <h2 id="nwd-więcej-niż-dwóch-liczb">NWD więcej niż dwóch liczb</h2>
+<p>Czy znalezienie NWD więcej niż dwóch liczb jest trudne? Wcale nie. Należy obliczyć</p>
 $$a = NWD(pierwsza, druga)$$$$b = NWD(a, trzecia)$$$$c = NWD(b, czwarta)$$$$\cdots$$<p>
 Jak wygląda taki kod? Oto on:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;iostream&gt;
@@ -243,6 +244,7 @@ Jak wygląda taki kod? Oto on:</p>
 </span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><h2 id="nww">NWW</h2>
+<p>Przy zagadnieniach związanych z NWD pojawia się NWW, czyli Najmniejsza Wspólna Wielokrotność dwóch liczb. Jak to policzyć? Wystarczy zapamiętać, że tak naprawdę:</p>
 $$NWW(a, b) = a * b / NWD(a, b)$$<p>
 Wynika to z rozkładu liczb na czynniki pierwsze. Jak wyglądałby taki kod?</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;iostream&gt;
