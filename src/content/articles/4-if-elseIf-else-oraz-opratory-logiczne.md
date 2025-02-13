@@ -1,8 +1,9 @@
 ---
+date: 2025-02-04T16:14:00+01:00
 draft: false
 title: 'If, else if, else, oraz operatory logiczne'
-id: 4
 nerd: false
+id: 4
 ---
 
 # If, else if, else, oraz operatory logiczne
@@ -81,16 +82,15 @@ int main(){
 Warto również wspomnieć o trzech podstawowych operatorach logicznych:
 
 1. Logiczne AND (`&&`)
-    Operator zwraca wartość `true`, tylko jeśli wszystkie operandy mają wartość `true` (lub są różne od zera).  
+    Operator zwraca wartość `true`, tylko jeśli prawa i lewa strony mają wartość `true` (lub są różne od zera).  
     Przykład: `a > 0 && b > 0` (`a` jest wiksze od `0`  **i**  `b` jest większe od `0`)
     
 2. **Logiczne OR (`||`)**  
-    Operator zwraca wartość `true`, jeśli którykolwiek z operandów ma wartość `true` (lub jest różny od zera).  
+    Operator zwraca wartość `true`, jeśli lewa bądź prawa strona ma wartość `true` (lub jest różny od zera).  
     Przykład: `a > 0 || b > 0` (`a` jest wiksze od `0`  **LUB**  `b` jest większe od `0`)
     
 3. **Logiczne NOT (`!`)**  
-    Operator zwraca wartość przeciwną do wartości logicznej operandu.  
+    Operator zwraca wartość przeciwną do wartości logicznej wyrażenia.  
     Przykład: `!(a > b)` (prawda, jeśli `a` **NIE** jest większe niż `b`).
 
-Dziękuję za przeczytanie!)
 
