@@ -1,9 +1,19 @@
 {{ define "main" }}
-  {{ .Content }}
-  
-  <div id="dol-nav">
-    {{ partial "navigation.html" . }}
-  </div>
+  <div id="srodek">
+    <div id="sidebar-left">
+      {{ partial "article_list.html" . }}
+    </div>
+    <div id="artykul">
+      {{ .Content }}
 
+      <div id="dol-nav">
+        {{ partial "navigation.html" . }}
+      </div>
+    </div>
+    <div id="sidebar-right">
+      <h2>Spis treści</h2>
+      {{ .TableOfContents }}
+    </div>
+  </div>
 {{ end }}
 

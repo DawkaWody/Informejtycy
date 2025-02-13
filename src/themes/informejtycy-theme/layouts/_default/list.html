@@ -1,8 +1,58 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+<div id="srodek">
+    <div id="sidebar-left">
+        {{ partial "article_list.html" . }}
+    </div>
+    <div id="artykul">
+        <h1>Zadania</h1>
+        <br>
+        
+        <table>
+            {{ $files := readDir "content/exercises" }}
+            {{ $sections := dict }}
+            {{ range $files }}
+                {{ if eq (path.Ext .Name) ".pdf" }}
+                    {{ $parts := split (path.Base .Name) "-" }}
+                    {{ $section := index $parts 0 }}
+                    {{ $number := index $parts 1 }}
+                    {{ $name := delimit (slice (index $parts 2)) "-" }}
+                    {{ $entry := dict "Name" .Name "Number" (string $number) "DisplayName" $name }}
+                    {{ if not (isset $sections $section) }}
+                        {{ $sections = merge $sections (dict $section (slice $entry)) }}
+                    {{ else }}
+                        {{ $existingEntries := index $sections $section }}
+                        {{ $sections = merge $sections (dict $section (append $existingEntries (slice $entry))) }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+            {{ range $section, $entries := $sections }}
+                {{ $sectionInt := int $section }}
+                {{ $article := first 1 (where $.Site.RegularPages "Params.id" $sectionInt) }}
+                <tr id="{{ $section }}">
+                    <th colspan="2">{{ if $article }}{{ $section }}. {{ (index $article 0).Params.title }}{{ else }}{{ $section }}{{ end }}</th>
+                </tr>
+                {{ $sortedEntries := sort $entries "Number" }}
+                {{ range $sortedEntries }}
+                <tr>
+                    <td><a href="{{ "exercises/" | relURL }}{{ .Name }}">{{ replace .DisplayName ".pdf" "" }}</a></td>
+                    <td>-</td>
+                </tr>
+                {{ end }}
+            {{ end }}
+        </table>
+    </div>
+    <div id="sidebar-right">
+        <h2>Spis treści</h2>
+        <ol>
+            {{ range $section, $entries := $sections }}
+                {{ $sectionInt := int $section }}
+                {{ $article := first 1 (where $.Site.RegularPages "Params.id" $sectionInt) }}
+                <li>
+                    <a href="#{{ $section }}">{{ if $article }}{{ $section }}. {{ (index $article 0).Params.title }}{{ else }}{{ $section }}{{ end }}</a>
+                </li>
+            {{ end }}
+        </ol>
+    </div>
+</div>
 {{ end }}

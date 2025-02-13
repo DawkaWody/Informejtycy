@@ -7,3 +7,23 @@
     {{- end }}
   {{- end }}
 {{- end }}
+
+{{- with resources.Get "css/highlight_light.css" }}
+  {{- if eq hugo.Environment "development" }}
+    <link rel="preload stylesheet" as="style" href="{{ .RelPermalink }}">
+  {{- else }}
+    {{- with . | minify | fingerprint }}
+      <link rel="preload stylesheet" as="style" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+{{- with resources.Get "css/highlight_dark.css" }}
+  {{- if eq hugo.Environment "development" }}
+    <link rel="preload stylesheet" as="style" href="{{ .RelPermalink }}">
+  {{- else }}
+    {{- with . | minify | fingerprint }}
+      <link rel="preload stylesheet" as="style" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{- end }}
+  {{- end }}
+{{- end }}

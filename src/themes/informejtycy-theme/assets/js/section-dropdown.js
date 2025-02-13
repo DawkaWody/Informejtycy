@@ -30,16 +30,5 @@ function rotateArrow(arrow, instant = false) {
     }
 }
 
-document.querySelector('.menu')
-.addEventListener('click', (e) => {
-    const el = e.target.parentElement;
-
-    if (el.classList[0] === 'section-dropdown') {
-        var sec = el.nextElementSibling;
-        rotateArrow(el.children[1]);
-        expandCollapseSection(sec);
-    }
-})
-
 window.expandCollapseSection = expandCollapseSection;
 window.rotateArrow = rotateArrow;

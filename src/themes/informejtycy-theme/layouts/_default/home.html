@@ -1,12 +1,25 @@
 {{ define "main" }}
-  {{ .Content }}
-  <style>
-    #realizowany {
-			margin-top: 5vh;
-			text-align: center;
-    }
-  </style>
-  <div id="realizowany">
-    {{ partial "project_as.html" . }}
+  <div id="srodek">
+    <div id="sidebar-left">
+      {{ partial "article_list.html" . }}
+    </div>
+    <div id="artykul">
+      {{ .Content }}
+
+      <style>
+        #realizowany {
+          margin-top: 5vh;
+          text-align: center;
+        }
+      </style>
+      <div id="realizowany">
+        {{ partial "project_as.html" . }}
+      </div>
+
+    </div>
+    <div id="sidebar-right">
+      <h2>Spis treści</h2>
+      {{ .TableOfContents }}
+    </div>
   </div>
 {{ end }}

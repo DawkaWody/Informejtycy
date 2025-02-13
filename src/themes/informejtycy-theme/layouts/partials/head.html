@@ -6,9 +6,3 @@
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
-
-<!-- Code highlighting -->
-{{ $highlight_light_css := resources.Get "css/highlight_light.css" | minify }}
-{{ $highlight_dark_css := resources.Get "css/highlight_dark.css" | minify }}
-<link rel="preload stylesheet" as="style" href="{{ $highlight_dark_css.Permalink }}">
-<link rel="preload stylesheet" as="style" href="{{ $highlight_light_css.Permalink }}">

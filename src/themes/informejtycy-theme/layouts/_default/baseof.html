@@ -12,22 +12,13 @@
     {{ partial "header.html" . }}
   </header>
   <main>
-    <div id="srodek">
-      <div id="sidebar-left">
-        {{ partial "article_list.html" . }}
-      </div>
-      <div id="artykul">
-        {{ block "main" . }}{{ end }}
-      </div>
-      <div id="sidebar-right">
-        {{ partial "table_of_contents.html" . }}
-      </div>
-    </div>
+    {{ block "main" . }}{{ end }}
   </main>
   <footer>
     {{ partial "footer.html" . }}
   </footer>
-  <script src="{{ .Site.BaseURL }}js/theme.js"></script>
-  <script src="{{ .Site.BaseURL }}js/section-dropdown.js"></script>
+  {{ with resources.Get "js/main.js" }}
+    <script src="{{ .RelPermalink }}"></script>
+  {{ end }}
 </body>
 </html>
