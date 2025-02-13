@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pl-pl" dir="ltr">
+<head><script src="/Informejtycy/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Informejtycy/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"&gt>
+<link rel="icon" type="image/x-icon" href="/Informejtycy/favicon.ico">
+
+<title>Sortowanie | Informejtycy.pl</title>
+
+    <link rel="stylesheet" href="/Informejtycy/css/main.css">
+    <link rel="preload stylesheet" as="style" href="/Informejtycy/css/highlight_light.css">
+    <link rel="preload stylesheet" as="style" href="/Informejtycy/css/highlight_dark.css">
+
+
+      <script src="/Informejtycy/js/theme.js"></script>
+      <script src="/Informejtycy/js/section-dropdown.js"></script>
+
+
+  
+  
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['$', '$']] 
+    }
+  };
+</script>
+  
+</head>
+<body>
+  <header>
+    
+    <div id="baner">
+        <a href="http://localhost:1313/Informejtycy/">
+            
+                <img id="baner-img" src="/Informejtycy/images/baner-ciemne.png" alt="baner">
+            
+        </a>
+    </div>
+    
+        <img id="theme-toggle" src="/Informejtycy/images/theme.png" alt="theme">
+    
+
+  </header>
+  <main>
+    
+  <div id="srodek">
+    <div id="sidebar-left">
+      <h2>Lista tematów</h2>
+<ul class="menu">
+    
+    
+    <li class="section" id="basic-section">
+        
+        <a href="#" class="section-dropdown">
+            <span class="section-title">Tematy podstawowe</span>
+                <img class="expand-img" alt="Rozwiń">
+        </a>
+        <ul class="submenu">
+            
+                
+                <li><a href="/Informejtycy/articles/1-jak-zaczac/" class="submenu-article" >1. Jak zacząć?</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/2-pierwszy-program/" class="submenu-article" >2. Pierwszy program w C&#43;&#43;</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/3-zmienne/" class="submenu-article" >3. Zmienne i operatory matematyczne</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/4-if-elseif-else-oraz-opratory-logiczne/" class="submenu-article" >4. If, else if, else, oraz operatory logiczne</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/6-pierwszosc-i-podzielnosc/" class="submenu-article" >6. Pierwszość i podzielność</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww/" class="submenu-article" >7. NWD,  Algorytm Euklidesa i NWW</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/8-tablice/" class="submenu-article" >8. Tablice</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/10-ciagi-znakow/" class="submenu-article" >10. Ciągi znaków</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/12-systemy-liczbowe/" class="submenu-article" >12. Systemy liczbowe</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/13-vector/" class="submenu-article" >13. Vector</a></li>
+            
+                
+                    
+                
+                <li><a href="/Informejtycy/articles/14-sortowanie/" class="submenu-article" id="aktualny-temat">14. Sortowanie</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/" class="submenu-article" >15. Wyszukiwanie liniowe i binarne</a></li>
+            
+        </ul>
+    </li>
+
+    <li class="section" id="avanced-section">
+        
+        <a href="#" class="section-dropdown">
+            <span class="section-title">Tematy zaawansowane</span>
+            <img class="expand-img" alt="Rozwiń">
+        </a>
+        <ul class="submenu">
+            
+        </ul>
+    </li>
+
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const section = document.getElementById('basic-section');
+                const content = section.querySelector('.submenu');
+                const img = section.querySelector('.expand-img');
+                window.rotateArrow(img, true);
+                window.expandCollapseSection(content, true);
+            });
+        </script>
+    
+
+    
+</ul>
+    </div>
+    <div id="artykul">
+      <h1 id="sortowanie">Sortowanie</h1>
+<h2 id="sortowanie-przez-wybieranie-selection-sort">Sortowanie przez wybieranie (Selection Sort)</h2>
+<p><strong>Sortowanie przez wybieranie</strong> polega na znajdowaniu najmniejszego (lub największego) elementu w nieposortowanej części tablicy i zamianie go z pierwszym elementem tej części. Proces ten powtarzamy dla kolejnych pozycji aż cała tablica będzie posortowana.</p>
+<p><strong>Jak działa:</strong></p>
+<ol>
+<li>Przechodzimy po tablicy, wybierając najmniejszy element z pozostałych.</li>
+<li>Zamieniamy go z pierwszym elementem w nieposortowanej części.</li>
+<li>Powtarzamy krok 1 dla pozostałych elementów.</li>
+</ol>
+<p><strong>Kod:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">selectionSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">minIndex</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// Zakładamy, że najmniejszy element jest na pozycji i
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        
+</span></span><span class="line"><span class="cl">        <span class="c1">// Pętla do znalezienia najmniejszego elementu w nieposortowanej części tablicy
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">minIndex</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">minIndex</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// Jeśli znaleziono mniejszy element, zamieniamy miejscami elementy i oraz minIndex
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">minIndex</span> <span class="o">!=</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">swap</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">minIndex</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">arr</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">64</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">11</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">selectionSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span> <span class="c1">// Wywołanie funkcji
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Posortowana tablica: &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Pętla do wypisania posortowanej tablicy
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="sortowanie-przez-zliczanie-counting-sort">Sortowanie przez zliczanie (Counting Sort)</h2>
+<p><strong>Sortowanie przez zliczanie</strong> działa inaczej niż tradycyjne algorytmy. Zamiast porównywać elementy, liczymy, ile razy występuje każdy element w tablicy, a potem tworzymy posortowaną tablicę na podstawie tych zliczeń.</p>
+<p><strong>Jak działa:</strong></p>
+<ol>
+<li>Tworzymy tablicę zliczeń, w której dla każdej liczby z tablicy wejściowej zliczamy, ile razy się ona pojawia.</li>
+<li>Na podstawie tych zliczeń rekonstruujemy posortowaną tablicę.</li>
+</ol>
+<p><strong>Kod:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">countingSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// Zakłada się, że pierwszy element jest największym (max)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">max</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Jeśli bieżący element jest większy od dotychczasowego max
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">max</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="c1">// Aktualizujemy wartość max
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">count</span><span class="p">[</span><span class="n">max</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="c1">// Tworzymy tablicę licznika, która ma rozmiar max + 1 i inicjalizujemy ją zerami
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">count</span><span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">max</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">arr</span><span class="p">[</span><span class="n">index</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">count</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">arr</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">countingSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span> <span class="c1">// Wywołanie funkcji
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Posortowana tablica: &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="sort">Sort</h2>
+<p>Funkcja sortowania jest używana do uporządkowania elementów kontenera (np. tablicy, wektora) w określonym porządku (rosnącym lub malejącym). Najczęściej stosowaną funkcją do sortowania jest funkcja <code>std::sort</code> z nagłówka <code>&lt;algorithm&gt;</code>.</p>
+<p><strong>Kod:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">sort</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="nl">num</span> <span class="p">:</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">num</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Parametry:</strong></p>
+<ul>
+<li><code>v.begin()</code>: Początkowy iterator kontenera (zaczynamy sortowanie od pierwszego elementu).</li>
+<li><code>v.end()</code>: Końcowy iterator kontenera (sortowanie kończy się na ostatnim elemencie).</li>
+</ul>
+<p><strong>Działanie:</strong></p>
+<ul>
+<li>Funkcja <code>std::sort</code> sortuje elementy w porządku rosnącym przy użyciu algorytmu sortowania szybkim (ang. quicksort) lub innego optymalnego algorytmu, zależnie od implementacji standardu C++.</li>
+<li>Można też podać własny sposób porównywania elementów, by sortować w porządku malejącym lub zgodnie z innymi kryteriami.</li>
+</ul>
+<p><strong>Sortowanie malejące:</strong></p>
+<p>Jeśli chcesz posortować elementy w porządku malejącym, wystarczy dodać trzeci argument w postaci funkcji do porównywania:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">std</span><span class="o">::</span><span class="n">greater</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">());</span>
+</span></span></code></pre></div><p><strong>Własne kryterium porównania:</strong></p>
+<p>Można również przekazać własną funkcję porównującą jako trzeci argument:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">porownanie</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">porownanie</span><span class="p">);</span>
+</span></span></code></pre></div>
+
+      <div id="dol-nav">
+        
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+
+
+
+
+<a id="poprzedni" href="http://localhost:1313/Informejtycy/articles/13-vector/"><img id="prev-img"></a>
+
+
+<a id="zadania" href="http://localhost:1313/Informejtycy/">Zadania</a>
+
+<a id="nastepny" href="http://localhost:1313/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/"><img id="next-img"></a>
+
+
+      </div>
+    </div>
+    <div id="sidebar-right">
+      <h2>Spis treści</h2>
+      <nav id="TableOfContents">
+  <ol>
+    <li><a href="#sortowanie-przez-wybieranie-selection-sort">Sortowanie przez wybieranie (Selection Sort)</a></li>
+    <li><a href="#sortowanie-przez-zliczanie-counting-sort">Sortowanie przez zliczanie (Counting Sort)</a></li>
+    <li><a href="#sort">Sort</a></li>
+  </ol>
+</nav>
+    </div>
+  </div>
+
+  </main>
+  <footer>
+    Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
+Kontakt: kontakt.informejtycy@gmail.com<br>
+&copy; 2025 Wszelkie prawa zastrzeżone
+  </footer>
+  
+    <script src="/Informejtycy/js/main.js"></script>
+  
+</body>
+</html>
