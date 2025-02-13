@@ -1,20 +1,17 @@
 function getStyleSheet(file_name) {
     for (var i = 0; i < document.styleSheets.length; i++) {
         var sheet = document.styleSheets[i];
-        if (sheet.href.includes(file_name)) {
+        if (sheet.href && sheet.href.includes(file_name)) {
             return sheet;
         }
     }
+    return null;
 }
 
 // Funkcja do ustawiania motywu podświetlania kodu
 function setCodeHighlightTheme(theme) {
-    sheet_light = getStyleSheet("highlight_light.css");
-    sheet_dark = getStyleSheet("highlight_dark.css");
-    if (sheet_light === null && sheet_dark === null) {
-        sheet_light = getStyleSheet("highlight_light.min.css");
-        sheet_dark = getStyleSheet("highlight_dark.min.css");
-    }
+    sheet_light = getStyleSheet("highlight_light");
+    sheet_dark = getStyleSheet("highlight_dark");
 
     if (theme === "light") {
         sheet_light.disabled = false;
