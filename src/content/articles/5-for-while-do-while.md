@@ -9,7 +9,7 @@ nerd: false
 
 ## While
 
-**Pętla** `while` służy do wielokrotnego wykonywania bloku kodu, dopóki warunek pętli jest spełniony (czyli dopóki warunek jest prawdziwy). Pętla ta jest używana, gdy nie znamy z góry liczby iteracji, a raczej zależy nam na wykonywaniu kodu, aż spełniony zostanie określony warunek.
+**Pętla** `while` służy do wielokrotnego wykonywania bloku kodu, dopóki warunek pętli jest spełniony (czyli dopóki warunek jest prawdziwy). Pętla ta jest używana, gdy zależy nam na wykonywaniu kodu, dopóki warunek jest spełniony. 
 
 **Składnia pętli `while`:**
 
@@ -19,7 +19,7 @@ while (warunek) {
 }
 ```
 
-1. **Warunek**: Przed każdą iteracją pętla sprawdza warunek. Jeśli warunek jest **prawdziwy**, blok kodu wewnątrz pętli jest wykonywany. Jeśli warunek jest **fałszywy**, pętla kończy działanie.
+1. **Warunek**: Przed każdą iteracją (powtórzeniem) pętla sprawdza warunek. Jeśli warunek jest **prawdziwy**, blok kodu wewnątrz pętli jest wykonywany. Jeśli warunek jest **fałszywy**, pętla kończy działanie.
     
 2. **Kod do wykonania**: Blok kodu wewnątrz pętli, który będzie wykonywany wielokrotnie, dopóki warunek będzie prawdziwy.
     
