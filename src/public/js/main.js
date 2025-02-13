@@ -2,18 +2,18 @@
 console.log("Hello from main.js");
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme) {
-    setTheme(savedTheme);
+    window.setTheme(savedTheme);
 } else {
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const defaultTheme = prefersDark ? "dark" : "light";
-    setTheme(defaultTheme);
+    window.setTheme(defaultTheme);
 }
 
 // Przełączanie motywu
 document.getElementById("theme-toggle").addEventListener("click", () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
     const newTheme = currentTheme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
+    window.setTheme(newTheme);
 });
 
 // Rozwijanie i zwijanie sekcji
@@ -23,7 +23,7 @@ document.querySelector('.menu')
 
     if (el.classList[0] === 'section-dropdown') {
         var sec = el.nextElementSibling;
-        rotateArrow(el.children[1]);
-        expandCollapseSection(sec);
+        window.rotateArrow(el.children[1]);
+        window.expandCollapseSection(sec);
     }
 })

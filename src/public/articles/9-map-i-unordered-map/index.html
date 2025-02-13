@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pl-pl" dir="ltr">
+<head><script src="/Informejtycy/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Informejtycy/livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Funnel+Display:wght@300..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"&gt>
+<link rel="icon" type="image/x-icon" href="/Informejtycy/favicon.ico">
+
+<title>Map i Unordered map | Informejtycy.pl</title>
+
+    <link rel="stylesheet" href="/Informejtycy/css/main.css">
+    <link rel="preload stylesheet" as="style" href="/Informejtycy/css/highlight_light.css">
+    <link rel="preload stylesheet" as="style" href="/Informejtycy/css/highlight_dark.css">
+
+
+      <script src="/Informejtycy/js/theme.js"></script>
+      <script src="/Informejtycy/js/section-dropdown.js"></script>
+
+
+  
+  
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['$', '$']] 
+    }
+  };
+</script>
+  
+</head>
+<body>
+  <header>
+    
+    <div id="baner">
+        <a href="http://localhost:1313/Informejtycy/">
+            
+                <img id="baner-img" src="/Informejtycy/images/baner-ciemne.png" alt="baner">
+            
+        </a>
+    </div>
+    
+        <img id="theme-toggle" src="/Informejtycy/images/theme.png" alt="theme">
+    
+
+  </header>
+  <main>
+    
+  <div id="srodek">
+    <div id="sidebar-left">
+      <h2>Lista tematów</h2>
+<ul class="menu">
+    
+    
+    <li class="section" id="basic-section">
+        
+        <a href="#" class="section-dropdown">
+            <span class="section-title">Tematy podstawowe</span>
+                <img class="expand-img" alt="Rozwiń">
+        </a>
+        <ul class="submenu">
+            
+                
+                <li><a href="/Informejtycy/articles/1-jak-zaczac/" class="submenu-article" >1. Jak zacząć?</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/2-pierwszy-program/" class="submenu-article" >2. Pierwszy program w C&#43;&#43;</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/3-zmienne/" class="submenu-article" >3. Zmienne i operatory matematyczne</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/4-if-elseif-else-oraz-opratory-logiczne/" class="submenu-article" >4. If, else if, else, oraz operatory logiczne</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/5-for-while-do-while/" class="submenu-article" >5. Pętle</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/6-pierwszosc-i-podzielnosc/" class="submenu-article" >6. Pierwszość i podzielność</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/7-nwd-algorytm-euklidesa-i-nww/" class="submenu-article" >7. NWD,  Algorytm Euklidesa i NWW</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/8-tablice/" class="submenu-article" >8. Tablice</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/10-ciagi-znakow/" class="submenu-article" >10. Ciągi znaków</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/12-systemy-liczbowe/" class="submenu-article" >12. Systemy liczbowe</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/13-vector/" class="submenu-article" >13. Vector</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/14-sortowanie/" class="submenu-article" >14. Sortowanie</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/15-wyszukiwanie-liniowe-i-binarne-kopia/" class="submenu-article" >15. Wyszukiwanie liniowe i binarne</a></li>
+            
+        </ul>
+    </li>
+
+    <li class="section" id="avanced-section">
+        
+        <a href="#" class="section-dropdown">
+            <span class="section-title">Tematy zaawansowane</span>
+            <img class="expand-img" alt="Rozwiń">
+        </a>
+        <ul class="submenu">
+            
+                
+                <li><a href="/Informejtycy/articles/4-pair-i-struct/" class="submenu-article" >4. Pair i Struct</a></li>
+            
+                
+                <li><a href="/Informejtycy/articles/8-set-i-multiset/" class="submenu-article" >8. Set i multiset</a></li>
+            
+                
+                    
+                
+                <li><a href="/Informejtycy/articles/9-map-i-unordered-map/" class="submenu-article" id="aktualny-temat">9. Map i Unordered map</a></li>
+            
+        </ul>
+    </li>
+
+    
+
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const section = document.getElementById('avanced-section');
+                const content = section.querySelector('.submenu');
+                const img = section.querySelector('.expand-img');
+                window.rotateArrow(img, true);
+                window.expandCollapseSection(content, true);
+            });
+        </script>
+    
+</ul>
+    </div>
+    <div id="artykul">
+      <h1 id="map-i-unordered-map">Map i Unordered map</h1>
+<h2 id="map">Map</h2>
+<p>Mapa służy do przyporządkowywania danym kluczom pewnych wartości. Aby jej użyć należy zaincludować bibliotekę map. Klucz to wartość występująca jako pierwsza.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;map&gt;
+</span></span></span></code></pre></div><h2 id="inicjowanie-mapy">Inicjowanie mapy</h2>
+<p>Mapę tworzy się bardzo podobnie do pary. Należy podać w nawiasie ostrokątnym dwa typy zmiennych, gdyż pierwszy element jest odpowiednikiem drugiego.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">map</span> <span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">glosy</span> <span class="o">=</span> <span class="p">{{</span><span class="s">&#34;Ania&#34;</span><span class="p">,</span> <span class="s">&#34;mezzosopran&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#34;Beatka&#34;</span><span class="p">,</span> <span class="s">&#34;alt&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#34;Czarek&#34;</span><span class="p">,</span> <span class="s">&#34;tenor&#34;</span><span class="p">}};</span>
+</span></span></code></pre></div><h2 id="odwoływanie-się-do-elementów-mapy">Odwoływanie się do elementów mapy</h2>
+<p>Odwoływanie się w mapie polega na dostawaniu się do wartości kryjącej się pod kluczem. Robimy to, stosując nawiasy kwadratowe lub komendę <code>nazwa_mapy.at(wartość)</code>. Co ciekawe jeśli odwołujemy się do klucza, który nie istnieje, automatycznie się on tworzy. Jeśli nie podamy wartości, jakiej powinien przypadać klucz, to ten drugi element będzie się równał:</p>
+<ul>
+<li>string - &quot;&quot;</li>
+<li>int - 0</li>
+<li>long long - 0</li>
+<li>bool - 0 (false)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">map</span> <span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">glosy</span> <span class="o">=</span> <span class="p">{{</span><span class="s">&#34;Ania&#34;</span><span class="p">,</span> <span class="s">&#34;mezzosopran&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#34;Beatka&#34;</span><span class="p">,</span> <span class="s">&#34;alt&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#34;Czarek&#34;</span><span class="p">,</span> <span class="s">&#34;tenor&#34;</span><span class="p">}};</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">glosy</span><span class="p">[</span><span class="s">&#34;Beatka&#34;</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></div><p>W tym przypadku wypisze się wyraz &ldquo;alt&rdquo;.</p>
+<h2 id="dodawanie-elementów">Dodawanie elementów</h2>
+<p>Elementy dodajemy do mapy poprzez użycie nawiasów kwadratowych lub komendy <code>nazwa_mapy.insert(wartość)</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">map</span> <span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">glosy</span> <span class="o">=</span> <span class="p">{{</span><span class="s">&#34;Ania&#34;</span><span class="p">,</span> <span class="s">&#34;mezzosopran&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#34;Beatka&#34;</span><span class="p">,</span> <span class="s">&#34;alt&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#34;Czarek&#34;</span><span class="p">,</span> <span class="s">&#34;tenor&#34;</span><span class="p">}};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">glosy</span><span class="p">[</span><span class="s">&#34;Darek&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;bas&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">glosy</span><span class="p">[</span><span class="s">&#34;Ela&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;sopran&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">glosy</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="s">&#34;Franek&#34;</span><span class="p">,</span> <span class="s">&#34;baryton&#34;</span><span class="p">});</span>
+</span></span></code></pre></div><p>Jeżeli dwa razy dodamy metodą insert ten sam klucz, ale z inną drugą wartością, zachowana zostanie jedynie ta, którą dodaliśmy jako pierwszą, np.:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">map</span> <span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">glosy</span> <span class="o">=</span> <span class="p">{{</span><span class="s">&#34;Ania&#34;</span><span class="p">,</span> <span class="s">&#34;mezzosopran&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#34;Beatka&#34;</span><span class="p">,</span> <span class="s">&#34;alt&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#34;Czarek&#34;</span><span class="p">,</span> <span class="s">&#34;tenor&#34;</span><span class="p">}};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">glosy</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="s">&#34;Darek&#34;</span><span class="p">,</span> <span class="s">&#34;bas&#34;</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="n">glosy</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="s">&#34;Darek&#34;</span><span class="p">,</span> <span class="s">&#34;kontratenor&#34;</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">glosy</span><span class="p">[</span><span class="s">&#34;Darek&#34;</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></div><p>W takim wypadku pod kluczem &ldquo;Darek&rdquo; jest zachowany &ldquo;bas&rdquo;.</p>
+<p>Nie oznacza to jednak, że nie możemy zmieniać wartości przypadających kluczom. Możemy tego dokonać, używając nawiasów kwadratowych:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">map</span> <span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">glosy</span> <span class="o">=</span> <span class="p">{{</span><span class="s">&#34;Ania&#34;</span><span class="p">,</span> <span class="s">&#34;mezzosopran&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#34;Beatka&#34;</span><span class="p">,</span> <span class="s">&#34;alt&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#34;Czarek&#34;</span><span class="p">,</span> <span class="s">&#34;tenor&#34;</span><span class="p">}};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">glosy</span><span class="p">[</span><span class="s">&#34;Darek&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;bas&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">glosy</span><span class="p">[</span><span class="s">&#34;Darek&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;kontratenor&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">glosy</span><span class="p">[</span><span class="s">&#34;Darek&#34;</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span></code></pre></div><p>W tej sytuacji wypisze się wyraz &ldquo;kontratenor&rdquo;.</p>
+<h2 id="funkcje-używane-przy-mapie">Funkcje używane przy mapie</h2>
+<p>Aby dowiedzieć się, jaki rozmiar ma mapa, stosujemy:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">glosy</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</span></span></code></pre></div><p>Aby usunąć dany klucz, wykorzystujemy:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">glosy</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="s">&#34;Czarek&#34;</span><span class="p">);</span>
+</span></span></code></pre></div><p>Aby usunąć wszystkie elementy mapy, korzystamy z:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">glosy</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+</span></span></code></pre></div><p>Aby sprawdzić, czy mapa jest pusta,. używamy:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">glosy</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>
+</span></span></code></pre></div><p>Jeżeli wypisze się &ldquo;0&rdquo;, to mapa nie jest pusta. Natomiast, gdy dostaniemy &ldquo;1&rdquo;, będzie to oznaczało, że w mapie nic się nie znajduje.</p>
+<p>Aby sprawdzić, czy dany element znajduje się w mapie, wykorzystujemy:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">glosy</span><span class="p">.</span><span class="n">count</span><span class="p">(</span><span class="s">&#34;Ania&#34;</span><span class="p">);</span>
+</span></span></code></pre></div><p>Aby odnaleźć pierwszy elementy niemniejszy od x, zapisujemy:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">glosy</span><span class="p">.</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</span></span></code></pre></div><p>Aby odnaleźć pierwszy element większy od x, stosujemy:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">glosy</span><span class="p">.</span><span class="n">upper_bound</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</span></span></code></pre></div><h2 id="pętla-przez-mapę">Pętla przez mapę</h2>
+<p>Jeśli chcemy przejść pętlą po całej mapie i wypisać klucze oraz odpowiadające im wartości wykorzystujemy <code>.first</code> oraz <code>.second</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">map</span> <span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">glosy</span> <span class="o">=</span> <span class="p">{{</span><span class="s">&#34;Ania&#34;</span><span class="p">,</span> <span class="s">&#34;mezzosopran&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#34;Beatka&#34;</span><span class="p">,</span> <span class="s">&#34;alt&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#34;Czarek&#34;</span><span class="p">,</span> <span class="s">&#34;tenor&#34;</span><span class="p">}};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">pair</span> <span class="nl">osoby</span> <span class="p">:</span> <span class="n">glosy</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">osoby</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">osoby</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>W powyższym przykładzie &ldquo;osoby&rdquo; odpowiada każdemu kluczowi.</p>
+<h2 id="unordered-map">Unordered map</h2>
+<p>Jeśli chcemy użyć unordered map, musimy zaincludować odpowiednią bibliotekę.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;unordered_map&gt;
+</span></span></span></code></pre></div><p>Różnica pomiędzy zwykłą mapą a unordered map polega na tym, że ta druga nie jest automatycznie sortowana po kluczach. Dzięki temu szacowana złożoność czasowa wynosi O(1). Oznacza to jednak, że ten typ mapy nie zawsze działa w czasie stałym. W najgorszym wypadku jej złożoność będzie równa O(n). Jednakże, przy wykonaniu wielu operacji, złożoność się uśrednia i wyjątki te nie odgrywają aż tak istotnej roli. W związku z tym ten rodzaj mapy jest z reguły szybszy od zwykłego jej wariantu. Aby zobrazować różnicę między tymi mapami, możemy prześledzić wyniki poniższych programów:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">map</span> <span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">glosy</span> <span class="o">=</span> <span class="p">{{</span><span class="s">&#34;Czarek&#34;</span><span class="p">,</span> <span class="s">&#34;tenor&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#34;Ania&#34;</span><span class="p">,</span> <span class="s">&#34;mezzosopran&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#34;Beatka&#34;</span><span class="p">,</span> <span class="s">&#34;alt&#34;</span><span class="p">}};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">osoby</span> <span class="p">:</span> <span class="n">glosy</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">osoby</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">osoby</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>W tym wypadku wynikiem będzie:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Ania</span> <span class="n">mezzosopran</span>
+</span></span><span class="line"><span class="cl"><span class="n">Beatka</span> <span class="n">alt</span>
+</span></span><span class="line"><span class="cl"><span class="n">Czarek</span> <span class="n">tenor</span>
+</span></span></code></pre></div><p>Natomiast gdy to samo wykonamy w unordered map:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">unordered_map</span> <span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">glosy</span> <span class="o">=</span> <span class="p">{{</span><span class="s">&#34;Czarek&#34;</span><span class="p">,</span> <span class="s">&#34;tenor&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#34;Ania&#34;</span><span class="p">,</span> <span class="s">&#34;mezzosopran&#34;</span><span class="p">},</span> <span class="p">{</span><span class="s">&#34;Beatka&#34;</span><span class="p">,</span> <span class="s">&#34;alt&#34;</span><span class="p">}};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">pair</span> <span class="nl">osoby</span> <span class="p">:</span> <span class="n">glosy</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">osoby</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">osoby</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Dostaniemy:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Beatka</span> <span class="n">alt</span>
+</span></span><span class="line"><span class="cl"><span class="n">Ania</span> <span class="n">mezzosopran</span>
+</span></span><span class="line"><span class="cl"><span class="n">Czarek</span> <span class="n">tenor</span>
+</span></span></code></pre></div><p>Jest to przykład, że w unordered map kolejność elementów jest losowa, a w zwykłej mapie - posortowana.</p>
+<p>Funkcje działające w unordered map nie różnią się od tych dotyczących normalnej mapy, oczywiście oprócz <code>lower_bound</code> i <code>upper_bound</code>.</p>
+
+
+      <div id="dol-nav">
+        
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+<a id="poprzedni" href="http://localhost:1313/Informejtycy/articles/8-tablice/"><img id="prev-img"></a>
+
+
+<a id="zadania" href="http://localhost:1313/Informejtycy/">Zadania</a>
+
+<a id="nastepny" href="http://localhost:1313/Informejtycy/articles/10-ciagi-znakow/"><img id="next-img"></a>
+
+
+      </div>
+    </div>
+    <div id="sidebar-right">
+      <h2>Spis treści</h2>
+      <nav id="TableOfContents">
+  <ol>
+    <li><a href="#map">Map</a></li>
+    <li><a href="#inicjowanie-mapy">Inicjowanie mapy</a></li>
+    <li><a href="#odwoływanie-się-do-elementów-mapy">Odwoływanie się do elementów mapy</a></li>
+    <li><a href="#dodawanie-elementów">Dodawanie elementów</a></li>
+    <li><a href="#funkcje-używane-przy-mapie">Funkcje używane przy mapie</a></li>
+    <li><a href="#pętla-przez-mapę">Pętla przez mapę</a></li>
+    <li><a href="#unordered-map">Unordered map</a></li>
+  </ol>
+</nav>
+    </div>
+  </div>
+
+  </main>
+  <footer>
+    Projekt realizowany w ramach Olimpiady Zwolnieni Z Teorii<br>
+Kontakt: kontakt.informejtycy@gmail.com<br>
+&copy; 2025 Wszelkie prawa zastrzeżone
+  </footer>
+  
+    <script src="/Informejtycy/js/main.js"></script>
+  
+</body>
+</html>
