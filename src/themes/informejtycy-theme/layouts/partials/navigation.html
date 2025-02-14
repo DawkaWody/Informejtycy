@@ -1,5 +1,7 @@
 {{ $currentPage := . }}
-{{ $pages := sort .Site.RegularPages "Params.id" }}
+{{ $isNerd := $currentPage.Params.nerd }}
+{{ $pages := where .Site.RegularPages "Params.nerd" $isNerd }}
+{{ $pages := sort $pages "Params.id" }}
 {{ $currentIndex := 0 }}
 
 {{ range $index, $page := $pages }}
@@ -16,7 +18,7 @@
     <style> #poprzedni {visibility: hidden} </style>
 {{ end }}
 
-<a id="zadania" href="{{ .Site.BaseURL }}">Zadania</a>
+<a id="zadania" href="{{ .Site.BaseURL }}/exercises">Zadania</a>
 
 <a id="nastepny" href="{{ $nextPage.Permalink }}"><img id="next-img"></a>
 {{ if ge $currentIndex (sub (len $pages) 1) }}
