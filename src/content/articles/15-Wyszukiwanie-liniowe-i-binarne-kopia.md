@@ -8,8 +8,8 @@ nerd: false
 ## Wyszukiwanie liniowe
 Czym jest wyszukiwanie liniowe? Nazwa może przerażać, ale jest to najprostszy sposób na wyszukanie odpowiedzi na nasze zapytanie w danym ciągu. Polega on jedynie na przejściu przez ciąg. Wyobraźmy sobie, że mamy ciąg liczb i dostajemy $k$ zapytań o dane liczby, czy występują one w ciągu. Jak wyglądałby taki kod?
 ```cpp
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 vector <int> ciag;
@@ -17,23 +17,27 @@ vector <int> ciag;
 int main() {
 	int n;
 	cin >> n;
+
 	int liczba;
 	for (int i = 0; i < n; i++) {
 		cin >> liczba;
 		ciag.push_back(liczba);
 	}
+
 	int k, liczba_do_spr;
 	cin >> k;
+
 	for (int i = 0; i < k; i++) {
 		cin >> liczba_do_spr;
 		bool czy_wystepuje = false;
-		//to w tej pętli przechodzimy po całym ciągu, czyli stosujemy wyszukiwanie liniowe
+		// to w tej pętli przechodzimy po całym ciągu, czyli stosujemy wyszukiwanie liniowe
 		for (int x = 0; x < n; x++) {
 			if (ciag[x] == liczba_do_spr) {
 				czy_wystepuje = true;
 				break;
 			}
 		}
+
 		if (czy_wystepuje) {
 			cout << "TAK" << endl;
 		} else {
@@ -50,8 +54,8 @@ Co zrobić jeśli długość naszego ciągu jest bardzo duża? Możemy zastosowa
 ## Wykorzystanie wyszukiwania binarnego
 Skoro już wiesz czym jest wyszukiwanie binarne, możesz spróbować się zastanowić jak napisać kod, który działałby w taki sposób. Weźmy na tapet zadanie, w którym musimy wypisać, pod którym indeksem znajduje się dana liczba. Kod do tego zagadnienia wygląda w następujący sposób:
 ```cpp
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 vector <int> ciag;
@@ -59,11 +63,13 @@ vector <int> ciag;
 int main() {
 	int n;
 	cin >> n;
+
 	int liczba;
 	for (int i = 0; i < n; i++) {
 		cin >> liczba;
 		ciag.push_back(liczba);
 	}
+	
 	int k, liczba_do_spr;
 	cin >> k;
 	for (int i = 0; i < k; i++) {

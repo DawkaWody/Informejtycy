@@ -33,13 +33,9 @@ using namespace std;
 
 int main(){
     vector <int> vec(6); // Stworzenie vectora 6 elementowego
-
     cin >> vec[4]; // Wczytanie wartości do piątej komórki vectora
-
     cout << vec[2]; // Wypisanie wartości trzeciej komórki vectora
-
     vec.push_back(12); // Dodanie liczby 12 do vectora na 7 pozycję
-
     vec.pop_back(); // Usunięcie ostatniego elementu vectora   
 }
 ```
@@ -55,9 +51,7 @@ using namespace std;
 
 int main(){
     vector <int> vec;
-
     sort(vec.begin(), vec.end()); // Sortowanie rosnące vectora vec
-
     sort(vec.begin(), vec.end(), greater<int>()); // Sortowanie malejące vectora vec
 }
 ``` 

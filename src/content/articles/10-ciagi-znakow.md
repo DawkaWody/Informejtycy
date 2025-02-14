@@ -5,8 +5,6 @@ id: 10
 nerd: false
 ---
 
-
-
 # Ciągi znaków
 
 ## Czym są ciągi znaków?

@@ -11,11 +11,11 @@ Jak można spodziewać się po samej nazwie, para to struktura danych służąca
 ## Inicjowanie pary
 Parę tworzymy podając dwa typy zmiennych w nawiasie ostrokątnym oraz jej nazwę:
 ```cpp
-pair <string, int> p1;
+pair<string, int> p1;
 ```
 Co ciekawe w parze możemy przechowywać inne pary, np.:
 ```cpp
-pair <int, pair<long long, string> > p2;
+pair<int, pair<long long, string>> p2;
 ```
 
 ## Przypisywanie danych
@@ -23,20 +23,20 @@ Mamy dwa sposoby na przypisanie danych. W pierwszym używamy komendy `make_pair(
 ```cpp
 string imie = "Hela";
 int wiek = 12;
-pair <string, int> p3 = make_pair(imie, wiek);
-pair <string, int> p4 = {imie, wiek};
+pair<string, int> p3 = make_pair(imie, wiek);
+pair<string, int> p4 = {imie, wiek};
 ```
 
 ## Odwoływanie się do elementów pary
 Odwoływanie się do elementów pary jest bardzo proste. Stosujemy jedynie konstrukcję `nazwa_pary.first` lub `nazwa_pary.second`. Częstym błędem w tej konstrukcji jest dodawanie nawiasów na końcu. Poniżej znajduje się przykład zastosowania tych konstrukcji przy wypisywaniu elementów pary:
 ```cpp
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main() {
 	string produkt = "chleb";
 	double koszt = 5.5;
-	pair <string, double> p5 = make_pair(produkt, koszt);
+	pair<string, double> p5 = make_pair(produkt, koszt);
 	cout << p4.first << endl;
 	cout << p4.second << endl;
 }
@@ -45,20 +45,20 @@ int main() {
 Par możemy używać także jako typów zmiennych w tablicach i wektorach.
 Tablica par:
 ```cpp
-pair <int, int> t[100];
+pair<int, int> t[100];
 ```
 Vector par:
 ```cpp
-vector <pair <int, int> > v;
+vector<pair<int, int>> v;
 ```
 Dzięki temu możemy sortować pary. Funkcja `sort()`, sortując, bierze pod uwagę w pierwszej kolejności wartości pierwszych elementów pary. Jeśli występują co najmniej dwie o takich samych pierwszych wartościach, funkcja ta sortuje po drugich elementach:
 ```cpp
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
-	vector <pair <int, int> > v = {{1, 2}, {2, 0}, {1, 1}};
+	vector<pair<int, int>> v = {{1, 2}, {2, 0}, {1, 1}};
 	sort(v.begin(), v.end());
     for (int i = 0; i < v.size(); i++) {
         cout << v[i].first << ' ' << v[i].second << endl;
@@ -80,7 +80,7 @@ W takiej strukturze możemy przechowywać zmienne o różnych typach (np. char, 
 ## Jak odwoływać się do elementów structa?
 Aby odwołać się do elementów structa, wystarczy zapisać nazwę struktury, postawić kropkę, a następnie podać nazwę elementu, który nas interesuje:
 ```cpp
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 struct {
@@ -97,7 +97,7 @@ int main() {
 ```
 Tutaj warto zaznaczyć, że możemy "powielać tę samą strukturę". Obrazując to na powyższym przykładzie:
 ```cpp
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 struct {
@@ -124,7 +124,7 @@ Reasumując, możemy tego dokonać, nadając wiele nazw naszej strukturze.
 ## Struct jako typ danych
 Jest przypadek, w którym nazwę structa zapisuje się przed otwierającym nawiasem klamrowym. W takiej sytuacji taką strukturę traktujemy jako typ danych. Oznacza to, że tworzymy zmienną i tam, gdzie normalnie stawiamy np. inta, piszemy nazwę struktury. Ważny jest fakt, że po zamykającym nawiasie klamrowym **stawiamy średnik**:
 ```cpp
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 struct kontakt {

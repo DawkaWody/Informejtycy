@@ -18,21 +18,20 @@ nerd: true
 
 **Operacje na `set`:**
 
-- **insert()** – dodaje element do zbioru (jeśli nie istnieje).
+- `insert()` – dodaje element do zbioru (jeśli nie istnieje).
     
-- **find()** – wyszukuje element w zbiorze.
+- `find()` – wyszukuje element w zbiorze.
     
-- **erase()** – usuwa element ze zbioru.
+- `erase()` – usuwa element ze zbioru.
     
-- **size()** – zwraca liczbę elementów w zbiorze.
+- `size()` – zwraca liczbę elementów w zbiorze.
     
-- **empty()** – sprawdza, czy zbiór jest pusty.
+- `empty()` – sprawdza, czy zbiór jest pusty.
 
-- lower_bound - zwraca iterator* do pierwszego elementu, który nie jest mniejszy od podanej wartości (czyli jest większy lub równy).
+- `lower_bound` - zwraca iterator* do pierwszego elementu, który nie jest mniejszy od podanej wartości (czyli jest większy lub równy).
 
-- upper_bound -  zwraca iterator* do pierwszego elementu, który jest większy od podanej wartości (czyli jest większy, nierówny).
+- `upper_bound` -  zwraca iterator* do pierwszego elementu, który jest większy od podanej wartości (czyli jest większy, nierówny).
     
-
 \* -  Iterator w to obiekt, który pozwala na przechodzenie przez elementy kontenera (np. `vector`, `set`). Umożliwia dostęp do elementów, ich modyfikację oraz poruszanie się po nich.
 
 **Deklaracja i użycie `set`:**
@@ -59,7 +58,7 @@ int main (){
 	cout << *lb << endl;        // 2
 	cout << *ub << endl;        // 5
 
-	// Spreadzanie istnienia elementu
+	// Sprawdzanie istnienia elementu
 	if (s.find(5) != s.end()){
 		cout << "element jest w zbiorze!" << endl;
 	}
@@ -67,7 +66,7 @@ int main (){
 	// Usuwanie elementu
 	s.erase(2);
 
-	//Sprawdzanie czy set jest pusty
+	// Sprawdzanie czy set jest pusty
 	if (s.empty()){
 		cout << "zbiór jest pusty!" << endl;
 	}
@@ -90,9 +89,9 @@ Podobnie jak `set`, struktura danych `multiset` przechowuje elementy w porządku
 
 **Operacje na `multiset`:**
 
-- **count()** – zwraca liczbę wystąpień danego elementu w multiset.
+- `count()` – zwraca liczbę wystąpień danego elementu w multiset.
     
-- Wszystkie operacje wcześniej opisane przy set, przy czym w przypadku `set` funkcja **find()** znajduje **tylko jeden element**, ponieważ `set` przechowuje unikalne elementy. Z kolei w przypadku `multiset` funkcja **find()** znajdzie **pierwsze wystąpienie** **danego elementu.**
+- Wszystkie operacje wcześniej opisane przy set, przy czym w przypadku `set` funkcja `find()` znajduje **tylko jeden element**, ponieważ `set` przechowuje unikalne elementy. Z kolei w przypadku `multiset` funkcja `find()` znajdzie **pierwsze wystąpienie** **danego elementu.**
     
 **Deklaracja i użycie `multiset`:**
 

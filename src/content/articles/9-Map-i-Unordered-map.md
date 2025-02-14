@@ -8,12 +8,12 @@ nerd: true
 ## Map
 Mapa służy do przyporządkowywania danym kluczom pewnych wartości. Aby jej użyć należy zaincludować bibliotekę map. Klucz to wartość występująca jako pierwsza.
 ```cpp
-#include<map>
+#include <map>
 ```
 ## Inicjowanie mapy
 Mapę tworzy się bardzo podobnie do pary. Należy podać w nawiasie ostrokątnym dwa typy zmiennych, gdyż pierwszy element jest odpowiednikiem drugiego.
 ```cpp
-map <string, string> glosy = {{"Ania", "mezzosopran"}, {"Beatka", "alt"}, {"Czarek", "tenor"}};
+map<string, string> glosy = {{"Ania", "mezzosopran"}, {"Beatka", "alt"}, {"Czarek", "tenor"}};
 ```
 
 ## Odwoływanie się do elementów mapy
@@ -23,7 +23,7 @@ Odwoływanie się w mapie polega na dostawaniu się do wartości kryjącej się 
 - long long - 0
 - bool - 0 (false)
 ```cpp
-map <string, string> glosy = {{"Ania", "mezzosopran"}, {"Beatka", "alt"}, {"Czarek", "tenor"}};
+map<string, string> glosy = {{"Ania", "mezzosopran"}, {"Beatka", "alt"}, {"Czarek", "tenor"}};
 cout << glosy["Beatka"] << endl;
 ```
 W tym przypadku wypisze się wyraz "alt".
@@ -31,7 +31,7 @@ W tym przypadku wypisze się wyraz "alt".
 ## Dodawanie elementów
 Elementy dodajemy do mapy poprzez użycie nawiasów kwadratowych lub komendy `nazwa_mapy.insert(wartość)`.
 ```cpp
-map <string, string> glosy = {{"Ania", "mezzosopran"}, {"Beatka", "alt"}, {"Czarek", "tenor"}};
+map<string, string> glosy = {{"Ania", "mezzosopran"}, {"Beatka", "alt"}, {"Czarek", "tenor"}};
 
 glosy["Darek"] = "bas";
 glosy["Ela"] = "sopran";
@@ -39,7 +39,7 @@ glosy.insert({"Franek", "baryton"});
 ```
 Jeżeli dwa razy dodamy metodą insert ten sam klucz, ale z inną drugą wartością, zachowana zostanie jedynie ta, którą dodaliśmy jako pierwszą, np.:
 ```cpp
-map <string, string> glosy = {{"Ania", "mezzosopran"}, {"Beatka", "alt"}, {"Czarek", "tenor"}};
+map<string, string> glosy = {{"Ania", "mezzosopran"}, {"Beatka", "alt"}, {"Czarek", "tenor"}};
 
 glosy.insert({"Darek", "bas"});
 glosy.insert({"Darek", "kontratenor"});
@@ -50,7 +50,7 @@ W takim wypadku pod kluczem "Darek" jest zachowany "bas".
 
 Nie oznacza to jednak, że nie możemy zmieniać wartości przypadających kluczom. Możemy tego dokonać, używając nawiasów kwadratowych:
 ```cpp
-map <string, string> glosy = {{"Ania", "mezzosopran"}, {"Beatka", "alt"}, {"Czarek", "tenor"}};
+map<string, string> glosy = {{"Ania", "mezzosopran"}, {"Beatka", "alt"}, {"Czarek", "tenor"}};
 
 glosy["Darek"] = "bas";
 glosy["Darek"] = "kontratenor";
@@ -94,7 +94,7 @@ glosy.upper_bound(x);
 ## Pętla przez mapę
 Jeśli chcemy przejść pętlą po całej mapie i wypisać klucze oraz odpowiadające im wartości wykorzystujemy `.first` oraz `.second`:
 ```cpp
-map <string, string> glosy = {{"Ania", "mezzosopran"}, {"Beatka", "alt"}, {"Czarek", "tenor"}};
+map<string, string> glosy = {{"Ania", "mezzosopran"}, {"Beatka", "alt"}, {"Czarek", "tenor"}};
 
 for (pair osoby : glosy) {
 	cout << osoby.first << ' ' << osoby.second << endl;
@@ -105,32 +105,32 @@ W powyższym przykładzie "osoby" odpowiada każdemu kluczowi.
 ## Unordered map
 Jeśli chcemy użyć unordered map, musimy zaincludować odpowiednią bibliotekę.
 ```cpp
-#include<unordered_map>
+#include <unordered_map>
 ```
 Różnica pomiędzy zwykłą mapą a unordered map polega na tym, że ta druga nie jest automatycznie sortowana po kluczach. Dzięki temu szacowana złożoność czasowa wynosi O(1). Oznacza to jednak, że ten typ mapy nie zawsze działa w czasie stałym. W najgorszym wypadku jej złożoność będzie równa O(n). Jednakże, przy wykonaniu wielu operacji, złożoność się uśrednia i wyjątki te nie odgrywają aż tak istotnej roli. W związku z tym ten rodzaj mapy jest z reguły szybszy od zwykłego jej wariantu. Aby zobrazować różnicę między tymi mapami, możemy prześledzić wyniki poniższych programów:
 ```cpp
-map <string, string> glosy = {{"Czarek", "tenor"}, {"Ania", "mezzosopran"}, {"Beatka", "alt"}};
+map<string, string> glosy = {{"Czarek", "tenor"}, {"Ania", "mezzosopran"}, {"Beatka", "alt"}};
 
 for (auto osoby : glosy) {
 	cout << osoby.first << ' ' << osoby.second << endl;
 }
 ```
 W tym wypadku wynikiem będzie:
-```cpp
+```
 Ania mezzosopran
 Beatka alt
 Czarek tenor
 ```
 Natomiast gdy to samo wykonamy w unordered map:
 ```cpp
-unordered_map <string, string> glosy = {{"Czarek", "tenor"}, {"Ania", "mezzosopran"}, {"Beatka", "alt"}};
+unordered_map<string, string> glosy = {{"Czarek", "tenor"}, {"Ania", "mezzosopran"}, {"Beatka", "alt"}};
 
 for (pair osoby : glosy) {
 	cout << osoby.first << ' ' << osoby.second << endl;
 }
 ```
 Dostaniemy:
-```cpp
+```
 Beatka alt
 Ania mezzosopran
 Czarek tenor

@@ -17,7 +17,7 @@ Ciało funkcji znajduje się w całości w nawiasach klamrowych, wszystko co jes
 ```cpp
 int policz_iloczyn(int a, int b)
 {
-    int wynik=a*b;
+    int wynik = a * b;
     return wynik;
 }
 ```
@@ -30,10 +30,12 @@ Poniższy program będzie wczytywał dwie liczby i wypisywał ich iloczyn;
 ```cpp
 #include <iostream>
 using namespace std;
+
 int policz_iloczyn(int a, int b){
     int wynik = a * b;
     return wynik;
 }
+
 int main()
 {
     int czynnik1, czynnik2;
@@ -48,9 +50,11 @@ Przykładowa funkcja typu `void` - funkcja przyjmująca liczbę i napis, a nast�
 ```cpp
 #include <iostream>
 using namespace std;
+
 void wypisz_n_razy(int n, string napis){
     for(int i = 0; i < n; i++) cout << napis << '\n';
 }
+
 int main()
 {
     int n;
@@ -65,7 +69,7 @@ Jak widać, zarówno w funkcji `main`, jak w funkcji `wypisz_n_razy` występują
 Poniższa funkcja sprawdza, czy liczba jest parzysta i zwraca wartość typu `bool`:
 ```cpp
 bool czy_parzysta(int x){
-    if(x%2==0) return true;
+    if (x % 2 == 0) return true;
     return false;
 }
 ```

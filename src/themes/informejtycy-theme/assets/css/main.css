@@ -276,7 +276,7 @@ td, th {
 
 .expand-img {
 	content: url("../images/expand.png");
-	width: 1.1rem;
+	width: 1.1vw; /* Changed from rem to vw */
 	transition: all 0.3s ease;
 }
 
@@ -301,7 +301,7 @@ td, th {
 }
 
 .section-title {
-	font-size: 1.4rem;
+	font-size: 1.2vw; /* Changed from rem to vw */
 	flex-grow: 1;
 }
 
@@ -314,8 +314,8 @@ td, th {
 }
 
 .submenu-article {
-	margin: 0.5rem 0;
-	font-size: 1.2rem;
+	margin: 0.5vw 0; /* Changed from rem to vw */
+	font-size: 1vw; /* Changed from rem to vw */
 	color: var(--lista-i-spis);
 }
 

@@ -118,9 +118,9 @@ Funkcja sortowania jest używana do uporządkowania elementów kontenera (np. ta
 **Kod:**
 
 ```cpp
-#include <algorithm>
-#include <vector>
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 int main() {
@@ -128,7 +128,7 @@ int main() {
     
     sort(v.begin(), v.end());
 
-    for(int num : v) {
+    for (int num : v) {
         cout << num << " ";
     }
 

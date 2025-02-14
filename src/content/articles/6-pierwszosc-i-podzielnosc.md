@@ -37,9 +37,7 @@ int main()
     {
         // sprawdzamy, czy liczba podana na wejsciu dzieli sie przez obecnie sprawdzana liczbe
         if (liczba % sprawdzany_dzielnik == 0)
-        {
             liczba_dzielnikow++; //jesli tak, to znalezlismy kolejny dzielnik
-        }
         sprawdzany_dzielnik++;    // sprawdzamy kolejny dzielnik
     }
     // wypisywanie TAK lub NIE
@@ -58,7 +56,6 @@ int main()
 Zauważmy, że można przyspieszyć ten program. Po pierwsze, nie musimy sprawdzać czy liczba dzieli się przez 1 i samą siebie (jest naturalna, więc zawsze się dzieli). To ogranicza program do sprawdzania dzielników od 2 do $a-1$. Teraz w przypadku wykrycia jakiegokolwiek dzielnika będzie wiadomo, że jest to trzeci dzielnik i należy wypisać NIE i zakończyć program (nie działa to jednak dla 0 i 1, więc można przed pętlą *while* użyć instrukcji warunkowej *if*). Dodatkowo, zauważmy, że wystarczy sprawdzać wszystkie możliwe dzielniki do $\sqrt{a}$ (uwzględniając $\sqrt{a}$), ponieważ jeśli jakaś liczba ma dzielnik większy niż $\sqrt a$, to ma też dzielnik mniejszy niż $\sqrt a$, więc na pewno zostanie on wykryty. Tak będzie wyglądał przyspieszony program:
 ```cpp
 #include <iostream>
-
 using namespace std;
 
 int main()
@@ -66,27 +63,27 @@ int main()
     int liczba;
     cin >> liczba;
 
-    //sprawdzamy, czy liczba jest równa 0 lub 1
+    // sprawdzamy, czy liczba jest równa 0 lub 1
     if (liczba < 2)
     {
-        //jesli tak, wypisujemy NIE i konczymy dzialanie programu
+        // jesli tak, wypisujemy NIE i konczymy dzialanie programu
         cout << "NIE";
         return 0;
     }
 
     int sprawdzany_dzielnik = 2;
-    //sprawdzamy do pierwiastka (a*a<=b to dla liczb naturalnych to samo co a<=pierwiastek z b)
+    // sprawdzamy do pierwiastka (a * a <= b to dla liczb naturalnych to samo co a<=pierwiastek z b)
     while (sprawdzany_dzielnik * sprawdzany_dzielnik <= liczba)
     {
         if (liczba % sprawdzany_dzielnik == 0)
         {
-            //Jesli znajdziemy jakikolwiek dzielnik, wypisujemy NIE i konczymy dzialanie programu
+            // jesli znajdziemy jakikolwiek dzielnik, wypisujemy NIE i konczymy dzialanie programu
             cout << "NIE";
             return 0;
         }
         sprawdzany_dzielnik++;
     }
-    //Jesli do tej pory nie wykryto zadnych dzielnikow, liczba jest pierwsza
+    // jesli do tej pory nie wykryto zadnych dzielnikow, liczba jest pierwsza
     cout << "TAK";
     return 0;
 }
@@ -98,6 +95,7 @@ Aby sprawdzić liczbę dzielników danej liczby, możemy, tak jak w sprawdzaniu 
 ```cpp
 #include <iostream>
 using namespace std;
+
 int main()
 {
     int liczba;
@@ -108,20 +106,19 @@ int main()
         return 0;
     }
 
-    int liczba_dzielnikow = 2; //1 i liczba na wejsciu
-    int sprawdzany_dzielnik = 2; //sprawdzamy dzielniki od 2
+    int liczba_dzielnikow = 2; // 1 i liczba na wejsciu
+    int sprawdzany_dzielnik = 2; // sprawdzamy dzielniki od 2
     while (sprawdzany_dzielnik * sprawdzany_dzielnik < liczba) {
         if (liczba % sprawdzany_dzielnik == 0) {
-            liczba_dzielnikow += 2; //zwiekszamy licznik o dwa
+            liczba_dzielnikow += 2; // zwiekszamy licznik o dwa
         }
         sprawdzany_dzielnik++;
     }
     if (sprawdzany_dzielnik * sprawdzany_dzielnik == liczba) {
-        //sprawdzamy pierwiastek i liczymy go pojedynczo
+        // sprawdzamy pierwiastek i liczymy go pojedynczo
         liczba_dzielnikow++;
     }
     cout << liczba_dzielnikow;
     return 0;
 }
-
 ```

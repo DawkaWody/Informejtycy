@@ -60,20 +60,23 @@ else{
 
 Przykład kodu na C++ z użyciem warunków:
 ```cpp
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
+
+int main() {
     int a, b;
     cin >> a >> b;
-    if(a < b){
+
+    if (a < b){
         cout << "a jest mniejsze niż b" << endl;
     }
-    else if(a > b){
+    else if (a > b){
         cout << "a jest większe niż b" << endl;
     }
-    else{
+    else {
         cout << "a równa się b" << endl;
     }
+
     return 0;
 }
 ```
@@ -81,9 +84,9 @@ int main(){
 
 Warto również wspomnieć o trzech podstawowych operatorach logicznych:
 
-1. Logiczne AND (`&&`)
+1. **Logiczne AND (`&&`)**
     Operator zwraca wartość `true`, tylko jeśli prawa i lewa strony mają wartość `true` (lub są różne od zera).  
-    Przykład: `a > 0 && b > 0` (`a` jest wiksze od `0`  **i**  `b` jest większe od `0`)
+    Przykład: `a > 0 && b > 0` (`a` jest wiksze od `0`  **I**  `b` jest większe od `0`)
     
 2. **Logiczne OR (`||`)**  
     Operator zwraca wartość `true`, jeśli lewa bądź prawa strona ma wartość `true` (lub jest różny od zera).  

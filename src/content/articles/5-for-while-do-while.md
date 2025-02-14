@@ -23,7 +23,6 @@ while (warunek) {
     
 2. **Kod do wykonania**: Blok kodu wewnątrz pętli, który będzie wykonywany wielokrotnie, dopóki warunek będzie prawdziwy.
     
-
 **Przykład pętli `while` :**
 
 ```cpp
