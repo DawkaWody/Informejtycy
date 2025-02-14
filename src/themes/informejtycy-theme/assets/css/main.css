@@ -317,3 +317,7 @@ td, th {
 	font-size: 1.2rem;
 	color: var(--lista-i-spis);
 }
+
+.ex-score {
+    text-align: center;
+}

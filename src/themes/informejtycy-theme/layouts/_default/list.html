@@ -3,53 +3,96 @@
     <div id="sidebar-left">
         {{ partial "article_list.html" . }}
     </div>
+
     <div id="artykul">
         <h1>Zadania</h1>
         <br>
         
+        <h2>Zadania podstawowe</h2>
         <table>
             {{ $files := readDir "content/exercises" }}
-            {{ $sections := dict }}
+            {{ $sections1 := dict }}
+            {{ $sections2 := dict }}
             {{ range $files }}
                 {{ if eq (path.Ext .Name) ".pdf" }}
                     {{ $parts := split (path.Base .Name) "-" }}
-                    {{ $section := index $parts 0 }}
-                    {{ $number := index $parts 1 }}
-                    {{ $name := delimit (slice (index $parts 2)) "-" }}
+                    {{ $table := index $parts 0 }}
+                    {{ $section := index $parts 1 }}
+                    {{ $number := index $parts 2 }}
+                    {{ $name := delimit (slice (index $parts 3)) "-" }}
                     {{ $entry := dict "Name" .Name "Number" (string $number) "DisplayName" $name }}
-                    {{ if not (isset $sections $section) }}
-                        {{ $sections = merge $sections (dict $section (slice $entry)) }}
-                    {{ else }}
-                        {{ $existingEntries := index $sections $section }}
-                        {{ $sections = merge $sections (dict $section (append $existingEntries (slice $entry))) }}
+                    {{ if eq $table "1" }}
+                        {{ if not (isset $sections1 $section) }}
+                            {{ $sections1 = merge $sections1 (dict $section (slice $entry)) }}
+                        {{ else }}
+                            {{ $existingEntries := index $sections1 $section }}
+                            {{ $sections1 = merge $sections1 (dict $section (append $existingEntries (slice $entry))) }}
+                        {{ end }}
+                    {{ else if eq $table "2" }}
+                        {{ if not (isset $sections2 $section) }}
+                            {{ $sections2 = merge $sections2 (dict $section (slice $entry)) }}
+                        {{ else }}
+                            {{ $existingEntries := index $sections2 $section }}
+                            {{ $sections2 = merge $sections2 (dict $section (append $existingEntries (slice $entry))) }}
+                        {{ end }}
                     {{ end }}
                 {{ end }}
             {{ end }}
 
-            {{ range $section, $entries := $sections }}
+            {{ range $section, $entries := $sections1 }}
                 {{ $sectionInt := int $section }}
-                {{ $article := first 1 (where $.Site.RegularPages "Params.id" $sectionInt) }}
-                <tr id="{{ $section }}">
+                {{ $article := first 1 (where (where $.Site.RegularPages "Params.id" $sectionInt) "Params.nerd" false) }}
+                <tr id="table1-{{ $section }}">
                     <th colspan="2">{{ if $article }}{{ $section }}. {{ (index $article 0).Params.title }}{{ else }}{{ $section }}{{ end }}</th>
                 </tr>
                 {{ $sortedEntries := sort $entries "Number" }}
                 {{ range $sortedEntries }}
                 <tr>
-                    <td><a href="{{ "exercises/" | relURL }}{{ .Name }}">{{ replace .DisplayName ".pdf" "" }}</a></td>
-                    <td>-</td>
+                    <td><a href="{{ "exercises/" | relURL }}{{ .Name }}" target="_blank">{{ replace .DisplayName ".pdf" "" }}</a></td>
+                    <td class="ex-score">-</td>
+                </tr>
+                {{ end }}
+            {{ end }}
+        </table>
+
+        <h2>Zadania zaawansowane</h2>
+        <table>
+            {{ range $section, $entries := $sections2 }}
+                {{ $sectionInt := int $section }}
+                {{ $article := first 1 (where (where $.Site.RegularPages "Params.id" $sectionInt) "Params.nerd" true) }}
+                <tr id="table2-{{ $section }}">
+                    <th colspan="2">{{ if $article }}{{ $section }}. {{ (index $article 0).Params.title }}{{ else }}{{ $section }}{{ end }}</th>
+                </tr>
+                {{ $sortedEntries := sort $entries "Number" }}
+                {{ range $sortedEntries }}
+                <tr>
+                    <td><a href="{{ "exercises/" | relURL }}{{ .Name }}" target="_blank">{{ replace .DisplayName ".pdf" "" }}</a></td>
+                    <td class="ex-score">-</td>
                 </tr>
                 {{ end }}
             {{ end }}
         </table>
     </div>
+
     <div id="sidebar-right">
         <h2>Spis treści</h2>
+        <h3>Zadania podstawowe</h3>
         <ol>
-            {{ range $section, $entries := $sections }}
+            {{ range $section, $entries := $sections1 }}
                 {{ $sectionInt := int $section }}
-                {{ $article := first 1 (where $.Site.RegularPages "Params.id" $sectionInt) }}
+                {{ $article := first 1 (where (where $.Site.RegularPages "Params.id" $sectionInt) "Params.nerd" false) }}
                 <li>
-                    <a href="#{{ $section }}">{{ if $article }}{{ $section }}. {{ (index $article 0).Params.title }}{{ else }}{{ $section }}{{ end }}</a>
+                    <a href="#table1-{{ $section }}">{{ if $article }}{{ (index $article 0).Params.title }}{{ else }}{{ $section }}{{ end }}</a>
+                </li>
+            {{ end }}
+        </ol>
+        <h3>Zadania zaawansowane</h3>
+        <ol>
+            {{ range $section, $entries := $sections2 }}
+                {{ $sectionInt := int $section }}
+                {{ $article := first 1 (where (where $.Site.RegularPages "Params.id" $sectionInt) "Params.nerd" true) }}
+                <li>
+                    <a href="#table2-{{ $section }}">{{ if $article }}{{ (index $article 0).Params.title }}{{ else }}{{ $section }}{{ end }}</a>
                 </li>
             {{ end }}
         </ol>
