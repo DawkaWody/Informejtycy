@@ -19,13 +19,16 @@ typ nazwa = wartosc;
 
 | Typ danych       | Opis                                                                                                                                                                                                                                  |
 |:----------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| `int`            | Przechowuje liczby całkowite.                                                                                                                                                                                                         |
+| `int`            | Przechowuje liczby całkowite w zakresie od $-2^{31}$ do $2^{31}-1$. Na nasze potrzeby wystarczy informacja, że jest to pomiędzy $-10^9$, a $10^9$.                                                                                    |
+| `long long`      | Przechowuje liczby całkowite w zakresie od $-2^{63}$ do $2^{63}-1$. Na nasze potrzeby wystarczy informacja, że jest to pomiędzy $-10^{18}$, a $10^{18}$.                                                                              |
 | `float`/`double` | Przechowuje liczby rzeczywiste (z przecinkiem). `double` pozwala przechować liczby o wyższej *precyzji* - albo liczby większe, albo z większą ilością cyfr po przecinku. Jeżeli wahasz się przy wyborze jednego z nich, weź `double`. |
 | `char`           | Przechowuje znaki (w kodowaniu ASCII, co oznacza między innymi brak polskich znaków). Znaki przechowuje się między znakami `' '` (a ciągi znaków między `" "`).                                                                       |
 | `bool`           | Wartość logiczna - zero lub jeden.                                                                                                                                                                                                    |
 | `void`           | Z pierwszego artykułu wiesz już że *prawie* każda funkcja coś zwraca. Funkcje, które nic nie zwracają (czyli nie obliczają żadnej wartości), są oznaczane właśnie tym typem.                                                          |
 
 > Dla dociekliwych, [pod koniec artykułu](#dla-dociekliwych-nr-1-skąd-pochodzą-nazwy-typów-danych) wyjaśniam również, dlaczego użyto takich nazw.
+
+Dlaczego tak właściwie `int` nie może przechowywać dowolnie dużych liczb? Pamięć przeznaczona na tego typu zmienne działa na zasadzie stosu. Na stos możemy coś położyć, albo coś z niego zdjąć. Wobec tego, jeżeli położymy tam zmienne o typach `int`, `char` i `double`, które mają swój określony rozmiar, to dolnej zmiennej nie możemy zwiększyć. Ma więc ona stały rozmiar, a co za tym idzie, maksymalną wartość jaką można w niej przechować. Ma to jednak pewne zalety, programiści wiedzą, że zmienna typu nie zmieni. Dzięki temu, czytając kod, nie będą się zastanawiać jakim typem jest teraz ta zmienna, co często ułatwia pracę.
 
 ## Operatory matematyczne i zmienne w praktyce
 
@@ -159,7 +162,7 @@ int main()
 
 ## Dla dociekliwych nr 1: skąd pochodzą nazwy typów danych?
 
-`int` to skrót angielskiego *integer*, czyli liczba całkowita. `float`/`double` pochodzą od formatu liczb "z przecinkiem". Liczby te na komputerze mogą być przechowywane w kilku rozmiarach. Te "krótsze" (zajmujące mniej miejsca w pamięci) to `float`, a "dłuższe" (zajmujące więcej miejsca) to `double`. Stąd wynikają różnice w precyzji typów. `char` pochodzi od angielskiego *character*, czyli znak. Są to znaki w kodowaniu [ASCII](https://pl.wikipedia.org/wiki/ASCII) - w późniejszym czasie dowiesz się więcej na temat tego kodowania. `bool` zaś pochodzi od matematyka George'a Boole'a, który opracował taki system i nazwał go *logiką*.
+`int` to skrót angielskiego *integer*, czyli liczba całkowita. `float`/`double` pochodzą od formatu liczb "z przecinkiem". Liczby te na komputerze mogą być przechowywane w kilku rozmiarach. Te "krótsze" (zajmujące mniej miejsca w pamięci) to `float` (od angielskiego *floating-point number*, a "dłuższe" (zajmujące więcej miejsca) to `double` (od angielskiego *double precision*). Z długości typów wynikają różnice w precyzji. `char` pochodzi od angielskiego *character*, czyli znak. Są to znaki w kodowaniu [ASCII](https://pl.wikipedia.org/wiki/ASCII) - w późniejszym czasie dowiesz się więcej na temat tego kodowania. `bool` zaś pochodzi od matematyka George'a Boole'a, który opracował taki system i nazwał go *logiką*.
 
 ## Dla dociekliwych nr 2: Czas wykonania i czas kompilacji programu
 
