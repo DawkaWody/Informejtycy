@@ -47,7 +47,7 @@ int main(){
 
 - **Warunek**: `i <= 5` – pętla będzie wykonywana, dopóki zmienna `i` będzie mniejsza lub równa 5.
     
-- **Kod do wykonania**: `cout << i << " ";` – wypisuje wartość `i`, a następnie `++i` zwiększa ją o 1 po każdej iteracji.
+- **Kod do wykonania**: `cout << i << " ";` – wypisuje wartość `i`, a następnie `i++` zwiększa ją o 1 po każdej iteracji.
     
 **Zastosowanie:**
 
@@ -61,7 +61,7 @@ Funkcję `for` można traktować jako skróconą wersję pętli `while`, której
     
 2. **Warunek** — sprawdzany przed każdym wykonaniem ciała pętli. Jeśli warunek jest prawdziwy, pętla działa, w przeciwnym razie przerywa działanie.
     
-3. **Zwiększenie/Zmiana** — wykonywana po każdym obiegu pętli (np. zwiększenie zmiennej sterującej).
+3. **Zwiększenie/Zmiana** — wykonywana po każdym obiegu pętli (np. zwiększenie zmiennej **i**).
     
 **Składnia pętli `for` :**
 
@@ -73,7 +73,7 @@ for (inicializacja; warunek; zmiana) {
 
 **Jak to wygląda w przypadku `while`:**
 
-Pętla `while` działa w podobny sposób, ale musisz ręcznie zadbać o inicjalizację, warunek i zmianę wartości zmiennej sterującej.
+Pętla `while` działa w podobny sposób, ale musisz ręcznie zadbać o inicjalizację, warunek i zmianę wartości zmiennej **i**.
 
 **Przykład z `for:`**
 
@@ -138,10 +138,10 @@ int main(){
 
 **Wyjaśnienie:**
 
-- **Kod do wykonania**: `cout << i << " ";` – wypisuje wartość `i`, a następnie `++i` zwiększa ją o 1.
+- **Kod do wykonania**: `cout << i << " ";` – wypisuje wartość `i`, a następnie `i++` zwiększa ją o 1.
     
 - **Warunek**: `i <= 5` – pętla będzie się powtarzać, dopóki `i` będzie mniejsze lub równe 5.
     
 **Zastosowanie:**
 
-Pętla `do-while` jest użyteczna, gdy chcesz, aby kod w pętli wykonał się przynajmniej raz, zanim zostanie sprawdzony warunek (np. w przypadku, gdy trzeba wykonać jakąś akcję przed sprawdzeniem warunku). Może być stosowana w sytuacjach, gdzie oczekujesz, że użytkownik wprowadzi dane, a sprawdzenie poprawności wprowadzenia nastąpi dopiero po pierwszej próbie.
+Pętla `do-while` jest użyteczna, gdy chcesz, aby kod w pętli wykonał się przynajmniej raz, zanim zostanie sprawdzony warunek (np. w przypadku, gdy trzeba wykonać jakąś akcję przed sprawdzeniem warunku). Może być stosowana w sytuacjach, gdzie oczekujesz, że wprowadzone zostaną dane, a sprawdzenie poprawności wprowadzenia nastąpi dopiero po pierwszej próbie.
