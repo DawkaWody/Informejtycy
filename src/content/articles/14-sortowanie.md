@@ -113,7 +113,7 @@ int main() {
 
 ## Sort
 
-Funkcja sortowania jest używana do uporządkowania elementów kontenera (np. tablicy, wektora) w określonym porządku (rosnącym lub malejącym). Najczęściej stosowaną funkcją do sortowania jest funkcja `std::sort` z nagłówka `<algorithm>`.
+Funkcja sortowania jest używana do uporządkowania elementów kontenera (np. tablicy, wektora) w określonym porządku (rosnącym lub malejącym). Najczęściej stosowaną funkcją do sortowania jest funkcja `sort` z nagłówka `<algorithm>`.
 
 **Kod:**
 
@@ -143,7 +143,7 @@ int main() {
 
 **Działanie:**
 
-- Funkcja `std::sort` sortuje elementy w porządku rosnącym przy użyciu algorytmu sortowania szybkim (ang. quicksort) lub innego optymalnego algorytmu, zależnie od implementacji standardu C++.
+- Funkcja `sort` sortuje elementy w porządku rosnącym przy użyciu algorytmu sortowania szybkim (ang. quicksort) lub innego optymalnego algorytmu.
 - Można też podać własny sposób porównywania elementów, by sortować w porządku malejącym lub zgodnie z innymi kryteriami.
 
 **Sortowanie malejące:**
@@ -151,7 +151,7 @@ int main() {
 Jeśli chcesz posortować elementy w porządku malejącym, wystarczy dodać trzeci argument w postaci funkcji do porównywania:
 
 ```cpp
-std::sort(v.begin(), v.end(), std::greater<int>());
+sort(v.begin(), v.end(), greater<int>());
 ```
 
 **Własne kryterium porównania:**
@@ -163,5 +163,5 @@ bool porownanie(int a, int b) {
     return a > b;
 }
 
-std::sort(v.begin(), v.end(), porownanie);
+sort(v.begin(), v.end(), porownanie);
 ```
