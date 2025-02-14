@@ -15,7 +15,7 @@ Podstawowym narzędziem, bez którego nie da się rozpocząć nauki programowani
 - [Programiz](https://www.programiz.com/cpp-programming/online-compiler/)
 - [myCompiler](https://www.mycompiler.io/new/cpp)
 
-Jeśli chcesz mieć pobrany program edytor kodu, aby móc zapisywać swoje odpowiedzi do zadań, polecamy:
+Jeśli chcesz mieć pobrany edytor kodu, aby móc zapisywać swoje odpowiedzi do zadań i programować bez połączenia do internetu, polecamy:
 
 - Dla systemu Windows/Linux:
   - **[REKOMENDOWANE]** [Code::Blocks](https://www.codeblocks.org) - istotne jest to by nazwa pobieranej wersji kończyła się na `mingw-setup`, na przykład `codeblocks-20.03mingw-setup.exe` (ta wersja ma instalator i wbudowany kompilator, czyli język C++).
