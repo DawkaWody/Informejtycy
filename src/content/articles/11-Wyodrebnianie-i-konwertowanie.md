@@ -2,7 +2,7 @@
 draft: false
 title: Wyodrębnianie i konwertowanie
 id: 11
-nerd: "false"
+nerd: false
 ---
 # Wyodrębnianie ostatniej cyfry z liczb i konwertowanie liczb na stringi i z powrotem
 ## Wyodrębnianie ostatniej cyfry na liczbach
