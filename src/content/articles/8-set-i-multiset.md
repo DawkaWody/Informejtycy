@@ -120,4 +120,4 @@ int main(){
 
 **Zastosowanie:**
 
-- `multiset` jest przydatny, gdy potrzebujesz zbioru, w którym mogą występować duplikaty, ale chcesz mieć zachowany porządek elementów. Często stosuje się go w sytuacjach, gdzie liczba wystąpień elementów jest istotna, np. w analizie częstotliwości wystąpień.
+- `multiset` jest przydatny, gdy potrzebujesz zbioru, w którym mogą występować duplikaty, ale chcesz mieć zachowany porządek elementów. Często stosuje się go w sytuacjach, gdzie liczba wystąpień elementów jest istotna.
