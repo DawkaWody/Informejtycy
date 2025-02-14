@@ -162,7 +162,7 @@ int main()
 
 ## Dla dociekliwych nr 1: skąd pochodzą nazwy typów danych?
 
-`int` to skrót angielskiego *integer*, czyli liczba całkowita. `float`/`double` pochodzą od formatu liczb "z przecinkiem". Liczby te na komputerze mogą być przechowywane w kilku rozmiarach. Te "krótsze" (zajmujące mniej miejsca w pamięci) to `float` (od angielskiego *floating-point number*, a "dłuższe" (zajmujące więcej miejsca) to `double` (od angielskiego *double precision*). Z długości typów wynikają różnice w precyzji. `char` pochodzi od angielskiego *character*, czyli znak. Są to znaki w kodowaniu [ASCII](https://pl.wikipedia.org/wiki/ASCII) - w późniejszym czasie dowiesz się więcej na temat tego kodowania. `bool` zaś pochodzi od matematyka George'a Boole'a, który opracował taki system i nazwał go *logiką*.
+`int` to skrót angielskiego *integer*, czyli liczba całkowita. `float`/`double` pochodzą od formatu liczb "z przecinkiem". Liczby te na komputerze mogą być przechowywane w kilku rozmiarach. Te "krótsze" (zajmujące mniej miejsca w pamięci) to `float` (od angielskiego *floating-point number*), a "dłuższe" (zajmujące więcej miejsca) to `double` (od angielskiego *double precision*). Z długości typów wynikają różnice w precyzji. `char` pochodzi od angielskiego *character*, czyli znak. Są to znaki w kodowaniu [ASCII](https://pl.wikipedia.org/wiki/ASCII) - w późniejszym czasie dowiesz się więcej na temat tego kodowania. `bool` zaś pochodzi od matematyka George'a Boole'a, który opracował taki system i nazwał go *logiką*.
 
 ## Dla dociekliwych nr 2: Czas wykonania i czas kompilacji programu
 
