@@ -322,3 +322,8 @@ td, th {
 .ex-score {
     text-align: center;
 }
+
+table a {
+	text-decoration: none;
+	color: var(--zwykly-tekst);
+}
