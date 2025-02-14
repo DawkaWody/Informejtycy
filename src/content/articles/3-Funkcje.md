@@ -12,7 +12,7 @@ Najpierw, **przed funkcją `main`**, piszemy typ zmiennej, który ma zwracać, l
 int policz_iloczyn(int a, int b)
 ```
 Z powyższej linii możemy dowiedzieć się, że jest to funkcja zwracająca wartość typu `int`, przyjmująca dwie wartości, również typu `int`.
-### Ciało funkcji
+## Ciało funkcji
 Ciało funkcji znajduje się w całości w nawiasach klamrowych, wszystko co jest poza nimi nie będzie wykonywane po wywołaniu funkcji. Każda funkcja, oprócz funkcji `void`, powinna coś zwracać. Do zwracania wartości używamy komendy `return`, a następnie podajemy nazwę zmiennej i kończymy średnikiem. Funkcja `policz_iloczyn`, będzie wyglądała tak:
 ```cpp
 int policz_iloczyn(int a, int b)
@@ -43,7 +43,7 @@ int main()
 }
 ```
 Co ważne, zmienne zadeklarowane w funkcji `main` nie będą dostępne w innych funkcjach, i odwrotnie. Oznacza to, że zmienne możemy nazwać tak samo w funkcji `main` jak w innych funkcjach i nie wystąpi kolizja oznaczeń. Jeśli zadeklarujemy jakąś zmienną poza funkcjami, będzie ona zmienną globalną - będzie dostępna we wszystkich funkcjach. 
-#### Inne typy funkcji - przykłady
+## Inne typy funkcji - przykłady
 Przykładowa funkcja typu `void` - funkcja przyjmująca liczbę i napis, a następnie wypisuje ten napis tyle razy ile podano:
 ```cpp
 #include <iostream>
