@@ -84,7 +84,7 @@ int main()
 }
 ```
 
-> Dla dociekliwych, [pod koniec artykułu](#dla-dociekliwych-nr-2-czas-wykonania-i-czas-kompilacji-programu) wyjaśniam różnicę między czasem kompilacji, a czasem wykonania.
+Dla dociekliwych, [pod koniec artykułu](#dla-dociekliwych-nr-2-czas-wykonania-i-czas-kompilacji-programu) wyjaśniam różnicę między czasem kompilacji, a czasem wykonania.
 
 `std::cin` to słówko, które podobnie jak `std::cout` jest "tłumaczone" językowi przez plik `<iostream>`. C++ spodziewa się po nim operatora `>>` i zmiennej, do której powinien *wczytać* wartość (czyli "wrzucić do pudełka").
 

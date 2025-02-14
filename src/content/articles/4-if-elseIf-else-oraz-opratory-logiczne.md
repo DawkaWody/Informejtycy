@@ -86,11 +86,11 @@ Warto również wspomnieć o trzech podstawowych operatorach logicznych:
 
 1. **Logiczne AND (`&&`)**
     Operator zwraca wartość `true`, tylko jeśli prawa i lewa strony mają wartość `true` (lub są różne od zera).  
-    Przykład: `a > 0 && b > 0` (`a` jest wiksze od `0`  **I**  `b` jest większe od `0`)
+    Przykład: `a > 0 && b > 0` (`a` jest większe od `0`  **i**  `b` jest większe od `0`)
     
 2. **Logiczne OR (`||`)**  
     Operator zwraca wartość `true`, jeśli lewa bądź prawa strona ma wartość `true` (lub jest różny od zera).  
-    Przykład: `a > 0 || b > 0` (`a` jest wiksze od `0`  **LUB**  `b` jest większe od `0`)
+    Przykład: `a > 0 || b > 0` (`a` jest większe od `0`  **LUB**  `b` jest większe od `0`)
     
 3. **Logiczne NOT (`!`)**  
     Operator zwraca wartość przeciwną do wartości logicznej wyrażenia.  

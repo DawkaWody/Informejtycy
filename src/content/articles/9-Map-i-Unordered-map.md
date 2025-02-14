@@ -18,10 +18,10 @@ map<string, string> glosy = {{"Ania", "mezzosopran"}, {"Beatka", "alt"}, {"Czare
 
 ## Odwoływanie się do elementów mapy
 Odwoływanie się w mapie polega na dostawaniu się do wartości kryjącej się pod kluczem. Robimy to, stosując nawiasy kwadratowe lub komendę `nazwa_mapy.at(wartość)`. Co ciekawe jeśli odwołujemy się do klucza, który nie istnieje, automatycznie się on tworzy. Jeśli nie podamy wartości, jakiej powinien przypadać klucz, to ten drugi element będzie się równał:
-- string - ""
-- int - 0
-- long long - 0
-- bool - 0 (false)
+- `string` - ""
+- `int` - 0
+- `long long` - 0
+- `bool` - 0 (`false`)
 ```cpp
 map<string, string> glosy = {{"Ania", "mezzosopran"}, {"Beatka", "alt"}, {"Czarek", "tenor"}};
 cout << glosy["Beatka"] << endl;

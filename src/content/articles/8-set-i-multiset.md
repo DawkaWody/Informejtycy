@@ -55,8 +55,8 @@ int main (){
 	// Nadanie wartości iteratorom
 	lb = s.lower_bound(2);
 	ub = s.upper_bound(2);
-	cout << *lb << endl;        // 2
-	cout << *ub << endl;        // 5
+	cout << *lb << endl; // 2
+	cout << *ub << endl; // 5
 
 	// Sprawdzanie istnienia elementu
 	if (s.find(5) != s.end()){

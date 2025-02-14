@@ -45,12 +45,12 @@ using namespace std;
 
 int nwd(int a, int b) {
 	while (a != b) {
-		//ten warunek sprawdza, która liczba jest większa
+		// ten warunek sprawdza, która liczba jest większa
 		if (a > b) {
-			//jeśli większa jest liczba a, to od a odejmujemy b
+			// jeśli większa jest liczba a, to od a odejmujemy b
 			a -= b;
 		} else {
-			//jeśli większa jest liczba b, to od b odejmujemy a
+			// jeśli większa jest liczba b, to od b odejmujemy a
 			b -= a;
 		}
 	}
@@ -72,7 +72,7 @@ using namespace std;
 int nwd(int a, int b) {
 	int pom;
 	while (b != 0) {
-		//zmienna pom przechowuje nam b, abyśmy potem mogli ustawić a na b sprzed zmian
+		// zmienna pom przechowuje nam b, abyśmy potem mogli ustawić a na b sprzed zmian
 		pom = b;
 		b = a % b;
 		a = pom;

@@ -30,15 +30,15 @@ int main()
     cin >> liczba;
     
     int liczba_dzielnikow = 0;
-    int sprawdzany_dzielnik = 1;     // dzielniki zaczynamy sprawdzać od 1
+    int sprawdzany_dzielnik = 1; // dzielniki zaczynamy sprawdzać od 1
 
     // sprawdzamy od 1 do liczby podanej na wejsciu włącznie
     while (sprawdzany_dzielnik <= liczba)
     {
         // sprawdzamy, czy liczba podana na wejsciu dzieli sie przez obecnie sprawdzana liczbe
         if (liczba % sprawdzany_dzielnik == 0)
-            liczba_dzielnikow++; //jesli tak, to znalezlismy kolejny dzielnik
-        sprawdzany_dzielnik++;    // sprawdzamy kolejny dzielnik
+            liczba_dzielnikow++; // jesli tak, to znalezlismy kolejny dzielnik
+        sprawdzany_dzielnik++; // sprawdzamy kolejny dzielnik
     }
     // wypisywanie TAK lub NIE
     

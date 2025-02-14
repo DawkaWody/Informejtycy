@@ -75,7 +75,6 @@ int main(){
 
 Łatwym sposobem wczytania wielu danych do tablicy jest użycie pętli:
 ```cpp
-
 #include <iostream>
 using namespace std;
 
