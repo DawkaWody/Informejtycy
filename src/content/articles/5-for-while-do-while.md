@@ -109,7 +109,7 @@ Pętla `do-while` jest podobna do pętli `while`, ale z tą różnicą, że waru
 
 **Składnia pętli `do-while`:**
 
-```
+```cpp
 do {
 	// kod do wykonania
 } while (warunek);
@@ -130,7 +130,7 @@ int main(){
 
 	// Pętla, która wypisuje liczy od 1 do 5
 	do {
-		cout << i " ";
+		cout << i << " ";
 		i++; // zwiększenie zmiennej i
 	} while (i <= 5);
 	// Wypisze: 1 2 3 4 5
