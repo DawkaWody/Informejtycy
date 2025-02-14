@@ -1,5 +1,3 @@
-console.log("Wodociągi kieleckie");
-
 // Ustawienie motywu na podstawie preferencji użytkownika
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme) {
@@ -26,5 +24,12 @@ document.querySelector('.menu')
         var sec = el.nextElementSibling;
         window.rotateArrow(el.children[1]);
         window.expandCollapseSection(sec);
+
+        // Zwijanie innych sekcji
+        document.querySelectorAll('.section-content').forEach(section => {
+            if (section !== sec && section.style.maxHeight) {
+                window.expandCollapseSection(section);
+            }
+        });
     }
-})
+});
