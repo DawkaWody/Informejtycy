@@ -11,11 +11,12 @@ Oto program wczytujący liczbę całkowitą i wypisujący jej ostatnią cyfrę:
 ```cpp
 #include <iostream>
 using namespace std;
+
 int main()
 {
     int liczba;
     cin >> liczba;
-    int ostatnia_cyfra = liczba % 10; //kluczowa linia kodu - zastosowanie reszty z dzielenia przez 10
+    int ostatnia_cyfra = liczba % 10; // kluczowa linia kodu - zastosowanie reszty z dzielenia przez 10
     cout << ostatnia_cyfra;
     return 0;
 }
@@ -25,17 +26,18 @@ Ostatnią cyfrę można wyodrębnić używając zmiennych typu string. Zasada dz
 ```cpp
 #include <iostream>
 using namespace std;
+
 int main()
 {
     string liczba;
     cin >> liczba;
     int dlugosc = liczba.size();
 
-    char ostatnia_cyfra_z = liczba[dlugosc - 1]; //ostatni znak ze stringa
-    cout << ostatnia_cyfra_z << '\n'; //wypisywanie jako znak
+    char ostatnia_cyfra_z = liczba[dlugosc - 1]; // ostatni znak ze stringa
+    cout << ostatnia_cyfra_z << '\n'; // wypisywanie jako znak
 
-    int ostatnia_cyfra_i = ostatnia_cyfra_z - '0'; //uzyskiwanie wartosci liczbowej uzywajac sposobu z artykulu 9
-    cout << ostatnia_cyfra_i; //wypisywanie jako liczba
+    int ostatnia_cyfra_i = ostatnia_cyfra_z - '0'; // uzyskiwanie wartosci liczbowej uzywajac sposobu z artykulu 9
+    cout << ostatnia_cyfra_i; // wypisywanie jako liczba
     return 0;
 }
 
@@ -46,6 +48,7 @@ Oto implementacja z użyciem liczb i dzielenia przez 10:
 ```cpp
 #include <iostream>
 using namespace std;
+
 int main()
 {
     int liczba, cyfra;
@@ -53,10 +56,11 @@ int main()
 
     int suma_cyfr = 0;
     while (liczba > 0) {
-        cyfra = liczba % 10; //uzyskiwanie wartosci ostatniej cyfry
-        liczba /= 10; //'odcinanie' ostatniej cyfry
-        suma_cyfr += cyfra; //aktualizowanie sumy
+        cyfra = liczba % 10; // uzyskiwanie wartosci ostatniej cyfry
+        liczba /= 10; // 'odcinanie' ostatniej cyfry
+        suma_cyfr += cyfra; // aktualizowanie sumy
     }
+
     cout << suma_cyfr;
     return 0;
 }
@@ -73,6 +77,7 @@ Przykładowy kod:
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
+
 int main()
 {
     int liczba;
@@ -80,9 +85,9 @@ int main()
     cin >> liczba;
     cin >> ciag;
 
-    int liczba_ciag1 = stoi(ciag); //String konwertujemy na int
-    long long liczba_ciag2 = stoll(ciag); //string konwertujemy na long long
-    string ciag_liczba = to_string(liczba); //int konwertujemy na string
+    int liczba_ciag1 = stoi(ciag); // string konwertujemy na int
+    long long liczba_ciag2 = stoll(ciag); // string konwertujemy na long long
+    string ciag_liczba = to_string(liczba); // int konwertujemy na string
 
     cout << "Oto pierwsza liczba, wczytana jako int, wypisana jako string: " << ciag_liczba << '\n';
     cout << "Oto druga liczba, wczytana jako string, wypisana jako int: " << liczba_ciag1 << '\n';
@@ -90,5 +95,4 @@ int main()
 
     return 0;
 }
-
 ```
