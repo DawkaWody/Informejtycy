@@ -16,6 +16,10 @@ function expandCollapseSection(section, instant = false) {
     }
 }
 
+function isExpanded(section) {
+    return section.style.maxHeight !== '' && section.style.maxHeight !== null;
+}
+
 function rotateArrow(arrow, instant = false) {
     tr = arrow.style.transition;
     if (instant) {
@@ -31,4 +35,5 @@ function rotateArrow(arrow, instant = false) {
 }
 
 window.expandCollapseSection = expandCollapseSection;
+window.isExpanded = isExpanded;
 window.rotateArrow = rotateArrow;
