@@ -12,7 +12,7 @@ Aby sprawdzić, czy liczba $a$ dzieli się przez liczbę $b$, możemy użyć ope
 bool czy_a_dzieli_sie_przez_b = false; //poczatkowo ustawiamy falsz
 if (a % b == 0) czy_a_dzieli_sie_przez_b = true; //uzywamy operatora %
 ```
-Powyższy fragment kodu sprawdza, czy liczba
+Powyższy fragment kodu sprawdza, czy liczba $a$ dzieli się przez liczbę $b$.
 ## Sprawdzanie pierwszości
 Korzystając z pętli while możemy sprawdzić, czy dana liczba jest pierwsza. Liczba pierwsza to taka, która ma dokładnie 2 różne dzielniki (1 i samą siebie). Dla przykładu, liczby 2, 3, 5, 7 są liczbami pierwszymi, a liczby 0, 1, 4, 8, 9 nie są. Więcej o liczbach pierwszych można wyczytać na https://pl.wikipedia.org/wiki/Liczby_pierwsze.
 Spróbujmy się zastanowić, jak by miał działać prosty program, który wczytuje jedną liczbę naturalną $a$, taką, że $0 \leq a \leq 10^6$ i wypisuje TAK jeśli liczba jest pierwsza lub NIE w przeciwnym wypadku. Oto pomysł na program:
