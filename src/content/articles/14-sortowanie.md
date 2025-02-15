@@ -11,7 +11,7 @@ nerd: false
 
 **Sortowanie przez wybieranie** polega na znajdowaniu najmniejszego (lub największego) elementu w nieposortowanej części tablicy i zamianie go z pierwszym elementem tej części. Proces ten powtarzamy dla kolejnych pozycji aż cała tablica będzie posortowana.
 
-**Jak działa:**
+**Jak to działa?:**
 
 1. Przechodzimy po tablicy, wybierając najmniejszy element z pozostałych.
 2. Zamieniamy go z pierwszym elementem w nieposortowanej części.

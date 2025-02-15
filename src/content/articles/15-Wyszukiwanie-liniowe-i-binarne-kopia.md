@@ -58,7 +58,7 @@ Skoro już wiesz czym jest wyszukiwanie binarne, możesz spróbować się zastan
 #include <vector>
 using namespace std;
 
-vector <int> ciag;
+vector<int> ciag;
 
 int main() {
 	int n;

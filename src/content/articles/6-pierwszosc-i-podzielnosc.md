@@ -1,10 +1,10 @@
 ---
 draft: false
-title: Pierwszość i podzielność
+title: Pierwszość i podzielność liczb
 id: 6
 nerd: false
 ---
-# Sprawdzanie pierwszości i liczby dzielników liczb
+# Sprawdzanie pierwszości, podzielności i liczby dzielników liczb
 
 ## Podzielność
 Aby sprawdzić, czy liczba $a$ dzieli się przez liczbę $b$, możemy użyć operatora `%`. Sprawdzimy więc, czy reszta z dzielenia liczby $a$ przez liczbę $b$ jest równa 0.

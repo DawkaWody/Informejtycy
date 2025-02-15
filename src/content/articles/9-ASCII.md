@@ -5,13 +5,13 @@ id: 9
 nerd: false
 ---
 # ASCII
-**ASCII**  to standard kodowania znaków, który przypisuje numery literom, cyfrom i symbolom. Innymi słowy, jest to system zapisu znaków poprzez liczby (7-bitowe - od 0 do 127) wykorzystywany między innymi przez c++. Oznacza to, że każda *litera alfabetu łacińskiego/cyfra/biały znak*(i wiele więcej) posiada swój własny numer w systemie ASCII.
+**ASCII**  to standard kodowania znaków, który przypisuje numery literom, cyfrom i symbolom. Innymi słowy, jest to system zapisu znaków poprzez liczby (7-bitowe - od 0 do 127) wykorzystywany między innymi przez C++. Oznacza to, że każda *litera alfabetu łacińskiego/cyfra/biały znak* (i wiele więcej) posiada swój własny numer w systemie ASCII.
 
 Poniższy fragment kodu wczyta dowolny znak i wypisze jego numer w systemie ASCII.
 ```cpp
 char znak;
 cin >> znak;
-int numer = znak; //znak w zmiennej typu int przyjmuje wartość ASCII
+int numer = znak; // znak w zmiennej typu int przyjmuje wartość ASCII
 cout << numer;
 ```
 Oczywiście można to zrobić bez użycia zmiennej typu int:

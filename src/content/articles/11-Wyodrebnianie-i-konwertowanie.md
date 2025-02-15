@@ -1,10 +1,10 @@
 ---
 draft: false
-title: Wyodrębnianie i konwertowanie
+title: Wyodrębnianie cyfr danej liczby i konwertowanie liczb na napisy
 id: 11
 nerd: false
 ---
-# Wyodrębnianie ostatniej cyfry z liczb i konwertowanie liczb na stringi
+# Wyodrębnianie cyfr danej liczby, konwertowanie liczb na napisy
 ## Wyodrębnianie ostatniej cyfry na liczbach
 Aby uzyskać ostatnią cyfrę danej liczby, możemy użyć operacji modulo (`%`). Gdy otrzymamy resztę z dzielenia przez 10 danej liczby całkowitej, to tak naprawdę otrzymamy jej cyfrę jedności, czyli ostatnią cyfrę. Analogicznie, aby otrzymać liczbę składającą się z dwóch ostatnich cyfr danej liczby, możemy zastosować resztę z dzielenia przez 100. Dla uzyskania trzech ostatnich liczb zastosujemy resztę z dzielenia przez 1000, i tak dalej.
 Oto program wczytujący liczbę całkowitą i wypisujący jej ostatnią cyfrę:
@@ -66,10 +66,9 @@ int main()
 }
 
 ```
-Uzyskiwanie sumy cyfr można też zaimplementować na stringach. Po prostu uzyskujemy wartość ostatniej cyfry jako znaku (sposób na uzyskiwanie wartości cyfry jako znaku opisany w  [Artykule 9](https://dawkawody.github.io/Informejtycy/articles/9-ascii/)), aktualizujemy sumę i przesuwamy iterator o jeden w lewo, aż
-przejdziemy po całym stringu.
+Uzyskiwanie sumy cyfr można też zaimplementować na stringach. Po prostu uzyskujemy wartość ostatniej cyfry jako znaku (sposób na uzyskiwanie wartości cyfry jako znaku opisany w  [Artykule 9](https://dawkawody.github.io/Informejtycy/articles/9-ascii/)), aktualizujemy sumę i przesuwamy iterator o jeden w lewo, aż przejdziemy po całym stringu.
 ## Funkcje wbudowane
-W celu zamienienia, czyli przekonwertowania stringa na zmienną liczbową lub odwrotnie, możemy użyć wbudowanych funkcji z biblioteki `<string>`(zawartej w `<bits/stdc++.h>`-biblioteka ta zawiera wiele potrzebnych bibliotek i automatycznie je dodaje):
+W celu zamienienia, czyli przekonwertowania stringa na zmienną liczbową lub odwrotnie, możemy użyć wbudowanych funkcji z biblioteki `<string>`(zawartej w `<bits/stdc++.h>` - biblioteka ta zawiera wiele potrzebnych bibliotek i automatycznie je dodaje):
 - `to_string()` - zamienia zmienną liczbową na zmienną typu `string`
 - `stoi()` - zamienia zmienną typu `string` na zmienną typu `int` (string to integer)
 - `stoll()` - zamienia zmienną typu `string` na zmienną typu `long long` (string to long long)
