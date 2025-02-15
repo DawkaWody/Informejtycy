@@ -4,7 +4,7 @@ title: Wyodrębnianie i konwertowanie
 id: 11
 nerd: false
 ---
-# Wyodrębnianie ostatniej cyfry z liczb i konwertowanie liczb na stringi i z powrotem
+# Wyodrębnianie ostatniej cyfry z liczb i konwertowanie liczb na stringi
 ## Wyodrębnianie ostatniej cyfry na liczbach
 Aby uzyskać ostatnią cyfrę danej liczby, możemy użyć operacji modulo (`%`). Gdy otrzymamy resztę z dzielenia przez 10 danej liczby całkowitej, to tak naprawdę otrzymamy jej cyfrę jedności, czyli ostatnią cyfrę. Analogicznie, aby otrzymać liczbę składającą się z dwóch ostatnich cyfr danej liczby, możemy zastosować resztę z dzielenia przez 100. Dla uzyskania trzech ostatnich liczb zastosujemy resztę z dzielenia przez 1000, i tak dalej.
 Oto program wczytujący liczbę całkowitą i wypisujący jej ostatnią cyfrę:
@@ -29,7 +29,7 @@ int main()
 {
     string liczba;
     cin >> liczba;
-    int dlugosc = liczba.length();
+    int dlugosc = liczba.size();
 
     char ostatnia_cyfra_z = liczba[dlugosc - 1]; //ostatni znak ze stringa
     cout << ostatnia_cyfra_z << '\n'; //wypisywanie jako znak
@@ -41,7 +41,7 @@ int main()
 
 ```
 ## Uzyskiwanie sumy cyfr danej liczby
-Aby uzyskać sumę cyfr danej liczby, możemy w pętli po kolei dodawać do zmiennej przechowującej sumę wartość liczbową ostatniej cyfry i 'odcinanie' jej od liczby początkowej. Używając sposobu uzyskiwania ostatniej cyfry na liczbach będziemy po prostu po każdym wykonaniu pętli dzielić całkowitoliczbowo przez 10, a w implementacji z użyciem stringów - przesuwać iterator o 1 w lewo.
+Aby uzyskać sumę cyfr danej liczby, możemy w pętli po kolei dodawać do sumy wartość liczbową ostatniej cyfry i odcinać ją od liczby początkowej. Używając sposobu uzyskiwania ostatniej cyfry na liczbach będziemy po prostu po każdym wykonaniu pętli dzielić całkowitoliczbowo przez 10.
 Oto implementacja z użyciem liczb i dzielenia przez 10:
 ```cpp
 #include <iostream>
@@ -62,8 +62,10 @@ int main()
 }
 
 ```
+Uzyskiwanie sumy cyfr można też zaimplementować na stringach. Po prostu uzyskujemy wartość ostatniej cyfry jako znaku (sposób na uzyskiwanie wartości cyfry jako znaku opisany w  [Artykule 9](https://dawkawody.github.io/Informejtycy/articles/9-ascii/)), aktualizujemy sumę i przesuwamy iterator o jeden w lewo, aż
+przejdziemy po całym stringu.
 ## Funkcje wbudowane
-W celu zamienienia, czyli przekonwertowania stringa na zmienną liczbową lub odwrotnie, możemy użyć wbudowanych funkcji z biblioteki `<string>`(zawartej w `<bits/stdc++.h>`):
+W celu zamienienia, czyli przekonwertowania stringa na zmienną liczbową lub odwrotnie, możemy użyć wbudowanych funkcji z biblioteki `<string>`(zawartej w `<bits/stdc++.h>`-biblioteka ta zawiera wiele potrzebnych bibliotek i automatycznie je dodaje):
 - `to_string()` - zamienia zmienną liczbową na zmienną typu `string`
 - `stoi()` - zamienia zmienną typu `string` na zmienną typu `int` (string to integer)
 - `stoll()` - zamienia zmienną typu `string` na zmienną typu `long long` (string to long long)
