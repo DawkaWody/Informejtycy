@@ -1,8 +1,8 @@
 ---
 draft: false
 title: Własne funkcje
-id: 3
-nerd: true
+id: 16
+nerd: false
 ---
 # FUNKCJE
 Funkcje piszemy, aby nasz kod stał się czytelniejszy. Jest to pewien rodzaj podprogramu, znajdującego się poza funkcją `main`. Zazwyczaj korzysta się z funkcji, kiedy program ma wielokrotnie wykonać jakieś operacje. Funkcja wykonuje określone operacje i może zwracać jakąś wartość.
