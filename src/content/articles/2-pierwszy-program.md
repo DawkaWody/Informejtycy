@@ -50,6 +50,7 @@ int main()
     // Program do wykonania.
     return 0;
 }
+
 // A to swoją drogą są komentarze.
 // Nie wpływają one na działanie programu.
 // Są tutaj tylko do wytłumaczenia kodu.

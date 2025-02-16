@@ -26,7 +26,7 @@ typ nazwa = wartosc;
 | `bool`           | Wartość logiczna - zero lub jeden.                                                                                                                                                                                                    |
 | `void`           | Z pierwszego artykułu wiesz już że *prawie* każda funkcja coś zwraca. Funkcje, które nic nie zwracają (czyli nie obliczają żadnej wartości), są oznaczane właśnie tym typem.                                                          |
 
-> Dla dociekliwych, [pod koniec artykułu](#dla-dociekliwych-nr-1-skąd-pochodzą-nazwy-typów-danych) wyjaśniam również, dlaczego użyto takich nazw.
+Dla dociekliwych, [pod koniec artykułu](#dla-dociekliwych-nr-1-skąd-pochodzą-nazwy-typów-danych) wyjaśniam również, dlaczego użyto takich nazw.
 
 Dlaczego tak właściwie `int` nie może przechowywać dowolnie dużych liczb? Pamięć przeznaczona na tego typu zmienne działa na zasadzie stosu. Na stos możemy coś położyć, albo coś z niego zdjąć. Wobec tego, jeżeli położymy tam zmienne o typach `int`, `char` i `double`, które mają swój określony rozmiar, to dolnej zmiennej nie możemy zwiększyć. Ma więc ona stały rozmiar, a co za tym idzie, maksymalną wartość jaką można w niej przechować. Ma to jednak pewne zalety, programiści wiedzą, że zmienna typu nie zmieni. Dzięki temu, czytając kod, nie będą się zastanawiać jakim typem jest teraz ta zmienna, co często ułatwia pracę.
 

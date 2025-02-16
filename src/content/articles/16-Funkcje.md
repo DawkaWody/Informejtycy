@@ -4,7 +4,7 @@ title: Własne funkcje
 id: 16
 nerd: false
 ---
-# FUNKCJE
+# Funkcje
 Funkcje piszemy, aby nasz kod stał się czytelniejszy. Jest to pewien rodzaj podprogramu, znajdującego się poza funkcją `main`. Zazwyczaj korzysta się z funkcji, kiedy program ma wielokrotnie wykonać jakieś operacje. Funkcja wykonuje określone operacje i może zwracać jakąś wartość.
 ## Deklaracja funkcji
 Najpierw, **przed funkcją `main`**, piszemy typ zmiennej, który ma zwracać, lub `void`, jeśli funkcja nic nie zwraca. Następnie, po spacji, piszemy nazwę funkcji. Po nazwie, w nawiasach okrągłych piszemy argumenty, jakie funkcja przyjmuje, poprzedzone ich typem danych. Jeśli funkcja nie przyjmuje argumentów, pozostawiamy puste nawiasy.

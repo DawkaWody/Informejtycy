@@ -34,7 +34,7 @@ int main(){
 }
 ```
 
-Okazuje się, że c++ jest trochę leniwy, ponieważ jeśli tablica zostanie zadeklarowana w głównej funkcji $main$ to c++ nie wysili się aby ją posprzątać, przez co jej komórki będą miały przeróżne dowolne wartości. Aby zmusić program do wyzerowania tablicy należy zadeklarować ją poza funkcją $main$:
+Okazuje się, że C++ jest trochę leniwy, ponieważ jeśli tablica zostanie zadeklarowana w głównej funkcji $main$ to c++ nie wysili się aby ją posprzątać, przez co jej komórki będą miały przeróżne dowolne wartości. Aby zmusić program do wyzerowania tablicy należy zadeklarować ją poza funkcją $main$:
 ```cpp
 #include <iostream>
 using namespace std;
