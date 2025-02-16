@@ -1,7 +1,7 @@
 ---
 draft: false
 title: 'Set i multiset'
-id: 8
+id: 7
 nerd: true
 ---
 # Set i multiset
