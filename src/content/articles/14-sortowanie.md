@@ -49,7 +49,7 @@ int main() {
 
     selectionSort(tablica, n);
 
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         cout << tablica[i] << " ";
     }
     // Wypisze: 10 20 30 40 50
@@ -76,7 +76,7 @@ void countingSort(int tablica[], int n) {
     int najwiekszy = tablica[0]; // Zakładamy, że pierwszy element jest największym
 
     // Jeśli bieżący element jest większy od dotychczasowego największego elementu, aktualizujemy jego wartość
-    for (int i = 1; i < n; i++){
+    for (int i = 1; i < n; i++) {
         if (tablica[i] > najwiekszy) {
             najwiekszy = tablica[i];
         }

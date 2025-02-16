@@ -14,7 +14,7 @@ Tworzenie tablicy jest bardzo podobne do tworzenia zmiennej, jednak dodatkowym e
 #include <iostream>
 using namespace std;
 
-int main(){
+int main() {
     int a; // Przypomnienie, tak tworzymy zmienną
     int a[10]; // Nowość, tak wygląda tworzenie tablicy dziesięcio elementowej, liczb całkowitych
     double b[5]; // To samo tylko że liczb zmiennoprzecinkowych
@@ -27,7 +27,7 @@ Warto zaznaczyć, że aby program zadziałał prawidłowo musi wiedzieć jak du�
 #include <iostream>
 using namespace std;
 
-int main(){
+int main() {
     int n;
     cin >> n;
     int a[n]; // Podczas wykonywania kodu może wystąpić błąd
@@ -41,7 +41,7 @@ using namespace std;
 
 int a[7]; // Wyzerowana tablica siedmio elementowa
 
-int main(){
+int main() {
 
 }
 ```
@@ -53,7 +53,7 @@ Wszystko fajnie, ale nadal nie umiemy używać tablicy tj. wpisywać do komórek
 #include <iostream>
 using namespace std;
 
-int main(){
+int main() {
     int tab[10];
     tab[0] = 3; // Przypisanie wartości 3 do pierwszej komórki tablicy tab
     int a;
@@ -68,7 +68,7 @@ Możemy również od razu przy tworzeniu tablicy podać jej jakieś dane, wypisu
 #include <iostream>
 using namespace std;
 
-int main(){
+int main() {
     int tablica[5] = {1, 4, 2, 5, 3}; // Stworzenie i jednocześnie zapisanie do tablicy pięciu elementów
 }
 ```
@@ -78,9 +78,9 @@ int main(){
 #include <iostream>
 using namespace std;
 
-int main(){
+int main() {
     int x[10];
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < 10; i++) {
         cin >> x[i];
     }
 }

@@ -41,7 +41,7 @@ nerd: true
 #include <set>
 using namespace std;
 
-int main (){
+int main () {
 	set<int> s;
 
 	// Deklaracja iteratorów
@@ -59,7 +59,7 @@ int main (){
 	cout << *ub << endl; // 5
 
 	// Sprawdzanie istnienia elementu
-	if (s.find(5) != s.end()){
+	if (s.find(5) != s.end()) {
 		cout << "element jest w zbiorze!" << endl;
 	}
 
@@ -67,7 +67,7 @@ int main (){
 	s.erase(2);
 
 	// Sprawdzanie czy set jest pusty
-	if (s.empty()){
+	if (s.empty()) {
 		cout << "zbiór jest pusty!" << endl;
 	}
 
@@ -100,7 +100,7 @@ Podobnie jak `set`, struktura danych `multiset` przechowuje elementy w porządku
 #include <set>
 using namespace std;
 
-int main(){
+int main() {
 	multiset<int> ms;
 
 	// Dodawanie elementów

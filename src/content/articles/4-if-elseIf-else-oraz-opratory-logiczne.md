@@ -67,10 +67,10 @@ int main() {
     int a, b;
     cin >> a >> b;
 
-    if (a < b){
+    if (a < b) {
         cout << "a jest mniejsze niż b" << endl;
     }
-    else if (a > b){
+    else if (a > b) {
         cout << "a jest większe niż b" << endl;
     }
     else {

@@ -31,7 +31,7 @@ Poniższy program będzie wczytywał dwie liczby i wypisywał ich iloczyn;
 #include <iostream>
 using namespace std;
 
-int policz_iloczyn(int a, int b){
+int policz_iloczyn(int a, int b) {
     int wynik = a * b;
     return wynik;
 }
@@ -51,7 +51,7 @@ Przykładowa funkcja typu `void` - funkcja przyjmująca liczbę i napis, a nast�
 #include <iostream>
 using namespace std;
 
-void wypisz_n_razy(int n, string napis){
+void wypisz_n_razy(int n, string napis) {
     for(int i = 0; i < n; i++) cout << napis << '\n';
 }
 
@@ -68,7 +68,7 @@ int main()
 Jak widać, zarówno w funkcji `main`, jak w funkcji `wypisz_n_razy` występują te same nazwy funkcji, jednak nie występuje kolizja oznaczeń. Funkcja `wypisz n razy` kopiuje wartości `n` i `napis`, więc może zmieniać ich wartość, nie zmieniając wartości zmiennych `n` i `napis` w funkcji `main`.
 Poniższa funkcja sprawdza, czy liczba jest parzysta i zwraca wartość typu `bool`:
 ```cpp
-bool czy_parzysta(int x){
+bool czy_parzysta(int x) {
     if (x % 2 == 0) return true;
     return false;
 }

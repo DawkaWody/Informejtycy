@@ -29,11 +29,11 @@ while (warunek) {
 #include <iostream>
 using namespace std;
 
-int main(){
+int main() {
 	int i = 1;
 
 	// Pętla, która wypisuje liczy od 1 do 5
-	while (i <= 5){
+	while (i <= 5) {
 		cout << i << " ";
 		i++;
 	}
@@ -85,8 +85,8 @@ Załóżmy, że chcemy zrobić to samo, co w poprzednim przykładzie – wypisa�
 #include <iostream>
 using namespace std;
 
-int main(){
-	for (int i = 1; i <= 5; i++){ // inicjalizacja: i = 1, warunek: i <= 5, zwiększenie: i++
+int main() {
+	for (int i = 1; i <= 5; i++) { // inicjalizacja: i = 1, warunek: i <= 5, zwiększenie: i++
 		cout << i << " ";
 	}
 	
@@ -124,7 +124,7 @@ do {
 #include <iostream>
 using namespace std;
 
-int main(){
+int main() {
 	int i = 1;
 
 	// Pętla, która wypisuje liczy od 1 do 5
