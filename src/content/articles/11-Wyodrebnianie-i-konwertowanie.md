@@ -36,7 +36,7 @@ int main()
     char ostatnia_cyfra_z = liczba[dlugosc - 1]; // ostatni znak ze stringa
     cout << ostatnia_cyfra_z << '\n'; // wypisywanie jako znak
 
-    int ostatnia_cyfra_i = ostatnia_cyfra_z - '0'; // uzyskiwanie wartosci liczbowej uzywajac sposobu z artykulu 9
+    int ostatnia_cyfra_i = ostatnia_cyfra_z - '0'; // uzyskiwanie wartosci liczbowej uzywajac sposobu z tematu 9
     cout << ostatnia_cyfra_i; // wypisywanie jako liczba
     return 0;
 }
