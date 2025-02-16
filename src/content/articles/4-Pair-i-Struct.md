@@ -1,7 +1,7 @@
 ---
 draft: false
 title: 'Pair i Struct'
-id: 4
+id: 3
 nerd: true
 ---
 # Pair i Struct
