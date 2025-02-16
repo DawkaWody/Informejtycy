@@ -12,9 +12,9 @@ nerd: true
 
 **Podstawowe cechy `set`:**
 
-**Unikalność elementów** – `set` nie dopuszcza powtarzających się elementów. Każdy element w zbiorze występuje tylko raz.
+ - **Unikalność elementów** – `set` nie dopuszcza powtarzających się elementów. Każdy element w zbiorze występuje tylko raz.
 
-**Porządek** – elementy w `set` są przechowywane w uporządkowanej kolejności.
+ - **Porządek** – elementy w `set` są przechowywane w uporządkowanej kolejności.
 
 **Operacje na `set`:**
 

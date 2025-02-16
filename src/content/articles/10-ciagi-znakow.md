@@ -1,13 +1,13 @@
 ---
 draft: false
-title: 'Ciągi znaków'
+title: 'Napisy'
 id: 10
 nerd: false
 ---
 
-# Ciągi znaków
+# Napisy
 
-## Czym są ciągi znaków?
+## Czym są napisy?
 
 W komputerze wszystko to liczby. Pytanie więc brzmi, jak przechować słowo albo zdanie? Zdanie to nic innego jak *ciąg znaków.* Potrafimy przechować ciąg, za pomocą tablicy. Mamy typ `char`, który pozwala przechować znaki. Więc możemy przechować ciąg, za pomocą tablicy znaków.
 

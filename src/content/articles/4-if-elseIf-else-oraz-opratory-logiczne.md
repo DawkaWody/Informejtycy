@@ -1,12 +1,12 @@
 ---
 date: 2025-02-04T16:14:00+01:00
 draft: false
-title: 'If, else if, else, oraz operatory logiczne'
+title: 'Instrukcje warunkowe i operatory logiczne'
 nerd: false
 id: 4
 ---
 
-# If, else if, else, oraz operatory logiczne
+# Instrukcje warunkowe i operatory logiczne
 
 ## Wstęp
 

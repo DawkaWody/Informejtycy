@@ -1,6 +1,6 @@
 ---
 draft: false
-title: Własne funkcje
+title: 'Funkcje'
 id: 16
 nerd: false
 ---

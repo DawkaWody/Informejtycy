@@ -1,11 +1,11 @@
 ---
 draft: false
-title: ASCII
+title: 'System ASCII'
 id: 9
 nerd: false
 ---
-# ASCII
-**ASCII**  to standard kodowania znaków, który przypisuje numery literom, cyfrom i symbolom. Innymi słowy, jest to system zapisu znaków poprzez liczby (7-bitowe - od 0 do 127) wykorzystywany między innymi przez C++. Oznacza to, że każda *litera alfabetu łacińskiego/cyfra/biały znak* (i wiele więcej) posiada swój własny numer w systemie ASCII.
+# System ASCII
+**ASCII** to standard kodowania znaków, który przypisuje numery literom, cyfrom i symbolom. Innymi słowy, jest to system zapisu znaków poprzez liczby (7-bitowe - od 0 do 127) wykorzystywany między innymi przez C++. Oznacza to, że każda *litera alfabetu łacińskiego/cyfra/biały znak* (i wiele więcej) posiada swój własny numer w systemie ASCII.
 
 Poniższy fragment kodu wczyta dowolny znak i wypisze jego numer w systemie ASCII.
 ```cpp

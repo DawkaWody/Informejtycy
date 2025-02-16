@@ -1,6 +1,6 @@
 ---
 draft: false
-title: Pierwszość i podzielność liczb
+title: 'Pierwszość i podzielność liczb'
 id: 6
 nerd: false
 ---
