@@ -23,38 +23,38 @@ nerd: false
 #include <iostream>
 using namespace std;
 
-void selectionSort(int arr[], int n) {
+void selectionSort(int tablica[], int n) {
+
     for (int i = 0; i < n - 1; i++) {
-        int minIndex = i; // Zakładamy, że najmniejszy element jest na pozycji i
-        
-        // Pętla do znalezienia najmniejszego elementu w nieposortowanej części tablicy
-        for (int j = i + 1; j < n; j++) { 
-            if (arr[j] < arr[minIndex]) {
-                minIndex = j;
+
+        int najmniejszy = i; // Zakładamy, że obecny element jest najmniejszy
+
+        // Jeśli znajdziemy mniejszy element, zmieniamy indeks najmniejszego
+        for (int j = i + 1; j < n; j++) {
+            if (tablica[j] < tablica[najmniejszy]) {
+                najmniejszy = j;
             }
         }
-        
-        // Jeśli znaleziono mniejszy element, zamieniamy miejscami elementy i oraz minIndex
-        if (minIndex != i) {
-            swap(arr[i], arr[minIndex]);
-        }
+        // Zamieniamy elementy miejscami
+        int a = tablica[i];
+        tablica[i] = tablica[najmniejszy];
+        tablica[najmniejszy] = a;
     }
 }
 
 int main() {
-    int arr[] = {64, 25, 12, 22, 11};
-    int n = 5;
-    
-    selectionSort(arr, n); // Wywołanie funkcji
-    
-    cout << "Posortowana tablica: ";
-    for (int i = 0; i < n; i++) { // Pętla do wypisania posortowanej tablicy
-        cout << arr[i] << " ";
+    int tablica[] = {20, 40, 30, 50, 10};
+    int n = 5; // Rozmiar tablicy
+
+    selectionSort(tablica, n);
+
+    for (int i = 0; i < n; i++){
+        cout << tablica[i] << " ";
     }
-    
+    // Wypisze: 10 20 30 40 50
+
     return 0;
 }
-
 ```
 
 ## Sortowanie przez zliczanie (Counting Sort)
@@ -71,43 +71,43 @@ int main() {
 #include <iostream>
 using namespace std;
 
-void countingSort(int arr[], int n) {
-    int max = arr[0]; // Zakłada się, że pierwszy element jest największym (max)
-    for (int i = 1; i < n; i++) {
-        if (arr[i] > max) { // Jeśli bieżący element jest większy od dotychczasowego max
-            max = arr[i]; // Aktualizujemy wartość max
+void countingSort(int tablica[], int n) {
+    int najwiekszy = tablica[0]; // Zakładamy, że pierwszy element jest największym
+
+    // Jeśli bieżący element jest większy od dotychczasowego największego elementu, aktualizujemy jego wartość
+    for (int i = 1; i < n; i++){
+        if (tablica[i] > najwiekszy) {
+            najwiekszy = tablica[i];
         }
     }
 
-    int count[max + 1] = {0}; // Tworzymy tablicę licznika, która ma rozmiar max + 1 i inicjalizujemy ją zerami
+    int wystapienia[najwiekszy + 1] = {0}; // Tworzymy tablicę z liczbą wystąpień elementów
 
     for (int i = 0; i < n; i++) {
-        count[arr[i]]++;
+        wystapienia[tablica[i]]++; // Zapisujemy liczbę wystąpień w tablicy
     }
-
+    // Na podstawie liczby wystąpień każdego z elementów układamy je w tablicy
     int index = 0;
-    for (int i = 0; i <= max; i++) {
-        while (count[i] > 0) {
-            arr[index++] = i;
-            count[i]--;
+    for (int i = 0; i <= najwiekszy; i++) {
+        while (wystapienia[i] > 0) {
+            tablica[index++] = i;
+            wystapienia[i]--;
         }
     }
 }
 
 int main() {
-    int arr[] = {4, 2, 2, 8, 3, 3, 1};
-    int n = 7;
-    
-    countingSort(arr, n); // Wywołanie funkcji
-    
-    cout << "Posortowana tablica: ";
+    int tablica[] = {4, 2, 2, 8, 3, 3, 1};
+    int n = 7; // Liczba elementów w tablicy
+
+    countingSort(tablica, n);
+
     for (int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
+        cout << tablica[i] << " ";
     }
-    
+    // Wypisze: 1 2 2 3 3 4 8
     return 0;
 }
-
 ```
 
 
@@ -128,9 +128,10 @@ int main() {
     
     sort(v.begin(), v.end());
 
-    for (int num : v) {
-        cout << num << " ";
+    for (int i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
     }
+// Wypisze: 1 2 3 5 8
 
     return 0;
 }
