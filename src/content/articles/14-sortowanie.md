@@ -35,6 +35,7 @@ void selectionSort(int tablica[], int n) {
                 najmniejszy = j;
             }
         }
+
         // Zamieniamy elementy miejscami
         int a = tablica[i];
         tablica[i] = tablica[najmniejszy];
@@ -86,6 +87,7 @@ void countingSort(int tablica[], int n) {
     for (int i = 0; i < n; i++) {
         wystapienia[tablica[i]]++; // Zapisujemy liczbę wystąpień w tablicy
     }
+
     // Na podstawie liczby wystąpień każdego z elementów układamy je w tablicy
     int index = 0;
     for (int i = 0; i <= najwiekszy; i++) {
@@ -131,7 +133,7 @@ int main() {
     for (int i = 0; i < v.size(); i++) {
         cout << v[i] << " ";
     }
-// Wypisze: 1 2 3 5 8
+    // Wypisze: 1 2 3 5 8
 
     return 0;
 }

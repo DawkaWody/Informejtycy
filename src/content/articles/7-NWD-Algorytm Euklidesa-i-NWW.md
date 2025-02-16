@@ -1,10 +1,10 @@
 ---
 draft: false
-title: 'NWD, NWW i Algorytm Euklidesa'
+title: 'NWD, NWW i algorytm Euklidesa'
 id: 7
 nerd: false
 ---
-# NWD, NWW i Algorytm Euklidesa
+# NWD, NWW i algorytm Euklidesa
 ## NWD
 Zapewne spotkałeś się już z takim skrótem jak NWD. Oznacza on Największy Wspólny Dzielnik, czyli największą możliwą liczbę, która dzieli liczbę $a$ i liczbę $b$ bez reszty. Czy zastanawiałeś się już, jak można znaleźć NWD pisząc program w C++? Można to zrobić w bardzo prosty sposób. Już wiesz, jak znaleźć dzielniki liczby $a$, dlatego teraz wystarczy sprawdzić, czy dzielniki $a$ dzielą także $b$. Warto zauważyć, że jeśli $a$ jest większe od $b$ to niektóre dzielniki $a$ mogą być większe od $b$, dlatego warto jest sprawdzać dzielniki liczby mniejszej.
 ```cpp
