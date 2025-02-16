@@ -23,7 +23,7 @@ nerd: false
 #include <iostream>
 using namespace std;
 
-void selectionSort(int tablica[], int n) {
+void sortowanie(int tablica[], int n) {
 
     for (int i = 0; i < n - 1; i++) {
 
@@ -44,10 +44,10 @@ void selectionSort(int tablica[], int n) {
 }
 
 int main() {
-    int tablica[] = {20, 40, 30, 50, 10};
+    int tablica[5] = {20, 40, 30, 50, 10};
     int n = 5; // Rozmiar tablicy
 
-    selectionSort(tablica, n);
+    sortowanie(tablica, n);
 
     for (int i = 0; i < n; i++) {
         cout << tablica[i] << " ";
@@ -72,7 +72,7 @@ int main() {
 #include <iostream>
 using namespace std;
 
-void countingSort(int tablica[], int n) {
+void sortowanie(int tablica[], int n) {
     int najwiekszy = tablica[0]; // Zakładamy, że pierwszy element jest największym
 
     // Jeśli bieżący element jest większy od dotychczasowego największego elementu, aktualizujemy jego wartość
@@ -82,7 +82,11 @@ void countingSort(int tablica[], int n) {
         }
     }
 
-    int wystapienia[najwiekszy + 1] = {0}; // Tworzymy tablicę z liczbą wystąpień elementów
+    int wystapienia[najwiekszy + 1]; // Tworzymy tablicę z liczbą wystąpień elementów
+
+    for (int i = 0; i < najwiekszy + 1; i++) { 
+		wystapienia[i] = 0; // Wypełniamy ją zerami, do których dodawać będziemy liczbę wystąpień 
+	}
 
     for (int i = 0; i < n; i++) {
         wystapienia[tablica[i]]++; // Zapisujemy liczbę wystąpień w tablicy
@@ -90,19 +94,20 @@ void countingSort(int tablica[], int n) {
 
     // Na podstawie liczby wystąpień każdego z elementów układamy je w tablicy
     int index = 0;
-    for (int i = 0; i <= najwiekszy; i++) {
+    for (int i = 0; i < najwiekszy + 1; i++) {
         while (wystapienia[i] > 0) {
-            tablica[index++] = i;
+            tablica[index] = i;
             wystapienia[i]--;
+            index++;
         }
     }
 }
 
 int main() {
-    int tablica[] = {4, 2, 2, 8, 3, 3, 1};
+    int tablica[7] = {4, 2, 2, 8, 3, 3, 1};
     int n = 7; // Liczba elementów w tablicy
 
-    countingSort(tablica, n);
+    sortowanie(tablica, n);
 
     for (int i = 0; i < n; i++) {
         cout << tablica[i] << " ";
