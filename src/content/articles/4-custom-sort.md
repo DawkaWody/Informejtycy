@@ -5,13 +5,15 @@ id: 4
 nerd: true
 ---
 
-### Wstęp
+# Custom sort
+
+## Wstęp
 
 Znasz już funkcję sort, która pozwala na posortowanie jakiejś struktury, ale sposób w jaki to robi nie jest zależny od Ciebie. Co jeśli chcemy posortować stringi np. po ich długości. Musimy wtedy sprawić, aby funkcja sort zachowywała się inaczej niż zwykle i do tego potrzebna jest **własna funkcja porównująca**. Wtedy sort wygląda tak:
 ```cpp
 sort(first, last, comp);
 ```
-### Funkcja porównująca
+## Funkcja porównująca
 
 `Comp` jest funkcją, którą musimy sami stworzyć. Domyślna funkcja `comp` sortuje rosnąco (a raczej niemalejąco) i wygląda tak:
 ```cpp
@@ -64,7 +66,7 @@ int main()
 	cout << endl;
 }
 ```
-### Własne sortowanie
+## Własne sortowanie
 
 Teraz powróćmy do pytania z początku: jak posortować stringi po długości? Pamiętajmy, że stringi domyślnie sortują się leksykograficznie, więc musimy napisać swoją funkcję. Funkcja ta mogłaby wyglądać tak:
 ```cpp
@@ -111,7 +113,7 @@ int main()
 	return 0;
 }
 ```
-### Sortowanie własnych obiektów
+## Sortowanie własnych obiektów
 
 Dzięki własnej funkcji porównującej można sortować również swoje obiekty! Na początek stwórzmy sobie jakiegoś structa np. samochód
 ```cpp
@@ -157,7 +159,7 @@ Fiat 126p: 30hp
 Mercedes AMG GT: 585hp
 Hennessey Venom F5: 1817hp
 ```
-### Bardziej "zaawansowane" porównywanie
+## Bardziej "zaawansowane" porównywanie
 
 W każdym z poprzednich przykładów funkcja sortująca miała 1 linię, ale oczywiście można posortować po bardziej skomplikowanych warunkach. W tym przykładzie nadal sortujemy samochody po koniach mechanicznych, ale jeśli wartości są równe to po długości nazwy modelu, chyba że samochód to fiat 126p - wtedy natychmiast idzie na koniec (niezbyt mądre, ale to tylko przykład).
 ```cpp
@@ -218,7 +220,7 @@ Mercedes AMG GT: 585hp
 Hennessey Venom F5: 1817hp
 Fiat 126p: 30hp
 ```
-### Możliwe błędy
+## Możliwe błędy
 
 Jest kilka rzeczy, o których należy pamiętać używając custom sorta:
 1: Należy pamiętać, że *funkcja porównująca musi przyjmować takie typy danych jakie są w kolekcji do posortowania i zawsze zwracać bool*. Na przykład jeśli posortujemy wektor
@@ -237,6 +239,6 @@ to kod się nie skompiluje. Zobaczymy wtedy błąd podobny do tego:
 cannot convert argument from 'std::basic_string' to 'int'
 ```
 2: Jeśli kiedyś funkcja sortująca posortuje odwrotnie niż chcesz, spróbuj odwrócić znak - odwróci to kolejność sortowania.
-### Podsumowanie
+## Podsumowanie
 
 Dzięki własnej funkcji porównującej możesz zmienić zachowanie funkcji `sort` tak aby pasowała do twoich potrzeb! W przykładach sortuję wektory, ale własną funkcję porównującą można zastosować na każdej kolekcji, która da się posortować. Custom sort to bardzo przydatna funkcjonalność i (być może) użyjesz jej wiele razy.
