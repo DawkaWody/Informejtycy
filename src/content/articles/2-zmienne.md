@@ -65,7 +65,7 @@ int main()
 }
 ```
 
-Pytanie brzmi "po co w tej sytuacji zmienna? Nie wystarczy napisać `cout << 5*5 << endl;` albo `cout << 25 << endl;`?". W tej sytuacji wystarczy. Niekiedy jednak użycie zmiennych jest konieczne. Przyjrzyjmy się *wczytywaniu danych.*
+Pytanie brzmi - po co w tej sytuacji zmienna? Nie wystarczy napisać `cout << 5*5 << endl;` albo `cout << 25 << endl;`?". W tej sytuacji wystarczy. Niekiedy jednak użycie zmiennych jest konieczne. Przyjrzyjmy się *wczytywaniu danych.*
 
 ## Wczytywanie danych
 

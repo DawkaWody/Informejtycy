@@ -86,7 +86,7 @@ ol {
 
 #sidebar-left li,
 #sidebar-right li {
-	margin-top: 5px;
+	margin-top: 2px;
 }
 
 #sidebar-left h2,
@@ -203,12 +203,8 @@ footer {
 }
 
 #menu {
-	margin-top: 18px;
-	margin-left: 25px;
-	position: relative;
-	cursor: pointer;
+	margin: 0;
 }
-
 
 #baner-img {
     margin-top: 7px;
@@ -305,21 +301,21 @@ td, th {
 }
 
 .section-title {
-	font-size: 1.2vw; /* Changed from rem to vw */
+	font-size: 1vw; /* Changed from rem to vw */
 	flex-grow: 1;
 }
 
 .submenu {
-	width: 90%;
+	width: 95%;
 	margin-left: auto;
 	overflow: hidden;
 	max-height: 0;
 	transition: max-height 0.4s ease-out;
 }
 
-.submenu-article {
-	margin: 0.5vw 0; /* Changed from rem to vw */
-	font-size: 1vw; /* Changed from rem to vw */
+.submenu-article, 
+#sidebar-right li {
+	font-size: 0.9vw; /* Changed from rem to vw */
 	color: var(--lista-i-spis);
 }
 
