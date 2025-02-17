@@ -335,6 +335,7 @@ table a {
 }
 
 #realizowany-img {
+	-webkit-tap-highlight-color: transparent;
     width: 30vw;
     border-radius: 12px;
 }
@@ -390,6 +391,15 @@ table a {
 		position: absolute;
 		right: 38px;
 		top: 34px;
+	}
+
+	#realizowany {
+		margin-top: -1vw !important;
+	}
+
+	#realizowany-img {
+		width: 75vw;
+		margin-top: 3vw;
 	}
 
 }
