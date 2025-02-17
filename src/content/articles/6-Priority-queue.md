@@ -31,14 +31,14 @@ Jak więc widać, pomimo iż `7` pojawiło się w kolejce jako trzecia liczba, n
 
 ## Użycie kolejki priorytetowej
 
-Załóżmy, że zawiadujemy kolejką łapówkową. Pozycja w niej zależy od tego, jak dużo zapłacisz. Musimy być w stanie dodać do kolejki nową osobę oraz wypuszczać z kolejki `k` pierwszych osób. Sposobem, który dotychczas poznałeś, można tę kolejkę trzymać w wektorze, który z dodaniem każdej osoby będzie na nowo sortowany. Pytanie więc brzmi - po co w takiej sytuacji korzystać z `priority_queue`? **Dla wydajności i własnej wygody.** Kolejka priorytetowa ma złożoność czasową $O(n \log n)$, a wektor sortowany po dodaniu każdego elementu około $O(n^2 \log n)$.
+Załóżmy, że zawiadujemy kolejką łapówkową. Pozycja w niej zależy od tego, jak dużo zapłacisz. Musimy być w stanie dodać do kolejki nową osobę oraz wypuszczać z kolejki $k$ pierwszych osób. Sposobem, który dotychczas poznałeś, można tę kolejkę trzymać w wektorze, który z dodaniem każdej osoby będzie na nowo sortowany. Pytanie więc brzmi - po co w takiej sytuacji korzystać z `priority_queue`? **Dla wydajności i własnej wygody.** Kolejka priorytetowa ma złożoność czasową $O(n \log n)$, a wektor sortowany po dodaniu każdego elementu około $O(n^2 \log n)$.
 
-> Zakładamy, że w rozwiązaniu dodajemy pojedynczo każdą nową osobę do kolejki i wektor sortujemy za każdym razem. Oczywiście, wektor może być  sortowany dopiero przy "wypuszczeniu" `k` pierwszych osób, ale zakładamy wariant faworyzujący kolejkę priorytetową.
+Zakładamy, że w rozwiązaniu dodajemy pojedynczo każdą nową osobę do kolejki i wektor sortujemy za każdym razem. Oczywiście, wektor może być  sortowany dopiero przy "wypuszczeniu" `k` pierwszych osób, ale zakładamy wariant faworyzujący kolejkę priorytetową.
 
 - Sortowany wektor
-	- Dodanie osoby do wektora to złożoność $O(1)$, co robimy `n` razy, więc wychodzi $O(n)$. Posortowanie to $O(n \log n)$, co również robimy `n` razy, więc otrzymujemy $O(n^2 \log n)$. Ostateczna złożoność to $O(n + n^2 \log n)$ czyli około $O(n^2 \log n)$.
+	- Dodanie osoby do wektora to złożoność $O(1)$, co robimy $n$ razy, więc wychodzi $O(n)$. Posortowanie to $O(n \log n)$, co również robimy `n` razy, więc otrzymujemy $O(n^2 \log n)$. Ostateczna złożoność to $O(n + n^2 \log n)$ czyli około $O(n^2 \log n)$.
 - Kolejka priorytetowa
-	- Dodanie osoby do kolejki to złożoność $O(\log n)$, co robimy `n` razy, więc wychodzi $O(n \log n)$.
+	- Dodanie osoby do kolejki to złożoność $O(\log n)$, co robimy $n$ razy, więc wychodzi $O(n \log n)$.
 
 ## Własna funkcja porównująca
 
@@ -138,7 +138,7 @@ int main()
 }
 ```
 
-> Oczywiście nie trzeba kopiować `priority_queue`, można wypisywać i usuwać elementy z oryginalnej kolejki. Należy tylko liczyć się z tym, że utracimy jej zawartość.
+Oczywiście nie trzeba kopiować `priority_queue`, można wypisywać i usuwać elementy z oryginalnej kolejki. Należy tylko liczyć się z tym, że utracimy jej zawartość.
 
 Gdy funkcja przyjmie parametr o typie `priority_queue`, kolejka skopiuje się sama, więc możemy utworzyć procedurę wypisującą zawartość kolejki priorytetowej.
 
@@ -154,4 +154,4 @@ void wypisz_pq(priority_queue pq)
 
 ## Podsumowanie
 
-Na dzisiejszej lekcji poznałeś narzędzie jakim jest kolejka priorytetowa. Dowiedziałeś się dlaczego z niej korzystamy i poznałeś metody udostępniane na owej kolejce przez standardową bibliotekę języka C++.
+Na dzisiejszej lekcji poznałeś narzędzie jakim jest kolejka priorytetowa. Dowiedziałeś się, dlaczego z niej korzystamy i poznałeś metody udostępniane na owej kolejce przez standardową bibliotekę języka C++.

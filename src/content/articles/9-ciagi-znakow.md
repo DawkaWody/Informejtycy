@@ -87,7 +87,7 @@ using namespace std;
 int main()
 {
     string napis = "Domek na drzewie";
-    for (int i=0; i<napis.size(); i++) {
+    for (int i = 0; i < napis.size(); i++) {
         cout << napis[i] << endl;
     }
 }

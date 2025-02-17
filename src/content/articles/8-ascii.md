@@ -30,7 +30,7 @@ cout << char(numer);
 ```
 Dla wejścia *52* program wypisze *4*, natomiast dla wejścia *97* program wypisze *a*.
 ## Operacje matematyczne na znakach
-W c++ możemy wykonywać operacje matematyczne na znakach, a dokładniej ich wartościach w ASCII. 
+W C++ możemy wykonywać operacje matematyczne na znakach, a dokładniej ich wartościach w ASCII. 
 Przykładowy program wczytujący dwa znaki i wypisujący sumę ich wartości w systemie ASCII:
 ```cpp
 #include <iostream>

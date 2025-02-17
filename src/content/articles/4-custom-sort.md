@@ -60,9 +60,7 @@ int main()
 	vector<int> liczby = { 1, 8, 3, 6, 3 };
 	sort(liczby.begin(), liczby.end(), porownaj);
 	for (int l : liczby)
-	{
 		cout << l << " ";
-	}
 	cout << endl;
 }
 ```
@@ -105,9 +103,7 @@ int main()
 
 	cout << "Oto napisy posortowane po dlugosci: " << " ";
 	for (string t : napisy)
-	{
 		cout << t << " ";
-	}
 	cout << endl;
 
 	return 0;
@@ -148,9 +144,7 @@ int main()
 	sort(samochody.begin(), samochody.end(), porownaj_samochody);
 
 	for (Samochod s : samochody)
-	{
 		s.Print();
-	}
 }
 ```
 Zakładając, że `Samochod` ma zdefiniowany konstruktor i metodę `Print()` program powinien wypisać mniej więcej coś takiego:
@@ -161,28 +155,20 @@ Hennessey Venom F5: 1817hp
 ```
 ## Bardziej "zaawansowane" porównywanie
 
-W każdym z poprzednich przykładów funkcja sortująca miała 1 linię, ale oczywiście można posortować po bardziej skomplikowanych warunkach. W tym przykładzie nadal sortujemy samochody po koniach mechanicznych, ale jeśli wartości są równe to po długości nazwy modelu, chyba że samochód to fiat 126p - wtedy natychmiast idzie na koniec (niezbyt mądre, ale to tylko przykład).
+W każdym z poprzednich przykładów funkcja sortująca miała 1 linię, ale oczywiście można posortować według bardziej skomplikowanych warunków. W tym przykładzie nadal sortujemy samochody po liczbie koni mechanicznych, ale jeśli wartości są równe, to po długości nazwy modelu, chyba że samochód to fiat 126p - wtedy natychmiast idzie na koniec (niezbyt mądre, ale to tylko przykład).
 ```cpp
 bool porownaj_samochody(Samochod a, Samochod b)
 {
 	if (a.marka == "Fiat" && a.model == "126p")
-	{
 		return false;
-	}
 	else if (b.marka == "Fiat" && b.model == "126p")
-	{
 		return true;
-	}
 	else
 	{
 		if (a.hp != b.hp)
-		{
 			return a.hp < b.hp;
-		}
 		else
-		{
 			return a.model.size() < b.model.size();
-		}
 	}
 }
 ```
@@ -207,9 +193,7 @@ int main()
 	sort(samochody.begin(), samochody.end(), porownaj_samochody);
 
 	for (Samochod s : samochody)
-	{
 		s.Print();
-	}
 }
 ```
 Dla takich danych program wypisze:
@@ -239,6 +223,7 @@ to kod się nie skompiluje. Zobaczymy wtedy błąd podobny do tego:
 cannot convert argument from 'std::basic_string' to 'int'
 ```
 2: Jeśli kiedyś funkcja sortująca posortuje odwrotnie niż chcesz, spróbuj odwrócić znak - odwróci to kolejność sortowania.
+
 ## Podsumowanie
 
-Dzięki własnej funkcji porównującej możesz zmienić zachowanie funkcji `sort` tak aby pasowała do twoich potrzeb! W przykładach sortuję wektory, ale własną funkcję porównującą można zastosować na każdej kolekcji, która da się posortować. Custom sort to bardzo przydatna funkcjonalność i (być może) użyjesz jej wiele razy.
+Dzięki własnej funkcji porównującej możesz zmienić zachowanie funkcji `sort` tak aby pasowała do twoich potrzeb! W przykładach sortuję wektory, ale własną funkcję porównującą można zastosować na każdej kolekcji, która da się posortować. Custom sort to bardzo przydatna funkcjonalność i z pewnością użyjesz jej wiele razy.

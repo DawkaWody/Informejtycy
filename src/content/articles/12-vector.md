@@ -15,13 +15,13 @@ Aby móc korzystać z `vectorów`, na początku trzeba zaimportować `#include <
 using namespace std;
 
 int main() {
-    vector <int> vec; // Stworzenie vectora 0 elementowego
+    vector<int> vec; // Stworzenie vectora 0 elementowego
     
-    vector <int> wekt(10); // Stworzenie vectora 10 elementowego
+    vector<int> wekt(10); // Stworzenie vectora 10 elementowego
     
     int n;
     cin >> n;
-    vector <int> wek_2(n); // Stworzenie vectora n elementowego
+    vector<int> wek_2(n); // Stworzenie vectora n elementowego
 }
 ```
 ## Przypisywanie i odczytywanie danych
@@ -32,7 +32,7 @@ Vectorem posługujemy się jak zwykłą tablicą, możemy odwoływać się do ko
 using namespace std;
 
 int main() {
-    vector <int> vec(6); // Stworzenie vectora 6 elementowego
+    vector<int> vec(6); // Stworzenie vectora 6 elementowego
     cin >> vec[4]; // Wczytanie wartości do piątej komórki vectora
     cout << vec[2]; // Wypisanie wartości trzeciej komórki vectora
     vec.push_back(12); // Dodanie liczby 12 do vectora na 7 pozycję
@@ -50,7 +50,7 @@ W vectorach możemy używać również innych metod takich jak: `size()` zwraca 
 using namespace std;
 
 int main() {
-    vector <int> vec;
+    vector<int> vec;
     sort(vec.begin(), vec.end()); // Sortowanie rosnące vectora vec
     sort(vec.begin(), vec.end(), greater<int>()); // Sortowanie malejące vectora vec
 }

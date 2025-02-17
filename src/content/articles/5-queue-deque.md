@@ -6,11 +6,11 @@ nerd: true
 ---
 # Queue i deque
 ## Queue
-Kolejną poznaną struktórą danych będzie kolejka, która pozwala na przechwywanie danych według kolejności ich dodawania.
+Kolejną poznaną strukturą danych będzie kolejka, która pozwala na przechwywanie danych według kolejności ich dodawania.
 ## Inicjowanie kolejki
 Kolejkę tworzymy porzez napisanie nazwy `queue`, typu danych jakie będzie przechowywać oraz nazwy:
 ```cpp
-queue <int> kolejka;
+queue<int> kolejka;
 ```
 Do używania kolejki konieczne jest zaimportowanie modułu `queue`:
 ```cpp
@@ -35,7 +35,7 @@ Deque (inna nazwa kolejka dwukierunkowa) jest struktórą bardzo podobną do zwy
 ## Inicjowanie deque
 Kolejkę tworzymy porzez napisanie nazwy `deque`, typu danych jakie będzie przechowywać oraz nazwy:
 ```cpp
-deque <int> kolejka;
+deque<int> kolejka;
 ```
 Do używania kolejki konieczne jest zaimportowanie modułu `queue`:
 ```cpp
