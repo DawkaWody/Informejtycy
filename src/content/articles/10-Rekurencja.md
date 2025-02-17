@@ -22,9 +22,7 @@ poprawnie obliczy jej wartość. Jeśli bowiem natrafi na kolejną strukturę, w
 
 ## Rekurencja w praktyce
 
-<a href="https://pl.wikipedia.org/wiki/Ci%C4%85g_Fibonacciego" target="_blank">Ciąg Fibonacciego</a> to popularna sekwencja
-liczb, w której $fib(N)$ jest sumą $fib(N-1) + fib(N-2)$. Jak się okazuje, jest to dokładnie to, czym jest
-rekurencja. Napiszmy taką funkcję.
+[Ciąg Fibonacciego](https://pl.wikipedia.org/wiki/Ci%C4%85g_Fibonacciego) to popularna sekwencja liczb, w której $fib(N)$ jest sumą $fib(N-1) + fib(N-2)$. Jak się okazuje, jest to dokładnie to, czym jest rekurencja. Napiszmy taką funkcję.
 
 ```cpp
 int fib(int n)

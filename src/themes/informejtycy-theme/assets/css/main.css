@@ -230,6 +230,7 @@ footer {
     transform: translateX(-50%);
     text-align: center;
 	font-size: 1.5vw;
+	margin-top: -10px;
 }
 
 #poprzedni {
@@ -331,6 +332,16 @@ td, th {
 table a {
 	text-decoration: none;
 	color: var(--zwykly-tekst);
+}
+
+#realizowany-img {
+    width: 30vw;
+    border-radius: 12px;
+}
+
+#realizowany {
+  margin-top: 5vh;
+  text-align: center;
 }
 
 @media (max-width: 800px) {
