@@ -70,12 +70,12 @@ Ale czy ten kod naprawdę będzie szybszy? No nie do końca, bo gdy dostaniemy t
 using namespace std;
 
 int nwd(int a, int b) {
-	int pom;
+	int stareB;
 	while (b != 0) {
-		// zmienna pom przechowuje nam b, abyśmy potem mogli ustawić a na b sprzed zmian
-		pom = b;
+		// zmienna stareB przechowuje nam b, abyśmy potem mogli ustawić a na b sprzed zmian
+		stareB = b;
 		b = a % b;
-		a = pom;
+		a = stareB;
 	}
 	return a;
 }
@@ -102,11 +102,11 @@ Jak wygląda taki kod? Oto on:
 using namespace std;
 
 int nwd(int a, int b) {
-	int pom;
+	int stareB;
 	while (b != 0) {
-		pom = b;
+		stareB = b;
 		b = a % b;
-		a = pom;
+		a = stareB;
 	}
 	return a;
 }
@@ -141,11 +141,11 @@ Wynika to z rozkładu liczb na czynniki pierwsze. Jak wyglądałby taki kod?
 using namespace std;
 
 int nwd(int a, int b) {
-	int pom;
+	int stareB;
 	while (b != 0) {
-		pom = b;
+		stareB = b;
 		b = a % b;
-		a = pom;
+		a = stareB;
 	}
 	return a;
 }
@@ -165,11 +165,11 @@ NWW więcej niż dwóch liczb można obliczyć analogicznie do NWD wielu liczb.
 using namespace std;
 
 int nwd(int a, int b) {
-	int pom;
+	int stareB;
 	while (b != 0) {
-		pom = b;
+		stareB = b;
 		b = a % b;
-		a = pom;
+		a = stareB;
 	}
 	return a;
 }

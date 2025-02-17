@@ -29,7 +29,7 @@ rekurencja. Napiszmy taką funkcję.
 ```cpp
 int fib(int n)
 {
-	return fib(n-1) + fib(n-2);
+	return fib(n - 1) + fib(n - 2);
 }
 ```
 
@@ -45,7 +45,7 @@ int fib(int n)
 	} else if (n == 2) {
 		return 1;
 	} else {
-		return fib(n-1) + fib(n-2);
+		return fib(n - 1) + fib(n - 2);
 	}
 }
 ```
@@ -57,7 +57,7 @@ int fib(int n)
 {
 	if (n <= 2)
 		return 1;
-	return fib(n-1) + fib(n-2);
+	return fib(n - 1) + fib(n - 2);
 }
 ```
 

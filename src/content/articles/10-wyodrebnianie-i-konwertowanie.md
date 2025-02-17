@@ -22,7 +22,7 @@ int main()
 }
 ```
 ## Wyodrębnianie ostatniej cyfry na stringach
-Ostatnią cyfrę można wyodrębnić używając zmiennych typu string. Zasada działania jest bardzo prosta: uzyskujemy ostatni znak ciągu jako char. Aby zamienić go na zmienną liczbową, można wykorzystać sposób opisany w [temacie 9](https://dawkawody.github.io/Informejtycy/articles/9-ascii/).
+Ostatnią cyfrę można wyodrębnić używając zmiennych typu string. Zasada działania jest bardzo prosta: uzyskujemy ostatni znak ciągu jako char. Aby zamienić go na zmienną liczbową, można wykorzystać sposób opisany w [temacie 8](https://dawkawody.github.io/Informejtycy/articles/8-ascii/).
 ```cpp
 #include <iostream>
 using namespace std;

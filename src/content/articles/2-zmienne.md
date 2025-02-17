@@ -164,7 +164,7 @@ int main()
 
 `int` to skrót angielskiego *integer*, czyli liczba całkowita. `float`/`double` pochodzą od formatu liczb "z przecinkiem". Liczby te na komputerze mogą być przechowywane w kilku rozmiarach. Te "krótsze" (zajmujące mniej miejsca w pamięci) to `float` (od angielskiego *floating-point number*), a "dłuższe" (zajmujące więcej miejsca) to `double` (od angielskiego *double precision*). Z długości typów wynikają różnice w precyzji. `char` pochodzi od angielskiego *character*, czyli znak. Są to znaki w kodowaniu [ASCII](https://pl.wikipedia.org/wiki/ASCII) - w późniejszym czasie dowiesz się więcej na temat tego kodowania. `bool` zaś pochodzi od matematyka George'a Boole'a, który opracował taki system i nazwał go *logiką*.
 
-## Dla dociekliwych nr 2: Czas wykonania i czas kompilacji programu
+## Dla dociekliwych nr 2: czas wykonania i czas kompilacji programu
 
 W C++ mówimy o *czasie kompilacji* i *czasie wykonania*.
 
@@ -172,4 +172,4 @@ W C++ mówimy o *czasie kompilacji* i *czasie wykonania*.
 
 - Czasie wykonania - wykonanie programu, po uruchomieniu pliku `.exe`. Wartości w tym procesie są wyznaczane dopiero po uruchomieniu.
 
-> Edytory typu Code::Blocks najczęściej *kompilują* program (czyli tworzą z niego plik `.exe`) automatycznie, zanim zostanie uruchomiony program.
+Edytory typu Code::Blocks najczęściej *kompilują* program (czyli tworzą z niego plik `.exe`) automatycznie, zanim zostanie uruchomiony program.
