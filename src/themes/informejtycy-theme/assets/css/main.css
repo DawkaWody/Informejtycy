@@ -252,7 +252,7 @@ footer {
 	width: 36px;
 }
 
-#poprzedni, #nastepny, #prev-img, #next-img {
+#baner-img, #theme-toggle, #poprzedni, #nastepny, #prev-img, #next-img {
 	user-select: none;
 }
 
@@ -372,7 +372,6 @@ table a {
   		width: 115px;
 		box-shadow: none !important;
 		cursor: pointer;
-		user-select: none;
 	}
 
 	#theme-toggle {
@@ -380,7 +379,6 @@ table a {
 		position: absolute;
 		right: 38px;
 		top: 34px;
-		user-select: none;
 	}
 
 }
