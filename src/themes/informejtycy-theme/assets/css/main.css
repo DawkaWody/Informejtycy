@@ -252,6 +252,10 @@ footer {
 	width: 36px;
 }
 
+#poprzedni, #nastepny, #prev-img, #next-img {
+	user-select: none;
+}
+
 /* Dla ciemnego motywu */
 [data-theme="dark"] #prev-img {
     content: url("../images/previous-dark.png");
@@ -368,6 +372,7 @@ table a {
   		width: 115px;
 		box-shadow: none !important;
 		cursor: pointer;
+		user-select: none;
 	}
 
 	#theme-toggle {
@@ -375,6 +380,7 @@ table a {
 		position: absolute;
 		right: 38px;
 		top: 34px;
+		user-select: none;
 	}
 
 }
