@@ -1,7 +1,7 @@
 ---
 draft: false
 title: 'Pierwszy program w C++'
-id: 2
+id: 1
 nerd: false
 ---
 

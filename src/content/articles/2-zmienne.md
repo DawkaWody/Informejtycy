@@ -1,7 +1,7 @@
 ---
 draft: false
 title: 'Zmienne i operatory matematyczne'
-id: 3
+id: 2
 nerd: false
 ---
 

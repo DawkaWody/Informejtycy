@@ -1,7 +1,7 @@
 ---
 draft: false
 title: 'NWD, NWW i algorytm Euklidesa'
-id: 7
+id: 6
 nerd: false
 ---
 # NWD, NWW i algorytm Euklidesa

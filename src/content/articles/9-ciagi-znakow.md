@@ -1,7 +1,7 @@
 ---
 draft: false
 title: 'Napisy'
-id: 10
+id: 9
 nerd: false
 ---
 

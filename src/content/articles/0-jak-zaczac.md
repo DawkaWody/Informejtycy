@@ -1,7 +1,7 @@
 ---
 draft: false
 title: 'Jak zacząć?'
-id: 1
+id: 0
 nerd: false
 ---
 

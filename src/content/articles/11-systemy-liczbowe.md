@@ -1,9 +1,8 @@
 ---
-date: 2025-02-04T16:14:00+01:00
 draft: false
 title: 'Systemy liczbowe'
 nerd: false
-id: 12
+id: 11
 ---
 
 # Systemy Liczbowe

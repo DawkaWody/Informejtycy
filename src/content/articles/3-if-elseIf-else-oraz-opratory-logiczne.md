@@ -1,9 +1,8 @@
 ---
-date: 2025-02-04T16:14:00+01:00
 draft: false
 title: 'Instrukcje warunkowe i operatory logiczne'
 nerd: false
-id: 4
+id: 3
 ---
 
 # Instrukcje warunkowe i operatory logiczne

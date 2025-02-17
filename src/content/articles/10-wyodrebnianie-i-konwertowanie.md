@@ -1,7 +1,7 @@
 ---
 draft: false
 title: Cyfry danej liczby i konwersja na napis
-id: 11
+id: 10
 nerd: false
 ---
 # Wyodrębnianie cyfr danej liczby, konwertowanie liczb na napisy

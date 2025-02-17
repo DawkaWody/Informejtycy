@@ -1,7 +1,7 @@
 ---
 draft: false
 title: 'Tablice'
-id: 8
+id: 7
 nerd: false
 ---
 # Tablice

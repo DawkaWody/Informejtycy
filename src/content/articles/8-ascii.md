@@ -1,7 +1,7 @@
 ---
 draft: false
 title: 'System ASCII'
-id: 9
+id: 8
 nerd: false
 ---
 # System ASCII

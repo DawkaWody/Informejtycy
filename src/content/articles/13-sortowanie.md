@@ -1,7 +1,7 @@
 ---
 draft: false
 title: 'Sortowanie'
-id: 14
+id: 13
 nerd: false
 ---
 
