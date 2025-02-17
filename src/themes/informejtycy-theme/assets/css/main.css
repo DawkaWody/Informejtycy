@@ -199,7 +199,7 @@ footer {
 	margin-top: 50px;
 	padding-top: 20px;
 	border-top: 1px solid var(--granica-stopki);
-	font-size: 14px;
+	font-size: 0.9vw;
 }
 
 #menu {
@@ -211,6 +211,7 @@ footer {
     margin-left: 5px;
     width: 200px;
 	box-shadow: none !important;
+	cursor: pointer;
 }
 
 #dol-nav {
@@ -228,7 +229,7 @@ footer {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-	font-size: 28px;
+	font-size: 1.5vw;
 }
 
 #poprzedni {
@@ -326,4 +327,54 @@ td, th {
 table a {
 	text-decoration: none;
 	color: var(--zwykly-tekst);
+}
+
+@media (max-width: 800px) {
+	
+	body {
+		font-size: 3vw;
+		line-height: 1.5;
+	}
+
+	#artykul h1 {
+		margin-top: 10px;
+	}
+
+	#sidebar-left,
+	#sidebar-right {
+		display: none;
+	}
+
+	#zadania {
+		font-size: 5vw;
+	}
+
+	footer {
+		font-size: 2vw;
+	}
+
+	header {
+		display: flex;
+		align-items: flex-start;
+		gap: 20px;
+		height: 50px;
+		background-color: var(--tlo-gornego-paska);
+		box-shadow: 0px 0px 3px 1px rgb(90, 98, 204);
+	}
+
+	#baner-img {
+  		margin-top: 7px;
+  		margin-left: 5px;
+  		width: 115px;
+		box-shadow: none !important;
+		cursor: pointer;
+	}
+
+	#theme-toggle {
+		width: 20px;
+		position: absolute;
+		right: 38px;
+		top: 34px;
+	}
+
 }
