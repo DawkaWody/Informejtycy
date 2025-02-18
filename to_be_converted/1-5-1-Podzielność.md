@@ -36,6 +36,7 @@ Wyjaśnienie do przykładu: 25 nie dzieli się przez 3, natomiast 6 tak.
 
 #### Przykład 2
 
+
 ##### Wejście
 
 ```
