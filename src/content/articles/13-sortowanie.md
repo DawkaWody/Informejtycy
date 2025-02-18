@@ -70,33 +70,34 @@ int main() {
 **Kod:**
 ```cpp
 #include <iostream>
+#include <vector>
 using namespace std;
 
-void sortowanie(int tablica[], int n) {
-    int najwiekszy = tablica[0]; // Zakładamy, że pierwszy element jest największym
+void sortowanie(vector<int>& zbior, int n) {
+    int najwiekszy = zbior[0]; // Zakładamy, że pierwszy element jest największym
 
     // Jeśli bieżący element jest większy od dotychczasowego największego elementu, aktualizujemy jego wartość
     for (int i = 1; i < n; i++) {
-        if (tablica[i] > najwiekszy) {
-            najwiekszy = tablica[i];
+        if (zbior[i] > najwiekszy) {
+            najwiekszy = zbior[i];
         }
     }
 
-    int wystapienia[najwiekszy + 1]; // Tworzymy tablicę z liczbą wystąpień elementów
+    vector<int> wystapienia; // Tworzymy vector z liczbą wystąpień elementów
 
-    for (int i = 0; i < najwiekszy + 1; i++) { 
-		wystapienia[i] = 0; // Wypełniamy ją zerami, do których dodawać będziemy liczbę wystąpień 
+    for (int i = 0; i < najwiekszy + 1; i++) {
+		wystapienia.push_back(0); // Wypełniamy go zerami, do których dodawać będziemy liczbę wystąpień
 	}
 
     for (int i = 0; i < n; i++) {
-        wystapienia[tablica[i]]++; // Zapisujemy liczbę wystąpień w tablicy
+        wystapienia[zbior[i]]++; // Zapisujemy liczbę wystąpień elementów
     }
 
-    // Na podstawie liczby wystąpień każdego z elementów układamy je w tablicy
+    // Na podstawie liczby wystąpień każdego z elementów układamy je
     int index = 0;
     for (int i = 0; i < najwiekszy + 1; i++) {
         while (wystapienia[i] > 0) {
-            tablica[index] = i;
+            zbior[index] = i;
             wystapienia[i]--;
             index++;
         }
@@ -104,13 +105,13 @@ void sortowanie(int tablica[], int n) {
 }
 
 int main() {
-    int tablica[7] = {4, 2, 2, 8, 3, 3, 1};
-    int n = 7; // Liczba elementów w tablicy
+    vector<int> zbior = {4, 2, 2, 8, 3, 3, 1};
+    int n = zbior.size();
 
-    sortowanie(tablica, n);
+    sortowanie(zbior, n);
 
     for (int i = 0; i < n; i++) {
-        cout << tablica[i] << " ";
+        cout << zbior[i] << " ";
     }
     // Wypisze: 1 2 2 3 3 4 8
     return 0;
