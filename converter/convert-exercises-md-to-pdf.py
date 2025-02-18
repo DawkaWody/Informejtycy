@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 import subprocess
 import os
 
-INPUT_DIR = "../exercises_md"
+INPUT_DIR = "../to_be_converted"
 OUTPUT_DIR = "../src/content/exercises"
 
 metadata_decode = {
