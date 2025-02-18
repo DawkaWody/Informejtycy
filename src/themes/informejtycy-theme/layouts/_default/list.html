@@ -91,31 +91,7 @@
     </div>
 
     <div id="sidebar-right">
-        <h2>Spis treści</h2>
-        <h3>Zadania podstawowe</h3>
-        <ol>
-            {{ range $sortedSections1 }}
-                {{ $section := . }}
-                {{ $entries := index $sections1 (string $section) }}
-                {{ $sectionInt := int $section }}
-                {{ $article := first 1 (where (where $.Site.RegularPages "Params.id" $sectionInt) "Params.nerd" false) }}
-                <li>
-                    <a href="#table1-{{ $section }}">{{ if $article }}{{ $section }}. {{ (index $article 0).Params.title }}{{ else }}{{ $section }}{{ end }}</a>
-                </li>
-            {{ end }}
-        </ol>
-        <h3>Zadania zaawansowane</h3>
-        <ol>
-            {{ range $sortedSections2 }}
-                {{ $section := . }}
-                {{ $entries := index $sections2 (string $section) }}
-                {{ $sectionInt := int $section }}
-                {{ $article := first 1 (where (where $.Site.RegularPages "Params.id" $sectionInt) "Params.nerd" true) }}
-                <li>
-                    <a href="#table2-{{ $section }}">{{ if $article }}{{ $section }}. {{ (index $article 0).Params.title }}{{ else }}{{ $section }}{{ end }}</a>
-                </li>
-            {{ end }}
-        </ol>
+        {{ partial "send_panel.html" . }}
     </div>
 </div>
 {{ end }}

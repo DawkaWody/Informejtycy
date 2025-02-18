@@ -1,0 +1,66 @@
+<h2>Prześlij rozwiązanie</h2>
+
+<form id="solutionForm">
+    <label for="topic">Wybierz temat:</label>
+    <select id="topic" name="topic">
+        <option value="" disabled selected>...</option>
+        {{ $sortedTopics := sort .Site.RegularPages "Params.id" }}
+        {{ range $sortedTopics }}
+            {{ if .Params.nerd }}
+                {{ continue }}
+            {{ end }}
+            <option value="{{ .Params.id }}" data-section="{{ .Params.id }}">{{ .Params.id }}. {{ .Params.title }}</option>
+        {{ end }}
+        <option value="" disabled>------</option>
+        {{ range $sortedTopics }}
+            {{ if not .Params.nerd }}
+                {{ continue }}
+            {{ end }}
+            <option value="{{ .Params.id }}" data-section="{{ .Params.id }}">{{ .Params.id }}. {{ .Params.title }}</option>
+        {{ end }}
+    </select>
+
+    <label for="problem">Wybierz zadanie:</label>
+    <select id="problem" name="problem" disabled>
+        <option value="" disabled selected>...</option>
+        {{ $exercises := readDir "content/exercises" }}
+        {{ range $exercises }}
+            {{ if eq (path.Ext .Name) ".pdf" }}
+                {{ $parts := split (path.Base .Name) "-" }}
+                {{ $table := index $parts 0 }}
+                {{ $section := index $parts 1 }}
+                {{ $number := index $parts 2 }}
+                {{ $name := delimit (slice (index $parts 3)) "-" }}
+                <option value="{{ $name }}" data-section="{{ $section }}">{{ $number }}. {{ replace $name ".pdf" "" }}</option>
+            {{ end }}
+        {{ end }}
+    </select>
+
+    <label for="code">Kod:</label>
+    <textarea id="code" name="code" rows="10" placeholder="Wklej tutaj swój kod..."></textarea>
+
+    <button id="submit-button" type="submit">Prześlij rozwiązanie</button>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const topicSelect = document.getElementById('topic');
+        const problemSelect = document.getElementById('problem');
+        const problemOptions = Array.from(problemSelect.options);
+
+        topicSelect.addEventListener('change', function() {
+            const selectedSection = topicSelect.options[topicSelect.selectedIndex].getAttribute('data-section');
+            problemSelect.disabled = !selectedSection;
+
+            // Clear current options
+            problemSelect.innerHTML = '<option value="" disabled selected>...</option>';
+
+            // Add relevant options
+            problemOptions.forEach(option => {
+                if (option.getAttribute('data-section') === selectedSection) {
+                    problemSelect.appendChild(option);
+                }
+            });
+        });
+    });
+</script>
