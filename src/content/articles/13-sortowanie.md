@@ -60,12 +60,12 @@ int main() {
 
 ## Sortowanie przez zliczanie (Counting Sort)
 
-**Sortowanie przez zliczanie** działa inaczej niż tradycyjne algorytmy. Zamiast porównywać elementy, liczymy, ile razy występuje każdy element w tablicy, a potem tworzymy posortowaną tablicę na podstawie tych zliczeń.
+**Sortowanie przez zliczanie** działa inaczej niż tradycyjne algorytmy. Zamiast porównywać elementy, liczymy, ile razy występuje każdy element w zbiorze, a potem tworzymy posortowaną vector na podstawie tych zliczeń.
 
 **Jak działa:**
 
-1. Tworzymy tablicę zliczeń, w której dla każdej liczby z tablicy wejściowej zliczamy, ile razy się ona pojawia.
-2. Na podstawie tych zliczeń rekonstruujemy posortowaną tablicę.
+1. Tworzymy vector zliczeń, w którym dla każdej liczby z vectora wejściowego zliczamy, ile razy się ona pojawia.
+2. Na podstawie tych zliczeń rekonstruujemy posortowany vector.
 
 **Kod:**
 ```cpp
