@@ -10,14 +10,14 @@ W $i$-tej z $n$ linii wyjścia powinien się znaleźć napis "TAK" lub "NIE" w z
 
 #### Przykład 1
 
-###### Wejście
+##### Wejście
 
 ```
 2 3
 25
 6
 ```
-###### Wyjście
+##### Wyjście
 
 ```
 NIE
@@ -37,7 +37,7 @@ Wyjaśnienie do przykładu: 25 nie dzieli się przez 3, natomiast 6 tak.
 14
 ```
 
-###### Wyjście
+##### Wyjście
 
 ```
 TAK
