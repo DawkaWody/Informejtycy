@@ -4,6 +4,7 @@ Zadanie jest bardzo podobne do zadania "Cyfry od końca". Skriptek lubi się zas
 
 ### Wejście
 
+
 W pierwszej linii wejścia znajdują się dwie liczby naturalne $q$, $x$, nie większe niż $10^3$ oznaczające kolejno liczbę zapytań oraz liczbę wymyśloną przez Skriptka. Następne $q$ linii składa się z liczb $a$ i $k$, gdzie $a$ oznacza rozpatrywaną liczbę a $k$ - którą cyfrę od końca mamy sprawdzić. Możesz założyć, że taka cyfra zawsze istnieje. Liczba $a$ nie przekracza $10^{64}$, a liczba $k$ nie przekracza $64$.
 
 ### Wyjście
@@ -12,11 +13,9 @@ Wyjście powinno składać się z $q$ linii, w każdej napis "TAK" lub "NIE" w z
 
 ## Przykłady
 
-
 #### Przykład 1
 
-
-###### Wejście
+##### Wejście
 
 ```
 2 10
@@ -24,7 +23,7 @@ Wyjście powinno składać się z $q$ linii, w każdej napis "TAK" lub "NIE" w z
 654 3
 ```
 
-###### Wyjście
+##### Wyjście
 
 ```
 TAK
@@ -34,8 +33,7 @@ Wyjaśnienie do przykładu: drugą cyfrą od końca liczby 123 jest 2, 2 jest dz
 
 #### Przykład 2
 
-
-###### Wejście
+##### Wejście
 
 ```
 3 5
@@ -44,16 +42,18 @@ Wyjaśnienie do przykładu: drugą cyfrą od końca liczby 123 jest 2, 2 jest dz
 1234567 6
 ```
 
-###### Wyjście
+##### Wyjście
 
 ```
 TAK
 NIE
 NIE
 ```
+
 Wyjaśnienie do przykładu: trzecią cyfrą od końca liczby 123 jest 1, 1 jest dzielnikiem 5, pierwszą cyfrą od końca liczby 9372 jest 2, 2 nie jest dzielnikiem 5, szóstą liczbą od końca liczby 1234567 jest 2, 2 nie jest dzielnikiem 5.
 
 Skriptek zaczął już pisać kod, jednak nie jest on do końca poprawny. Pomóż mu i popraw jego kod!
+
 ```cpp
 #include <iostream>
 using namespace std;

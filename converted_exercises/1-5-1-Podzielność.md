@@ -1,11 +1,15 @@
 # Podzielność
+
 Ramcio lubi sprawdzać, czy dana liczba dzieli się przez wymyśloną przez niego liczbę $x$. Chce sprawdzić $n$ liczb, przy czym zarówno $n$, $x$, jak i rozpatrywana liczba nie przekroczą $10^6$.
+
 ### Wejście
 
 W pierwszej linii wejścia znajdują się dwie liczby naturalne $n$ i $x$. W następnych $n$ liniach wejścia znajduje się po jednej liczbie.
+
 ### Wyjście
 
 W $i$-tej z $n$ linii wyjścia powinien się znaleźć napis "TAK" lub "NIE" w zależności od tego, czy liczba z $i+1$-wszej linii wejścia dzieli się przez $x$.
+
 ## Przykłady
 
 #### Przykład 1
@@ -17,6 +21,10 @@ W $i$-tej z $n$ linii wyjścia powinien się znaleźć napis "TAK" lub "NIE" w z
 25
 6
 ```
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 ##### Wyjście
 
 ```

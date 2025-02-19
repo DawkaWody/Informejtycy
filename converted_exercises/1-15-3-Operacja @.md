@@ -5,34 +5,39 @@ Cachek się nudzi. Wymyślił własną operację matematyczną, oznacza ją znak
 ### Wejście
 
 Wejście składa się z liczby $n$, oraz, w nowej linii, $n$ liczb naturalnych, nie większych niż $7$, oddzielonych znakami @ otoczonych spacjami z obu stron. Możesz założyć, że $2 \leq n < 7$. 
+
 ### Wyjście 
 
 Na standardowe wyjście należy wypisać jedną liczbę naturalną - wynik tej operacji.
+
 ## Przykłady
 
 #### Przykład 1
 
-###### Wejście
+##### Wejście
 
 ```
 2
 3 @ 4
 ```
-###### Wyjście
+
+##### Wyjście
 
 ```
 2
 ```
 Wyjaśnienie do przykładu: $3@4=\frac{3 \cdot (3+1)}{2}-4=6-4=2$.
+
 #### Przykład 2
 
-###### Wejście
+##### Wejście
 
 ```
 3
 1 @ 2 @ 3
 ```
-###### Wyjście
+
+##### Wyjście
 
 ```
 -3

@@ -1,9 +1,12 @@
 # Skandal 2
+
 Cachek bardzo nie chce, aby Skriptek wpadł w szał (robi to wtedy, gdy zobaczy liczbę podzielną przez 4 i/lub mającą dokładnie 4 dzielniki). Odkrył, że można sprawdzić, czy podana liczba - $a$ jest iloczynem dwóch różnych liczb pierwszych takich, że $p1=a/p2$ i/lub czy dzieli się przez 4. Na razie nie wie, że może to też być sześcian liczby pierwszej.  W związku z tym zaczął pisać program sprawdzający, czy dla liczby podanej na wejściu Skriptek wpadnie w szał. Jego program przyjmuje tylko jedną liczbę $a$, taką, że $1 \leq a \leq 10^9$. Zasady oceniania, czy Skriptek wpadnie w szał są takie same jak w poprzednim zadaniu ("Skandal").
 Pomóż Skriptkowi sprawić, aby poniższy program działał poprawnie.
+
 ### Wejście
 
 W pierwszej i jedynej linii wejścia znajduje się jedna liczba całkowita opisana w treści zadania.
+
 ### Wyjście
 
 W jedynej linii wyjścia ma się znajdować komunikat (TAK/NIE), mówiący o tym, czy Skriptek dostał szału (Szczegóły w zadaniu "Skandal").

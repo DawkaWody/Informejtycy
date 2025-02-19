@@ -1,5 +1,7 @@
 # Podzielność i ciąg
+
 Pingisław postanowił połączyć zagadnienia z dwóch poprzednich zadań. Dla podanego $n$-elementowego ciągu chce wiedzieć, ile elementów z tego ciągu dzieli się przez $x$ oraz czy co najmniej połowa elementów tego ciągu jest liczbami pierwszymi.
+
 ### Wejście
 
 W pierwszej linii wejścia znajdują się dwie liczby naturalne nie przekraczające $10^4$ $n$ oraz $x$. W drugiej i ostatniej linii wejścia znajduje się $n$ liczb oddzielonych spacjami, żadna z nich nie przekracza $10^4$. 

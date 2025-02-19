@@ -5,27 +5,30 @@ Bajtek lubi wielkie litery. Nie jest zadowolony, gdy istnieje mała litera, któ
 
 #### Przykład 1
 
-###### Wejście
+##### Wejście
 
 ```
 8
 HDjkLmHn
 ```
-###### Wyjście
+
+##### Wyjście
 
 ```
 TAK
 ```
 Wyjaśnienie do przykładu: najczęściej występującą literą w tym ciągu jest H, a H jest wielką literą.
+
 #### Przykład 2
 
-###### Wejście
+##### Wejście
 
 ```
 11
 WkoPlmkWays
 ```
-###### Wyjście
+
+##### Wyjście
 
 ```
 NIE

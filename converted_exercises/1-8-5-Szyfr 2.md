@@ -1,30 +1,35 @@
 # Szyfr 2
+
 Bufferka i Hasha, przyjaciółki, podobnie jak Skriptek i Cachek, szyfrują liściki. Ich algorytm działa jednak na innej zasadzie - biorą pod uwagę tylko cyfry parzyste (żeby nikt się nie domyślił, piszą też nieparzyste). Pierwszym krokiem w odszyfrowywaniu wiadomości jest policzenie sumy cyfr parzystych. Pomóż im poprawić program, wczytujący liczbę $n$, następnie $n$ cyfr wypisujący sumę cyfr parzystych, aby mogły pisać do siebie liściki. Możesz założyć, że $1 \leq n \leq 10^6$
+
 ## Przykłady
 
 #### Przykład 1
 
-###### Wejście
+##### Wejście
 
 ```
 7
 1872406
 ```
-###### Wyjście
+
+##### Wyjście
 
 ```
 20
 ```
 Wyjaśnienie do przykładu: $8+2+4+0+6=20$
+
 #### Przykład 2
 
-###### Wejście
+##### Wejście
 
 ```
 4
 1939
 ```
-###### Wyjście
+
+##### Wyjście
 
 ```
 0
