@@ -22,6 +22,10 @@ W $i$-tej z $n$ linii wyjścia powinien się znaleźć napis "TAK" lub "NIE" w z
 6
 ```
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
