@@ -1,3 +1,5 @@
+console.log("Wodociągi kieleckie!");
+
 // Ustawienie motywu na podstawie preferencji użytkownika
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme) {
