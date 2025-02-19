@@ -13,6 +13,7 @@
             {{ $files := readDir "content/exercises" }}
             {{ $sections1 := dict }}
             {{ $sections2 := dict }}
+            {{ $index := 0 }}
             {{ range $files }}
                 {{ if eq (path.Ext .Name) ".pdf" }}
                     {{ $parts := split (path.Base .Name) "-" }}
@@ -57,7 +58,7 @@
                 {{ range $sortedEntries }}
                 <tr>
                     <td><a href="{{ "exercises/" | relURL }}{{ .Name }}" target="_blank">{{ replace .DisplayName ".pdf" "" }}</a></td>
-                    <td class="ex-score">-</td>
+                    <td class="ex-score" id="zad-{{ $index }}">{{ $index = add $index 1 }}-</td>
                 </tr>
                 {{ end }}
             {{ end }}
@@ -83,7 +84,7 @@
                 {{ range $sortedEntries }}
                 <tr>
                     <td><a href="{{ "exercises/" | relURL }}{{ .Name }}" target="_blank">{{ replace .DisplayName ".pdf" "" }}</a></td>
-                    <td class="ex-score">-</td>
+                    <td class="ex-score" id="zad-{{ $index }}">{{ $index = add $index 1 }}-</td>
                 </tr>
                 {{ end }}
             {{ end }}
