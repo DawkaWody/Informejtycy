@@ -54,17 +54,43 @@ function ukryjFF() {
 	ff.style.display = "none";
 }
 
+var scores = {};
+
+// Funkcja do wczytania scores z localStorage
+function loadScoresFromLocalStorage() {
+	const savedScores = localStorage.getItem("scores");
+	if (savedScores) {
+		scores = JSON.parse(savedScores);
+	}
+}
+
+// Funkcja do zapisania scores do localStorage
+function saveScoresToLocalStorage() {
+	localStorage.setItem("scores", JSON.stringify(scores));
+}
+
+// Zaktualizowanie wyników na stronie
+function updateScores() {
+	for (var key in scores) {
+		var score = scores[key];
+		var element = document.getElementById("zad-" + key);
+		element.innerHTML = score;
+	}
+
+	// Zapisz scores do localStorage po każdej zmianie
+	saveScoresToLocalStorage();
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+	loadScoresFromLocalStorage();
 	ukryjPanel();
+	updateScores();
 
 	var submitButton = document.getElementById("submit-button");
 
 	submitButton.addEventListener("click", function () {
 		var problem = document.getElementById("problem").value;
 		var code = document.getElementById("code").value;
-
-		// console.log('Problem:', problem);
-		// console.log('Code:', code);
 
 		const option = document.querySelector('option[value="' + problem + '"]');
 		const problemId = option ? option.getAttribute("problem-id") : null;
@@ -106,13 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
 								var invalidID = statusData.invalid_problem_id;
 								var ff = statusData.first_failed;
 
-								// console.log('Score:', score);
-								// console.log('Memory limit exceeded:', memlimit);
-								// console.log('Time limit exceeded:', timelimit);
-								// console.log('Compilation error:', compErr);
-								// console.log('Invalid problem ID:', invalidID);
-								// console.log('First failed:', ff);
-
 								pokazPanel();
 								ukryjWaiting();
 								ukryjFF();
@@ -132,6 +151,9 @@ document.addEventListener("DOMContentLoaded", function () {
 									var ffpole = document.getElementById("receive-ff");
 									ffpole.innerHTML = ff;
 								}
+
+								scores[problemId] = Math.max(score, scores[problemId] || 0);
+								updateScores();
 
 								clearInterval(intervalId);
 							}
