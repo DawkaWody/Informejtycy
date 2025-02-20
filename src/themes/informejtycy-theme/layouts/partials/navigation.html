@@ -18,7 +18,10 @@
     <style> #poprzedni {visibility: hidden} </style>
 {{ end }}
 
-<a id="zadania" href="{{ .Site.BaseURL }}/exercises">Zadania</a>
+{{ $topicID := $currentPage.Params.id }}
+{{ $tableID := cond $isNerd (print "table2-" $topicID) (print "table1-" $topicID) }}
+
+<a id="zadania" href="{{ .Site.BaseURL }}/exercises#{{ $tableID }}">Zadania</a>
 
 <a id="nastepny" href="{{ $nextPage.Permalink }}"><img id="next-img"></a>
 {{ if ge $currentIndex (sub (len $pages) 1) }}
