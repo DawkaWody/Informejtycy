@@ -49,7 +49,7 @@ body {
 	display: flex;
 	align-items: flex-start;
 	gap: 35px;
-	margin-top: 3vw;
+	margin-top: 2vw;
 	/* Ensure the container does not shrink */
 	flex-shrink: 0;
 }
@@ -75,7 +75,7 @@ ol {
 	border-radius: 5px;
 	border: 1px solid var(--granica-paneli-bocznych);
 	position: sticky;
-	top: 3vw;
+	top: 2vw;
 	flex-shrink: 0; /* Prevent sidebars from shrinking */
 }
 

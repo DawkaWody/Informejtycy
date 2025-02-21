@@ -34,7 +34,7 @@
         </ul>
     </li>
 
-    {{ if $basicExpand }}
+    {{ if or $basicExpand (not $nerdExpand) }}
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const section = document.getElementById('basic-section');
