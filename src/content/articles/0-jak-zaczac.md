@@ -17,12 +17,12 @@ Podstawowym narzędziem, bez którego nie da się rozpocząć nauki programowani
 
 Jeśli chcesz mieć pobrany edytor kodu, aby móc zapisywać swoje odpowiedzi do zadań i programować bez połączenia do internetu, polecamy:
 
-- Dla systemu Windows/Linux:
-  - **[REKOMENDOWANE]** [Code::Blocks](https://www.codeblocks.org) - istotne jest to by nazwa pobieranej wersji kończyła się na `mingw-setup`, na przykład `codeblocks-20.03mingw-setup.exe` (ta wersja ma instalator i wbudowany kompilator, czyli język C++).
-  - [Microsoft Visual Studio](https://visualstudio.microsoft.com/pl/)
-- Dla systemu macOS:
-  - [Xcode](https://developer.apple.com/xcode/)
-  - [Microsoft Visual Studio](https://visualstudio.microsoft.com/pl/)
+Dla systemu Windows/Linux:
+- **[REKOMENDOWANE]** [Code::Blocks](https://www.codeblocks.org) - istotne jest to by nazwa pobieranej wersji kończyła się na `mingw-setup`, na przykład `codeblocks-20.03mingw-setup.exe` (ta wersja ma instalator i wbudowany kompilator, czyli język C++).
+- [Microsoft Visual Studio](https://visualstudio.microsoft.com/pl/)
+Dla systemu macOS:
+- [Xcode](https://developer.apple.com/xcode/)
+- [Microsoft Visual Studio](https://visualstudio.microsoft.com/pl/)
 
 Kompilatorem C++ jest g++. Jest on automatycznie wbudowany w Code::Blocks oraz Xcode, ale można go też uruchomić, korzystając z terminala. Zachęcamy do zapoznania się z nim, aczkolwiek na sam początek proponujemy pobrać jeden z wymienionych wyżej programów.
 
