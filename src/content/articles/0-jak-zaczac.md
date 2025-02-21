@@ -20,6 +20,7 @@ Jeśli chcesz mieć pobrany edytor kodu, aby móc zapisywać swoje odpowiedzi do
 Dla systemu Windows/Linux:
 - **[REKOMENDOWANE]** [Code::Blocks](https://www.codeblocks.org) - istotne jest to by nazwa pobieranej wersji kończyła się na `mingw-setup`, na przykład `codeblocks-20.03mingw-setup.exe` (ta wersja ma instalator i wbudowany kompilator, czyli język C++).
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/pl/)
+
 Dla systemu macOS:
 - [Xcode](https://developer.apple.com/xcode/)
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/pl/)
