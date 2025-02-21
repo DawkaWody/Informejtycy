@@ -18,7 +18,11 @@
     <style> #poprzedni {visibility: hidden} </style>
 {{ end }}
 
-<a id="zadania" href="{{ .Site.BaseURL }}/exercises">Zadania</a>
+{{ $topicID := $currentPage.Params.id }}
+{{ $topicIDFormatted := printf "%02d" $topicID }}  <!-- Formatujemy na dwucyfrową liczbę -->
+{{ $tableID := cond $isNerd (print "table2-" $topicIDFormatted) (print "table1-" $topicIDFormatted) }}
+
+<a id="zadania" href="{{ .Site.BaseURL }}/exercises#{{ $tableID }}">Zadania</a>
 
 <a id="nastepny" href="{{ $nextPage.Permalink }}"><img id="next-img"></a>
 {{ if ge $currentIndex (sub (len $pages) 1) }}

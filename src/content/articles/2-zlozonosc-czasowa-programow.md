@@ -1,11 +1,11 @@
 ---
 draft: false
-title: Złożoność czasowa programów
+title: Złożoność czasowa
 id: 2
 nerd: true
 ---
 
-# Złożoność czasowa programów
+# Złożoność czasowa
 
 ## Wstęp
 

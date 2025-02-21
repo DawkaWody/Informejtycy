@@ -1,11 +1,11 @@
 ---
 draft: false
-title: Custom sort
+title: Własne sortowanie
 id: 4
 nerd: true
 ---
 
-# Custom sort
+# Własne sortowanie
 
 ## Wstęp
 

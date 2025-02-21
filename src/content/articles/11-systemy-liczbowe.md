@@ -5,7 +5,7 @@ nerd: false
 id: 11
 ---
 
-# Systemy Liczbowe
+# Systemy liczbowe
 
 ## System dziesiętny
 System dziesiętny to najpopularniejszy system liczbowy, którego używamy na co dzień. Składa się z dziesięciu cyfr: 0, 1, 2, 3, 4, 5, 6, 7, 8 i 9. Ważne jest też położenie cyfry w liczbie – określa ono jej wartość (np. w liczbie 2136: 2 oznacza tysiące, 1 oznacza setki, 3 – dziesiątki, a 6 – jedności). Uważa się, że na co dzień używamy właśnie systemu dziesiętnego, ponieważ jest najprostszy do nauki. Wynika to z faktu, że mamy 10 palców, za pomocą których jako dzieci uczymy się liczenia.

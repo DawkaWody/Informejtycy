@@ -10,15 +10,17 @@ function getStyleSheet(file_name) {
 
 // Funkcja do ustawiania motywu podświetlania kodu
 function setCodeHighlightTheme(theme) {
-    sheet_light = getStyleSheet("highlight_light");
-    sheet_dark = getStyleSheet("highlight_dark");
+    var sheet_light = getStyleSheet("highlight_light");
+    var sheet_dark = getStyleSheet("highlight_dark");
 
-    if (theme === "light") {
-        sheet_light.disabled = false;
-        sheet_dark.disabled = true;
-    } else {
-        sheet_light.disabled = true;
-        sheet_dark.disabled = false;
+    if (sheet_light && sheet_dark) {
+        if (theme === "light") {
+            sheet_light.disabled = false;
+            sheet_dark.disabled = true;
+        } else {
+            sheet_light.disabled = true;
+            sheet_dark.disabled = false;
+        }
     }
 }
 
@@ -30,3 +32,9 @@ function setTheme(theme) {
 }
 
 window.setTheme = setTheme;
+
+// Wczytanie motywu z localStorage przy załadowaniu strony
+document.addEventListener("DOMContentLoaded", function () {
+    var savedTheme = localStorage.getItem("theme") || "light"; // Domyślnie jasny
+    setTheme(savedTheme);
+});
