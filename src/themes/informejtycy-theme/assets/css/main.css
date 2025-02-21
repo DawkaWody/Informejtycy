@@ -339,6 +339,7 @@ table a {
 	-webkit-tap-highlight-color: transparent;
     width: 30vw;
     border-radius: 12px;
+	margin-bottom: 1vw;
 }
 
 #realizowany {

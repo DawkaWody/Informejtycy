@@ -19,7 +19,8 @@
 {{ end }}
 
 {{ $topicID := $currentPage.Params.id }}
-{{ $tableID := cond $isNerd (print "table2-" $topicID) (print "table1-" $topicID) }}
+{{ $topicIDFormatted := printf "%02d" $topicID }}  <!-- Formatujemy na dwucyfrową liczbę -->
+{{ $tableID := cond $isNerd (print "table2-" $topicIDFormatted) (print "table1-" $topicIDFormatted) }}
 
 <a id="zadania" href="{{ .Site.BaseURL }}/exercises#{{ $tableID }}">Zadania</a>
 
