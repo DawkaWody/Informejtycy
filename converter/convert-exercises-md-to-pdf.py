@@ -6,32 +6,61 @@ import os
 INPUT_DIR = "../to_be_converted"
 OUTPUT_DIR = "../src/content/exercises"
 
+# metadata_decode = {
+# 	"1 01":r"metadatas\metadata-Patryk.yaml",
+# 	"1 02":r"metadatas\metadata-Patryk.yaml",
+# 	"1 03":r"metadatas\metadata-Eryk.yaml",
+# 	"1 04":r"metadatas\metadata-Zuzia.yaml",
+# 	"1 05":r"metadatas\metadata-Antek.yaml",
+# 	"1 06":r"metadatas\metadata-Zuzia.yaml",
+# 	"1 07":r"metadatas\metadata-Szymon.yaml",
+# 	"1 08":r"metadatas\metadata-Antek.yaml",
+# 	"1 09":r"metadatas\metadata-Adam.yaml",
+# 	"1 10":r"metadatas\metadata-Antek.yaml",
+# 	"1 11":r"metadatas\metadata-Eryk.yaml",
+# 	"1 12":r"metadatas\metadata-Szymon.yaml",
+# 	"1 13":r"metadatas\metadata-Zuzia.yaml",
+# 	"1 14":r"metadatas\metadata-Krysia.yaml",
+# 	"1 15":r"metadatas\metadata-Antek.yaml",
+# 	"2 01":r"metadatas\metadata-Bartek.yaml",
+# 	"2 03":r"metadatas\metadata-Krysia.yaml",
+# 	"2 04":r"metadatas\metadata-Dawid.yaml",
+# 	"2 05":r"metadatas\metadata-Szymon.yaml",
+# 	"2 06":r"metadatas\metadata-Adam.yaml",
+# 	"2 07":r"metadatas\metadata-Zuzia.yaml",
+# 	"2 08":r"metadatas\metadata-Krysia.yaml",
+# 	"2 09":r"metadatas\metadata-Eryk.yaml",
+# 	"2 10":r"metadatas\metadata-Adam.yaml"
+# }
+# windows
+
 metadata_decode = {
-	"1 1":r"metadatas\metadata-Patryk.yaml",
-	"1 2":r"metadatas\metadata-Patryk.yaml",
-	"1 3":r"metadatas\metadata-Eryk.yaml",
-	"1 4":r"metadatas\metadata-Zuzia.yaml",
-	"1 5":r"metadatas\metadata-Antek.yaml",
-	"1 6":r"metadatas\metadata-Zuzia.yaml",
-	"1 7":r"metadatas\metadata-Szymon.yaml",
-	"1 8":r"metadatas\metadata-Antek.yaml",
-	"1 9":r"metadatas\metadata-Adam.yaml",
-	"1 10":r"metadatas\metadata-Antek.yaml",
-	"1 11":r"metadatas\metadata-Eryk.yaml",
-	"1 12":r"metadatas\metadata-Szymon.yaml",
-	"1 13":r"metadatas\metadata-Zuzia.yaml",
-	"1 14":r"metadatas\metadata-Krysia.yaml",
-	"1 15":r"metadatas\metadata-Antek.yaml",
-	"2 1":r"metadatas\metadata-Bartek.yaml",
-	"2 3":r"metadatas\metadata-Krysia.yaml",
-	"2 4":r"metadatas\metadata-Dawid.yaml",
-	"2 5":r"metadatas\metadata-Szymon.yaml",
-	"2 6":r"metadatas\metadata-Adam.yaml",
-	"2 7":r"metadatas\metadata-Zuzia.yaml",
-	"2 8":r"metadatas\metadata-Krysia.yaml",
-	"2 9":r"metadatas\metadata-Eryk.yaml",
-	"2 10":r"metadatas\metadata-Adam.yaml"
+    "1 01":r"metadatas/metadata-Patryk.yaml",
+    "1 02":r"metadatas/metadata-Patryk.yaml",
+    "1 03":r"metadatas/metadata-Eryk.yaml",
+    "1 04":r"metadatas/metadata-Zuzia.yaml",
+    "1 05":r"metadatas/metadata-Antek.yaml",
+    "1 06":r"metadatas/metadata-Zuzia.yaml",
+    "1 07":r"metadatas/metadata-Szymon.yaml",
+    "1 08":r"metadatas/metadata-Antek.yaml",
+    "1 09":r"metadatas/metadata-Adam.yaml",
+    "1 10":r"metadatas/metadata-Antek.yaml",
+    "1 11":r"metadatas/metadata-Eryk.yaml",
+    "1 12":r"metadatas/metadata-Szymon.yaml",
+    "1 13":r"metadatas/metadata-Zuzia.yaml",
+    "1 14":r"metadatas/metadata-Krysia.yaml",
+    "1 15":r"metadatas/metadata-Antek.yaml",
+    "2 01":r"metadatas/metadata-Bartek.yaml",
+    "2 03":r"metadatas/metadata-Krysia.yaml",
+    "2 04":r"metadatas/metadata-Dawid.yaml",
+    "2 05":r"metadatas/metadata-Szymon.yaml",
+    "2 06":r"metadatas/metadata-Adam.yaml",
+    "2 07":r"metadatas/metadata-Zuzia.yaml",
+    "2 08":r"metadatas/metadata-Krysia.yaml",
+    "2 09":r"metadatas/metadata-Eryk.yaml",
+    "2 10":r"metadatas/metadata-Adam.yaml"
 }
+# linux
 
 def check_for_software_existance() -> None:
 	try:

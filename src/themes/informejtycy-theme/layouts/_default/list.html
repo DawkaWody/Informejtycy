@@ -41,15 +41,14 @@
 
             {{ $sections1Keys := slice }}
             {{ range $key, $value := $sections1 }}
-                {{ $sections1Keys = append $sections1Keys (slice (int $key)) }}
+                {{ $sections1Keys = append $sections1Keys (slice $key) }}
             {{ end }}
             {{ $sortedSections1 := sort $sections1Keys }}
 
             {{ range $sortedSections1 }}
                 {{ $section := . }}
-                {{ $entries := index $sections1 (string $section) }}
-                {{ $sectionInt := int $section }}
-                {{ $article := first 1 (where (where $.Site.RegularPages "Params.id" $sectionInt) "Params.nerd" false) }}
+                {{ $entries := index $sections1 $section }}
+                {{ $article := first 1 (where (where $.Site.RegularPages "Params.id" $section) "Params.nerd" false) }}
                 <tr id="table1-{{ $section }}">
                     <th colspan="2">{{ if $article }}{{ $section }}. {{ (index $article 0).Params.title }}{{ else }}{{ $section }}{{ end }}</th>
                 </tr>
@@ -67,15 +66,14 @@
         <table>
             {{ $sections2Keys := slice }}
             {{ range $key, $value := $sections2 }}
-                {{ $sections2Keys = append $sections2Keys (slice (int $key)) }}
+                {{ $sections2Keys = append $sections2Keys (slice $key) }}
             {{ end }}
             {{ $sortedSections2 := sort $sections2Keys }}
 
             {{ range $sortedSections2 }}
                 {{ $section := . }}
-                {{ $entries := index $sections2 (string $section) }}
-                {{ $sectionInt := int $section }}
-                {{ $article := first 1 (where (where $.Site.RegularPages "Params.id" $sectionInt) "Params.nerd" true) }}
+                {{ $entries := index $sections2 $section }}
+                {{ $article := first 1 (where (where $.Site.RegularPages "Params.id" $section) "Params.nerd" true) }}
                 <tr id="table2-{{ $section }}">
                     <th colspan="2">{{ if $article }}{{ $section }}. {{ (index $article 0).Params.title }}{{ else }}{{ $section }}{{ end }}</th>
                 </tr>

@@ -9,33 +9,35 @@
             {{ if .Params.nerd }}
                 {{ continue }}
             {{ end }}
-            <option value="{{ .Params.id }}" data-section="{{ .Params.id }}">{{ .Params.id }}. {{ .Params.title }}</option>
+            <option value="{{ .Params.id }}" nerd="false" data-section="{{ .Params.id }}">{{ .Params.id }}. {{ .Params.title }}</option>
         {{ end }}
         <option value="" disabled>------</option>
         {{ range $sortedTopics }}
             {{ if not .Params.nerd }}
                 {{ continue }}
             {{ end }}
-            <option value="{{ .Params.id }}" data-section="{{ .Params.id }}">{{ .Params.id }}. {{ .Params.title }}</option>
+            <option value="{{ .Params.id }}" nerd="true" data-section="{{ .Params.id }}">{{ .Params.id }}. {{ .Params.title }}</option>
         {{ end }}
     </select>
 
     <label for="problem">Wybierz zadanie:</label>
     <select id="problem" name="problem" disabled>
-        <option value="" disabled selected>...</option>
-        {{ $exercises := readDir "content/exercises" }}
-        {{ $ex_id := 0 }}
-        {{ range $exercises }}
-            {{ if eq (path.Ext .Name) ".pdf" }}
-                {{ $parts := split (path.Base .Name) "-" }}
+    <option value="" disabled selected>...</option>
+    {{ $exercises := readDir "content/exercises" }}
+    {{ $ex_id := 0 }}
+    {{ range $index, $file := sort $exercises ".Name" }}
+        {{ if eq (path.Ext $file.Name) ".pdf" }}
+            {{ $parts := split (path.Base $file.Name) "-" }}
+            {{ if ge (len $parts) 4 }}
                 {{ $table := index $parts 0 }}
-                {{ $section := index $parts 1 }}
+                {{ $section_str := index $parts 1 }}  <!-- Formatowanie jako dwucyfrowe -->
                 {{ $number := index $parts 2 }}
                 {{ $name := delimit (slice (index $parts 3)) "-" }}
-                <option value="{{ $name }}" data-section="{{ $section }}" problem-id="{{ $ex_id }}">{{ $number }}. {{ replace $name ".pdf" "" }}</option>
+                <option value="{{ $name }}" t="{{ $table }}" data-section="{{ $section_str }}" problem-id="{{ $ex_id }}">{{ $number }}. {{ replace $name ".pdf" "" }}</option>
                 {{ $ex_id = add $ex_id 1 }}
             {{ end }}
         {{ end }}
+    {{ end }}
     </select>
 
     <label for="code">Kod:</label>
@@ -45,24 +47,27 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const topicSelect = document.getElementById('topic');
-        const problemSelect = document.getElementById('problem');
-        const problemOptions = Array.from(problemSelect.options);
+document.addEventListener('DOMContentLoaded', function() {
+    const topicSelect = document.getElementById('topic');
+    const problemSelect = document.getElementById('problem');
+    const problemOptions = Array.from(problemSelect.options);
 
-        topicSelect.addEventListener('change', function() {
-            const selectedSection = topicSelect.options[topicSelect.selectedIndex].getAttribute('data-section');
-            problemSelect.disabled = !selectedSection;
+    topicSelect.addEventListener('change', function() {
+        const selectedOption = topicSelect.options[topicSelect.selectedIndex];
+        const selectedSection = parseInt(selectedOption.getAttribute('data-section'), 10); // Fixed syntax error
+        const isNerd = selectedOption.getAttribute('nerd') === 'true';
 
-            // Clear current options
-            problemSelect.innerHTML = '<option value="" disabled selected>...</option>';
+        problemSelect.disabled = !selectedSection;
+        problemSelect.innerHTML = '<option value="" disabled selected>...</option>';
 
-            // Add relevant options
-            problemOptions.forEach(option => {
-                if (option.getAttribute('data-section') === selectedSection) {
-                    problemSelect.appendChild(option);
-                }
-            });
+        problemOptions.forEach(option => {
+            const tableValue = option.getAttribute('t');
+            const expectedTable = isNerd ? '2' : '1';
+
+            if (parseInt(option.getAttribute('data-section'), 10) === selectedSection && tableValue === expectedTable) {
+                problemSelect.appendChild(option);
+            }
         });
     });
+});
 </script>
