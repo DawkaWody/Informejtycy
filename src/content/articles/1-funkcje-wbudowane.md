@@ -103,7 +103,7 @@ int main()
 }
 ```
 
-Funkcja bubbleSort porównuje każdy element z następnym i jeżeli jest większy to zamieniają się miejscami funkcją `swap`. Powtarza ten proces aż największe liczby będą na końcu tablicy. W kodzie uwzględniona jest także flaga zamiana, która przerywa sortowanie jeżeli wektor jest już posortowany, żeby zwiększyć wydajność. Na koniec wypisuje posortowany wektor.  
+Funkcja bubbleSort porównuje każdy element z następnym i jeżeli jest większy to zamieniają się miejscami funkcją `swap`. Powtarza ten proces aż największe liczby będą na końcu tablicy. W kodzie uwzględniona jest także flaga `zamiana`, która przerywa sortowanie jeżeli wektor jest już posortowany, żeby zwiększyć wydajność. Na koniec wypisuje posortowany wektor.  
 
 ## `reverse`
 Funkcja reverse odwraca kolejność elementów w tablicy.
