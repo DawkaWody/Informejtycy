@@ -50,7 +50,7 @@
                 {{ $entries := index $sections1 $section }}
                 {{ $article := first 1 (where (where $.Site.RegularPages "Params.id" $section) "Params.nerd" false) }}
                 <tr id="table1-{{ $section }}">
-                    <th colspan="2">{{ if $article }}{{ $section }}. {{ (index $article 0).Params.title }}{{ else }}{{ $section }}{{ end }}</th>
+                    <th colspan="2" id="sec1-{{ $section }}"></th>
                 </tr>
                 {{ $sortedEntries := sort $entries "Number" }}
                 {{ range $sortedEntries }}
@@ -75,7 +75,7 @@
                 {{ $entries := index $sections2 $section }}
                 {{ $article := first 1 (where (where $.Site.RegularPages "Params.id" $section) "Params.nerd" true) }}
                 <tr id="table2-{{ $section }}">
-                    <th colspan="2">{{ if $article }}{{ $section }}. {{ (index $article 0).Params.title }}{{ else }}{{ $section }}{{ end }}</th>
+                    <th colspan="2" id="sec2-{{ $section }}"></th>
                 </tr>
                 {{ $sortedEntries := sort $entries "Number" }}
                 {{ range $sortedEntries }}
@@ -93,4 +93,38 @@
         {{ partial "receive.html" . }}
     </div>
 </div>
+
+<script>
+    
+document.addEventListener("DOMContentLoaded", function() {
+document.getElementById("sec1-01").innerHTML = "1. Pierwszy program w C++";
+document.getElementById("sec1-02").innerHTML = "2. Zmienne i operatory matematyczne";
+document.getElementById("sec1-03").innerHTML = "3. Instrukcje warunkowe i operatory logiczne";
+document.getElementById("sec1-04").innerHTML = "4. Pętle";
+document.getElementById("sec1-05").innerHTML = "5. Pierwszość i podzielność liczb";
+document.getElementById("sec1-06").innerHTML = "6. NWD, NWW i algorytm Euklidesa";
+document.getElementById("sec1-07").innerHTML = "7. Tablice";
+document.getElementById("sec1-08").innerHTML = "8. System ASCII";
+document.getElementById("sec1-09").innerHTML = "9. Napisy";
+document.getElementById("sec1-10").innerHTML = "10. Cyfry danej liczby i konwersja na napis";
+document.getElementById("sec1-11").innerHTML = "11. Systemy liczbowe";
+document.getElementById("sec1-12").innerHTML = "12. Vector";
+document.getElementById("sec1-13").innerHTML = "13. Sortowanie";
+document.getElementById("sec1-14").innerHTML = "14. Wyszukiwanie liniowe i binarne";
+document.getElementById("sec1-15").innerHTML = "15. Funkcje";
+document.getElementById("sec2-01").innerHTML = "1. Funkcje wbudowane";
+document.getElementById("sec2-02").innerHTML = "2. Złożoność czasowa programów";
+document.getElementById("sec2-03").innerHTML = "3. Pair i Struct";
+document.getElementById("sec2-04").innerHTML = "4. Custom sort";
+document.getElementById("sec2-05").innerHTML = "5. Kolejka";
+document.getElementById("sec2-06").innerHTML = "6. Priority queue";
+document.getElementById("sec2-07").innerHTML = "7. Set i multiset";
+document.getElementById("sec2-08").innerHTML = "8. Map i Unordered map";
+document.getElementById("sec2-09").innerHTML = "9. Stack";
+document.getElementById("sec2-10").innerHTML = "10. Rekurencja";
+// do poprawki (to było na szybko!!!)
+});
+
+</script>
+
 {{ end }}
