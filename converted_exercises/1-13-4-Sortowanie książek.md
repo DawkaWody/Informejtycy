@@ -2,16 +2,16 @@
 
 Napisz program, który wczyta dane o stron w książkach, a następnie posortuje je rosnąco.
 
-#### Wejście:
+### Wejście:
 
 W pierwszym wierszu wejścia podana jest liczba $n$ ($0 < n \le 10^6$) - liczba książek.
 W kolejnych $n$ wierszach wejścia podana jest liczba $a$ ($0 < a \le 10^6$) stron książki.
 
-#### Wyjście:
+### Wyjście:
 
 W $n$ liczbach wyjścia znajdują się posortowane liczby stron w książkach.
 
-#### Przykład:
+### Przykład:
 
 **Wejście:**
 ```

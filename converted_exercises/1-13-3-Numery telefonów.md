@@ -2,16 +2,16 @@
 
 Napisz program, który wczyta listę numerów telefonów w formacie `xxx-xxx-xxx` (gdzie `x` to cyfra) i posortuje je w porządku malejącym.
 
-#### Wejście:
+### Wejście:
 
 Pierwsza linia wejścia zawiera liczbę $n$ ($0 < n \le 10^6$), czyli liczbę numerów do posortowania.
 W następnych $n$ liniach znajdują się 9-cyfrowe numery telefonów.
 
-#### Wyjście:
+### Wyjście:
 
 W $n$ liniach wyjścia znajdują się posortowane malejąco numery telefonów.
 
-#### Przykład:
+### Przykład:
 
 **Wejście:**
 ```
