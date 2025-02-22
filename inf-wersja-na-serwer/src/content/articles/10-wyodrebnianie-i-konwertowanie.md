@@ -22,7 +22,7 @@ int main()
 }
 ```
 ## Wyodrębnianie ostatniej cyfry na stringach
-Ostatnią cyfrę można wyodrębnić używając zmiennych typu string. Zasada działania jest bardzo prosta: uzyskujemy ostatni znak ciągu jako char. Aby zamienić go na zmienną liczbową, można wykorzystać sposób opisany w [temacie 8](https://informejtycy.pl/articles/8-ascii/).
+Ostatnią cyfrę można wyodrębnić używając zmiennych typu string. Zasada działania jest bardzo prosta: uzyskujemy ostatni znak ciągu jako char. Aby zamienić go na zmienną liczbową, można wykorzystać sposób opisany w [temacie 8](http://informejtycy.pl/articles/8-ascii/).
 ```cpp
 #include <iostream>
 using namespace std;
@@ -66,7 +66,7 @@ int main()
 }
 
 ```
-Uzyskiwanie sumy cyfr można też zaimplementować na stringach. Po prostu uzyskujemy wartość ostatniej cyfry jako znaku (sposób na uzyskiwanie wartości cyfry jako znaku opisany w [temacie 8](https://informejtycy.pl/articles/8-ascii/)), aktualizujemy sumę i przesuwamy iterator o jeden w lewo, aż przejdziemy po całym stringu.
+Uzyskiwanie sumy cyfr można też zaimplementować na stringach. Po prostu uzyskujemy wartość ostatniej cyfry jako znaku (sposób na uzyskiwanie wartości cyfry jako znaku opisany w [temacie 8](http://informejtycy.pl/articles/8-ascii/)), aktualizujemy sumę i przesuwamy iterator o jeden w lewo, aż przejdziemy po całym stringu.
 ## Funkcje wbudowane
 W celu zamienienia, czyli przekonwertowania stringa na zmienną liczbową lub odwrotnie, możemy użyć wbudowanych funkcji z biblioteki `<string>`(zawartej w `<bits/stdc++.h>` - biblioteka ta zawiera wiele potrzebnych bibliotek i automatycznie je dodaje):
 - `to_string()` - zamienia zmienną liczbową na zmienną typu `string`
