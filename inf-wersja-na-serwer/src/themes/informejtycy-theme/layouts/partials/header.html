@@ -1,0 +1,11 @@
+
+    <div id="baner">
+        <a href="{{ .Site.BaseURL }}">
+            {{ with resources.Get "images/baner-ciemne.png" }}
+                <img id="baner-img" src="{{ .RelPermalink }}" alt="baner">
+            {{ end }}
+        </a>
+    </div>
+    {{ with resources.Get "images/theme.png" }}
+        <img id="theme-toggle" src="{{ .RelPermalink }}" alt="theme">
+    {{ end }}

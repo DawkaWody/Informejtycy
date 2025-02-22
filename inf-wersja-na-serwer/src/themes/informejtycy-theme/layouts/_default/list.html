@@ -1,0 +1,130 @@
+{{ define "main" }}
+<div id="srodek">
+    <div id="sidebar-left">
+        {{ partial "article_list.html" . }}
+    </div>
+
+    <div id="artykul">
+        <h1>Zadania</h1>
+        
+        <h2>Zadania podstawowe</h2>
+        <table>
+            {{ $files := readDir "content/exercises" }}
+            {{ $sections1 := dict }}
+            {{ $sections2 := dict }}
+            {{ $ex_id := 0 }}
+            {{ range $files }}
+                {{ if eq (path.Ext .Name) ".pdf" }}
+                    {{ $parts := split (path.Base .Name) "-" }}
+                    {{ $table := index $parts 0 }}
+                    {{ $section := index $parts 1 }}
+                    {{ $number := index $parts 2 }}
+                    {{ $name := delimit (slice (index $parts 3)) "-" }}
+                    {{ $entry := dict "Name" .Name "Number" (string $number) "DisplayName" $name }}
+                    {{ if eq $table "1" }}
+                        {{ if not (isset $sections1 $section) }}
+                            {{ $sections1 = merge $sections1 (dict $section (slice $entry)) }}
+                        {{ else }}
+                            {{ $existingEntries := index $sections1 $section }}
+                            {{ $sections1 = merge $sections1 (dict $section (append $existingEntries (slice $entry))) }}
+                        {{ end }}
+                    {{ else if eq $table "2" }}
+                        {{ if not (isset $sections2 $section) }}
+                            {{ $sections2 = merge $sections2 (dict $section (slice $entry)) }}
+                        {{ else }}
+                            {{ $existingEntries := index $sections2 $section }}
+                            {{ $sections2 = merge $sections2 (dict $section (append $existingEntries (slice $entry))) }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+            {{ $sections1Keys := slice }}
+            {{ range $key, $value := $sections1 }}
+                {{ $sections1Keys = append $sections1Keys (slice $key) }}
+            {{ end }}
+            {{ $sortedSections1 := sort $sections1Keys }}
+
+            {{ range $sortedSections1 }}
+                {{ $section := . }}
+                {{ $entries := index $sections1 $section }}
+                {{ $article := first 1 (where (where $.Site.RegularPages "Params.id" $section) "Params.nerd" false) }}
+                <tr id="table1-{{ $section }}">
+                    <th colspan="2" id="sec1-{{ $section }}"></th>
+                </tr>
+                {{ $sortedEntries := sort $entries "Number" }}
+                {{ range $sortedEntries }}
+                <tr>
+                    <td><a href="{{ "exercises/" | relURL }}{{ .Name }}" target="_blank">{{ replace .DisplayName ".pdf" "" }}</a></td>
+                    <td class="ex-score" id="zad-{{ $ex_id }}">{{ $ex_id = add $ex_id 1 }}-</td>
+                </tr>
+                {{ end }}
+            {{ end }}
+        </table>
+
+        <h2>Zadania zaawansowane</h2>
+        <table>
+            {{ $sections2Keys := slice }}
+            {{ range $key, $value := $sections2 }}
+                {{ $sections2Keys = append $sections2Keys (slice $key) }}
+            {{ end }}
+            {{ $sortedSections2 := sort $sections2Keys }}
+
+            {{ range $sortedSections2 }}
+                {{ $section := . }}
+                {{ $entries := index $sections2 $section }}
+                {{ $article := first 1 (where (where $.Site.RegularPages "Params.id" $section) "Params.nerd" true) }}
+                <tr id="table2-{{ $section }}">
+                    <th colspan="2" id="sec2-{{ $section }}"></th>
+                </tr>
+                {{ $sortedEntries := sort $entries "Number" }}
+                {{ range $sortedEntries }}
+                <tr>
+                    <td><a href="{{ "exercises/" | relURL }}{{ .Name }}" target="_blank">{{ replace .DisplayName ".pdf" "" }}</a></td>
+                    <td class="ex-score" id="zad-{{ $ex_id }}">{{ $ex_id = add $ex_id 1 }}-</td>
+                </tr>
+                {{ end }}
+            {{ end }}
+        </table>
+    </div>
+
+    <div id="sidebar-right">
+        {{ partial "send_panel.html" . }}
+        {{ partial "receive.html" . }}
+    </div>
+</div>
+
+<script>
+    
+document.addEventListener("DOMContentLoaded", function() {
+// Sprawdzanie i przypisanie wartości tylko, jeśli element istnieje
+const sekcje = [
+    "sec1-01", "sec1-02", "sec1-03", "sec1-04", "sec1-05",
+    "sec1-06", "sec1-07", "sec1-08", "sec1-09", "sec1-10",
+    "sec1-11", "sec1-12", "sec1-13", "sec1-14", "sec1-15",
+    "sec2-01", "sec2-02", "sec2-03", "sec2-04", "sec2-05",
+    "sec2-06", "sec2-07", "sec2-08", "sec2-09", "sec2-10"
+];
+
+const teksty = [
+    "1. Pierwszy program w C++", "2. Zmienne i operatory matematyczne", "3. Instrukcje warunkowe i operatory logiczne",
+    "4. Pętle", "5. Pierwszość i podzielność liczb", "6. NWD, NWW i algorytm Euklidesa", "7. Tablice",
+    "8. System ASCII", "9. Napisy", "10. Cyfry danej liczby i konwersja na napis", "11. Systemy liczbowe",
+    "12. Vector", "13. Sortowanie", "14. Wyszukiwanie liniowe i binarne", "15. Funkcje",
+    "1. Funkcje wbudowane", "2. Złożoność czasowa programów", "3. Pair i Struct", "4. Własne sortowanie",
+    "5. Kolejka", "6. Priority queue", "7. Set i multiset", "8. Map i Unordered map", "9. Stack", "10. Rekurencja"
+];
+
+for (let i = 0; i < sekcje.length; i++) {
+    let el = document.getElementById(sekcje[i]);
+    if (el) {
+        el.innerHTML = teksty[i];
+    }
+}
+
+// do poprawki (to było na szybko!!!)
+});
+
+</script>
+
+{{ end }}

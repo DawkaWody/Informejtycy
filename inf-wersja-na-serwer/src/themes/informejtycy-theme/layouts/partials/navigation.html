@@ -1,0 +1,30 @@
+{{ $currentPage := . }}
+{{ $isNerd := $currentPage.Params.nerd }}
+{{ $pages := where .Site.RegularPages "Params.nerd" $isNerd }}
+{{ $pages := sort $pages "Params.id" }}
+{{ $currentIndex := 0 }}
+
+{{ range $index, $page := $pages }}
+    {{ if eq $page.Permalink $currentPage.Permalink }}
+        {{ $currentIndex = $index }}
+    {{ end }}
+{{ end }}
+
+{{ $prevPage := index $pages (sub $currentIndex 1) }}
+{{ $nextPage := index $pages (add $currentIndex 1) }}
+
+<a id="poprzedni" href="{{ $prevPage.Permalink }}"><img id="prev-img"></a>
+{{ if le $currentIndex 0 }}
+    <style> #poprzedni {visibility: hidden} </style>
+{{ end }}
+
+{{ $topicID := $currentPage.Params.id }}
+{{ $topicIDFormatted := printf "%02d" $topicID }}  <!-- Formatujemy na dwucyfrową liczbę -->
+{{ $tableID := cond $isNerd (print "table2-" $topicIDFormatted) (print "table1-" $topicIDFormatted) }}
+
+<a id="zadania" href="https://informejtycy.pl/Informejtycy/exercises#{{ $tableID }}">Zadania</a>
+
+<a id="nastepny" href="{{ $nextPage.Permalink }}"><img id="next-img"></a>
+{{ if ge $currentIndex (sub (len $pages) 1) }}
+    <style> #nastepny {visibility: hidden} </style>
+{{ end }}

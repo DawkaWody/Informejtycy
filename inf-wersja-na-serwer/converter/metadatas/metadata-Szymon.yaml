@@ -1,0 +1,16 @@
+header-includes: |
+  \usepackage[a4paper, total={5.5in, 8in}]{geometry}
+  \usepackage{fancyhdr}
+  \usepackage{hyperref}
+  \usepackage{datetime}
+  \renewcommand{\dateseparator}{.}
+  \pagestyle{fancy}
+  \fancyhead{}
+  \fancyhead[L]{\href{https://informejtycy.pl}{informejtycy.pl}}
+  \fancyhead[C]{\thepage}
+  \fancyhead[R]{\ddmmyyyydate{\today}}
+  \fancyfoot{}
+  \fancyfoot[L]{Projekt organizowany w ramach olimpiady Zwolnieni z Teorii \\ \textcopyright{} 2025 Wszelkie prawa zastrzeżone}
+  \fancyfoot[R]{\itshape{Szymon Kierner}}
+  \renewcommand{\headrulewidth}{0.1pt}
+  \renewcommand{\footrulewidth}{0.1pt}
