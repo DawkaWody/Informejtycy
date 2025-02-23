@@ -9,7 +9,7 @@ nerd: true
 
 ## Wstęp
 
-Znasz już funkcję sort, która pozwala na posortowanie jakiejś struktury, ale sposób w jaki to robi nie jest zależny od Ciebie. Co jeśli chcemy posortować stringi np. po ich długości. Musimy wtedy sprawić, aby funkcja sort zachowywała się inaczej niż zwykle i do tego potrzebna jest **własna funkcja porównująca**. Wtedy sort wygląda tak:
+Znasz już funkcję sort, która pozwala na posortowanie jakiejś struktury, ale sposób w jaki to robi nie jest zależny od Ciebie. Co jeśli chcemy posortować stringi np. według ich długości? Musimy wtedy sprawić, aby funkcja sort zachowywała się inaczej niż zwykle i do tego potrzebna jest **własna funkcja porównująca**. Wtedy sort wygląda tak:
 ```cpp
 sort(first, last, comp);
 ```
@@ -37,7 +37,7 @@ int main()
 	sort(liczby.begin(), liczby.end(), porownaj);
 }
 ```
-Zauważ, że przy podawaniu funkcji `porównaj` nie piszemy nawiasów. To ważne - gdybyśmy podali ją z nawiasami, to program wyrzuciłby błąd. Jeśli teraz wypiszemy wektor `liczby` to otrzymamy
+Zauważ, że przy podawaniu funkcji `porównaj` nie piszemy nawiasów. To ważne - gdybyśmy podali ją z nawiasami, to program zwróciłby błąd. Jeśli teraz wypiszemy wektor `liczby` to otrzymamy:
 ```
 8 6 3 3 1
 ```
@@ -66,14 +66,14 @@ int main()
 ```
 ## Własne sortowanie
 
-Teraz powróćmy do pytania z początku: jak posortować stringi po długości? Pamiętajmy, że stringi domyślnie sortują się leksykograficznie, więc musimy napisać swoją funkcję. Funkcja ta mogłaby wyglądać tak:
+Teraz powróćmy do pytania z początku: jak posortować stringi według ich długości? Pamiętajmy, że stringi domyślnie sortują się leksykograficznie, więc musimy napisać swoją funkcję. Funkcja ta mogłaby wyglądać tak:
 ```cpp
 bool porownaj(string a, string b)
 {
 	return a.size() < b.size();
 }
 ```
-funkcja ta będzie sortować je rosnąco, ale wystarczy, że odwrócimy znak i może sortować malejąco. Wczytajmy teraz trochę napisów do wektora a potem go posortujmy.
+Funkcja ta będzie sortować je rosnąco, ale wystarczy, że odwrócimy znak i może sortować malejąco. Wczytajmy teraz kilka napisów do wektora a potem go posortujmy.
 ```cpp
 #include <iostream>
 #include <vector>
@@ -111,7 +111,7 @@ int main()
 ```
 ## Sortowanie własnych obiektów
 
-Dzięki własnej funkcji porównującej można sortować również swoje obiekty! Na początek stwórzmy sobie jakiegoś structa np. samochód
+Dzięki własnej funkcji porównującej można sortować również swoje obiekty! Na początek stwórzmy jakiegoś structa - np. samochód.
 ```cpp
 struct Samochod
 {
@@ -120,7 +120,7 @@ struct Samochod
 	int hp;
 };
 ```
-powiedzmy, że chcemy go posortować po koniach mechanicznych (hp). Do tego również użyjemy własnej funkcji.
+Powiedzmy, że chcemy go posortować samochody według liczby koni mechanicznych (`hp`). Do tego również użyjemy własnej funkcji.
 ```cpp
 bool porownaj_samochody(Samochod a, Samochod b)
 {
@@ -153,9 +153,10 @@ Fiat 126p: 30hp
 Mercedes AMG GT: 585hp
 Hennessey Venom F5: 1817hp
 ```
+
 ## Bardziej "zaawansowane" porównywanie
 
-W każdym z poprzednich przykładów funkcja sortująca miała 1 linię, ale oczywiście można posortować według bardziej skomplikowanych warunków. W tym przykładzie nadal sortujemy samochody po liczbie koni mechanicznych, ale jeśli wartości są równe, to po długości nazwy modelu, chyba że samochód to fiat 126p - wtedy natychmiast idzie na koniec (niezbyt mądre, ale to tylko przykład).
+W każdym z poprzednich przykładów funkcja sortująca miała 1 linijkę, ale oczywiście można posortować według bardziej skomplikowanych warunków. W tym przykładzie nadal sortujemy samochody po liczbie koni mechanicznych, ale jeśli wartości są równe, to po długości nazwy modelu, chyba że samochód to fiat 126p - wtedy natychmiast idzie na koniec.
 ```cpp
 bool porownaj_samochody(Samochod a, Samochod b)
 {
@@ -172,7 +173,7 @@ bool porownaj_samochody(Samochod a, Samochod b)
 	}
 }
 ```
-Zauważ, że funkcja porównująca ma zwracać czy a jest mniejsze od b, więc za pomocą wartości logicznych możemy trochę "oszukać" sortowanie (choć własna funkcja to już oszukiwanie sortowania), żeby pewne elementy zawsze były traktowane priorytetowo. Teraz możemy dodać trochę więcej samochodów i przetestować nasze sortowanie.
+Zauważ, że funkcja porównująca ma zwracać czy `a` jest mniejsze od `b`, więc za pomocą wartości logicznych możemy trochę "oszukać" sortowanie (choć własna funkcja to już oszukiwanie sortowania), żeby pewne elementy zawsze były traktowane priorytetowo. Teraz możemy dodać trochę więcej samochodów i przetestować nasze sortowanie.
 ```cpp
 int main()
 {
