@@ -1,4 +1,4 @@
-baseURL = 'http://informejtycy.pl'
+baseURL = 'https://informejtycy.pl'
 languageCode = 'pl-pl'
 title = 'Informejtycy.pl'
 theme = 'informejtycy-theme'
