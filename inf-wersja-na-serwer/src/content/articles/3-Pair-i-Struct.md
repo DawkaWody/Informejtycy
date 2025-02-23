@@ -37,8 +37,8 @@ int main() {
 	string produkt = "chleb";
 	double koszt = 5.5;
 	pair<string, double> p5 = make_pair(produkt, koszt);
-	cout << p4.first << endl;
-	cout << p4.second << endl;
+	cout << p5.first << endl;
+	cout << p5.second << endl;
 }
 ```
 ## Pary w tablicach i wektorach
@@ -55,6 +55,7 @@ Dzięki temu możemy sortować pary. Funkcja `sort()`, sortując, bierze pod uwa
 ```cpp
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 int main() {
