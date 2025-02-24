@@ -96,7 +96,7 @@ Jeśli chcemy przejść pętlą po całej mapie i wypisać klucze oraz odpowiada
 ```cpp
 map<string, string> glosy = {{"Ania", "mezzosopran"}, {"Beatka", "alt"}, {"Czarek", "tenor"}};
 
-for (pair osoby : glosy) {
+for (auto osoby : glosy) {
 	cout << osoby.first << ' ' << osoby.second << endl;
 }
 ```
@@ -125,7 +125,7 @@ Natomiast gdy to samo wykonamy w unordered map:
 ```cpp
 unordered_map<string, string> glosy = {{"Czarek", "tenor"}, {"Ania", "mezzosopran"}, {"Beatka", "alt"}};
 
-for (pair osoby : glosy) {
+for (auto osoby : glosy) {
 	cout << osoby.first << ' ' << osoby.second << endl;
 }
 ```
