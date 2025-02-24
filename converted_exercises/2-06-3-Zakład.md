@@ -1,6 +1,6 @@
 # Zakład
 
-Jasio założył się ze swoim kolegą, że do końca roku uda mu się mieć tą samą średnią. Niestety, rok dobiega końca, a Jaś jest dalej z tyłu. Wpadł więc na świetny pomysł - pozmienia oceny. Oczywiście, wyglądało by to podejrzanie, gdyby nagle doszło mu parenaście ocen, tym bardziej, że wzorowych. Z tego powodu, Jaś będzie zwiększał swoje oceny i zmniejszał oceny kolegi, dopóki ich średnie nie będą równe (albo Jasio nie będzie miał średniej większej). W każdym ruchu zmieni jakąś ze swoich ocen na dowolną inną lub jakąś ocenę kolegi na dowolną inną. Teraz chce wiedzieć, czy zdąży zmienić oceny tak, aby wyrównać średnie. Chce poznać w ile ruchów może takie zmiany wprowadzić. Napisał program, lecz ten nie działał poprawnie. Oto kod:
+Jasio założył się ze swoim kolegą, że do końca roku uda mu się mieć tą samą średnią. Niestety, rok dobiega końca, a Jaś jest dalej z tyłu. Wpadł więc na świetny pomysł - pozmienia oceny. Oczywiście, wyglądałoby to podejrzanie, gdyby nagle doszło mu parenaście ocen, tym bardziej, że wzorowych. Z tego powodu, Jaś będzie zwiększał swoje oceny i zmniejszał oceny kolegi, dopóki ich średnie nie będą równe (albo Jasio nie będzie miał średniej większej). W każdym ruchu zmieni jakąś ze swoich ocen na dowolną inną lub jakąś ocenę kolegi na dowolną inną. Teraz chce wiedzieć, czy zdąży zmienić oceny tak, aby wyrównać średnie. Chce poznać w ile ruchów może takie zmiany wprowadzić. Napisał program, lecz ten nie działał poprawnie. Oto kod:
 
 ```cpp
 #include <iostream>

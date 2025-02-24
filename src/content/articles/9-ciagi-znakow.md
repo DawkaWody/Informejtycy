@@ -19,7 +19,7 @@ Podobnie jak w przypadku tablicy, możemu uzyskiwać kolejne literki poprzez kwa
 
 ## Jak komputer oddziela ciągi znaków?
 
-W pamięci komputera trzeba odróżnić od siebie ciągi znaków. Dlatego, ktoś wpadł na pomysł, by robić to znakiem *null* `\0` (chociaż są to dwa znaki `\` i `0`, to komputer traktuje je jako jeden znak). Oczywiście, jest to tylko konwencja i można by wprowadzić zasadę, że od teraz robi to znak spacji. Byłoby to jednak mało praktyczne - spacja bowiem może być częścią zdania.
+W pamięci komputera trzeba odróżnić od siebie ciągi znaków. Dlatego, ktoś wpadł na pomysł, by robić to znakiem *null* `\0` (chociaż są to dwa znaki `\` i `0`, to komputer traktuje je jako jeden znak). Oczywiście, jest to tylko konwencja i możnaby wprowadzić zasadę, że od teraz robi to znak spacji. Byłoby to jednak mało praktyczne - spacja bowiem może być częścią zdania.
 
 ## String
 
