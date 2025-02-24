@@ -1,31 +1,15 @@
-name = 'Theme name'
+name = 'Informejtycy-theme'
 license = 'MIT'
-licenselink = 'https://github.com/owner/repo/LICENSE'
-description = 'Theme description'
+licenselink = 'https://github.com/DawkaWody/Informejtycy/blob/main/src/themes/informejtycy-theme/LICENSE'
+description = 'A hugo theme made under Informejtycy project'
 
 # The home page of the theme, where the source can be found
-homepage = 'https://github.com/owner/repo'
+homepage = 'https://github.com/DawkaWody/Informejtycy'
 
 # If you have a running demo of the theme
-demosite = 'https://owner.github.io/repo'
-
-# Taxonomy terms
-tags = ['blog', 'company']
-features = ['some', 'awesome', 'features']
-
-# If the theme has multiple authors
-authors = [
-  {name = 'Name of author', homepage = 'Website of author'},
-  {name = 'Name of author', homepage = 'Website of author'}
-]
+demosite = 'https://dawkawody.github.io/Informejtycy'
 
 # If the theme has a single author
 [author]
-  name = 'Your name'
-  homepage = 'Your website'
-
-# If porting an existing theme
-[original]
-  author = 'Name of original author'
-  homepage = 'Website of original author'
-  repo = 'https://github.com/owner/repo'
+  name = 'DawkaWody'
+  homepage = 'https://github.com/DawkaWody'
