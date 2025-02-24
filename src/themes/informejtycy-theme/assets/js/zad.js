@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			return;
 		}
 
-		fetch('http://127.0.0.1:5000/checker/submit', {
+		fetch('https://informejtycy.pl/checker/submit', {
 			method: 'POST',
 			headers: {
 				'Problem': problemId,
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				pokazWaiting();
 
 				const intervalId = setInterval(() => {
-					fetch(`http://127.0.0.1:5000/checker/status/${auth_code}`)
+					fetch(`https://informejtycy.pl/checker/status/${auth_code}`)
 						.then(response => response.json())
 						.then(statusData => {
 							console.log('Status:', statusData);
