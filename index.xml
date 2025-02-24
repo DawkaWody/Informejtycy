@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Informejtycy.pl</title><link>https://informejtycy.pl/</link><description>Recent content on Informejtycy.pl</description><generator>Hugo</generator><language>pl-pl</language><lastBuildDate>Tue, 04 Feb 2025 16:14:00 +0100</lastBuildDate><atom:link href="https://informejtycy.pl/index.xml" rel="self" type="application/rss+xml"/><item><title>Stack</title><link>https://informejtycy.pl/articles/9-stack/</link><pubDate>Tue, 04 Feb 2025 16:14:00 +0100</pubDate><guid>https://informejtycy.pl/articles/9-stack/</guid><description>&lt;h1 id="stack">Stack&lt;/h1>
+&lt;h2 id="wprowadzenie">Wprowadzenie&lt;/h2>
+&lt;p>&lt;code>Stack&lt;/code> to typ kontenera w C++ działający w trybie LIFO (Last In, First Out). Oznacza to, że dodając i odczytując wartości ze stosu (&lt;code>stack&lt;/code>), operacje te wykonywane są na elemencie znajdującym się na samej górze. Nie ma możliwości bezpośredniego dostępu do elementów znajdujących się niżej w strukturze.&lt;/p>
+&lt;p>Aby lepiej zrozumieć, jak działa stos, można przyrównać go do talii kart leżącej na stole. W tym przypadku można manipulować wyłącznie kartą znajdującą się na samej górze. Jeśli chcesz dostać się do kart znajdujących się niżej, musisz najpierw zdjąć karty znajdujące się wyżej.&lt;/p></description></item><item><title>Cyfry danej liczby i konwersja na napis</title><link>https://informejtycy.pl/articles/10-wyodrebnianie-i-konwertowanie/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/10-wyodrebnianie-i-konwertowanie/</guid><description>&lt;h1 id="wyodrębnianie-cyfr-danej-liczby-konwertowanie-liczb-na-napisy">Wyodrębnianie cyfr danej liczby, konwertowanie liczb na napisy&lt;/h1>
+&lt;h2 id="wyodrębnianie-ostatniej-cyfry-na-liczbach">Wyodrębnianie ostatniej cyfry na liczbach&lt;/h2>
+&lt;p>Aby uzyskać ostatnią cyfrę danej liczby, możemy użyć operacji modulo (&lt;code>%&lt;/code>). Gdy otrzymamy resztę z dzielenia przez 10 danej liczby całkowitej, to tak naprawdę otrzymamy jej cyfrę jedności, czyli ostatnią cyfrę. Analogicznie, aby otrzymać liczbę składającą się z dwóch ostatnich cyfr danej liczby, możemy zastosować resztę z dzielenia przez 100. Dla uzyskania trzech ostatnich liczb zastosujemy resztę z dzielenia przez 1000, i tak dalej.
+Oto program wczytujący liczbę całkowitą i wypisujący jej ostatnią cyfrę:&lt;/p></description></item><item><title>Funkcje</title><link>https://informejtycy.pl/articles/15-funkcje/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/15-funkcje/</guid><description>&lt;h1 id="funkcje">Funkcje&lt;/h1>
+&lt;p>Funkcje piszemy, aby nasz kod stał się czytelniejszy. Jest to pewien rodzaj podprogramu, znajdującego się poza funkcją &lt;code>main&lt;/code>. Zazwyczaj korzysta się z funkcji, kiedy program ma wielokrotnie wykonać jakieś operacje. Funkcja wykonuje określone operacje i może zwracać jakąś wartość.&lt;/p>
+&lt;h2 id="deklaracja-funkcji">Deklaracja funkcji&lt;/h2>
+&lt;p>Najpierw, &lt;strong>przed funkcją &lt;code>main&lt;/code>&lt;/strong>, piszemy typ zmiennej, który ma zwracać, lub &lt;code>void&lt;/code>, jeśli funkcja nic nie zwraca. Następnie, po spacji, piszemy nazwę funkcji. Po nazwie, w nawiasach okrągłych piszemy argumenty, jakie funkcja przyjmuje, poprzedzone ich typem danych. Jeśli funkcja nie przyjmuje argumentów, pozostawiamy puste nawiasy.&lt;/p></description></item><item><title>Funkcje wbudowane</title><link>https://informejtycy.pl/articles/1-funkcje-wbudowane/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/1-funkcje-wbudowane/</guid><description>&lt;h1 id="najważniejsze-funkcje-wbudowane-w-c">Najważniejsze funkcje wbudowane w C++&lt;/h1>
+&lt;h2 id="min">&lt;code>min&lt;/code>&lt;/h2>
+&lt;p>Funkcja &lt;code>min&lt;/code> znajduje mniejszą z dwóch wartości. Jesli wartości są równe,
+zwraca pierwszą z nich. Jest częścią nagłówka algorithm.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;algorithm&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">using&lt;/span> &lt;span class="k">namespace&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="kt">int&lt;/span> &lt;span class="n">a&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">b&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;Podaj liczbe kalorii w pierwszej potrawie: &amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="n">cin&lt;/span> &lt;span class="o">&amp;gt;&amp;gt;&lt;/span> &lt;span class="n">a&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;Podaj liczbe kalorii w drugiej potrawie: &amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="n">cin&lt;/span> &lt;span class="o">&amp;gt;&amp;gt;&lt;/span> &lt;span class="n">b&lt;/span>&lt;span class="p">;&lt;/span> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="kt">int&lt;/span> &lt;span class="n">minimum&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">min&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">a&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">b&lt;/span>&lt;span class="p">);&lt;/span> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;Mniejsza liczba kalorii to: &amp;#34;&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">minimum&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Uzytkownik podaje liczbę kalorii zawartą w potrawie a, a potem w potrawie b. Program deklaruje zmienną &amp;lsquo;minimum&amp;rsquo; przechowującą najmniejszą liczbę kalorii w potrawie, a potem ją wypisuje.&lt;/p></description></item><item><title>Instrukcje warunkowe i operatory logiczne</title><link>https://informejtycy.pl/articles/3-if/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/3-if/</guid><description>&lt;h1 id="instrukcje-warunkowe-i-operatory-logiczne">Instrukcje warunkowe i operatory logiczne&lt;/h1>
+&lt;h2 id="wstęp">Wstęp&lt;/h2>
+&lt;p>Już wiesz, czym są &lt;strong>zmienne&lt;/strong>, a teraz nauczymy Cię, jak z nimi pracować. W C++ istnieją tzw. operatory logiczne, które są w dużej mierze oparte na matematyce. Ten dział jest omawiany w pierwszej klasie liceum.&lt;/p>
+&lt;h2 id="porównywanie-wartości">Porównywanie wartości&lt;/h2>
+&lt;p>Zacznijmy od najprostszych operatorów porównania:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="n">a&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">b&lt;/span> &lt;span class="c1">// a jest mniejsze od b
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="n">a&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="n">b&lt;/span> &lt;span class="c1">// a jest mniejsze bądź równe od b
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="n">a&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">b&lt;/span> &lt;span class="c1">// a jest większe od b
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="n">a&lt;/span> &lt;span class="o">&amp;gt;=&lt;/span> &lt;span class="n">b&lt;/span> &lt;span class="c1">// a jest większe bądź równe od b
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="n">a&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="n">b&lt;/span> &lt;span class="c1">// a równa się b
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="n">a&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="n">b&lt;/span> &lt;span class="c1">// a nie równa się b
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Takie operatory zwracają wartość zmiennej typu &lt;code>bool&lt;/code>:&lt;/p></description></item><item><title>Jak zacząć?</title><link>https://informejtycy.pl/articles/0-jak-zaczac/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/0-jak-zaczac/</guid><description>&lt;h1 id="jak-zacząć">Jak zacząć?&lt;/h1>
+&lt;h2 id="kompilatory-online-i-edytory">Kompilatory online i edytory&lt;/h2>
+&lt;p>Podstawowym narzędziem, bez którego nie da się rozpocząć nauki programowania, jest kompilator. Jest to miejsce, w którym nasz kod jest tłumaczony na język zrozumiały przez komputer, a następnie uruchamiany. Na samym początku można korzystać z kompilatorów online. W tym celu polecamy używanie:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://ideone.com/l/cpp">ideone.com&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.programiz.com/cpp-programming/online-compiler/">Programiz&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.mycompiler.io/new/cpp">myCompiler&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Jeśli chcesz mieć pobrany edytor kodu, aby móc zapisywać swoje odpowiedzi do zadań i programować bez połączenia do internetu, polecamy:&lt;/p></description></item><item><title>Kolejka</title><link>https://informejtycy.pl/articles/5-queue-deque/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/5-queue-deque/</guid><description>&lt;h1 id="queue-i-deque">Queue i deque&lt;/h1>
+&lt;h2 id="queue">Queue&lt;/h2>
+&lt;p>Kolejną poznaną strukturą danych będzie kolejka, która pozwala na przechwywanie danych według kolejności ich dodawania.&lt;/p>
+&lt;h2 id="inicjowanie-kolejki">Inicjowanie kolejki&lt;/h2>
+&lt;p>Kolejkę tworzymy porzez napisanie nazwy &lt;code>queue&lt;/code>, typu danych jakie będzie przechowywać oraz nazwy:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="n">queue&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">kolejka&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Do używania kolejki konieczne jest zaimportowanie modułu &lt;code>queue&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;queue&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="przypisywanie-danych">Przypisywanie danych&lt;/h2>
+&lt;p>Dane do kolejki dodajemy przez metodę &lt;code>push&lt;/code>, która umieszcza je na końcu kolejki:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="n">kolejka&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">push&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="odwołanie-się-do-elementów">Odwołanie się do elementów&lt;/h2>
+&lt;p>Kolejka róźni się od dotąd poznanych typów danych, brakiem swobodnego dostępu do wszystkich danych, a jedynie do pierwszego elementu poprzez metodę &lt;code>front&lt;/code>, np.:&lt;/p></description></item><item><title>Map i Unordered map</title><link>https://informejtycy.pl/articles/8-map-i-unordered-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/8-map-i-unordered-map/</guid><description>&lt;h1 id="map-i-unordered-map">Map i Unordered map&lt;/h1>
+&lt;h2 id="map">Map&lt;/h2>
+&lt;p>Mapa służy do przyporządkowywania danym kluczom pewnych wartości. Aby jej użyć należy zaincludować bibliotekę map. Klucz to wartość występująca jako pierwsza.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;map&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="inicjowanie-mapy">Inicjowanie mapy&lt;/h2>
+&lt;p>Mapę tworzy się bardzo podobnie do pary. Należy podać w nawiasie ostrokątnym dwa typy zmiennych, gdyż pierwszy element jest odpowiednikiem drugiego.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="n">map&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">string&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">string&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">glosy&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{{&lt;/span>&lt;span class="s">&amp;#34;Ania&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;mezzosopran&amp;#34;&lt;/span>&lt;span class="p">},&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="s">&amp;#34;Beatka&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;alt&amp;#34;&lt;/span>&lt;span class="p">},&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="s">&amp;#34;Czarek&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;tenor&amp;#34;&lt;/span>&lt;span class="p">}};&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="odwoływanie-się-do-elementów-mapy">Odwoływanie się do elementów mapy&lt;/h2>
+&lt;p>Odwoływanie się w mapie polega na dostawaniu się do wartości kryjącej się pod kluczem. Robimy to, stosując nawiasy kwadratowe lub komendę &lt;code>nazwa_mapy.at(wartość)&lt;/code>. Co ciekawe jeśli odwołujemy się do klucza, który nie istnieje, automatycznie się on tworzy. Jeśli nie podamy wartości, jakiej powinien przypadać klucz, to ten drugi element będzie się równał:&lt;/p></description></item><item><title>Napisy</title><link>https://informejtycy.pl/articles/9-ciagi-znakow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/9-ciagi-znakow/</guid><description>&lt;h1 id="napisy">Napisy&lt;/h1>
+&lt;h2 id="czym-są-napisy">Czym są napisy?&lt;/h2>
+&lt;p>W komputerze wszystko to liczby. Pytanie więc brzmi, jak przechować słowo albo zdanie? Zdanie to nic innego jak &lt;em>ciąg znaków.&lt;/em> Potrafimy przechować ciąg, za pomocą tablicy. Mamy typ &lt;code>char&lt;/code>, który pozwala przechować znaki. Więc możemy przechować ciąg, za pomocą tablicy znaków.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">char&lt;/span> &lt;span class="n">slowo&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">6&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s">&amp;#34;Witaj&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Podobnie jak w przypadku tablicy, możemu uzyskiwać kolejne literki poprzez kwadratowe nawiasy. Na przykład &lt;code>slowo[2]&lt;/code> zwróci &lt;code>t&lt;/code> (pamiętamy o indeksowaniu od zera). Zwróćmy uwagę na jedną rzecz, chociaż słowo &amp;ldquo;Witaj&amp;rdquo; ma długość pięciu znaków, tablica ma rozmiar &lt;code>6&lt;/code>. Dlaczego?&lt;/p></description></item><item><title>NWD, NWW i algorytm Euklidesa</title><link>https://informejtycy.pl/articles/6-nwd-algorytm-euklidesa-i-nww/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/6-nwd-algorytm-euklidesa-i-nww/</guid><description>&lt;h1 id="nwd-nww-i-algorytm-euklidesa">NWD, NWW i algorytm Euklidesa&lt;/h1>
+&lt;h2 id="nwd">NWD&lt;/h2>
+&lt;p>Zapewne spotkałeś się już z takim skrótem jak NWD. Oznacza on Największy Wspólny Dzielnik, czyli największą możliwą liczbę, która dzieli liczbę $a$ i liczbę $b$ bez reszty. Czy zastanawiałeś się już, jak można znaleźć NWD pisząc program w C++? Można to zrobić w bardzo prosty sposób. Już wiesz, jak znaleźć dzielniki liczby $a$, dlatego teraz wystarczy sprawdzić, czy dzielniki $a$ dzielą także $b$. Warto zauważyć, że jeśli $a$ jest większe od $b$ to niektóre dzielniki $a$ mogą być większe od $b$, dlatego warto jest sprawdzać dzielniki liczby mniejszej.&lt;/p></description></item><item><title>Pair i Struct</title><link>https://informejtycy.pl/articles/3-pair-i-struct/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/3-pair-i-struct/</guid><description>&lt;h1 id="pair-i-struct">Pair i Struct&lt;/h1>
+&lt;h2 id="czym-jest-para">Czym jest para?&lt;/h2>
+&lt;p>Jak można spodziewać się po samej nazwie, para to struktura danych służąca do przechowywania &lt;strong>dwóch wartości&lt;/strong>. Może ona przechowywać zarówno takie same, jak i różne typy danych.&lt;/p>
+&lt;h2 id="inicjowanie-pary">Inicjowanie pary&lt;/h2>
+&lt;p>Parę tworzymy podając dwa typy zmiennych w nawiasie ostrokątnym oraz jej nazwę:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="n">pair&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">string&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kt">int&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">p1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Co ciekawe w parze możemy przechowywać inne pary, np.:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="n">pair&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">pair&lt;/span>&lt;span class="o">&amp;lt;&lt;/span>&lt;span class="kt">long&lt;/span> &lt;span class="kt">long&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">string&lt;/span>&lt;span class="o">&amp;gt;&amp;gt;&lt;/span> &lt;span class="n">p2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="przypisywanie-danych">Przypisywanie danych&lt;/h2>
+&lt;p>Mamy dwa sposoby na przypisanie danych. W pierwszym używamy komendy &lt;code>make_pair()&lt;/code>. Natomiast w drugim nie stosujemy żadnych komend. Musimy jednak pamiętać o nawiasie klamrowym:&lt;/p></description></item><item><title>Pętle</title><link>https://informejtycy.pl/articles/4-for-while-do-while/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/4-for-while-do-while/</guid><description>&lt;h1 id="pętle">Pętle&lt;/h1>
+&lt;h2 id="while">While&lt;/h2>
+&lt;p>&lt;strong>Pętla&lt;/strong> &lt;code>while&lt;/code> służy do wielokrotnego wykonywania bloku kodu, dopóki warunek pętli jest prawdziwy.&lt;/p>
+&lt;p>&lt;strong>Składnia pętli &lt;code>while&lt;/code>:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="k">while&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">warunek&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="c1">// kod do wykonania
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Warunek&lt;/strong>: Przed każdą iteracją (powtórzeniem) pętla sprawdza warunek. Jeśli warunek jest &lt;strong>prawdziwy&lt;/strong>, blok kodu wewnątrz pętli jest wykonywany. Jeśli warunek jest &lt;strong>fałszywy&lt;/strong>, pętla kończy działanie.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Kod do wykonania&lt;/strong>: Blok kodu wewnątrz pętli, który będzie wykonywany wielokrotnie, dopóki warunek będzie prawdziwy.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Przykład pętli &lt;code>while&lt;/code> :&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>&lt;span class="k">using&lt;/span> &lt;span class="k">namespace&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="kt">int&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="c1">// Pętla, która wypisuje liczy od 1 do 5
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>	&lt;span class="k">while&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34; &amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="n">i&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="c1">// Wypisze: 1 2 3 4 5
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="k">return&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Wyjaśnienie:&lt;/strong>&lt;/p></description></item><item><title>Pierwszość i podzielność liczb</title><link>https://informejtycy.pl/articles/5-pierwszosc-i-podzielnosc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/5-pierwszosc-i-podzielnosc/</guid><description>&lt;h1 id="sprawdzanie-pierwszości-podzielności-i-liczby-dzielników-liczb">Sprawdzanie pierwszości, podzielności i liczby dzielników liczb&lt;/h1>
+&lt;h2 id="podzielność">Podzielność&lt;/h2>
+&lt;p>Aby sprawdzić, czy liczba $a$ dzieli się przez liczbę $b$, możemy użyć operatora &lt;code>%&lt;/code>. Sprawdzimy więc, czy reszta z dzielenia liczby $a$ przez liczbę $b$ jest równa 0.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">bool&lt;/span> &lt;span class="n">czy_a_dzieli_sie_przez_b&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">false&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// poczatkowo ustawiamy falsz
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">a&lt;/span> &lt;span class="o">%&lt;/span> &lt;span class="n">b&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">czy_a_dzieli_sie_przez_b&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">true&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// uzywamy operatora %
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Powyższy fragment kodu sprawdza, czy liczba $a$ dzieli się przez liczbę $b$.&lt;/p>
+&lt;h2 id="sprawdzanie-pierwszości">Sprawdzanie pierwszości&lt;/h2>
+&lt;p>Korzystając z pętli while możemy sprawdzić, czy dana liczba jest pierwsza. Liczba pierwsza to taka, która ma dokładnie 2 różne dzielniki (1 i samą siebie). Dla przykładu, liczby 2, 3, 5, 7 są liczbami pierwszymi, a liczby 0, 1, 4, 8, 9 nie są. Więcej o liczbach pierwszych można wyczytać na &lt;a href="https://pl.wikipedia.org/wiki/Liczby_pierwsze">Wikipedii&lt;/a>.
+Spróbujmy się zastanowić, jak by miał działać prosty program, który wczytuje jedną liczbę naturalną $a$, taką, że $0 \leq a \leq 10^6$ i wypisuje TAK jeśli liczba jest pierwsza lub NIE w przeciwnym wypadku. Oto pomysł na program:&lt;/p></description></item><item><title>Pierwszy program w C++</title><link>https://informejtycy.pl/articles/1-pierwszy-program/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/1-pierwszy-program/</guid><description>&lt;h1 id="pierwszy-program-w-c">Pierwszy program w C++&lt;/h1>
+&lt;h2 id="pierwsze-kroki">Pierwsze kroki&lt;/h2>
+&lt;p>Spróbujmy najpierw napisać program, który coś wypisze. Mówi się, że komputer &lt;em>wypisuje coś na wyjście&lt;/em>, czyli, że tekst pojawi się na ekranie. Oto linijka, która to robi:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;Witaj uzytkowniku!&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Na ten moment nie przejmuj się tym &lt;code>std::&lt;/code>, zaraz wyjaśni się, dlaczego jest to potrzebne i jak tego uniknąć.&lt;/p>
+&lt;p>Każda linijka musi się kończyć znakiem &lt;code>;&lt;/code> - tak został stworzony język, żeby jasno oddzielić od siebie linie. &lt;code>cout&lt;/code> to z angielskiego &lt;em>character output&lt;/em>, czyli wyjście znaków. Komputer oczekuje po nim znaku &lt;code>&amp;lt;&amp;lt;&lt;/code>, po którym powinna znaleźć się wartość do wypisania. Z racji tego, że program ma wypisać słowo (albo zdanie), a nie na przykład liczbę, musi ona znaleźć się między znakami &lt;code>&amp;quot; &amp;quot;&lt;/code>. Co istotne, na razie dopuszczane są tylko litery alfabetu łacińskiego.&lt;/p></description></item><item><title>Priority queue</title><link>https://informejtycy.pl/articles/6-priority-queue/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/6-priority-queue/</guid><description>&lt;h1 id="priority-queue">Priority queue&lt;/h1>
+&lt;p>Poznałeś już, czym jest zwykła kolejka. Każdy dodany element ustawia się w niej i czeka na chwilę, gdy znajdzie się na jej przodzie. Niekiedy jednak przydatne mogłoby okazać się narzędzie, umożliwiające na trzymanie elementów w dowolnej kolejności - najlepiej tak, aby wpasowywało ono nowo dodany fragment w już istniejący. Standardowa biblioteka C++ oczywiście posiada takie narzędzie. Nosi ono nazwę &lt;code>priority_queue&lt;/code> i zawiera
+się w nagłówku &lt;code>&amp;lt;queue&amp;gt;&lt;/code>.&lt;/p>
+&lt;p>By zainicjować kolejkę priorytetową wystarczy napisać &lt;code>priority_queue&lt;/code> i w nawiasach ostrokątnych podać typ, jaki będzie przechowywany w kolejce. Domyślnie kolejka przechowuje elementy malejąco.&lt;/p></description></item><item><title>Rekurencja</title><link>https://informejtycy.pl/articles/10-rekurencja/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/10-rekurencja/</guid><description>&lt;h1 id="rekurencja">Rekurencja&lt;/h1>
+&lt;p>&lt;strong>Funkcja rekurencyjna&lt;/strong> to funkcja, która uruchamia samą siebie. Pytanie brzmi - kiedy takie funkcje są nam potrzebne?&lt;/p>
+&lt;h2 id="po-co-nam-rekurencja">Po co nam rekurencja?&lt;/h2>
+&lt;p>Wyobraźmy sobie, że analizujemy strukturę. Jej wartość określa się, jako sumę jej wartości. Wartościami struktury mogą być
+liczby, albo inne struktury. Program, który obliczyłby wartość danej struktury, musiałby zsumować jej wartości. Co
+jeśli wartość jest mu nie znana - musi ją pozyskać, a więc zsumować jej wartości. Co jeśli wartością tej kolejnej struktury
+jest jeszcze kolejna struktura? Znowu musimy pozyskać jej wartość. Cały proces się zapętla, a program może zrobić się bardzo
+skomplikowany. Funkcja rekurencja rozwiązuje ten problem. Najpierw implementujemy jej działanie dla &lt;em>idealnej&lt;/em> struktury,
+czyli takiej, której wartościami są jedynie liczby. Teraz dodajemy warunek, jeżeli jakąś wartością struktury jest inna
+struktura, uruchom się dla niej. Dzięki temu, niezależnie czy ta głębsza struktura będzie idealna czy nie, funkcja
+poprawnie obliczy jej wartość. Jeśli bowiem natrafi na kolejną strukturę, wywoła się dla niej - niezależnie od tego jak bardzo
+&lt;em>zagnieżdżone&lt;/em> są te struktury, funkcja ta policzy wszystkie ich wartości.&lt;/p></description></item><item><title>Set i multiset</title><link>https://informejtycy.pl/articles/7-set-i-multiset/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/7-set-i-multiset/</guid><description>&lt;h1 id="set-i-multiset">Set i multiset&lt;/h1>
+&lt;h2 id="set">Set&lt;/h2>
+&lt;p>&lt;code>set&lt;/code> jest strukturą danych, która przechowuje unikalne elementy w porządku rosnącym (domyślnie, ale porządek ten można dostosować).&lt;/p>
+&lt;p>&lt;strong>Podstawowe cechy &lt;code>set&lt;/code>:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Unikalność elementów&lt;/strong> – &lt;code>set&lt;/code> nie dopuszcza powtarzających się elementów. Każdy element w zbiorze występuje tylko raz.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Porządek&lt;/strong> – elementy w &lt;code>set&lt;/code> są przechowywane w uporządkowanej kolejności.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Operacje na &lt;code>set&lt;/code>:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>insert()&lt;/code> – dodaje element do zbioru (jeśli nie istnieje).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>find()&lt;/code> – wyszukuje element w zbiorze.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>erase()&lt;/code> – usuwa element ze zbioru.&lt;/p></description></item><item><title>Sortowanie</title><link>https://informejtycy.pl/articles/13-sortowanie/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/13-sortowanie/</guid><description>&lt;h1 id="sortowanie">Sortowanie&lt;/h1>
+&lt;h2 id="sortowanie-przez-wybieranie-selection-sort">Sortowanie przez wybieranie (Selection Sort)&lt;/h2>
+&lt;p>&lt;strong>Sortowanie przez wybieranie&lt;/strong> polega na znajdowaniu najmniejszego (lub największego) elementu w nieposortowanej części tablicy i zamianie go z pierwszym elementem tej części. Proces ten powtarzamy dla kolejnych pozycji aż cała tablica będzie posortowana.&lt;/p>
+&lt;p>&lt;strong>Jak to działa?:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Przechodzimy po tablicy, wybierając najmniejszy element z pozostałych.&lt;/li>
+&lt;li>Zamieniamy go z pierwszym elementem w nieposortowanej części.&lt;/li>
+&lt;li>Powtarzamy krok 1 dla pozostałych elementów.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Kod:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>&lt;span class="k">using&lt;/span> &lt;span class="k">namespace&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kt">void&lt;/span> &lt;span class="nf">sortowanie&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">tablica&lt;/span>&lt;span class="p">[],&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">n&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">int&lt;/span> &lt;span class="n">najmniejszy&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// Zakładamy, że obecny element jest najmniejszy
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Jeśli znajdziemy mniejszy element, zmieniamy indeks najmniejszego
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">j&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">j&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">j&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">tablica&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">j&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">tablica&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">najmniejszy&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">najmniejszy&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">j&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Zamieniamy elementy miejscami
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="n">a&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">tablica&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">];&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">tablica&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">tablica&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">najmniejszy&lt;/span>&lt;span class="p">];&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">tablica&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">najmniejszy&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">a&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">int&lt;/span> &lt;span class="n">tablica&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="mi">20&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">40&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">30&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">50&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">int&lt;/span> &lt;span class="n">n&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// Rozmiar tablicy
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">sortowanie&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">tablica&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">tablica&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34; &amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Wypisze: 10 20 30 40 50
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="sortowanie-przez-zliczanie-counting-sort">Sortowanie przez zliczanie (Counting Sort)&lt;/h2>
+&lt;p>&lt;strong>Sortowanie przez zliczanie&lt;/strong> działa inaczej niż tradycyjne algorytmy. Zamiast porównywać elementy, liczymy, ile razy występuje każdy element w zbiorze, a potem tworzymy posortowany vector na podstawie tych zliczeń.&lt;/p></description></item><item><title>System ASCII</title><link>https://informejtycy.pl/articles/8-ascii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/8-ascii/</guid><description>&lt;h1 id="system-ascii">System ASCII&lt;/h1>
+&lt;p>&lt;strong>ASCII&lt;/strong> to standard kodowania znaków, który przypisuje numery literom, cyfrom i symbolom. Innymi słowy, jest to system zapisu znaków poprzez liczby (7-bitowe - od 0 do 127) wykorzystywany między innymi przez C++. Oznacza to, że każda &lt;em>litera alfabetu łacińskiego/cyfra/biały znak&lt;/em> (i wiele więcej) posiada swój własny numer w systemie ASCII.&lt;/p>
+&lt;p>Poniższy fragment kodu wczyta dowolny znak i wypisze jego numer w systemie ASCII.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">char&lt;/span> &lt;span class="n">znak&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">cin&lt;/span> &lt;span class="o">&amp;gt;&amp;gt;&lt;/span> &lt;span class="n">znak&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="n">numer&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">znak&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// znak w zmiennej typu int przyjmuje wartość ASCII
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">numer&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Oczywiście można to zrobić bez użycia zmiennej typu int:&lt;/p></description></item><item><title>Systemy liczbowe</title><link>https://informejtycy.pl/articles/11-systemy-liczbowe/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/11-systemy-liczbowe/</guid><description>&lt;h1 id="systemy-liczbowe">Systemy liczbowe&lt;/h1>
+&lt;h2 id="system-dziesiętny">System dziesiętny&lt;/h2>
+&lt;p>System dziesiętny to najpopularniejszy system liczbowy, którego używamy na co dzień. Składa się z dziesięciu cyfr: 0, 1, 2, 3, 4, 5, 6, 7, 8 i 9. Ważne jest też położenie cyfry w liczbie – określa ono jej wartość (np. w liczbie 2136: 2 oznacza tysiące, 1 oznacza setki, 3 – dziesiątki, a 6 – jedności). Uważa się, że na co dzień używamy właśnie systemu dziesiętnego, ponieważ jest najprostszy do nauki. Wynika to z faktu, że mamy 10 palców, za pomocą których jako dzieci uczymy się liczenia.&lt;/p></description></item><item><title>Tablice</title><link>https://informejtycy.pl/articles/7-tablice/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/7-tablice/</guid><description>&lt;h1 id="tablice">Tablice&lt;/h1>
+&lt;p>Nadszedł czas poznać pierwszą strukturę pozwalającą przechowywać wiele wartości. Jest nią tablica, czyli wiele zmiennych tego samego typu, które są zebrane pod jedną nazwą, a do konkretnej zmiennej tj. komórki tablicy uzyskujemy dostęp poprzez wskazanie jej numeru. Na pierwszy rzut oka nietypowym zjawiskiem jest numeracja komórek tablicy od zera, jednak jak się niedługo dowiecie w wielu przypadkach jest to naprawdę przydatne.&lt;/p>
+&lt;h2 id="inicjowanie">Inicjowanie&lt;/h2>
+&lt;p>Tworzenie tablicy jest bardzo podobne do tworzenia zmiennej, jednak dodatkowym elementem jest to że musimy napisać po jej nazwie, w nawiasach kwadratowych liczbę naturalnej oznaczającej wielkość tablicy.&lt;/p></description></item><item><title>Vector</title><link>https://informejtycy.pl/articles/12-vector/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/12-vector/</guid><description>&lt;h1 id="vector">Vector&lt;/h1>
+&lt;p>Tablice są bardzo dobrym rozwiązaniem do przechowywania wielu danych, jednak konieczność ścisłego ustalenia ich wielkości, po czym nie wykorzystywania znacznej części, bo np. okazało się że w takim przypadku potrzebujemy mniej miejsca, może czasem być denerwujące. Dlatego możemy używać vectorów zamiast tablic, wiele spośród ich mechanik są analogiczne do tych tablicy, jednak zawiera on również dodatkowe przydatne funkcje.&lt;/p>
+&lt;h2 id="inicjowanie">Inicjowanie&lt;/h2>
+&lt;p>Aby móc korzystać z &lt;code>vectorów&lt;/code>, na początku trzeba zaimportować &lt;code>#include &amp;lt;vector&amp;gt;&lt;/code>, potem tworzymy go poprzez zapisanie nazwy &lt;code>vector&lt;/code>, następnie typu danych w nawiasach ostrokątnych &lt;code>&amp;lt;typ_danych&amp;gt;&lt;/code> oraz nazwy na końcu &lt;code>nazwa&lt;/code>, po której opcjonalnym elementem jest wielkości vectora w nawiasach okrągłych &lt;code>(wielkość_początkowa)&lt;/code>. :&lt;/p></description></item><item><title>Własne sortowanie</title><link>https://informejtycy.pl/articles/4-custom-sort/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/4-custom-sort/</guid><description>&lt;h1 id="własne-sortowanie">Własne sortowanie&lt;/h1>
+&lt;h2 id="wstęp">Wstęp&lt;/h2>
+&lt;p>Znasz już funkcję sort, która pozwala na posortowanie jakiejś struktury, ale sposób w jaki to robi nie jest zależny od Ciebie. Co jeśli chcemy posortować stringi np. po ich długości. Musimy wtedy sprawić, aby funkcja sort zachowywała się inaczej niż zwykle i do tego potrzebna jest &lt;strong>własna funkcja porównująca&lt;/strong>. Wtedy sort wygląda tak:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="n">sort&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">first&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">last&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">comp&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="funkcja-porównująca">Funkcja porównująca&lt;/h2>
+&lt;p>&lt;code>Comp&lt;/code> jest funkcją, którą musimy sami stworzyć. Domyślna funkcja &lt;code>comp&lt;/code> sortuje rosnąco (a raczej niemalejąco) i wygląda tak:&lt;/p></description></item><item><title>Wyszukiwanie liniowe i binarne</title><link>https://informejtycy.pl/articles/14-wyszukiwanie-liniowe-i-binarne/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/14-wyszukiwanie-liniowe-i-binarne/</guid><description>&lt;h1 id="wyszukiwanie-liniowe-i-binarne">Wyszukiwanie liniowe i binarne&lt;/h1>
+&lt;h2 id="wyszukiwanie-liniowe">Wyszukiwanie liniowe&lt;/h2>
+&lt;p>Czym jest wyszukiwanie liniowe? Nazwa może przerażać, ale jest to najprostszy sposób na wyszukanie odpowiedzi na nasze zapytanie w danym ciągu. Polega on jedynie na przejściu przez ciąg. Wyobraźmy sobie, że mamy ciąg liczb i dostajemy $k$ zapytań o dane liczby, czy występują one w ciągu. Jak wyglądałby taki kod?&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;vector&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>&lt;span class="k">using&lt;/span> &lt;span class="k">namespace&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">vector&lt;/span> &lt;span class="o">&amp;lt;&lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">ciag&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="kt">int&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="n">cin&lt;/span> &lt;span class="o">&amp;gt;&amp;gt;&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="kt">int&lt;/span> &lt;span class="n">liczba&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="k">for&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="n">cin&lt;/span> &lt;span class="o">&amp;gt;&amp;gt;&lt;/span> &lt;span class="n">liczba&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="n">ciag&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">push_back&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">liczba&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="kt">int&lt;/span> &lt;span class="n">k&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">liczba_do_spr&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="n">cin&lt;/span> &lt;span class="o">&amp;gt;&amp;gt;&lt;/span> &lt;span class="n">k&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="k">for&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">k&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="n">cin&lt;/span> &lt;span class="o">&amp;gt;&amp;gt;&lt;/span> &lt;span class="n">liczba_do_spr&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="kt">bool&lt;/span> &lt;span class="n">czy_wystepuje&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="c1">// to w tej pętli przechodzimy po całym ciągu, czyli stosujemy wyszukiwanie liniowe
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>		&lt;span class="k">for&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">x&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">x&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">n&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">x&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">ciag&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="n">liczba_do_spr&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="n">czy_wystepuje&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">true&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="k">break&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">czy_wystepuje&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;TAK&amp;#34;&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;NIE&amp;#34;&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ten sposób sprawdza się, kiedy mamy nieposortowany ciąg, a także jak nasze $n$, czyli długość ciągu, jest stosunkowo małe.&lt;/p></description></item><item><title>Złożoność czasowa</title><link>https://informejtycy.pl/articles/2-zlozonosc-czasowa-programow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/2-zlozonosc-czasowa-programow/</guid><description>&lt;h1 id="złożoność-czasowa">Złożoność czasowa&lt;/h1>
+&lt;h2 id="wstęp">Wstęp&lt;/h2>
+&lt;p>Podczas nauki C++ nie sposób nie wspomnieć o jego prędkości. Jest on jednym z najszybszych języków programowania jednocześnie dostarczając wiele użytecznych funkcjonalności. Jednak jakby się postarać, to w każdym języku programowania można napisać coś co będzie baaardzo wolne. No właśnie - ale jak bardzo wolne?&lt;/p>
+&lt;h2 id="jak-zmierzyć-czas-wykonywania-programu">Jak zmierzyć czas wykonywania programu?&lt;/h2>
+&lt;p>Do mierzenia szybkości programu wykorzystywana jest notacja dużego O. Zanim powiem na czym polega, przeanalizujmy dlaczego zwykłe mierzenie czasu wykonywania programu nie jest zbyt miarodajne. Przypuśćmy, że bierzemy pod lupę taki fragment kodu:&lt;/p></description></item><item><title>Zmienne i operatory matematyczne</title><link>https://informejtycy.pl/articles/2-zmienne/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://informejtycy.pl/articles/2-zmienne/</guid><description>&lt;h1 id="zmienne-i-operatory-matematyczne">Zmienne i operatory matematyczne&lt;/h1>
+&lt;h2 id="czym-są-zmienne">Czym są zmienne?&lt;/h2>
+&lt;p>&lt;em>Zmienne&lt;/em> w informatyce można porównać do pudełek. Pudełko ma rozmiar i kształt, toteż mogą się w nim znaleźć tylko pasujące rzeczy. Ma również swoją nazwę, aby język mógł odróżnić je od innych. Kształt i rozmiar określa &lt;em>typ danych.&lt;/em> Na przykład, do &amp;ldquo;pudełka&amp;rdquo; z typem &lt;code>int&lt;/code>, od angielskiego &lt;em>integer&lt;/em>, możemy wrzucić tylko liczby całkowite. W C++ tworzymy zmienne w następujący sposób.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">typ nazwa = wartosc;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="typy-danych">Typy danych&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">Typ danych&lt;/th>
+ &lt;th style="text-align: center">Opis&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;code>int&lt;/code>&lt;/td>
+ &lt;td style="text-align: center">Przechowuje liczby całkowite w zakresie od $-2^{31}$ do $2^{31}-1$. Na nasze potrzeby wystarczy informacja, że jest to pomiędzy $-10^9$, a $10^9$.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;code>long long&lt;/code>&lt;/td>
+ &lt;td style="text-align: center">Przechowuje liczby całkowite w zakresie od $-2^{63}$ do $2^{63}-1$. Na nasze potrzeby wystarczy informacja, że jest to pomiędzy $-10^{18}$, a $10^{18}$.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;code>float&lt;/code>/&lt;code>double&lt;/code>&lt;/td>
+ &lt;td style="text-align: center">Przechowuje liczby rzeczywiste (z przecinkiem). &lt;code>double&lt;/code> pozwala przechować liczby o wyższej &lt;em>precyzji&lt;/em> - albo liczby większe, albo z większą ilością cyfr po przecinku. Jeżeli wahasz się przy wyborze jednego z nich, weź &lt;code>double&lt;/code>.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;code>char&lt;/code>&lt;/td>
+ &lt;td style="text-align: center">Przechowuje znaki (w kodowaniu ASCII, co oznacza między innymi brak polskich znaków). Znaki przechowuje się między znakami &lt;code>' '&lt;/code> (a ciągi znaków między &lt;code>&amp;quot; &amp;quot;&lt;/code>).&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;code>bool&lt;/code>&lt;/td>
+ &lt;td style="text-align: center">Wartość logiczna - zero lub jeden.&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">&lt;code>void&lt;/code>&lt;/td>
+ &lt;td style="text-align: center">Z pierwszego artykułu wiesz już że &lt;em>prawie&lt;/em> każda funkcja coś zwraca. Funkcje, które nic nie zwracają (czyli nie obliczają żadnej wartości), są oznaczane właśnie tym typem.&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>Dla dociekliwych, &lt;a href="#dla-dociekliwych-nr-1-sk%C4%85d-pochodz%C4%85-nazwy-typ%C3%B3w-danych">pod koniec artykułu&lt;/a> wyjaśniam również, dlaczego użyto takich nazw.&lt;/p></description></item></channel></rss>
