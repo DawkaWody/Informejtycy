@@ -95,36 +95,38 @@
 </div>
 
 <script>
-    
-document.addEventListener("DOMContentLoaded", function() {
-// Sprawdzanie i przypisanie wartości tylko, jeśli element istnieje
-const sekcje = [
-    "sec1-01", "sec1-02", "sec1-03", "sec1-04", "sec1-05",
-    "sec1-06", "sec1-07", "sec1-08", "sec1-09", "sec1-10",
-    "sec1-11", "sec1-12", "sec1-13", "sec1-14", "sec1-15",
-    "sec2-01", "sec2-02", "sec2-03", "sec2-04", "sec2-05",
-    "sec2-06", "sec2-07", "sec2-08", "sec2-09", "sec2-10"
-];
+    document.addEventListener("DOMContentLoaded", function() {
+        // Sprawdzanie i przypisanie wartości tylko, jeśli element istnieje
+        const sekcje = [
+            {{ range $sortedSections1 }}
+                "sec1-{{ . }}",
+            {{ end }}
+            {{ range $sortedSections2 }}
+                "sec2-{{ . }}",
+            {{ end }}
+        ];
 
-const teksty = [
-    "1. Pierwszy program w C++", "2. Zmienne i operatory matematyczne", "3. Instrukcje warunkowe i operatory logiczne",
-    "4. Pętle", "5. Pierwszość i podzielność liczb", "6. NWD, NWW i algorytm Euklidesa", "7. Tablice",
-    "8. System ASCII", "9. Napisy", "10. Cyfry danej liczby i konwersja na napis", "11. Systemy liczbowe",
-    "12. Vector", "13. Sortowanie", "14. Wyszukiwanie liniowe i binarne", "15. Funkcje",
-    "1. Funkcje wbudowane", "2. Złożoność czasowa programów", "3. Pair i Struct", "4. Własne sortowanie",
-    "5. Kolejka", "6. Priority queue", "7. Set i multiset", "8. Map i Unordered map", "9. Stack", "10. Rekurencja"
-];
+        const teksty = [
+            {{ $sortedPages := sort .Site.RegularPages "Params.id" }}
+            {{ range $sortedPages }}
+                {{ if and (eq .Params.nerd false) (ne .Params.id 0)}}
+                    "{{ .Params.title }}",
+                {{ end }}
+            {{ end }}
+            {{ range $sortedPages }}
+                {{ if eq .Params.nerd true }}
+                    "{{ .Params.title }}",
+                {{ end }}
+            {{ end }}
+        ];
 
-for (let i = 0; i < sekcje.length; i++) {
-    let el = document.getElementById(sekcje[i]);
-    if (el) {
-        el.innerHTML = teksty[i];
-    }
-}
-
-// do poprawki (to było na szybko!!!)
-});
-
+        for (let i = 0; i < sekcje.length; i++) {
+            let el = document.getElementById(sekcje[i]);
+            if (el) {
+                el.innerHTML = teksty[i];
+            }
+        }
+    });
 </script>
 
 {{ end }}
