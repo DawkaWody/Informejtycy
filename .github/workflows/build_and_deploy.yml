@@ -61,4 +61,4 @@ jobs:
           password: ${{ secrets.REMOTE_PASSWORD }}
           script: |
             cd /home/inft/INFORMEJTYCY-PL
-            echo "${{ secrets.REMOTE_ROOT_PASSWORD }}" | sudo -S bash deploy_static.sh
+            echo "${{ secrets.REMOTE_PASSWORD }}" | sudo -S bash deploy_static.sh
