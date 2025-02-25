@@ -1,4 +1,4 @@
-name: Build site
+name: Build and remotely deploy site
 
 on:
   push:
@@ -37,7 +37,7 @@ jobs:
       - name: Copy all images
         run: cp -Rf ./src/assets/images/ ./src/public/
       
-      - name: Deploy site
+      - name: Copy site to built page branch
         if: github.ref == 'refs/heads/main'
         run: |
           cd ./src
@@ -52,3 +52,13 @@ jobs:
           else
             echo "No changes to the output on this push."
           fi
+      
+      - name: Trigger deploy on remote sever
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: inft
+          password: ${{ secrets.REMOTE_PASSWORD }}
+          script: |
+            cd /home/inft/INFORMEJTYCY-PL
+            bash deploy.sh
