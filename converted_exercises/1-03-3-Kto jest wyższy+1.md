@@ -1,7 +1,7 @@
 
 # Kto jest wyższy+1?
 
-Do Bajtka i Warka dołączył Maciek. Oceń kto z nich jest najwyższy.
+Do Bartka i Warka dołączył Maciek. Oceń kto z nich jest najwyższy.
 
 ## Wejście
 Na wejściu znajdują się dwie liczby całkowite $a$ , $b$ i $c$  *( $0 < a , b ,c < 10^5$)* oznaczające wysokości Bartka, Warka i Maćka(w tej kolejności).

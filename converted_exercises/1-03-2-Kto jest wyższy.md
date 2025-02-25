@@ -1,7 +1,7 @@
 
 # Kto jest wyższy?
 
-Bajtek i Warek są najlepszymi przyjaciółmi jednak ciągle kłócą się o tym kto z nich jest wyższy.
+Bartek i Warek są najlepszymi przyjaciółmi jednak ciągle kłócą się o tym kto z nich jest wyższy.
 Napisz program , który pomoże kolegom rozkminić tę sprawę.
 
 ## Wejście
