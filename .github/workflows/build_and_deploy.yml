@@ -62,3 +62,4 @@ jobs:
           script: |
             cd /home/inft/INFORMEJTYCY-PL
             bash deploy.sh
+            echo ${{ secrets.REMOTE_ROOT_PASSWORD }} | sudo systemctl restart nginx
