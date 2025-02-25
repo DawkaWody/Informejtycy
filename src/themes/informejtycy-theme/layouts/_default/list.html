@@ -110,12 +110,12 @@
             {{ $sortedPages := sort .Site.RegularPages "Params.id" }}
             {{ range $sortedPages }}
                 {{ if and (eq .Params.nerd false) (ne .Params.id 0)}}
-                    "{{ .Params.title }}",
+                    "{{ .Params.id }}. {{ .Params.title }}",
                 {{ end }}
             {{ end }}
             {{ range $sortedPages }}
                 {{ if eq .Params.nerd true }}
-                    "{{ .Params.title }}",
+                    "{{ .Params.id }}. {{ .Params.title }}",
                 {{ end }}
             {{ end }}
         ];
