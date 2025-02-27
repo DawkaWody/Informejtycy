@@ -31,7 +31,7 @@ std::cout << "Witaj uzytkowniku!";
 
 Wyobraź sobie pulpit, na którym jest plik o nazwie o nazwie "cout". Nie możesz tam zrobić drugiego pliku, o tej samej nazwie. Żeby tego uniknąć, można zrobić folder i w nim umieścić plik "cout". Tyle, że teraz za każdym razem muszę wejść ów folder, żeby uzyskać zawartość pliku "cout". Tym gorzej, jeśli na pulpicie nie ma żadnego pliku "cout" i nic by się nie stało, gdyby znajdował się poza folderem.
 
-To samo dzieje się w naszym programie. Programiści, w obawie przed tworzeniem dwóch różnych obiektów o tej samej nazwie, umieścili `cout` w przysłowiowym "folderze", o nazwie `std`. Za każdym razem, gdy chcę z niego skorzystać, muszę pisać `std::cout`. Możemy przyjąć, że `std::` to otworzenie tego "folderu". Żeby tego uniknąć, można wyciągnąć `cout` poza "folder". Robi to instrukcja `using namespace std`. Co istotne, gdy raz "wyciągniemy" `cout`, nie musimy więcej tego robić! Każde kolejne `cout` możemy pisać bez `std::`.
+To samo dzieje się w naszym programie. Programiści, w obawie przed tworzeniem dwóch różnych obiektów o tej samej nazwie, umieścili `cout` w "folderze", o nazwie `std` (profesjonalnie, nosi on nazwe *namespace*, czyli *przestrzeń nazw*). Za każdym razem, gdy chcę z niego skorzystać, muszę pisać `std::cout`. Możemy przyjąć, że `std::` to otworzenie tego "folderu". Żeby tego uniknąć, można wyciągnąć `cout` poza "folder". Robi to instrukcja `using namespace std`. Co istotne, gdy raz "wyciągniemy" `cout`, nie musimy więcej tego robić! Każde kolejne `cout` możemy pisać bez `std::`.
 
 ```cpp
 #include <iostream>
