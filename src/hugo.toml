@@ -3,6 +3,8 @@ languageCode = 'pl-pl'
 title = 'Informejtycy.pl'
 theme = 'informejtycy-theme'
 
+enableEmoji = true
+
 [markup]
     [markup.tableOfContents]
         startLevel = 2
