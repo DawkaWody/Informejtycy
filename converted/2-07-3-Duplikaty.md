@@ -5,7 +5,7 @@ Napisz program, który wczytuje ciąg liczb całkowitych, a następnie wyświetl
 ### Wejście:
 
 Pierwsza linia zawiera liczbę $n$ ($0 < n \le 10^6$) – liczbę liczb całkowitych w ciągu.  
-Druga linia zawiera $n$ liczb całkowitych $a_1, a_2​, \cdots, a_n$ ($-1000 < a \le 1000$)
+Druga linia zawiera $n$ liczb całkowitych $a_1, a_2, \cdots, a_n$ ($-1000 < a \le 1000$)
 
 ### Wyjście:
 

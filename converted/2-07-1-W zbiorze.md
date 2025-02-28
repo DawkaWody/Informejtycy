@@ -7,7 +7,7 @@ Napisz program, który
 ### Wejście:
 
 Pierwsza linia zawiera liczbę $n$  – liczbę liczb całkowitych do wczytania.
-Druga linia wejścia zawiera liczby $a_1​, a_2​, …, a_n$ ($-1000 < a \le 1000$), które mają zostać wczytane do zbioru.
+Druga linia wejścia zawiera liczby $a_1, a_2, \dots, a_n$ ($-1000 < a \le 1000$), które mają zostać wczytane do zbioru.
 Trzecia linia zawiera jedną liczbę całkowitą szukaną $x$ ($-1000 < x \le 1000$) w zbiorze.
 
 ### Wyjście:
