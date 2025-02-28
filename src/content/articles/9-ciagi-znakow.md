@@ -94,3 +94,19 @@ int main()
 ```
 
 Program *podstawi* zmienną `i` za kolejne wartości od `0` do długości słowa i dla każdej ów zmiennej, wypisze znak spod jej indeksu, ze zmiennej `napis`.
+
+## Wczytywanie zdań
+
+Na koniec powiedzmy sobie o tym, jak wczytać zdanie. Z artykułu o zmiennych i operatorach matematycznych wiesz już, że `std::cin` oddziela dane bazując na spacjach i nowych liniach. Pytanie więc brzmi, co jeśli chcemy wczytać zdanie zawierające spacje? W tej sytuacji musimy wczytać całą linię, z użyciem funkcji `std::getline` zawartej w `<iostream>`.
+
+```cpp
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    string s;
+    getline(cin, s); // wczyta całą linię włącznie ze spacjami
+}
+```
