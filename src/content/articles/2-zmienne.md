@@ -52,7 +52,11 @@ int liczba = 5;
 liczba += 3;
 ```
 
-Język, gdy napotyka operator `+=`, ustawia wartość zmiennej `liczba` na sumę jej i liczby `3`. `a += b` to więc dokładnie to samo co `a = a + b`. To samo zachodzi dla pozostałych operatorów. Przyjrzyjmy się teraz programowi, który wypisze na wyjście wynik mnożenia zmiennej liczba i wartości 5.
+Język, gdy napotyka operator `+=`, ustawia wartość zmiennej `liczba` na sumę jej i liczby `3`. `a += b` to więc dokładnie to samo co `a = a + b`. To samo zachodzi dla pozostałych operatorów.
+
+> Warto jeszcze wspomnieć, o operatorze `++` i `--`, który zwiększa lub zmniejsza wartość zmiennej **o jeden!** `a++` jest więc równoznaczne z `a = a + 1`.
+
+Przyjrzyjmy się teraz programowi, który wypisze na wyjście wynik mnożenia zmiennej liczba i wartości 5.
 
 ```cpp
 #include <iostream>

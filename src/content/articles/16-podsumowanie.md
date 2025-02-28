@@ -100,9 +100,9 @@ Co tu się zadziało?
 
 2. Wartość zmiennej `adres_liczby` to `0x15`;
 
-3. Ładujemy wartość zmiennej `adres_liczby` i zwiększamy ją o `5`.
+3. Ładujemy wartość zmiennej `adres_liczby` i zwiększamy ją o `5`;
    
-   - W ten sposób zwiększyliśmy wartość, która znajdowała się pod adresem `0x15`, czyli wartość zmiennej `liczba`.
+   - W ten sposób zwiększyliśmy wartość, która znajdowała się pod adresem `0x15`, czyli wartość zmiennej `liczba`;
 
 4. Wypisujemy wartość zmiennej `liczba`, która wynosi `10`;
 
