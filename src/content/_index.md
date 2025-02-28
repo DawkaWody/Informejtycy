@@ -1,6 +1,3 @@
-## Zadania
-Praktyka czyni mistrza! Wszystkie zadania znajdziesz [tutaj](/exercises).
-
 ## O projekcie
 
 Projekt "Informejtycy" powstał, aby odpowiedzieć na rosnące zapotrzebowanie na dostęp do wysokiej jakości

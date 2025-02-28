@@ -161,6 +161,17 @@ pre {
 	display: flex;
 }
 
+#zad-ikonka {
+	width: 30px;
+	position: absolute;
+	right: 100px;
+	top: 40px;
+}
+
+#zad-ikonka:hover {
+	cursor: pointer;
+}
+
 #theme-toggle {
 	width: 30px;
 	position: absolute;

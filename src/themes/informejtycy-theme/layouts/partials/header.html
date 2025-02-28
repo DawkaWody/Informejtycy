@@ -1,11 +1,15 @@
-
-    <div id="baner">
-        <a href="{{ .Site.BaseURL }}">
-            {{ with resources.Get "images/baner-ciemne.png" }}
-                <img id="baner-img" src="{{ .RelPermalink }}" alt="baner">
-            {{ end }}
-        </a>
-    </div>
-    {{ with resources.Get "images/theme.png" }}
-        <img id="theme-toggle" src="{{ .RelPermalink }}" alt="theme">
+<div id="baner">
+    <a href="{{ .Site.BaseURL }}">
+        {{ with resources.Get "images/baner-ciemne.png" }}
+        <img id="baner-img" src="{{ .RelPermalink }}" alt="baner">
+        {{ end }}
+    </a>
+</div>
+<a href="{{ site.BaseURL }}exercises" target="_blank">
+    {{ with resources.Get "images/zadania-icon.png" }}
+    <img id="zad-ikonka" src="{{ .RelPermalink }}" alt="exercises">
     {{ end }}
+</a>
+{{ with resources.Get "images/theme.png" }}
+<img id="theme-toggle" src="{{ .RelPermalink }}" alt="theme">
+{{ end }}
