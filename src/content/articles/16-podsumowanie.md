@@ -33,7 +33,7 @@ Gratulacje, ukończyłeś pierwszy etap nauki :tada:. Tematy podstawowe wprowadz
 
 - **Iteracja** - (również *obrót pętli*) powtórzenie kodu pętli - np. jeśli pętla wykonała kod pięć razy, powiemy, że wykonała pięć iteracji lub pięć obrotów;
 
-- **Iterowanie się po obiekcie** - uzyskiwanie kolejnych elementów obiektu, przechowywującego wiele wartości, np. tablica;
+- **Iterowanie się po obiekcie** - (rówież *przechodzenie po obiekcie*) uzyskiwanie kolejnych elementów obiektu, przechowywującego wiele wartości, np. tablica;
 
 - **Iterator** - zmienna *wskazująca* na jakiś element np. wektora. Iteratory są dostępne tylko na wybranych typach danych, nie ma ich na tablicach. Na razie, aby uzyskać element tablicy/wektora wystarczy odwołać się do indeksu, lecz niedługo poznasz struktury, w których nie będzie się dało tak zrobić - wtedy iteratory się nam przydadzą;
 
