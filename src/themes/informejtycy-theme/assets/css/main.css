@@ -265,7 +265,7 @@ footer {
 	width: 36px;
 }
 
-#baner-img, #theme-toggle, #poprzedni, #nastepny, #prev-img, #next-img {
+#baner-img, #theme-toggle, #zad-ikonka, #poprzedni, #nastepny, #prev-img, #next-img {
 	user-select: none;
 }
 
@@ -397,6 +397,13 @@ table a {
   		width: 115px;
 		box-shadow: none !important;
 		cursor: pointer;
+	}
+
+	#zad-ikonka {
+		width: 20px;
+		position: absolute;
+		right: 72px;
+		top: 34px;
 	}
 
 	#theme-toggle {
