@@ -122,7 +122,7 @@ Jeżeli wywołamy tę funkcję `zwieksz(jakas_zmienna, 5)`, to wartość `jakas_
 **Rozwiązanie? Wskaźniki!** Utwórzmy sobie funkcję, która przyjmuje *adres* zmiennej typu `int`. Dzięki temu zwiększy się wartość spod adresu parametru, czyli wartość zmiennej, którą podaliśmy (a nie jej kopii).
 
 ```cpp
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 void zwieksz(int* liczba, int ile)
@@ -151,7 +151,7 @@ int main()
 Jeżeli nie chcemy pisać gwiazdeczek, możemy utworzyć referencję. Referencja to nic innego jak zmienna, która odnosi się do **dokładnie tej samej wartości, o tym samym położeniu w pamięci.** Innymi słowy, dzięki referencji możemy mieć dwie zmienne, które są dokładnie tym samym, a zmiana jednej z nich modyfikuje drugą.
 
 ```cpp
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int main()
@@ -174,13 +174,13 @@ Zmienne `liczba` i `tez_liczba` są powiązane - odnoszą się do tego samego ad
 Referencja jest szczególnie przydatna w przypadku parametrów funkcji, kiedy przekazujemy funkcji np. `vector`, bez jego kopiowania, tak, aby funkcja mogła edytować jego wartości, a po wyjściu z niej, zmienna oryginalna też była zmieniona.
 
 ```cpp
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 void zwieksz_kazdy_element_wektora_o_1(vector<int>& wektor)
 {
-    for (int i=0; i<wektor.size(); i++) {
+    for (int i = 0; i < wektor.size(); i++) {
         wektor[i]++;
     }
 }

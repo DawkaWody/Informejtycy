@@ -25,4 +25,4 @@ rozwiązywanie zadań z algorytmiki i programowania, co ta wiedza daje i w czym 
 naszą pasją choć jedną/jednego z Was, to warto działać. Bo jak mówił amerykański pisarz Napoleon Hill: „Jeśli nie
 możesz robić rzeczy wielkich, rób małe rzeczy w wielki sposób”
 
-## Nasi patroni i partnerzy
+## Patroni i partnerzy
