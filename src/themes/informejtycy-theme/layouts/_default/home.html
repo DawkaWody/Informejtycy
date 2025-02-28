@@ -17,86 +17,37 @@
     <div id="spis-tel">
       <h2>Spis treści</h2>
       <h3>Tematy podstawowe</h3>
-      <a class="link-spis-tel" href="/articles/0-jak-zaczac">0. Jak zacząć?</a><br>
-      <a class="link-spis-tel" href="/articles/1-pierwszy-program">1. Pierwszy program w C++</a><br>
-      <a class="link-spis-tel" href="/articles/2-zmienne">2. Zmienne i operatory matematyczne</a><br>
-      <a class="link-spis-tel" href="/articles/3-if">3. Instrukcje warunkowe i operatory logiczne</a><br>
-      <a class="link-spis-tel" href="/articles/4-for-while-do-while">4. Pętle</a><br>
-      <a class="link-spis-tel" href="/articles/5-pierwszosc-i-podzielnosc">5. Pierwszość i podzielność liczb</a><br>
-      <a class="link-spis-tel" href="/articles/6-nwd-algorytm-euklidesa-i-nww">6. NWD, NWW i algorytm Euklidesa</a><br>
-      <a class="link-spis-tel" href="/articles/7-tablice">7. Tablice</a><br>
-      <a class="link-spis-tel" href="/articles/8-ascii">8. System ASCII</a><br>
-      <a class="link-spis-tel" href="/articles/9-ciagi-znakow">9. Napisy</a><br>
-      <a class="link-spis-tel" href="/articles/10-wyodrebnianie-i-konwertowanie">10. Cyfry danej liczby i konwersja na napis</a><br>
-      <a class="link-spis-tel" href="/articles/11-systemy-liczbowe">11. Systemy liczbowe</a><br>
-      <a class="link-spis-tel" href="/articles/12-vector">12. Vector</a><br>
-      <a class="link-spis-tel" href="/articles/13-sortowanie">13. Sortowanie</a><br>
-      <a class="link-spis-tel" href="/articles/14-wyszukiwanie-liniowe-i-binarne">14. Wyszukiwanie liniowe i binarne</a><br>
-      <a class="link-spis-tel" href="/articles/15-funkcje">15. Funkcje</a><br>
+      {{ $sortedPages := sort .Site.RegularPages "Params.id" }}
+      {{ range $sortedPages }}
+        {{ if eq .Params.nerd false }}
+          <a class="link-spis-tel" href="{{ .RelPermalink }}">{{ .Params.id }}. {{ .Title }}</a><br>
+          {{ end }}
+      {{ end }}
 
       <h3>Tematy zaawansowane</h3>
-      <a class="link-spis-tel" href="/articles/1-funkcje-wbudowane">1. Funkcje wbudowane</a><br>
-      <a class="link-spis-tel" href="/articles/2-zlozonosc-czasowa-programow">2. Złożoność czasowa</a><br>
-      <a class="link-spis-tel" href="/articles/3-pair-i-struct">3. Pair i Struct</a><br>
-      <a class="link-spis-tel" href="/articles/4-custom-sort">4. Własne sortowanie</a><br>
-      <a class="link-spis-tel" href="/articles/5-queue-deque">5. Kolejka</a><br>
-      <a class="link-spis-tel" href="/articles/6-priority-queue">6. Priority queue</a><br>
-      <a class="link-spis-tel" href="/articles/7-set-i-multiset">7. Set i Multiset</a><br>
-      <a class="link-spis-tel" href="/articles/8-map-i-unordered-map">8. Map i Unordered Map</a><br>
-      <a class="link-spis-tel" href="/articles/9-stack">9. Stack</a><br>
-      <a class="link-spis-tel" href="/articles/10-rekurencja">10. Rekurencja</a><br>
+      {{ range $sortedPages }}
+        {{ if eq .Params.nerd true }}
+          <a class="link-spis-tel" href="{{ .RelPermalink }}">{{ .Params.id }}. {{ .Title }}</a><br>
+          {{ end }}
+      {{ end }}
     </div>
-
-
-    <h2 id="zadania---pamiętaj-o-praktyce">Zadania</h2>
-    <p>Praktyka czyni mistrza! Wszystkie zadania znajdziesz <a href="/exercises">tutaj</a>.</p>
-
-    <h2 id="o-projekcie">O projekcie</h2>
-    <p>Projekt "Informejtycy" powstał, aby odpowiedzieć na rosnące zapotrzebowanie na dostęp do wysokiej jakości
-      edukacji informatycznej dla wszystkich, niezależnie od miejsca zamieszkania czy sytuacji życiowej i materialnej. W
-      świecie, który nieustannie się zmienia, kluczowe jest posiadanie wiedzy z zakresu programowania i algorytmiki.
-      Dlatego też stworzyliśmy w pełni darmową platformę online, dostępną dla każdego, kto chce rozwijać swoje
-      umiejętności – bez względu na wiek, doświadczenie czy zasoby finansowe. Na naszej platformie dostępnych jest
-      szereg zadań, których rozwiązanie - korzystając z zamieszczanych materiałów - nie powinno stanowić problemu. Aby
-      wyróżnić się na tle konkurencji, oferujemy nie tylko klasyczne zadania, ale również inne, polegające na
-      znajdowaniu i usuwaniu błędów w istniejących już kodach. To zaś szkoli umiejętność rozumienia czyjegoś kodu, czyli
-      niezwykle ważny aspekt pracy w grupie. Informejtycy to coś znacznie więcej niż platforma do nauki!</p>
-
-    <h2 id="o-nas">O nas</h2>
-    <p>To my - Krysia, Zuzia, Adam, Antek, Bartek, Dawid, Eryk, Patryk i Szymon, dziewięcioosobowa grupa uczniów z klasy
-      Ic XIV LO im. Stanisława Staszica w Warszawie. Grupa osób do niedawna sobie nieznajomych, którą połączyła wspólna
-      pasja - informatyka. I choć każdy z nas jest inny, bo ma swoje wizje oraz odmienny sposób patrzenia na świat, choć
-      słucha innej muzyki, uprawia odmienne sporty, i nawet nie wszystkich nas bawią te same żarty, to mimo to rozumiemy
-      się, wspieramy, wzajemnie pomagamy i wspólnie podążamy jedną drogą, która prowadzi nas do zgłębienia tajników
-      informatyki i programowania. Przychodząc do liceum, byliśmy już laureatami bądź finalistami Olimpiady
-      Informatycznej Juniorów, czy kuratoryjnego konkursu informatycznego LOGIA. I to właśnie ta informatyka połączyła
-      nas w listopadzie 2024 r., kiedy postanowiliśmy, że stworzymy – w ramach Olimpiady Zwolnieni z Teorii - projekt
-      Informejtycy, by zarażać innych naszą największą pasją. Naszym celem jest pokazanie, jak świetną zabawą jest
-      rozwiązywanie zadań z algorytmiki i programowania, co ta wiedza daje i w czym może nam pomóc. A jeśli zarazimy tą
-      naszą pasją choć jedną/jednego z Was, to warto działać. Bo jak mówił amerykański pisarz Napoleon Hill: „Jeśli nie
-      możesz robić rzeczy wielkich, rób małe rzeczy w wielki sposób”.</p>
-
-    <h2 id="nasi-patroni-i-partnerzy">Patroni i partnerzy</h2>
-
+    
+    {{ .Content }}
+    
     <style>
       #realizowany {
         margin-top: 5vh;
         text-align: center;
       }
-    </style>
+      </style>
     <div id="realizowany">
       {{ partial "project_as.html" . }}
     </div>
-
+    
   </div>
   <div id="sidebar-right">
     <h2>Spis treści</h2>
-    <ol>
-      <li><a href="#zadania---pamiętaj-o-praktyce">Zadania</a></li>
-      <li><a href="#o-projekcie">O projekcie</a></li>
-      <li><a href="#o-nas">O nas</a></li>
-      <li><a href="#nasi-patroni-i-partnerzy">Patroni i partnerzy</a></li>
-    </ol>
+    {{ .TableOfContents }}
   </div>
 </div>
 {{ end }}

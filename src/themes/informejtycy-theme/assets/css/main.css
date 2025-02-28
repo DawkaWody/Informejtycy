@@ -225,7 +225,7 @@ footer {
 	font-size: 20px;
 }
 
-#zadania {
+#zadania-link {
     position: absolute; /* Umieszcza "Zadania" na środku */
     left: 50%;
     transform: translateX(-50%);
