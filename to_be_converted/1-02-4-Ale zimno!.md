@@ -1,6 +1,6 @@
 # Ale zimno!
 
-Bajtazar z Bajtocji otrzymał zadanie przekształcenia temperatury z Celsjusza na Fahrenheita. Ma to zrobić dla wielu osób, dlatego chce napisać program, który pomoże mu w tej pracy.  
+Bajtazar otrzymał zadanie przekształcenia temperatury z Celsjusza na Fahrenheita. Ma to zrobić dla wielu osób, dlatego chce napisać program, który pomoże mu w tej pracy.  
 
 Wzór na konwersję temperatury z Celsjusza na Fahrenheita jest następujący:
 

@@ -1,4 +1,4 @@
-# Bajtazar i tabliczka mnożenia
+# Tabliczka mnożenia
 
 Bajtazar właśnie tworzy nową maszynę do błyskawicznego mnożenia liczb. Aby jednak maszyna zadziałała, potrzebuje programu, który pomnoży dwie liczby i wypisze wynik. Pomożesz mu?
 

@@ -25,7 +25,7 @@ W pierwszej i zarazem ostatniej linii wyjścia powinna się znajdować liczba oz
 ```
 1 TAK
 ```
-Wyjaśnienie do przykładu: z podanego ciągu tylko 12 dzieli się przez 2, dokładnie połowa elementów tego ciągu to liczby pierwsze (3, 7)
+Wyjaśnienie do przykładu: z podanego ciągu tylko 12 dzieli się przez 2, dokładnie połowa elementów tego ciągu to liczby pierwsze (3, 7).
 
 #### Przykład 2
 
@@ -41,4 +41,4 @@ Wyjaśnienie do przykładu: z podanego ciągu tylko 12 dzieli się przez 2, dok�
 ```
 2 NIE
 ```
-Wyjaśnienie do przykładu: 0 i 123 dzielą się przez 6, w ciągu nie występuje żadna liczba pierwsza
+Wyjaśnienie do przykładu: 0 i 123 dzielą się przez 6, w ciągu nie występuje żadna liczba pierwsza.

@@ -1,6 +1,3 @@
----
-
----
 # Największa liczba
 
 Napisz program, który wczyta $n$ ($0 < n \le 10^6$) liczb całkowitych i znajdzie największą wprowadzoną liczbę. Program ma również wypisać liczbę, która pojawiła się najwięcej razy.

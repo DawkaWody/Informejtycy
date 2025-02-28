@@ -1,4 +1,4 @@
-# Bajtazar i zaginione nawiasy
+# Zaginione nawiasy
 
 Dawno, dawno temu, w królestwie Bajtocji, żył sobie sympatyczny młody programista imieniem Bajtazar. Bajtazar uwielbiał pisać programy, które pomagały mieszkańcom jego krainy w codziennym życiu. Pewnego dnia, w trakcie przygotowywania swojego najnowszego wynalazku – Maszyny Liczącej Szczęście, Bajtazar popełnił kilka błędów w swoim kodzie.
 

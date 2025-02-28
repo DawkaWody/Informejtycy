@@ -26,7 +26,7 @@ W jedynej linii wyjścia powinna znajdować się liczba oznaczającą liczbę el
 ```
 2
 ```
-Wyjaśnienie do przykładu: Liczby 4 i 9 są trójliczbami
+Wyjaśnienie do przykładu: Liczby 4 i 9 są trójliczbami.
 
 #### Przykład 2
 
@@ -42,4 +42,4 @@ Wyjaśnienie do przykładu: Liczby 4 i 9 są trójliczbami
 ```
 1
 ```
-Wyjaśnienie do przykładu: Tylko liczba 25 jest trójliczbą
+Wyjaśnienie do przykładu: Tylko liczba 25 jest trójliczbą.

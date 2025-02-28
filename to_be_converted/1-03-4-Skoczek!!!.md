@@ -1,4 +1,3 @@
-
 # Skoczek!!!
 
 Skoczek szachowy porusza się w kształcie litery „L” — o dwa pola w pionie w dowolnym kierunku i jedno pole w poziomie lub odwrotnie. Dane są dwa różne pola na szachownicy, określ, czy skoczek może przejść z pierwszego pola na drugie jednym ruchem.
