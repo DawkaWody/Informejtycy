@@ -49,7 +49,7 @@ body {
 	display: flex;
 	align-items: flex-start;
 	gap: 35px;
-	margin-top: 2.25vw;
+	margin-top: 3vw;
 	/* Ensure the container does not shrink */
 	flex-shrink: 0;
 }
@@ -75,7 +75,7 @@ ol {
 	border-radius: 5px;
 	border: 1px solid var(--granica-paneli-bocznych);
 	position: sticky;
-	top: 2.25vw;
+	top: 3vw;
 	flex-shrink: 0; /* Prevent sidebars from shrinking */
 }
 
@@ -339,7 +339,6 @@ table a {
 	-webkit-tap-highlight-color: transparent;
     width: 30vw;
     border-radius: 12px;
-	margin-bottom: 1vw;
 }
 
 #realizowany {

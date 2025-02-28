@@ -61,16 +61,9 @@ select, option {
 }
 
 textarea {
-    resize: none;
-    font-family: monospace;
-    line-height: 1.5;
-    overflow: hidden;
-    overflow-y: auto; /* Pozwala na przewijanie myszką, ale ukrywa pasek */
-    scrollbar-width: none; /* Ukrywa pasek w Firefox */
-}
-
-textarea::-webkit-scrollbar {
-    display: none; /* Ukrywa pasek w Chrome, Safari, Edge */
+    resize: none; /* Opcjonalnie, jeśli nie chcesz, by pole można było zmieniać */
+    font-family: monospace; /* Styl czcionki jak w edytorze kodu */
+    line-height: 1.5; /* Lepsze odstępy między wierszami w textarea */
 }
 
 select:focus,
