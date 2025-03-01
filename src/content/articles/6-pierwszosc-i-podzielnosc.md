@@ -1,7 +1,7 @@
 ---
 draft: false
 title: 'Pierwszość i podzielność liczb'
-id: 5
+id: 6
 nerd: false
 ---
 # Sprawdzanie pierwszości, podzielności i liczby dzielników liczb

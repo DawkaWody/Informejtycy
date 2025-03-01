@@ -2,7 +2,7 @@
 draft: false
 title: 'Systemy liczbowe'
 nerd: false
-id: 11
+id: 12
 ---
 
 # Systemy liczbowe

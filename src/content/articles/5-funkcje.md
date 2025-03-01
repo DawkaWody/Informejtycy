@@ -1,7 +1,7 @@
 ---
 draft: false
 title: 'Funkcje'
-id: 15
+id: 5
 nerd: false
 ---
 # Funkcje

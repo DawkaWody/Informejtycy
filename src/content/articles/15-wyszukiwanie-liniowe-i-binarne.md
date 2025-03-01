@@ -1,7 +1,7 @@
 ---
 draft: false
 title: Wyszukiwanie liniowe i binarne
-id: 14
+id: 15
 nerd: false
 ---
 # Wyszukiwanie liniowe i binarne
