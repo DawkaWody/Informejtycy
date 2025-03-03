@@ -5,6 +5,11 @@
         {{ end }}
     </a>
 </div>
+<a href="{{ site.BaseURL }}">
+    {{ with resources.Get "images/home.png" }}
+    <img id="home-ikonka" src="{{ .RelPermalink }}" alt="home">
+    {{ end }}
+</a>
 <a href="{{ site.BaseURL }}exercises">
     {{ with resources.Get "images/zadania-icon.png" }}
     <img id="zad-ikonka" src="{{ .RelPermalink }}" alt="exercises">

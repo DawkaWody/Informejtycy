@@ -168,8 +168,11 @@ pre {
 	top: 40px;
 }
 
-#zad-ikonka:hover {
-	cursor: pointer;
+#home-ikonka {
+	width: 30px;
+	position: absolute;
+	right: 154px;
+	top: 40px;
 }
 
 #theme-toggle {
@@ -179,7 +182,7 @@ pre {
 	top: 40px;
 }
 
-#theme-toggle:hover {
+#theme-toggle:hover, #zad-ikonka:hover, #home-ikonka:hover {
 	cursor: pointer;
 }
 
@@ -265,7 +268,7 @@ footer {
 	width: 36px;
 }
 
-#baner-img, #theme-toggle, #zad-ikonka, #poprzedni, #nastepny, #prev-img, #next-img {
+#baner-img, #theme-toggle, #zad-ikonka, #home-ikonka, #poprzedni, #nastepny, #prev-img, #next-img {
 	user-select: none;
 }
 
@@ -403,6 +406,13 @@ table a {
 		width: 20px;
 		position: absolute;
 		right: 72px;
+		top: 34px;
+	}
+
+	#home-ikonka {
+		width: 20px;
+		position: absolute;
+		right: 108px;
 		top: 34px;
 	}
 
