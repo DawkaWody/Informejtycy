@@ -4,7 +4,7 @@
     {{ partial "article_list.html" . }}
   </div>
   <div id="artykul">
-    <h1>Strona główna</h1>
+    <h1>Cześć, miło nam cię widzieć!</h1>
 
     <style>
       .link-spis-tel {
@@ -19,31 +19,31 @@
       <h3>Tematy podstawowe</h3>
       {{ $sortedPages := sort .Site.RegularPages "Params.id" }}
       {{ range $sortedPages }}
-        {{ if eq .Params.nerd false }}
-          <a class="link-spis-tel" href="{{ .RelPermalink }}">{{ .Params.id }}. {{ .Title }}</a><br>
-          {{ end }}
+      {{ if eq .Params.nerd false }}
+      <a class="link-spis-tel" href="{{ .RelPermalink }}">{{ .Params.id }}. {{ .Title }}</a><br>
+      {{ end }}
       {{ end }}
 
       <h3>Tematy zaawansowane</h3>
       {{ range $sortedPages }}
-        {{ if eq .Params.nerd true }}
-          <a class="link-spis-tel" href="{{ .RelPermalink }}">{{ .Params.id }}. {{ .Title }}</a><br>
-          {{ end }}
+      {{ if eq .Params.nerd true }}
+      <a class="link-spis-tel" href="{{ .RelPermalink }}">{{ .Params.id }}. {{ .Title }}</a><br>
+      {{ end }}
       {{ end }}
     </div>
-    
+
     {{ .Content }}
-    
+
     <style>
       #realizowany {
-        margin-top: 5vh;
+        margin-top: 2vw;
         text-align: center;
       }
-      </style>
+    </style>
     <div id="realizowany">
       {{ partial "project_as.html" . }}
     </div>
-    
+
   </div>
   <div id="sidebar-right">
     <h2>Spis treści</h2>
