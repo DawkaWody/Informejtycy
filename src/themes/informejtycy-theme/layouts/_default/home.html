@@ -10,7 +10,7 @@
       .link-spis-tel {
         color: var(--zwykly-tekst);
         text-decoration: none;
-        font-weight: bold;
+        line-height: 1.75;
       }
     </style>
 
@@ -31,6 +31,118 @@
       {{ end }}
       {{ end }}
     </div>
+
+    <!-- <style>
+      html,
+      body {
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .section {
+        scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* //////////////////////////// */
+
+      .h2-srodek {
+        text-align: center;
+        margin-top: 2vw;
+      }
+
+      #srodekS2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+      }
+
+      .krok {
+        background-color: #f0f0f0;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .krok img {
+        width: 50%;
+        height: 50%;
+        object-fit: contain;
+      }
+
+      .podpis {
+        width: 120%;
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 22px;
+        font-weight: normal;
+        text-align: center;
+      }
+
+      .strzalka {
+        width: 80px;
+        height: auto;
+      }
+
+      #gora-kroki {
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+
+      #dol-kroki {
+        margin-top: 120px;
+        margin-bottom: 20px;
+      }
+    </style>
+
+    <div class="section" style="margin-top: -60px;">
+      <img src="../images/bez-tla.png" style="width: 500px;">
+      <h2 style="margin-top: -120px;">- to coś znacznie więcej niż platforma do nauki!</h2>
+      <p style="margin-top: 0px; max-width: 60%; text-align: center;">Już dziś zacznij przygodę z programowaniem<br>
+        i zdobądź umiejętności cenione na rynku pracy.</p>
+      </p>
+    </div>
+
+    <div class="section">
+
+      <h2 class="h2-srodek" id="gora-kroki">Krok po kroku:</h2>
+
+      <div id="srodekS2">
+
+        <div class="krok" id="krok1">
+          <img src="../images/icon1.png">
+          <div class="podpis">Czytasz poradniki i analizujesz przykłady</div>
+        </div>
+
+        <img src="../images/next-dark.png" class="strzalka">
+
+        <div class="krok" id="krok2">
+          <img src="../images/icon2.png">
+          <div class="podpis">Zdobywasz wiedzę</div>
+        </div>
+
+        <img src="../images/next-dark.png" class="strzalka">
+
+        <div class="krok" id="krok3">
+          <img src="../images/icon3.png">
+          <div class="podpis">Wykonujesz zadania i ćwiczysz umiejętności</div>
+        </div>
+      </div>
+
+      <h2 class="h2-srodek" id="dol-kroki">A potem programowanie to już tylko przyjemność!</h2>
+    </div> -->
 
     {{ .Content }}
 
