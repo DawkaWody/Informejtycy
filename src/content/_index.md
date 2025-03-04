@@ -24,5 +24,3 @@ Informejtycy, by zarażać innych naszą największą pasją. Naszym celem jest 
 rozwiązywanie zadań z algorytmiki i programowania, co ta wiedza daje i w czym może nam pomóc. A jeśli zarazimy tą
 naszą pasją choć jedną/jednego z Was, to warto działać. Bo jak mówił amerykański pisarz Napoleon Hill: „Jeśli nie
 możesz robić rzeczy wielkich, rób małe rzeczy w wielki sposób”
-
-## Patroni i partnerzy

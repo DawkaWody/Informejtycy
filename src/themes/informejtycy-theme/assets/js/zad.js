@@ -101,6 +101,11 @@ document.addEventListener("DOMContentLoaded", function () {
 			return;
 		}
 
+		if (code.length > 5000) {
+			console.error('Kod jest za długi');
+			return;
+		}
+
 		fetch('https://informejtycy.pl/checker/submit', {
 			method: 'POST',
 			headers: {
