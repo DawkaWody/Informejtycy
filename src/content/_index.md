@@ -4,8 +4,9 @@ Projekt "Informejtycy" powstał, aby odpowiedzieć na rosnące zapotrzebowanie n
 edukacji informatycznej dla wszystkich, niezależnie od miejsca zamieszkania czy sytuacji życiowej i materialnej. W
 świecie, który nieustannie się zmienia, kluczowe jest posiadanie wiedzy z zakresu programowania i algorytmiki.
 Dlatego też stworzyliśmy w pełni darmową platformę online, dostępną dla każdego, kto chce rozwijać swoje
-umiejętności – bez względu na wiek, doświadczenie czy zasoby finansowe. Na naszej platformie dostępnych jest
-szereg zadań, których rozwiązanie - korzystając z zamieszczanych materiałów - nie powinno stanowić problemu. Aby
+umiejętności – bez względu na wiek, doświadczenie czy zasoby finansowe. 
+
+Na naszej platformie dostępnych jest szereg zadań, których rozwiązanie - korzystając z zamieszczanych materiałów - nie powinno stanowić problemu. Aby
 wyróżnić się na tle konkurencji, oferujemy nie tylko klasyczne zadania, ale również inne, polegające na
 znajdowaniu i usuwaniu błędów w istniejących już kodach. To zaś szkoli umiejętność rozumienia czyjegoś kodu, czyli
 niezwykle ważny aspekt pracy w grupie. Informejtycy to coś znacznie więcej niż platforma do nauki!
@@ -23,4 +24,4 @@ nas w listopadzie 2024 r., kiedy postanowiliśmy, że stworzymy – w ramach Oli
 Informejtycy, by zarażać innych naszą największą pasją. Naszym celem jest pokazanie, jak świetną zabawą jest
 rozwiązywanie zadań z algorytmiki i programowania, co ta wiedza daje i w czym może nam pomóc. A jeśli zarazimy tą
 naszą pasją choć jedną/jednego z Was, to warto działać. Bo jak mówił amerykański pisarz Napoleon Hill: „Jeśli nie
-możesz robić rzeczy wielkich, rób małe rzeczy w wielki sposób”
+możesz robić rzeczy wielkich, rób małe rzeczy w wielki sposób”.
