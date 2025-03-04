@@ -349,27 +349,15 @@ table a {
 	color: var(--zwykly-tekst);
 }
 
-#realizowany {
+#realizowany a {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	gap: 20px;
 }
 
-#realizowany img {
+#realizowany a img {
 	height: 13vw;
 	border-radius: 12px;
-}
-
-@media (max-width: 1700px) {
-	#realizowany img {
-		height: 12vw;
-	}
-}
-
-@media (max-width: 1200px) {
-	#realizowany img {
-		height: 10vw;
-	}
 }
 
 @media (max-width: 800px) {
@@ -435,16 +423,15 @@ table a {
 		top: 34px;
 	}
 
-	#realizowany {
+	#realizowany a {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
-	#realizowany img {
+	#realizowany a img {
 		width: 80vw;
 		height: auto;
 		border-radius: 12px;
-		margin-bottom: 20px;
 	}
 }
