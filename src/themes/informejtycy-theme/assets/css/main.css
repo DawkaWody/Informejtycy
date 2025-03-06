@@ -349,13 +349,13 @@ table a {
 	color: var(--zwykly-tekst);
 }
 
-#realizowany {
+.realizowany {
 	display: flex;
 	flex-direction: row;
 	gap: 20px;
 }
 
-#realizowany a img {
+.realizowany a img {
 	height: 13vw;
 	border-radius: 12px;
 }
@@ -423,13 +423,13 @@ table a {
 		top: 34px;
 	}
 
-	#realizowany a {
+	.realizowany {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
-	#realizowany a img {
+	.realizowany a img {
 		width: 80vw;
 		height: auto;
 		border-radius: 12px;
