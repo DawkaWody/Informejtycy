@@ -349,7 +349,7 @@ table a {
 	color: var(--zwykly-tekst);
 }
 
-#realizowany a {
+#realizowany {
 	display: flex;
 	flex-direction: row;
 	gap: 20px;
