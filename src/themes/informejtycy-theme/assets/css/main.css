@@ -360,6 +360,10 @@ table a {
 	border-radius: 12px;
 }
 
+p {
+    text-align: justify;
+}
+
 @media (max-width: 800px) {
 	
 	body {
