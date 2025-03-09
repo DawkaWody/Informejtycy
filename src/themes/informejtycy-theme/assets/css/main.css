@@ -408,6 +408,7 @@ p {
 
 	footer {
 		font-size: 2vw;
+		margin-top: 30px;
 	}
 
 	header {
@@ -452,10 +453,11 @@ p {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		gap: 10px;
 	}
 
 	.partnerships a img {
-		width: 80vw;
+		width: 100%;
 		height: auto;
 		border-radius: 12px;
 	}
