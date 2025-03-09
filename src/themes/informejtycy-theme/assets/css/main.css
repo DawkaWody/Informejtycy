@@ -448,18 +448,13 @@ p {
 		top: 34px;
 	}
 
-	.patrons, .partnerships {
+	.partnerships {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
-	.rzad-zdjec {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.patrons a img, .partnerships a img {
+	.partnerships a img {
 		width: 80vw;
 		height: auto;
 		border-radius: 12px;
