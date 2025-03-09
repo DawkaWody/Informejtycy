@@ -46,9 +46,17 @@ if (window.innerWidth > 1000) {
 }
 
 window.addEventListener("load", adjustImageHeight);
-window.addEventListener("resize", adjustImageHeight);
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 1000) {
+        adjustImageHeight();
+    } else {
+        resetImageHeight(); // Resetujemy wysokość zdjęć na mniejszych ekranach
+    }
+});
 
 function adjustImageHeight() {
+    if (window.innerWidth <= 1000) return; // Jeśli ekran < 1000px, nie wykonujemy kodu
+
     const container = document.querySelector(".rzad-zdjec");
     const images = container.querySelectorAll("a img");
 
@@ -72,3 +80,10 @@ function adjustImageHeight() {
 
     images.forEach(img => img.style.height = `${height}px`);
 }
+
+function resetImageHeight() {
+    document.querySelectorAll(".rzad-zdjec a img").forEach(img => {
+        img.style.height = ""; // Resetuje wysokość do domyślnej (np. CSS)
+    });
+}
+
