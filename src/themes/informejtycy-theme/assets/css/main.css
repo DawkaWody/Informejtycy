@@ -349,15 +349,36 @@ table a {
 	color: var(--zwykly-tekst);
 }
 
-.realizowany {
+.patrons {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.rzad-zdjec {
 	display: flex;
 	flex-direction: row;
 	gap: 20px;
 }
 
-.realizowany a img {
-	height: 11vw;
+.rzad-zdjec a img {
+	height: 7vw;
 	border-radius: 12px;
+}
+
+.partnerships {
+    display: flex;
+    gap: 20px; /* Ustawia równą przerwę między elementami */
+}
+
+.partnerships a {
+    flex: 1; /* Każdy link (i jego zawartość) zajmie równą część dostępnej szerokości */
+}
+
+.partnerships a img {
+    width: 100%; /* Obrazy rozciągają się na całą szerokość kontenera */
+    height: auto; /* Automatyczna wysokość, aby zachować proporcje */
+    border-radius: 12px;
 }
 
 p {
@@ -427,13 +448,13 @@ p {
 		top: 34px;
 	}
 
-	.realizowany {
+	.patrons, .partnerships {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
-	.realizowany a img {
+	.patrons a img, .partnerships a img {
 		width: 80vw;
 		height: auto;
 		border-radius: 12px;
