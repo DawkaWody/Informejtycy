@@ -44,3 +44,31 @@ if (window.innerWidth > 1000) {
     let elem = document.getElementById("spis-tel");
     if (elem) elem.remove();
 }
+
+window.addEventListener("load", adjustImageHeight);
+window.addEventListener("resize", adjustImageHeight);
+
+function adjustImageHeight() {
+    const container = document.querySelector(".rzad-zdjec");
+    const images = container.querySelectorAll("a img");
+
+    if (images.length === 0) return;
+
+    let maxWidth = container.clientWidth;
+    let height = 600; // Początkowa wysokość w px
+    let gap = 20; // Odstęp między obrazkami
+    let totalWidth;
+
+    do {
+        totalWidth = 0;
+        images.forEach(img => {
+            let aspectRatio = img.naturalWidth / img.naturalHeight;
+            totalWidth += height * aspectRatio; // Obliczamy szerokość dla danej wysokości
+        });
+
+        totalWidth += (images.length - 1) * gap; // Dodajemy odstępy między zdjęciami
+        if (totalWidth > maxWidth) height -= 1; // Zmniejszamy wysokość jeśli za szeroko
+    } while (totalWidth > maxWidth && height > 10); // Minimalna wysokość, np. 10px
+
+    images.forEach(img => img.style.height = `${height}px`);
+}
