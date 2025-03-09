@@ -349,15 +349,27 @@ table a {
 	color: var(--zwykly-tekst);
 }
 
-.realizowany {
+.partnerships {
 	display: flex;
 	flex-direction: row;
 	gap: 20px;
 }
 
-.realizowany a img {
+.partnerships a img {
+	height: 15vw;
+	border-radius: 12px;
+}
+
+.patrons {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+}
+
+.patrons a img {
 	height: 11vw;
 	border-radius: 12px;
+	max-width: 350px;
 }
 
 p {
@@ -427,13 +439,25 @@ p {
 		top: 34px;
 	}
 
-	.realizowany {
+	.partnerships {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
-	.realizowany a img {
+	.partnerships a img {
+		width: 80vw;
+		height: auto;
+		border-radius: 12px;
+	}
+
+	.patrons {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.patrons a img {
 		width: 80vw;
 		height: auto;
 		border-radius: 12px;

@@ -208,24 +208,13 @@
 
     {{ .Content }}
 
-    <style>
-      .realizowany {
-        margin-top: 2vw;
-        text-align: center;
-      }
-
-      .realizowany a {
-        text-decoration: none;
-      }
-    </style>
-
     <h2 id="patroni">Patroni</h2>
-    <div class="realizowany">
+    <div class="patrons">
       {{ partial "patrons.html" . }}
     </div>
 
     <h2 id="programy-partnerskie">Programy partnerskie</h2>
-    <div class="realizowany">
+    <div class="partnerships">
       {{ partial "partnerships.html" . }}
     </div>
 
