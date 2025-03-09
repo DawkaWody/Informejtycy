@@ -70,7 +70,7 @@ function adjustImageHeight(container) {
 
         totalWidth += (images.length - 1) * gap; // Dodajemy odstępy między zdjęciami
         if (totalWidth > maxWidth) height -= 1; // Zmniejszamy wysokość jeśli za szeroko
-    } while (totalWidth > maxWidth && height > 10); // Minimalna wysokość, np. 10px
+    } while (totalWidth > maxWidth && height > 100); // Minimalna wysokość, np. 10px
 
     images.forEach(img => img.style.height = `${height}px`);
 }
