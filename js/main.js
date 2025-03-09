@@ -45,21 +45,15 @@ if (window.innerWidth > 1000) {
     if (elem) elem.remove();
 }
 
-window.addEventListener("load", adjustImageHeight);
-window.addEventListener("resize", () => {
-    if (window.innerWidth > 1000) {
-        adjustImageHeight();
-    } else {
-        resetImageHeight(); // Resetujemy wysokość zdjęć na mniejszych ekranach
-    }
-});
+window.addEventListener("load", adjustAllImageRows);
+window.addEventListener("resize", adjustAllImageRows);
 
-function adjustImageHeight() {
-    if (window.innerWidth <= 1000) return; // Jeśli ekran < 1000px, nie wykonujemy kodu
+function adjustAllImageRows() {
+    document.querySelectorAll(".rzad-zdjec").forEach(adjustImageHeight);
+}
 
-    const container = document.querySelector(".rzad-zdjec");
+function adjustImageHeight(container) {
     const images = container.querySelectorAll("a img");
-
     if (images.length === 0) return;
 
     let maxWidth = container.clientWidth;
@@ -80,10 +74,3 @@ function adjustImageHeight() {
 
     images.forEach(img => img.style.height = `${height}px`);
 }
-
-function resetImageHeight() {
-    document.querySelectorAll(".rzad-zdjec a img").forEach(img => {
-        img.style.height = ""; // Resetuje wysokość do domyślnej (np. CSS)
-    });
-}
-
