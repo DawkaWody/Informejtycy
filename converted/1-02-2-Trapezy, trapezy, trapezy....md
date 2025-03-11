@@ -6,7 +6,7 @@ $$
 P = \frac{(a + b) \cdot h}{2}
 $$
 
-Gdzie:  
+Gdzie:
 - $a$ – długość większej podstawy,
 - $b$ – długość mniejszej podstawy,
 - $h$ – wysokość trapezu.

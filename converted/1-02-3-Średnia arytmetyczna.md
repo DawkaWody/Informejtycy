@@ -13,8 +13,7 @@ $$
 S = \frac{a + b + c}{3}
 $$
 
-Gdzie:
-- $a$, $b$, $c$ – to liczby całkowite, dla których należy obliczyć średnią.
+Gdzie $a$, $b$, $c$  to liczby całkowite, dla których należy obliczyć średnią.
 
 ###  Przykład działania programu:
 Dla danych wejściowych:  
