@@ -1,29 +1,106 @@
-<div class="rzad-zdjec">
+<style>
+    .desktop-only {
+        display: flex;
+    }
+
+    .mobile-only {
+        display: none;
+    }
+
+    /* Dla telefonów */
+    @media (max-width: 800px) {
+        .desktop-only {
+            display: none;
+        }
+
+        .mobile-only {
+            display: flex;
+        }
+    }
+</style>
+
+<div class="rzad-zdjec desktop-only">
     <a href="https://pti.org.pl/" target="_blank">
         {{ with resources.Get "images/partnerships/pti.png" }}
-        <img src="{{ .RelPermalink }}" style="background-color: white;">
+        <img src="{{ .RelPermalink }}">
         {{ end }}
     </a>
     <a href="https://not.org.pl/" target="_blank">
         {{ with resources.Get "images/partnerships/not.png" }}
-        <img src="{{ .RelPermalink }}" style="background-color: white;">
-        {{ end }}
-    </a>
-</div>
-
-<div class="rzad-zdjec">
-    <a href="https://przeglad-techniczny.pl/" target="_blank">
-        {{ with resources.Get "images/partnerships/przeglad_techniczny.jpg" }}
         <img src="{{ .RelPermalink }}">
         {{ end }}
     </a>
     <a href="https://sp351.pl/" target="_blank">
         {{ with resources.Get "images/partnerships/sp351.png" }}
-        <img src="{{ .RelPermalink }}" style="background-color: white;">
+        <img src="{{ .RelPermalink }}">
         {{ end }}
     </a>
     <a href="https://spwni.edu.pl/" target="_blank">
         {{ with resources.Get "images/partnerships/iwiczna.png" }}
+        <img src="{{ .RelPermalink }}">
+        {{ end }}
+    </a>
+</div>
+
+<div class="rzad-zdjec desktop-only">
+    <a href="https://przeglad-techniczny.pl/" target="_blank">
+        {{ with resources.Get "images/partnerships/przeglad_techniczny.jpg" }}
+        <img src="{{ .RelPermalink }}">
+        {{ end }}
+    </a>
+    <a href="https://piasecznonews.pl/" target="_blank">
+        {{ with resources.Get "images/partnerships/piaseczno-news.png" }}
+        <img src="{{ .RelPermalink }}">
+        {{ end }}
+    </a>
+    <a href="http://www.kurierpoludniowy.pl/" target="_blank">
+        {{ with resources.Get "images/partnerships/logo_kp.png" }}
+        <img src="{{ .RelPermalink }}">
+        {{ end }}
+    </a>
+</div>
+
+<div class="rzad-zdjec mobile-only">
+    <a href="https://pti.org.pl/" target="_blank">
+        {{ with resources.Get "images/partnerships/pti.png" }}
+        <img src="{{ .RelPermalink }}">
+        {{ end }}
+    </a>
+    <a href="https://not.org.pl/" target="_blank">
+        {{ with resources.Get "images/partnerships/not.png" }}
+        <img src="{{ .RelPermalink }}">
+        {{ end }}
+    </a>
+</div>
+<div class="rzad-zdjec mobile-only">
+    <a href="https://sp351.pl/" target="_blank">
+        {{ with resources.Get "images/partnerships/sp351.png" }}
+        <img src="{{ .RelPermalink }}">
+        {{ end }}
+    </a>
+    <a href="https://spwni.edu.pl/" target="_blank">
+        {{ with resources.Get "images/partnerships/iwiczna.png" }}
+        <img src="{{ .RelPermalink }}">
+        {{ end }}
+    </a>
+</div>
+
+<div class="rzad-zdjec mobile-only">
+    <a href="https://piasecznonews.pl/" target="_blank">
+        {{ with resources.Get "images/partnerships/piaseczno-news.png" }}
+        <img src="{{ .RelPermalink }}">
+        {{ end }}
+    </a>
+</div>
+
+<div class="rzad-zdjec mobile-only">
+    <a href="https://przeglad-techniczny.pl/" target="_blank">
+        {{ with resources.Get "images/partnerships/przeglad_techniczny.jpg" }}
+        <img src="{{ .RelPermalink }}">
+        {{ end }}
+    </a>
+    <a href="http://www.kurierpoludniowy.pl/" target="_blank">
+        {{ with resources.Get "images/partnerships/logo_kp.png" }}
         <img src="{{ .RelPermalink }}">
         {{ end }}
     </a>

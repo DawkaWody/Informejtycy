@@ -364,6 +364,7 @@ table a {
 .rzad-zdjec a img {
 	height: 7vw;
 	border-radius: 12px;
+	background-color: white;
 }
 
 .partnerships {
