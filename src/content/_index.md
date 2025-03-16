@@ -11,6 +11,8 @@ wyróżnić się na tle konkurencji, oferujemy nie tylko klasyczne zadania, ale 
 znajdowaniu i usuwaniu błędów w istniejących już kodach. To zaś szkoli umiejętność rozumienia czyjegoś kodu, czyli
 niezwykle ważny aspekt pracy w grupie. Informejtycy to coś znacznie więcej niż platforma do nauki!
 
+---
+
 ## O nas
 
 To my - Krysia, Zuzia, Adam, Antek, Bartek, Dawid, Eryk, Patryk i Szymon, dziewięcioosobowa grupa uczniów z klasy

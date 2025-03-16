@@ -14,44 +14,60 @@ function ukryjPanel() {
 
 function pokazWaiting() {
 	var waiting = document.getElementById("waiting");
-	waiting.style.display = "block";
-	waiting.style.marginBottom = "20px";
+	if (waiting) {
+		waiting.style.display = "block";
+		waiting.style.marginBottom = "20px";
+	}
 }
 
 function ukryjWaiting() {
 	var waiting = document.getElementById("waiting");
-	waiting.style.display = "none";
+	if (waiting) {
+		waiting.style.display = "none";
+	}
 }
 
 function pokazWynik() {
 	var wynik = document.getElementById("receive-score");
-	wynik.style.display = "block";
+	if (wynik) {
+		wynik.style.display = "block";
+	}
 }
 
 function ukryjWynik() {
 	var wynik = document.getElementById("receive-score");
-	wynik.style.display = "none";
+	if (wynik) {
+		wynik.style.display = "none";
+	}
 }
 
 function pokazWerdykt() {
 	var werdykt = document.getElementById("receive-verdict");
-	werdykt.style.display = "block";
-	werdykt.style.marginBottom = "20px";
+	if (werdykt) {
+		werdykt.style.display = "block";
+		werdykt.style.marginBottom = "20px";
+	}
 }
 
 function ukryjWerdykt() {
 	var werdykt = document.getElementById("receive-verdict");
-	werdykt.style.display = "none";
+	if (werdykt) {
+		werdykt.style.display = "none";
+	}
 }
 
 function pokazFF() {
 	var ff = document.getElementById("rec-ff");
-	ff.style.display = "block";
+	if (ff) {
+		ff.style.display = "block";
+	}
 }
 
 function ukryjFF() {
 	var ff = document.getElementById("rec-ff");
-	ff.style.display = "none";
+	if (ff) {
+		ff.style.display = "none";
+	}
 }
 
 var scores = {};
@@ -74,7 +90,9 @@ function updateScores() {
 	for (var key in scores) {
 		var score = scores[key];
 		var element = document.getElementById("zad-" + key);
-		element.innerHTML = score;
+		if (element) {
+			element.innerHTML = score;
+		}
 	}
 
 	// Zapisz scores do localStorage po każdej zmianie
@@ -87,6 +105,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	updateScores();
 
 	var submitButton = document.getElementById("submit-button");
+	if (!submitButton) {
+		return;
+	}
 
 	submitButton.addEventListener("click", function () {
 		var problem = document.getElementById("problem").value;
@@ -142,19 +163,24 @@ document.addEventListener("DOMContentLoaded", function () {
 								ukryjFF();
 
 								var wynik = document.getElementById("receive-score");
-								wynik.innerHTML = "Wynik zgłoszenia: " + score + "/100";
+								if (wynik) {
+									wynik.innerHTML = "Wynik zgłoszenia: " + score + "/100";
+								}
 								var werdykt = document.getElementById("receive-verdict");
-
-								if (compErr) werdykt.innerHTML = "Werdykt: Błąd kompilacji";
-								else if (memlimit) werdykt.innerHTML = "Werdykt: Przekroczono limit pamięci";
-								else if (timelimit) werdykt.innerHTML = "Werdykt: Przekroczono limit czasu";
-								else if (invalidID) werdykt.innerHTML = "Werdykt: Nieprawidłowy problem";
-								else if (score === 100) werdykt.innerHTML = "Werdykt: OK";
-								else {
-									werdykt.innerHTML = "Werdykt: Zła odpowiedź";
-									pokazFF();
-									var ffpole = document.getElementById("receive-ff");
-									ffpole.innerHTML = ff;
+								if (werdykt) {
+									if (compErr) werdykt.innerHTML = "Werdykt: Błąd kompilacji";
+									else if (memlimit) werdykt.innerHTML = "Werdykt: Przekroczono limit pamięci";
+									else if (timelimit) werdykt.innerHTML = "Werdykt: Przekroczono limit czasu";
+									else if (invalidID) werdykt.innerHTML = "Werdykt: Nieprawidłowy problem";
+									else if (score === 100) werdykt.innerHTML = "Werdykt: OK";
+									else {
+										werdykt.innerHTML = "Werdykt: Zła odpowiedź";
+										pokazFF();
+										var ffpole = document.getElementById("receive-ff");
+										if (ffpole) {
+											ffpole.innerHTML = ff;
+										}
+									}
 								}
 
 								scores[problemId] = Math.max(score, scores[problemId] || 0);
