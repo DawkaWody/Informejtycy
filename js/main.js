@@ -1,13 +1,3 @@
-// Ustawienie motywu na podstawie preferencji użytkownika
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme) {
-    window.setTheme(savedTheme);
-} else {
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const defaultTheme = prefersDark ? "dark" : "light";
-    window.setTheme(defaultTheme);
-}
-
 // Przełączanie motywu
 document.getElementById("theme-toggle")
     .addEventListener("click", () => {
