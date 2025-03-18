@@ -6,54 +6,6 @@
   <div id="artykul">
     <h1>Cześć, miło nam Cię widzieć!</h1>
 
-    <style>
-      .link-spis-tel {
-        color: var(--zwykly-tekst);
-        text-decoration: none;
-        line-height: 1.75;
-      }
-
-      .stat {
-        color: var(--naglowki);
-        font-weight: bold;
-        font-size: 28px;
-      }
-
-      @media (max-width: 800px) {
-
-        html,
-        body {
-          font-size: 3.6vw;
-        }
-      }
-    </style>
-
-    <style>
-      #wlasciwy-spis-tel {
-        height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: height 0.5s ease-in-out, opacity 0.3s ease-in-out;
-      }
-
-      #wlasciwy-spis-tel.show {
-        height: auto;
-        opacity: 1;
-      }
-
-      #przycisk-spis-tel {
-        margin-bottom: 10px;
-        text-align: center;
-        border: solid;
-        border-radius: 10px;
-        padding: 10px 5px;
-      }
-
-      #przycisk-spis-tel:hover {
-        cursor: pointer;
-      }
-    </style>
-
     <div id="spis-tel">
       <a href="#przesuniecie" style="text-decoration: none;">
         <h2 id="przycisk-spis-tel">Zacznij naukę już dziś</h2>
@@ -63,45 +15,22 @@
         <h3 id="przesuniecie">Tematy podstawowe</h3>
         {{ $sortedPages := sort .Site.RegularPages "Params.id" }}
         {{ range $sortedPages }}
-        {{ if eq .Params.nerd false }}
-        <a class="link-spis-tel" href="{{ .RelPermalink }}">{{ .Params.id }}. {{ .Title }}</a><br>
-        {{ end }}
+          {{ if eq .Params.nerd false }}
+            <a class="link-spis-tel" href="{{ .RelPermalink }}">{{ .Params.id }}. {{ .Title }}</a><br>
+          {{ end }}
         {{ end }}
 
         <hr>
 
         <h3>Tematy zaawansowane</h3>
         {{ range $sortedPages }}
-        {{ if eq .Params.nerd true }}
-        <a class="link-spis-tel" href="{{ .RelPermalink }}">{{ .Params.id }}. {{ .Title }}</a><br>
-        {{ end }}
+          {{ if eq .Params.nerd true }}
+            <a class="link-spis-tel" href="{{ .RelPermalink }}">{{ .Params.id }}. {{ .Title }}</a><br>
+          {{ end }}
         {{ end }}
         <hr>
       </div>
     </div>
-
-    <script>
-      const spisTel = document.getElementById("spis-tel");
-      const wlasciwySpisTel = document.getElementById("wlasciwy-spis-tel");
-
-      spisTel.addEventListener("click", () => {
-        if (wlasciwySpisTel.classList.contains("show")) {
-          wlasciwySpisTel.style.height = `${wlasciwySpisTel.scrollHeight}px`; // Ustaw na aktualną wysokość
-          setTimeout(() => {
-            wlasciwySpisTel.style.height = "0"; // Animacja zwijania
-            wlasciwySpisTel.style.opacity = "0";
-          }, 10);
-          wlasciwySpisTel.classList.remove("show");
-        } else {
-          wlasciwySpisTel.style.height = `${wlasciwySpisTel.scrollHeight}px`; // Ustaw wysokość przed pokazaniem
-          wlasciwySpisTel.style.opacity = "1";
-          setTimeout(() => {
-            wlasciwySpisTel.style.height = "auto"; // Po zakończeniu animacji pozwalamy działać naturalnej wysokości
-          }, 500);
-          wlasciwySpisTel.classList.add("show");
-        }
-      });
-    </script>
 
     <h3 id="statsy-h2">Czy wiedziałeś, że Informejtycy to już:</h3>
     <ul>
@@ -247,4 +176,16 @@
     </ol>
   </div>
 </div>
+{{- with resources.Get "js/home.js" }}
+  {{- if eq hugo.Environment "development" }}
+    {{- with . | js.Build }}
+      <script src="{{ .RelPermalink }}" type="text/javascript"></script>
+    {{- end }}
+  {{- else }}
+    {{- $opts := dict "minify" true }}
+    {{- with . | js.Build $opts | fingerprint }}
+      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" type="text/javascript"></script>
+    {{- end }}
+  {{- end }}
+{{- end }}
 {{ end }}

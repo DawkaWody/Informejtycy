@@ -26,15 +26,15 @@
 
 {{ if eq .Kind "section" }}
   {{- with resources.Get "js/zad.js" }}
-  {{- if eq hugo.Environment "development" }}
-    {{- with . | js.Build }}
-      <script src="{{ .RelPermalink }}" type="text/javascript"></script>
+    {{- if eq hugo.Environment "development" }}
+      {{- with . | js.Build }}
+        <script src="{{ .RelPermalink }}" type="text/javascript"></script>
+      {{- end }}
+    {{- else }}
+      {{- $opts := dict "minify" true }}
+      {{- with . | js.Build $opts | fingerprint }}
+        <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" type="text/javascript"></script>
+      {{- end }}
     {{- end }}
-  {{- else }}
-    {{- $opts := dict "minify" true }}
-    {{- with . | js.Build $opts | fingerprint }}
-      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" type="text/javascript"></script>
-    {{- end }}
-  {{- end }}
   {{- end }}
 {{ end }}

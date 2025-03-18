@@ -1,0 +1,42 @@
+.link-spis-tel {
+    color: var(--zwykly-tekst);
+    text-decoration: none;
+    line-height: 1.75;
+}
+
+.stat {
+    color: var(--naglowki);
+    font-weight: bold;
+    font-size: 28px;
+}
+
+@media (max-width: 800px) {
+    html,
+    body {
+        font-size: 3.6vw;
+    }
+}
+
+#wlasciwy-spis-tel {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+#wlasciwy-spis-tel.show {
+    height: auto;
+    opacity: 1;
+}
+
+#przycisk-spis-tel {
+    margin-bottom: 10px;
+    text-align: center;
+    border: solid;
+    border-radius: 10px;
+    padding: 10px 5px;
+}
+
+#przycisk-spis-tel:hover {
+    cursor: pointer;
+}
