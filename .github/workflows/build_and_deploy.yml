@@ -62,3 +62,4 @@ jobs:
           script: |
             cd /home/inft/INFORMEJTYCY-PL
             echo "${{ secrets.REMOTE_PASSWORD }}" | sudo -S bash deploy_static.sh
+            echo "${{ secrets.REMOTE_PASSWORD }}" | sudo -S ./.venv/bin/python3 stats_updater/get_stats.py
