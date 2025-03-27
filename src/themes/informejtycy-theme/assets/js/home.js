@@ -22,15 +22,21 @@ spisTel.addEventListener("click", () => {
 var fakeStats = false;
 if (!fakeStats) {
     const stats = document.querySelectorAll(".stat");
-    if (stats.length === 4) {
-        fetch("../stats.json")
-            .then(response => response.json())
-            .then(data => {
-                stats[0].textContent = data.total_users;
-                stats[1].textContent = data.exercises;
-                stats[2].textContent = data.views;
-                stats[3].textContent = data.code_lines;
-            })
-            .catch(err => console.error(err));
-    }
+
+if (stats.length === 4) {
+    fetch("../stats.json")
+        .then(response => response.json())
+        .then(data => {
+            const formatNumber = (num, precision) => {
+                const rounded = Math.floor(num / precision) * precision; // Zaokrąglenie w dół do określonej dokładności
+                return rounded.toLocaleString("pl-PL"); // Formatowanie liczby z kropkami
+            };
+
+            stats[0].textContent = formatNumber(data.total_users, 200);
+            stats[1].textContent = formatNumber(data.exercises, 20);
+            stats[2].textContent = formatNumber(data.views, 2000);
+            stats[3].textContent = formatNumber(data.code_lines, 1000);
+        })
+        .catch(err => console.error(err));
+}
 }
