@@ -32,10 +32,10 @@ if (stats.length === 4) {
                 return rounded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); // Ręczne dodanie kropek
             };
 
-            stats[0].textContent = formatNumber(data.total_users, 200);
+            stats[0].textContent = formatNumber(data.total_users, 100);
             stats[1].textContent = formatNumber(data.exercises, 20);
             stats[2].textContent = formatNumber(data.views, 2000);
-            stats[3].textContent = formatNumber(data.code_lines, 2000);
+            stats[3].textContent = formatNumber(data.code_lines, 1000);
         })
         .catch(err => console.error(err));
 }
