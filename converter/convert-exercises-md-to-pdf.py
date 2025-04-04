@@ -60,6 +60,11 @@ metadata_decode = {
     "2 09":"metadatas/metadata-Eryk.yaml",
     "2 10":"metadatas/metadata-Adam.yaml"
 }
+exceptions = {
+	"1 01 3": "metadatas/metadata-Adam.yaml",
+	"1 02 5": "metadatas/metadata-Adam.yaml",
+	"1 02 6": "metadatas/metadata-Adam.yaml"
+}
 # linux
 
 def check_for_software_existance() -> None:
@@ -98,7 +103,13 @@ def main() -> None:
 	for file in mdfiles:
 		source_file = os.path.join(INPUT_DIR, file)
 		destination_file = file[:-2]+"pdf"
-		metadata = metadata_decode[' '.join(destination_file.split('\\')[0].split('-')[:2])]
+		try:
+			if ' '.join(destination_file.split('\\')[0].split('-')[:3]) in exceptions:
+				metadata = exceptions[' '.join(destination_file.split('\\')[0].split('-')[:3])]
+			else:
+				metadata = metadata_decode[' '.join(destination_file.split('\\')[0].split('-')[:2])]
+		except:
+			metadata = metadata_decode[' '.join(destination_file.split('\\')[0].split('-')[:2])]
 		destination_file = os.path.join(OUTPUT_DIR, destination_file)
 		
 		print(f"\nSource file: {source_file}")
