@@ -19,9 +19,7 @@ spisTel.addEventListener("click", () => {
     }
 });
 
-var fakeStats = false;
-if (!fakeStats) {
-    const stats = document.querySelectorAll(".stat");
+const stats = document.querySelectorAll(".stat");
 
 if (stats.length === 4) {
     fetch("../stats.json")
@@ -38,5 +36,4 @@ if (stats.length === 4) {
             stats[3].textContent = formatNumber(data.code_lines, 1000);
         })
         .catch(err => console.error(err));
-}
 }

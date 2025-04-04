@@ -32,7 +32,7 @@ jobs:
       - name: Build site
         env:
           TZ: 'Europe/Warsaw'
-        run: cd ./src && hugo --minify
+        run: cd ./src && hugo --minify --cleanDestinationDir
       
       - name: Copy all images
         run: cp -Rf ./src/assets/images/ ./src/public/
