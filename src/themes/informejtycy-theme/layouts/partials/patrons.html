@@ -20,28 +20,41 @@
 </style>
 
 <div class="rzad-zdjec desktop-only">
+    <a href="https://um.warszawa.pl/prezydent-warszawy/" target="_blank">
+        {{ with resources.Get "images/partnerships/warszawa.png" }}
+        <img src="{{ .RelPermalink }}" style="min-height: 84px;">
+        {{ end }}
+    </a>
     <a href="https://pti.org.pl/" target="_blank">
         {{ with resources.Get "images/partnerships/pti.png" }}
         <img src="{{ .RelPermalink }}">
         {{ end }}
     </a>
-    <a href="https://pistacja.tv/" target="_blank">
-        {{ with resources.Get "images/partnerships/pistacja.png" }}
-        <img src="{{ .RelPermalink }}">
-        {{ end }}
-    </a>
-    <a href="https://piit.org.pl/" target="_blank">
-        {{ with resources.Get "images/partnerships/piit.png" }}
-        <img src="{{ .RelPermalink }}">
-        {{ end }}
-    </a>
-</div>
-<div class="rzad-zdjec desktop-only">
     <a href="https://not.org.pl/" target="_blank">
         {{ with resources.Get "images/partnerships/not.png" }}
         <img src="{{ .RelPermalink }}">
         {{ end }}
     </a>
+</div>
+<div class="rzad-zdjec desktop-only">    
+    <a href="https://piit.org.pl/" target="_blank">
+        {{ with resources.Get "images/partnerships/piit.png" }}
+        <img src="{{ .RelPermalink }}">
+        {{ end }}
+    </a> 
+    <a href="https://pistacja.tv/" target="_blank">
+        {{ with resources.Get "images/partnerships/pistacja.png" }}
+        <img src="{{ .RelPermalink }}">
+        {{ end }}
+    </a>
+    <a href="https://pasja-informatyki.pl/" target="_blank">
+        {{ with resources.Get "images/partnerships/pasja.png" }}
+        <img src="{{ .RelPermalink }}">
+        {{ end }}
+    </a>
+</div>
+
+<div class="rzad-zdjec desktop-only">   
     <a href="https://www.staszic.waw.pl/" target="_blank">
         {{ with resources.Get "images/partnerships/staszic.png" }}
         <img src="{{ .RelPermalink }}">
@@ -57,19 +70,14 @@
         <img src="{{ .RelPermalink }}">
         {{ end }}
     </a>
-    <a href="https://pasja-informatyki.pl/" target="_blank">
-        {{ with resources.Get "images/partnerships/pasja.png" }}
+    <a href="https://przeglad-techniczny.pl/" target="_blank">
+        {{ with resources.Get "images/partnerships/przeglad_techniczny.jpg" }}
         <img src="{{ .RelPermalink }}">
         {{ end }}
     </a>
 </div>
 
 <div class="rzad-zdjec desktop-only">
-    <a href="https://przeglad-techniczny.pl/" target="_blank">
-        {{ with resources.Get "images/partnerships/przeglad_techniczny.jpg" }}
-        <img src="{{ .RelPermalink }}">
-        {{ end }}
-    </a>
     <a href="https://piasecznonews.pl/" target="_blank">
         {{ with resources.Get "images/partnerships/piaseczno-news.png" }}
         <img src="{{ .RelPermalink }}">
@@ -83,13 +91,21 @@
 </div>
 
 <div class="rzad-zdjec mobile-only">
-    <a href="https://pti.org.pl/" target="_blank">
-        {{ with resources.Get "images/partnerships/pti.png" }}
-        <img src="{{ .RelPermalink }}">
+    <a href="https://um.warszawa.pl/prezydent-warszawy/" target="_blank">
+        {{ with resources.Get "images/partnerships/warszawa.png" }}
+        <img src="{{ .RelPermalink }}" style="min-height: 84px;">
         {{ end }}
     </a>
     <a href="https://not.org.pl/" target="_blank">
         {{ with resources.Get "images/partnerships/not.png" }}
+        <img src="{{ .RelPermalink }}">
+        {{ end }}
+    </a>
+</div>
+
+<div class="rzad-zdjec mobile-only">
+    <a href="https://pti.org.pl/" target="_blank">
+        {{ with resources.Get "images/partnerships/pti.png" }}
         <img src="{{ .RelPermalink }}">
         {{ end }}
     </a>
@@ -101,13 +117,13 @@
 </div>
 
 <div class="rzad-zdjec mobile-only">
-    <a href="https://pistacja.tv/" target="_blank">
-        {{ with resources.Get "images/partnerships/pistacja.png" }}
+    <a href="https://piit.org.pl/" target="_blank">
+        {{ with resources.Get "images/partnerships/piit.png" }}
         <img src="{{ .RelPermalink }}">
         {{ end }}
     </a>
-    <a href="https://piit.org.pl/" target="_blank">
-        {{ with resources.Get "images/partnerships/piit.png" }}
+    <a href="https://pistacja.tv/" target="_blank">
+        {{ with resources.Get "images/partnerships/pistacja.png" }}
         <img src="{{ .RelPermalink }}">
         {{ end }}
     </a>
