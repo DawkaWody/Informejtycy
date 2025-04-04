@@ -20,8 +20,13 @@ jobs:
         uses: actions/checkout@v3
         if: github.ref == 'refs/heads/main'
         with:
-          ref: built-page # Destination branch name
+          ref: built-page
           path: build-site
+
+      - name: Clean built-page branch
+        if: github.ref == 'refs/heads/main'
+        run: |
+          rm -rf build-site/*
         
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
@@ -32,7 +37,7 @@ jobs:
       - name: Build site
         env:
           TZ: 'Europe/Warsaw'
-        run: cd ./src && hugo --minify --cleanDestinationDir
+        run: cd ./src && hugo --minify
       
       - name: Copy all images
         run: cp -Rf ./src/assets/images/ ./src/public/
