@@ -1,1 +1,0 @@
-jeżeli zauważyłeś popsute indeksy w pliku converted, nie martw się to tylko artykuł funkcje wleciał wcześniej i wszystko się popsuło, a Dawidowi nie chciało się pozmieniać nazw plików `.md` więc jest troche słabo i jest tam nieco syf więc **nie konwertuj na pałę zadań z tamtąd!!!**

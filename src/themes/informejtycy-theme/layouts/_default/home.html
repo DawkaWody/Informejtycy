@@ -1,169 +1,76 @@
 {{ define "main" }}
 <div id="srodek">
-  <div id="sidebar-left">
-    {{ partial "article_list.html" . }}
-  </div>
+  <div id="sidebar-left">{{ partial "article_list.html" . }}</div>
   <div id="artykul">
     <h1>Cześć, miło nam Cię widzieć!</h1>
 
     <div id="spis-tel">
-      <a href="#przesuniecie" style="text-decoration: none;">
+      <a href="#przesuniecie" style="text-decoration: none">
         <h2 id="przycisk-spis-tel">Zacznij naukę już dziś</h2>
       </a>
       <div id="wlasciwy-spis-tel">
-        <hr>
+        <hr />
         <h3 id="przesuniecie">Tematy podstawowe</h3>
-        {{ $sortedPages := sort .Site.RegularPages "Params.id" }}
-        {{ range $sortedPages }}
-          {{ if eq .Params.nerd false }}
-            <a class="link-spis-tel" href="{{ .RelPermalink }}">{{ .Params.id }}. {{ .Title }}</a><br>
-          {{ end }}
-        {{ end }}
+        {{ $sortedPages := sort .Site.RegularPages "Params.id" }} {{ range
+        $sortedPages }} {{ if eq .Params.nerd false }}
+        <a class="link-spis-tel" href="{{ .RelPermalink }}"
+          >{{ .Params.id }}. {{ .Title }}</a
+        ><br />
+        {{ end }} {{ end }}
 
-        <hr>
+        <hr />
 
         <h3>Tematy zaawansowane</h3>
-        {{ range $sortedPages }}
-          {{ if eq .Params.nerd true }}
-            <a class="link-spis-tel" href="{{ .RelPermalink }}">{{ .Params.id }}. {{ .Title }}</a><br>
-          {{ end }}
-        {{ end }}
-        <hr>
+        {{ range $sortedPages }} {{ if eq .Params.nerd true }}
+        <a class="link-spis-tel" href="{{ .RelPermalink }}"
+          >{{ .Params.id }}. {{ .Title }}</a
+        ><br />
+        {{ end }} {{ end }}
+        <hr />
       </div>
     </div>
 
     <h3 id="statsy-h2">Czy wiedziałeś, że Informejtycy to już:</h3>
     <ul>
-      <li>ponad <span class="stat">1.400</span> zadowolonych użytkowników, którzy rozwijają swoje umiejętności</li>
-      <li>ponad <span class="stat">100</span> dostępnych zadań, które pomagają w nauce programowania</li>
-      <li>ponad <span class="stat">12.000</span> odwiedzin, czyli rosnąca społeczność pasjonatów</li>
-      <li>ponad <span class="stat">4.000</span> linii kodu, które tworzą to miejsce dla Was</li>
+      <li>
+        ponad <span class="stat">1.400</span> zadowolonych użytkowników, którzy
+        rozwijają swoje umiejętności
+      </li>
+      <li>
+        ponad <span class="stat">100</span> dostępnych zadań, które pomagają w
+        nauce programowania
+      </li>
+      <li>
+        ponad <span class="stat">12.000</span> odwiedzin, czyli rosnąca
+        społeczność pasjonatów
+      </li>
+      <li>
+        ponad <span class="stat">4.000</span> linii kodu, które tworzą to
+        miejsce dla Was
+      </li>
     </ul>
     <h3>A to wszystko dzięki Wam! Razem tworzymy społeczność Informejtyków!</h3>
-    <hr>
-    <!-- <style>
-      html,
-      body {
-        scroll-snap-type: y mandatory;
-        overflow-y: scroll;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-      }
+    <hr />
 
-      .section {
-        scroll-snap-align: start;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      /* //////////////////////////// */
-
-      .h2-srodek {
-        text-align: center;
-        margin-top: 2vw;
-      }
-
-      #srodekS2 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 60px;
-      }
-
-      .krok {
-        background-color: #f0f0f0;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-      }
-
-      .krok img {
-        width: 50%;
-        height: 50%;
-        object-fit: contain;
-      }
-
-      .podpis {
-        width: 120%;
-        position: absolute;
-        top: 110%;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 22px;
-        font-weight: normal;
-        text-align: center;
-      }
-
-      .strzalka {
-        width: 80px;
+    {{ with resources.Get "images/srebrny-wilk.png" }}
+    <img
+      src="{{ .RelPermalink }}"
+      style="
+        width: 100%;
         height: auto;
-      }
+        border-radius: 10px;
+        display: block;
+        margin: 20px auto;
+      "
+    />
+    {{ end }}
 
-      #gora-kroki {
-        margin-top: 40px;
-        margin-bottom: 40px;
-      }
-
-      #dol-kroki {
-        margin-top: 120px;
-        margin-bottom: 20px;
-      }
-    </style>
-
-    <div class="section" style="margin-top: -60px;">
-      <img src="../images/bez-tla.png" style="width: 500px;">
-      <h2 style="margin-top: -120px;">- to coś znacznie więcej niż platforma do nauki!</h2>
-      <p style="margin-top: 0px; max-width: 60%; text-align: center;">Już dziś zacznij przygodę z programowaniem<br>
-        i zdobądź umiejętności cenione na rynku pracy.</p>
-      </p>
-    </div>
-
-    <div class="section">
-
-      <h2 class="h2-srodek" id="gora-kroki">Krok po kroku:</h2>
-
-      <div id="srodekS2">
-
-        <div class="krok" id="krok1">
-          <img src="../images/icon1.png">
-          <div class="podpis">Czytasz poradniki i analizujesz przykłady</div>
-        </div>
-
-        <img src="../images/next-dark.png" class="strzalka">
-
-        <div class="krok" id="krok2">
-          <img src="../images/icon2.png">
-          <div class="podpis">Zdobywasz wiedzę</div>
-        </div>
-
-        <img src="../images/next-dark.png" class="strzalka">
-
-        <div class="krok" id="krok3">
-          <img src="../images/icon3.png">
-          <div class="podpis">Wykonujesz zadania i ćwiczysz umiejętności</div>
-        </div>
-      </div>
-
-      <h2 class="h2-srodek" id="dol-kroki">A potem programowanie to już tylko przyjemność!</h2>
-    </div> -->
-
-    {{ .Content }}
-    <hr>
+    <hr />
     <h2 id="patroni">Patronaty</h2>
-    <div class="patrons">
-      {{ partial "patrons.html" . }}
-    </div>
-    <hr>
+    <div class="patrons">{{ partial "patrons.html" . }}</div>
+    <hr />
     <h2 id="programy-partnerskie">Programy partnerskie</h2>
-    <div class="partnerships">
-      {{ partial "partnerships.html" . }}
-    </div>
+    <div class="partnerships">{{ partial "partnerships.html" . }}</div>
   </div>
   <div id="sidebar-right">
     <h2>Spis treści</h2>
@@ -176,16 +83,15 @@
     </ol>
   </div>
 </div>
-{{- with resources.Get "js/home.js" }}
-  {{- if eq hugo.Environment "development" }}
-    {{- with . | js.Build }}
-      <script src="{{ .RelPermalink }}" type="text/javascript"></script>
-    {{- end }}
-  {{- else }}
-    {{- $opts := dict "minify" true }}
-    {{- with . | js.Build $opts | fingerprint }}
-      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" type="text/javascript"></script>
-    {{- end }}
-  {{- end }}
-{{- end }}
-{{ end }}
+{{- with resources.Get "js/home.js" }} {{- if eq hugo.Environment "development"
+}} {{- with . | js.Build }}
+<script src="{{ .RelPermalink }}" type="text/javascript"></script>
+{{- end }} {{- else }} {{- $opts := dict "minify" true }} {{- with . | js.Build
+$opts | fingerprint }}
+<script
+  src="{{ .RelPermalink }}"
+  integrity="{{- .Data.Integrity }}"
+  crossorigin="anonymous"
+  type="text/javascript"
+></script>
+{{- end }} {{- end }} {{- end }} {{ end }}

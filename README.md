@@ -1,3 +1,5 @@
+# Informejtycy
+
 ## O projekcie
 
 Projekt “Informejtycy” powstał, aby odpowiedzieć na rosnące zapotrzebowanie na dostęp do wysokiej jakości edukacji informatycznej dla wszystkich, niezależnie od miejsca zamieszkania czy sytuacji życiowej i materialnej. W świecie, który nieustannie się zmienia, kluczowe jest posiadanie wiedzy z zakresu programowania i algorytmiki. Dlatego też stworzyliśmy w pełni darmową platformę online, dostępną dla każdego, kto chce rozwijać swoje umiejętności – bez względu na wiek, doświadczenie czy zasoby finansowe.
